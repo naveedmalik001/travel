@@ -1,0 +1,73 @@
+import React from "react";
+import { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import JsonLd from "@/components/JsonLd";
+import PackageCatalogClient from "./PackageCatalogClient";
+
+export const metadata: Metadata = {
+  title: "Kashmir Tour Packages 2026 | Gulmarg, Gurez, Ladakh & Honeymoon Trips",
+  description: "Browse curated Kashmir tour packages, Honeymoon specials, Gurez Valley, Keran Valley, and Ladakh expeditions. Handcrafted by local Tangmarg & Gulmarg travel specialists with verified 3-star/4-star hotels and dedicated cabs.",
+  keywords: [
+    "Kashmir Tour Packages",
+    "Kashmir Honeymoon Packages",
+    "Gurez Valley Tour",
+    "Keran Valley Tour Package",
+    "Ladakh Tour Package",
+    "Gulmarg Tour Operator",
+    "Tangmarg Travel Agency",
+    "Srinagar Tour Packages",
+    "Kashmir Family Tours"
+  ],
+  openGraph: {
+    title: "Curated Kashmir & Ladakh Tour Packages | Shop A Trip",
+    description: "Explore 3N/4D, 5N/6D, 6N/7D, Gurez, Keran, and Leh Ladakh custom tour packages with verified stays and 24/7 mountain support.",
+    url: "https://shopatrip.in/packages",
+    images: ["/logo.jpg"],
+  },
+};
+
+export default function PackagesPage() {
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Shop A Trip Kashmir & Ladakh Tour Packages",
+    description: "Handcrafted Kashmir, Gurez Valley, Keran Valley, and Ladakh tour itineraries.",
+    url: "https://shopatrip.in/packages",
+  };
+
+  return (
+    <main className="min-h-screen bg-[#fbfdfb] text-slate-900 selection:bg-emerald-100 selection:text-emerald-950 flex flex-col justify-between">
+      <JsonLd data={itemListSchema} />
+      <Navbar />
+
+      <div className="pt-24 md:pt-28">
+        <Breadcrumbs items={[{ name: "Tour Packages", href: "/packages" }]} />
+
+        {/* Hero Banner */}
+        <section className="relative bg-[#081f16] text-white py-14 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-800/30 via-transparent to-transparent pointer-events-none" />
+          <div className="max-w-7xl mx-auto relative z-10 text-center">
+            <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-semibold bg-emerald-950/90 text-emerald-300 border border-emerald-500/30 mb-4">
+              ★ Handcrafted Himalayan Itineraries
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight">
+              Explore Our Curated <span className="text-amber-400">Kashmir & Ladakh</span> Tour Packages
+            </h1>
+            <p className="mt-4 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
+              From romantic honeymoon escapes on Dal Lake to rugged offbeat frontiers in Gurez and high-pass Ladakh expeditions, all managed by our local Tangmarg/Gulmarg operations team.
+            </p>
+          </div>
+        </section>
+
+        {/* Interactive Catalog with Filter & Search */}
+        <PackageCatalogClient />
+      </div>
+
+      <Footer />
+      <WhatsAppFloat />
+    </main>
+  );
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="pineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B" />
+      <stop offset="100%" stop-color="#022c22" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded Base Crest -->
+  <rect width="32" height="32" rx="8" fill="url(#pineGrad)" />
+  <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="#10B981" stroke-width="0.75" stroke-opacity="0.4" />
+  
+  <!-- Stylized Mountain Peaks -->
+  <!-- Back Snow Peak -->
+  <path d="M16 6 L25 21 L7 21 Z" fill="#FFFFFF" fill-opacity="0.95" />
+  <!-- Mountain Shadow Side -->
+  <path d="M16 6 L25 21 L16 21 Z" fill="#93C5FD" fill-opacity="0.75" />
+  
+  <!-- Foreground Golden Peak / Compass Accent -->
+  <path d="M12 11 L18 21 L6 21 Z" fill="url(#goldGrad)" />
+  
+  <!-- Pine Tree Silhouette in Valley -->
+  <path d="M16 17 L17.5 20 L16.8 20 L18 22.5 L14 22.5 L15.2 20 L14.5 20 Z" fill="#064E3B" />
+  <rect x="15.6" y="22.5" width="0.8" height="1.5" fill="#064E3B" />
+  
+  <!-- Sun / Golden Dot -->
+  <circle cx="23" cy="9" r="2" fill="url(#goldGrad)" />
+</svg>

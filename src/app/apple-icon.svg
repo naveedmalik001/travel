@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <defs>
+    <linearGradient id="applePineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B" />
+      <stop offset="100%" stop-color="#022c22" />
+    </linearGradient>
+    <linearGradient id="appleGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="180" height="180" rx="40" fill="url(#applePineGrad)" />
+  <rect x="4" y="4" width="172" height="172" rx="36" fill="none" stroke="#10B981" stroke-width="3" stroke-opacity="0.4" />
+  
+  <!-- Back Snow Peak -->
+  <path d="M90 35 L145 120 L35 120 Z" fill="#FFFFFF" fill-opacity="0.95" />
+  <path d="M90 35 L145 120 L90 120 Z" fill="#93C5FD" fill-opacity="0.75" />
+  
+  <!-- Foreground Golden Peak -->
+  <path d="M68 65 L102 120 L34 120 Z" fill="url(#appleGoldGrad)" />
+  
+  <!-- Pine Tree in Center -->
+  <path d="M90 95 L99 112 L95 112 L102 128 L78 128 L85 112 L81 112 Z" fill="#064E3B" />
+  <rect x="88" y="128" width="4" height="8" fill="#064E3B" />
+  
+  <!-- Sun Crest -->
+  <circle cx="130" cy="52" r="12" fill="url(#appleGoldGrad)" />
+</svg>
