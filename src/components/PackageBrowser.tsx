@@ -17,7 +17,8 @@ import {
   MapPin,
   ChevronDown,
   ChevronUp,
-  Landmark
+  Landmark,
+  Compass
 } from "lucide-react";
 
 export default function PackageBrowser({
