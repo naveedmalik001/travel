@@ -107,14 +107,14 @@ export default function WelcomeCallOverlay() {
     }
   }, [isMuted]);
 
-  // Master play audio function (prioritizes real audio file, falls back to Santoor synthesis)
+  // Master play audio function (prioritizes user-provided kashmir_calling.mp3, falls back to Santoor synthesis)
   const startAudioPlayback = useCallback(() => {
     if (isMuted) return;
 
     if (audioElementRef.current) {
-      audioElementRef.current.volume = 0.85;
+      audioElementRef.current.volume = 1.0;
       audioElementRef.current.play().catch(() => {
-        // If HTML5 audio is blocked by autoplay policy, fallback to synthesized Santoor
+        // If HTML5 audio is blocked by browser autoplay policy before first gesture, fallback to synthesized Santoor
         playSantoorFallback();
       });
     } else {
@@ -127,6 +127,7 @@ export default function WelcomeCallOverlay() {
     try {
       if (audioElementRef.current) {
         audioElementRef.current.pause();
+        audioElementRef.current.currentTime = 0;
       }
       if (ringIntervalRef.current) {
         clearInterval(ringIntervalRef.current);
@@ -219,13 +220,14 @@ export default function WelcomeCallOverlay() {
       setCurrentSlide((prev) => (prev + 1) % DESTINATION_SLIDES.length);
     }, 4500);
 
-    // Unblock & start audio on ANY user touch or gesture anywhere on screen
+    // Unblock & start audio on ANY user interaction anywhere on screen
     const unlockAudio = () => {
       startAudioPlayback();
     };
-    window.addEventListener("pointerdown", unlockAudio, { once: true });
-    window.addEventListener("touchstart", unlockAudio, { once: true });
-    window.addEventListener("click", unlockAudio, { once: true });
+    window.addEventListener("pointerdown", unlockAudio, { passive: true });
+    window.addEventListener("touchstart", unlockAudio, { passive: true });
+    window.addEventListener("click", unlockAudio, { passive: true });
+    window.addEventListener("keydown", unlockAudio, { passive: true });
 
     return () => {
       if (ringIntervalRef.current) clearInterval(ringIntervalRef.current);
@@ -233,6 +235,7 @@ export default function WelcomeCallOverlay() {
       window.removeEventListener("pointerdown", unlockAudio);
       window.removeEventListener("touchstart", unlockAudio);
       window.removeEventListener("click", unlockAudio);
+      window.removeEventListener("keydown", unlockAudio);
       if (audioElementRef.current) {
         audioElementRef.current.pause();
       }
@@ -242,14 +245,15 @@ export default function WelcomeCallOverlay() {
     };
   }, [startAudioPlayback, playSantoorFallback]);
 
-
   // Touch & Mouse Swipe Handlers for Slide-to-Answer
   const handleTouchStart = (e: React.TouchEvent) => {
     if (isAnswered) return;
+    startAudioPlayback();
     setIsDragging(true);
     startXRef.current = e.touches[0].clientX;
     currentDragRef.current = 0;
   };
+
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (!isDragging || isAnswered || !trackRef.current) return;
@@ -277,6 +281,7 @@ export default function WelcomeCallOverlay() {
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (isAnswered) return;
+    startAudioPlayback();
     setIsDragging(true);
     startXRef.current = e.clientX;
     currentDragRef.current = 0;
