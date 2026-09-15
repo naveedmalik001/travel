@@ -29,17 +29,23 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const sanitize = (str: string) => str.trim().slice(0, 500);
+    const cleanName = sanitize(formData.name);
+    const cleanPhone = sanitize(formData.phone);
+    const cleanEmail = sanitize(formData.email);
+    const cleanNotes = sanitize(formData.notes);
+
     const msg = `*New Travel Inquiry via Website*
-Name: ${formData.name}
-Phone: ${formData.phone}
-Email: ${formData.email || "N/A"}
+Name: ${cleanName}
+Phone: ${cleanPhone}
+Email: ${cleanEmail || "N/A"}
 Travel Month: ${formData.travelMonth}
 Guests: ${formData.guests}
 Preferred Destination: ${formData.destination}
-Notes: ${formData.notes || "None"}`;
+Notes: ${cleanNotes || "None"}`;
 
     const waUrl = `https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent(msg)}`;
-    window.open(waUrl, "_blank");
+    window.open(waUrl, "_blank", "noopener,noreferrer");
     setSubmitted(true);
   };
 

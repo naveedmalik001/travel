@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { tourPackages, TourPackage } from "@/data/packages";
 import PackageCard from "@/components/PackageCard";
 import ItineraryModal from "@/components/ItineraryModal";
@@ -13,7 +13,9 @@ import {
   ShieldCheck, 
   Compass, 
   Calculator,
-  ArrowRight
+  ArrowRight,
+  ChevronDown,
+  ChevronUp
 } from "lucide-react";
 
 export default function PackageCatalogClient() {
@@ -21,6 +23,7 @@ export default function PackageCatalogClient() {
   const [selectedDuration, setSelectedDuration] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [sortBy, setSortBy] = useState<string>("popular");
+  const [visibleCount, setVisibleCount] = useState<number>(6);
   const [activeModalPackage, setActiveModalPackage] = useState<TourPackage | null>(null);
 
   const categories = [
@@ -89,6 +92,13 @@ export default function PackageCatalogClient() {
         return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
       });
   }, [selectedCategory, selectedDuration, searchQuery, sortBy]);
+
+  // Reset pagination count when any filter changes
+  useEffect(() => {
+    setVisibleCount(6);
+  }, [selectedCategory, selectedDuration, searchQuery, sortBy]);
+
+  const visiblePackages = filteredPackages.slice(0, visibleCount);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -173,7 +183,7 @@ export default function PackageCatalogClient() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
                 selectedCategory === cat
-                  ? "bg-pine-900 text-white shadow-sm"
+                  ? "bg-pine-900 text-amber-300 shadow-sm"
                   : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
               }`}
             >
@@ -199,7 +209,7 @@ export default function PackageCatalogClient() {
             </button>
           ))}
           <span className="ml-auto text-xs text-slate-500 font-medium">
-            Showing <strong className="text-pine-900">{filteredPackages.length}</strong> verified tour packages
+            Showing <strong className="text-pine-900">{visiblePackages.length}</strong> of <strong className="text-pine-900">{filteredPackages.length}</strong> packages
           </span>
         </div>
       </div>
@@ -220,15 +230,42 @@ export default function PackageCatalogClient() {
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredPackages.map((pkg) => (
-            <PackageCard
-              key={pkg.id}
-              pkg={pkg}
-              onOpenDetails={(p) => setActiveModalPackage(p)}
-            />
-          ))}
-        </div>
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {visiblePackages.map((pkg) => (
+              <PackageCard
+                key={pkg.id}
+                pkg={pkg}
+                onOpenDetails={(p) => setActiveModalPackage(p)}
+              />
+            ))}
+          </div>
+
+          {/* Progressive Pagination Controls */}
+          {filteredPackages.length > 6 && (
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+              {visibleCount < filteredPackages.length && (
+                <button
+                  onClick={() => setVisibleCount((prev) => Math.min(prev + 3, filteredPackages.length))}
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-2xl bg-pine-900 hover:bg-pine-800 text-amber-300 font-bold text-xs sm:text-sm shadow-md transition-all transform hover:-translate-y-0.5"
+                >
+                  <span>View More Packages (+{Math.min(3, filteredPackages.length - visibleCount)} More)</span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+              )}
+
+              {visibleCount > 6 && (
+                <button
+                  onClick={() => setVisibleCount(6)}
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs sm:text-sm transition-all"
+                >
+                  <span>Show Fewer</span>
+                  <ChevronUp className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+          )}
+        </>
       )}
 
       {/* Custom Quote Banner */}
@@ -265,3 +302,4 @@ export default function PackageCatalogClient() {
     </div>
   );
 }
+

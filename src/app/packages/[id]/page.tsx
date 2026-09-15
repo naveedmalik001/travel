@@ -10,6 +10,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import { tourPackages } from "@/data/packages";
 import { companyInfo } from "@/data/company";
+import { buildPackageWhatsAppUrl } from "@/data/whatsapp";
 import PackageDetailInquiry from "./PackageDetailInquiry";
 import { 
   Clock, 
@@ -124,9 +125,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
     },
   };
 
-  const whatsappUrl = `https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent(
-    `Hello Shop A Trip Team! I am interested in booking the "${pkg.title}" (${pkg.duration}) starting from ${pkg.priceFrom}. Please share customized availability & hotel confirmation.`
-  )}`;
+  const whatsappUrl = buildPackageWhatsAppUrl(pkg);
 
   const relatedPackages = tourPackages
     .filter((p) => p.id !== pkg.id && (p.category === pkg.category || p.division === pkg.division))

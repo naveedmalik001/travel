@@ -132,9 +132,11 @@ export default function CustomTripPlanner() {
   }, [selectedDestinations, days, travelers, hotelTier, vehicle]);
 
   const generateWhatsAppMessage = () => {
+    const cleanName = userName.trim().slice(0, 100);
+    const cleanPhone = userPhone.trim().slice(0, 30);
     const text = `*Custom Tour Request - Shop A Trip Tour & Travels*
-Name: ${userName || "Traveler"}
-Phone: ${userPhone || "Not provided"}
+Name: ${cleanName || "Traveler"}
+Phone: ${cleanPhone || "Not provided"}
 Travel Season: ${travelMonth}
 Duration: ${days} Days / ${days - 1} Nights
 Travelers: ${travelers} Persons

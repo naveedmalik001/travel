@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import Link from "next/link";
 import { tourPackages, TourPackage } from "@/data/packages";
 import PackageCard from "./PackageCard";
@@ -8,16 +8,10 @@ import ItineraryModal from "./ItineraryModal";
 import { 
   Filter, 
   Search, 
-  Layers, 
-  Calendar,
-  Flame,
-  Heart,
-  Mountain,
-  Sun,
-  MapPin,
   ChevronDown,
   ChevronUp,
-  Landmark,
+  ChevronLeft,
+  ChevronRight,
   Compass
 } from "lucide-react";
 
@@ -32,6 +26,10 @@ export default function PackageBrowser({
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [showAll, setShowAll] = useState<boolean>(false);
   const [activeModalPackage, setActiveModalPackage] = useState<TourPackage | null>(null);
+  
+  // Mobile/Tablet Slider State & Ref
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
 
   // Counts for divisions
   const counts = useMemo(() => {
@@ -90,15 +88,56 @@ export default function PackageBrowser({
     });
   }, [selectedDivision, selectedCategory, durationFilter, searchQuery]);
 
-  // Initial display: 3 packages (1 row on desktop) or 6 if expanded or mobile
+  // Reset mobile slider position when filters change
+  useEffect(() => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    }
+    setActiveSlideIndex(0);
+  }, [selectedDivision, selectedCategory, durationFilter, searchQuery]);
+
+  // Handle scroll in mobile slider to update pagination dot
+  const handleScroll = () => {
+    if (!sliderRef.current) return;
+    const { scrollLeft, clientWidth } = sliderRef.current;
+    if (clientWidth > 0) {
+      const newIndex = Math.round(scrollLeft / (clientWidth * 0.85));
+      setActiveSlideIndex(Math.min(newIndex, filteredPackages.length - 1));
+    }
+  };
+
+  const scrollSlider = (direction: "prev" | "next") => {
+    if (!sliderRef.current) return;
+    const scrollAmount = sliderRef.current.clientWidth * 0.85;
+    sliderRef.current.scrollBy({
+      left: direction === "next" ? scrollAmount : -scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollToIndex = (index: number) => {
+    if (!sliderRef.current) return;
+    const scrollAmount = sliderRef.current.clientWidth * 0.85 * index;
+    sliderRef.current.scrollTo({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
+    setActiveSlideIndex(index);
+  };
+
+  // Desktop visible packages (3 initial, or all when expanded)
   const visiblePackages = showAll ? filteredPackages : filteredPackages.slice(0, 3);
 
   return (
-    <section id="packages" className="py-20 bg-slate-50 border-t border-slate-200/80">
+    <section id="packages" className="py-16 sm:py-20 bg-slate-50 border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto mb-10">
+        <div className="max-w-3xl mx-auto mb-8 sm:mb-10 text-center sm:text-left">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold mb-2">
+            <Compass className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Handcrafted Itineraries</span>
+          </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
             Browse tour packages
           </h2>
@@ -108,7 +147,7 @@ export default function PackageBrowser({
         </div>
 
         {/* Primary Division-Wise Selector Bar */}
-        <div className="max-w-3xl mx-auto mb-8">
+        <div className="max-w-3xl mx-auto mb-6 sm:mb-8">
           <div className="bg-white p-1.5 rounded-2xl shadow-sm border border-slate-200 grid grid-cols-2 sm:grid-cols-4 gap-1.5">
             {divisions.map((div) => {
               const isSelected = selectedDivision === div.id;
@@ -119,7 +158,7 @@ export default function PackageBrowser({
                     setSelectedDivision(div.id);
                     setSelectedCategory("All"); // Reset category on division change
                   }}
-                  className={`py-3 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex flex-col items-center justify-center gap-0.5 ${
+                  className={`py-2.5 sm:py-3 px-2 sm:px-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex flex-col items-center justify-center gap-0.5 ${
                     isSelected
                       ? "bg-pine-900 text-amber-300 shadow-md scale-[1.02]"
                       : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
@@ -138,11 +177,11 @@ export default function PackageBrowser({
         </div>
 
         {/* Secondary Filter Controls (Theme Tags, Duration & Search) */}
-        <div className="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-200 mb-8 space-y-4">
+        <div className="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-200 mb-6 sm:mb-8 space-y-4">
           
           {/* Theme Categories Pills */}
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-xs font-semibold text-slate-500 mr-1">Theme</span>
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+            <span className="text-xs font-semibold text-slate-500 mr-1 hidden sm:inline">Theme:</span>
             {categories.map((cat) => {
               const isSelected = selectedCategory === cat.id;
               return (
@@ -178,7 +217,7 @@ export default function PackageBrowser({
                   <button
                     key={d.id}
                     onClick={() => setDurationFilter(d.id)}
-                    className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
+                    className={`px-2.5 sm:px-3 py-1.5 rounded-lg font-medium transition-colors ${
                       durationFilter === d.id
                         ? "bg-pine-900 text-amber-300"
                         : "bg-slate-100 hover:bg-slate-200 text-slate-700"
@@ -204,18 +243,86 @@ export default function PackageBrowser({
           </div>
         </div>
 
-        {/* Results Counter */}
-        <div className="flex items-center justify-between mb-6 text-xs text-slate-500 font-medium">
+        {/* Results Counter & Controls */}
+        <div className="flex items-center justify-between mb-4 sm:mb-6 text-xs text-slate-500 font-medium px-1">
           <span>
-            Showing <strong>{visiblePackages.length}</strong> of <strong>{filteredPackages.length}</strong> {selectedDivision !== "All" ? `${selectedDivision} Division` : ""} itineraries
+            Showing <strong>{filteredPackages.length}</strong> {selectedDivision !== "All" ? `${selectedDivision} Division` : ""} itineraries
           </span>
-          <span>MAP Stays + Private Dedicated Cab Included</span>
+          <span className="hidden sm:inline">MAP Stays + Private Dedicated Cab Included</span>
         </div>
 
-        {/* Packages Grid */}
         {filteredPackages.length > 0 ? (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* 1. MOBILE & TABLET VIEW: Touch-Swipe Slider / Carousel (Hidden on Desktop) */}
+            <div className="block lg:hidden">
+              {/* Slider Header / Navigation Controls for Mobile & Tablet */}
+              <div className="flex items-center justify-between mb-3 px-1">
+                <span className="text-xs text-emerald-800 font-semibold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  Swipe left or right ({activeSlideIndex + 1} of {filteredPackages.length})
+                </span>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    onClick={() => scrollSlider("prev")}
+                    className="p-2 rounded-xl bg-white border border-slate-200 text-slate-700 shadow-sm active:bg-slate-100 hover:bg-slate-50 transition-colors"
+                    aria-label="Previous package slide"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => scrollSlider("next")}
+                    className="p-2 rounded-xl bg-white border border-slate-200 text-slate-700 shadow-sm active:bg-slate-100 hover:bg-slate-50 transition-colors"
+                    aria-label="Next package slide"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Horizontal Scrollable Slider Container */}
+              <div
+                ref={sliderRef}
+                onScroll={handleScroll}
+                className="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory no-scrollbar scroll-smooth -mx-4 px-4 sm:-mx-6 sm:px-6"
+                style={{ WebkitOverflowScrolling: "touch" }}
+              >
+                {filteredPackages.map((pkg) => (
+                  <div
+                    key={pkg.id}
+                    className="w-[85vw] sm:w-[350px] flex-shrink-0 snap-center"
+                  >
+                    <PackageCard
+                      pkg={pkg}
+                      onOpenDetails={(p) => setActiveModalPackage(p)}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Slider Pagination Indicator Dots */}
+              {filteredPackages.length > 1 && (
+                <div className="flex items-center justify-center gap-1.5 mt-3">
+                  {filteredPackages.slice(0, Math.min(filteredPackages.length, 10)).map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => scrollToIndex(idx)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        activeSlideIndex === idx
+                          ? "w-6 bg-pine-900"
+                          : "w-2 bg-slate-300 hover:bg-slate-400"
+                      }`}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
+                  {filteredPackages.length > 10 && (
+                    <span className="text-[10px] text-slate-400 ml-1">+{filteredPackages.length - 10}</span>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {/* 2. DESKTOP VIEW: Multi-Column Grid (Hidden on Mobile/Tablet) */}
+            <div className="hidden lg:grid lg:grid-cols-3 gap-8">
               {visiblePackages.map((pkg) => (
                 <PackageCard
                   key={pkg.id}
@@ -225,12 +332,13 @@ export default function PackageBrowser({
               ))}
             </div>
 
-            {/* View More / Show Less Button & Full Catalog Link */}
-            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+            {/* Action Buttons: Show More / Fewer & Browse All Tour Packages */}
+            <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              {/* Show More toggle for Desktop */}
               {filteredPackages.length > 3 && (
                 <button
                   onClick={() => setShowAll(!showAll)}
-                  className="inline-flex items-center space-x-2 px-6 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs sm:text-sm transition-all"
+                  className="hidden lg:inline-flex items-center space-x-2 px-6 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs sm:text-sm transition-all"
                 >
                   <span>
                     {showAll 
@@ -241,9 +349,10 @@ export default function PackageBrowser({
                 </button>
               )}
 
+              {/* Browse All Tour Packages CTA */}
               <Link
                 href="/packages"
-                className="inline-flex items-center space-x-2 px-7 py-3 rounded-2xl bg-pine-900 hover:bg-pine-800 text-amber-300 font-bold text-xs sm:text-sm shadow-md transition-all transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-7 py-3 rounded-2xl bg-pine-900 hover:bg-pine-800 text-amber-300 font-bold text-xs sm:text-sm shadow-md transition-all transform hover:-translate-y-0.5"
               >
                 <span>Browse All Tour Packages</span>
                 <span>→</span>
@@ -281,3 +390,4 @@ export default function PackageBrowser({
     </section>
   );
 }
+

@@ -17,16 +17,28 @@ const securityHeaders = [
     value: 'nosniff',
   },
   {
+    key: 'X-XSS-Protection',
+    value: '1; mode=block',
+  },
+  {
     key: 'Referrer-Policy',
     value: 'strict-origin-when-cross-origin',
   },
   {
+    key: 'Cross-Origin-Opener-Policy',
+    value: 'same-origin-allow-popups',
+  },
+  {
+    key: 'Cross-Origin-Resource-Policy',
+    value: 'same-origin',
+  },
+  {
     key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=(self)',
+    value: 'camera=(), microphone=(), geolocation=(self), payment=(), usb=(), display-capture=()',
   },
   {
     key: 'Content-Security-Policy',
-    value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https:; object-src 'none'; base-uri 'self';",
+    value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https:; frame-ancestors 'self'; form-action 'self' https://wa.me https://api.whatsapp.com; object-src 'none'; base-uri 'self'; upgrade-insecure-requests;",
   },
 ];
 
@@ -55,3 +67,4 @@ const nextConfig = {
 };
 
 export default nextConfig;
+

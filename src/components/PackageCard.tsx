@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { TourPackage } from "@/data/packages";
 import { companyInfo } from "@/data/company";
+import { buildPackageWhatsAppUrl } from "@/data/whatsapp";
 import { 
   Clock, 
   MapPin, 
@@ -21,9 +22,7 @@ interface PackageCardProps {
 }
 
 export default function PackageCard({ pkg, onOpenDetails }: PackageCardProps) {
-  const whatsappUrl = `https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent(
-    `Hello Shop A Trip Team! I want to inquire about the "${pkg.title}" (${pkg.duration}). Please share customized quote & hotel details.`
-  )}`;
+  const whatsappUrl = buildPackageWhatsAppUrl(pkg);
 
   return (
     <div className="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-soft hover:shadow-card transition-all duration-300 flex flex-col group hover:-translate-y-1">

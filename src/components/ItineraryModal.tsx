@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { TourPackage } from "@/data/packages";
 import { companyInfo } from "@/data/company";
+import { buildPackageWhatsAppUrl } from "@/data/whatsapp";
 import { 
   X, 
   Calendar, 
@@ -33,9 +34,7 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
 
   if (!isOpen || !pkg) return null;
 
-  const whatsappMessage = encodeURIComponent(
-    `Hello Shop A Trip Team! I am interested in booking the "${pkg.title}" (${pkg.duration}). Could you please share the best quote and available dates?`
-  );
+  const whatsappUrl = buildPackageWhatsAppUrl(pkg);
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
@@ -258,7 +257,7 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
               Call {companyInfo.phones[0]}
             </a>
             <a
-              href={`https://wa.me/${companyInfo.whatsapp}?text=${whatsappMessage}`}
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 sm:flex-initial px-6 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs shadow-md transition-all flex items-center justify-center space-x-1.5"
