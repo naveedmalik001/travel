@@ -489,7 +489,7 @@ export default function WelcomeCallOverlay() {
         )}
 
         <p className="text-[11px] text-slate-400/90 mt-4 text-center">
-          Shop A Trip Tour &amp; Travels • Tangmarg &amp; Gulmarg, Kashmir
+          Shop A Trip Tour &amp; Travels • Jammu, Kashmir &amp; Ladakh
         </p>
       </footer>
     </div>
