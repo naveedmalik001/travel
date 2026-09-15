@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, ShieldCheck } from "lucide-react";
+import { ChevronDown, ShieldCheck, HelpCircle } from "lucide-react";
 
 const faqs = [
   {
@@ -33,38 +33,43 @@ export default function FAQSection() {
     <section className="py-16 sm:py-20 bg-slate-50 border-t border-slate-200">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         
-        {/* Section header — direct, no badge */}
-        <div className="mb-10">
-          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
-            Common questions
-          </h2>
-          <p className="mt-1.5 text-sm text-slate-500">
-            About planning, permits, and packages.
-          </p>
+        {/* Section header */}
+        <div className="flex items-start gap-4 mb-10">
+          <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+            <HelpCircle className="w-6 h-6" />
+          </div>
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
+              Common questions
+            </h2>
+            <p className="mt-1.5 text-sm text-slate-500">
+              About planning, permits, and packages.
+            </p>
+          </div>
         </div>
 
-        <div className="space-y-2.5">
+        <div className="space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className={`rounded-2xl border overflow-hidden transition-all ${
+                className={`rounded-2xl border overflow-hidden transition-all duration-200 ${
                   isOpen
-                    ? "bg-white border-slate-300 shadow-card"
-                    : "bg-white border-slate-200/80 shadow-soft"
+                    ? "bg-white border-emerald-200 shadow-md"
+                    : "bg-white border-slate-200/80 shadow-sm"
                 }`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-pine-700 min-h-[52px]"
+                  className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 min-h-[56px]"
                   aria-expanded={isOpen}
                 >
-                  <span className={`text-sm sm:text-base font-semibold leading-snug transition-colors ${isOpen ? "text-pine-900" : "text-slate-800"}`}>
+                  <span className={`text-sm sm:text-base font-semibold leading-snug transition-colors ${isOpen ? "text-emerald-900" : "text-slate-800"}`}>
                     {faq.q}
                   </span>
-                  <div className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-all ${
-                    isOpen ? "bg-pine-900 text-amber-300 rotate-180" : "bg-slate-100 text-slate-500"
+                  <div className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-200 ${
+                    isOpen ? "bg-emerald-900 text-amber-300 rotate-180" : "bg-slate-100 text-slate-500"
                   }`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
@@ -81,9 +86,9 @@ export default function FAQSection() {
         </div>
 
         {/* Trust footer */}
-        <div className="mt-8 flex items-center gap-2 text-xs text-slate-500">
-          <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-          <span>
+        <div className="mt-8 flex items-center gap-3 p-4 bg-emerald-50 rounded-2xl border border-emerald-100">
+          <ShieldCheck className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+          <span className="text-xs text-emerald-800 font-medium">
             Government Registered Tour Operator · Tangmarg, Baramulla, J&K
           </span>
         </div>

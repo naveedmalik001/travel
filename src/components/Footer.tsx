@@ -241,7 +241,7 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>© {new Date().getFullYear()} {companyInfo.name}. All rights reserved.</p>
           <p className="font-serif italic text-amber-400/90 text-sm">
-            Tagline: {companyInfo.tagline}
+            {companyInfo.tagline}
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <Link href="/packages" className="hover:text-slate-300">Packages</Link>

@@ -18,7 +18,6 @@ import {
   MapPin, 
   Compass, 
   CheckCircle2, 
-  Sparkles, 
   MessageSquare, 
   Phone, 
   ArrowRight,
@@ -151,8 +150,9 @@ export default async function DestinationDetailPage({ params }: PageProps) {
               <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/90 text-emerald-300 border border-emerald-500/40">
                 {dest.region}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-pine-950">
-                ★ Himalayan Destination
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-pine-950 flex items-center gap-1.5">
+                <MapPin className="w-3 h-3" />
+                Himalayan Destination
               </span>
             </div>
 
@@ -200,7 +200,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
               {/* About Destination */}
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-soft">
                 <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-                  <Sparkles className="w-5 h-5 mr-2 text-emerald-600" />
+                  <Compass className="w-5 h-5 mr-2 text-emerald-600" />
                   About {dest.name}
                 </h2>
                 <p className="text-slate-600 leading-relaxed text-sm sm:text-base">

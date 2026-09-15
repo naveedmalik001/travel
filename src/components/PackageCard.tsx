@@ -11,7 +11,8 @@ import {
   CheckCircle2, 
   MessageSquare, 
   ArrowRight, 
-  FileText
+  FileText,
+  BadgeCheck
 } from "lucide-react";
 
 interface PackageCardProps {
@@ -43,8 +44,9 @@ export default function PackageCard({ pkg, onOpenDetails }: PackageCardProps) {
             {pkg.tag}
           </span>
           {pkg.featured && (
-            <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-500/40 backdrop-blur-sm">
-              ★ Featured
+            <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-500/40 backdrop-blur-sm flex items-center gap-1">
+              <BadgeCheck className="w-3 h-3" />
+              Featured
             </span>
           )}
         </div>

@@ -10,7 +10,8 @@ import {
   ArrowRight, 
   PhoneCall, 
   CheckCircle2, 
-  Compass
+  Compass,
+  Star
 } from "lucide-react";
 
 export default function HeroSection({
@@ -81,7 +82,7 @@ export default function HeroSection({
           {/* Three concrete trust signals — no generic checkmarks */}
           <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm text-emerald-200/80">
             <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />Zero hidden fees</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />Verified 3★ & 4★ stays</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />Verified 3-Star &amp; 4-Star stays</span>
             <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />Gondola & permit support</span>
           </div>
 
@@ -180,7 +181,10 @@ export default function HeroSection({
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                 Govt. registered operator
               </span>
-              <span className="font-semibold text-pine-800">★ 4.9 / 5.0</span>
+              <span className="flex items-center gap-1 font-semibold text-amber-600">
+                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                4.9 / 5.0
+              </span>
             </div>
           </div>
         </div>

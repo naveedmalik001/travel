@@ -25,7 +25,8 @@ import {
   ArrowLeft, 
   Share2, 
   Calendar,
-  Sparkles,
+  Compass,
+  BadgeCheck,
   ArrowRight
 } from "lucide-react";
 
@@ -166,8 +167,9 @@ export default async function PackageDetailPage({ params }: PageProps) {
                 {pkg.category}
               </span>
               {pkg.featured && (
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-pine-800 text-amber-300 border border-amber-400/40">
-                  ★ Recommended Departure
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-pine-800 text-amber-300 border border-amber-400/40 flex items-center gap-1">
+                  <BadgeCheck className="w-3 h-3" />
+                  Recommended Departure
                 </span>
               )}
             </div>
@@ -223,7 +225,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
               {/* Tour Overview */}
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-soft">
                 <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-                  <Sparkles className="w-5 h-5 mr-2 text-emerald-600" />
+                  <Compass className="w-5 h-5 mr-2 text-emerald-600" />
                   Package Overview
                 </h2>
                 <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
@@ -409,7 +411,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                   </div>
 
                   <p className="text-[11px] text-emerald-800 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200 mb-5">
-                    ✓ Includes 3★/4★ stay, MAP meal plan (Breakfast & Dinner), private cab for all days, airport transfers & taxes.
+                    Includes 3-Star/4-Star stay, MAP meal plan (Breakfast &amp; Dinner), private cab for all days, airport transfers &amp; taxes.
                   </p>
 
                   <div className="space-y-3">

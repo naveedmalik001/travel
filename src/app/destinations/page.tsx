@@ -6,6 +6,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import DestinationCatalogClient from "./DestinationCatalogClient";
+import { BadgeCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Kashmir & Ladakh Destination Guides | Gulmarg, Gurez, Keran, Pahalgam",
@@ -46,16 +47,18 @@ export default function DestinationsPage() {
         <Breadcrumbs items={[{ name: "Destinations", href: "/destinations" }]} />
 
         {/* Hero Banner */}
-        <section className="relative bg-[#081f16] text-white py-14 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <section className="relative bg-[#081f16] text-white py-14 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-800/30 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-12 bg-[#fbfdfb] rounded-tl-[2rem] rounded-tr-[2rem] hidden md:block" />
           <div className="max-w-7xl mx-auto relative z-10 text-center">
-            <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-semibold bg-emerald-950/90 text-emerald-300 border border-emerald-500/30 mb-4">
-              ★ Local Himalayan Destination Guide
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/90 text-emerald-300 border border-emerald-500/30 mb-5">
+              <BadgeCheck className="w-3.5 h-3.5 text-emerald-400" />
+              Local Himalayan Destination Guide
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight">
-              Iconic Valleys & <span className="text-amber-400">Untouched Frontiers</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+              Iconic Valleys &amp; <span className="text-amber-400">Untouched Frontiers</span>
             </h1>
-            <p className="mt-4 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
               Whether you are chasing alpine snows in Gulmarg, mystical folklore in Gurez Valley, or the high passes of Ladakh, our local experts have mapped out every trail, view, and stay.
             </p>
           </div>

@@ -15,7 +15,7 @@ import {
   Compass, 
   ChevronRight,
   Calculator,
-  Sparkles
+  Award
 } from "lucide-react";
 
 export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: () => void }) {
@@ -49,41 +49,56 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Top Notification / Contact Bar */}
-      <div className="bg-[#0B1E15] text-emerald-100/90 text-xs py-2 px-4 border-b border-emerald-900/40 hidden md:block">
+      {/* Top Notification / Contact Bar - Responsive for both Mobile & Desktop */}
+      <div className="bg-[#0B1E15] text-emerald-100/90 text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-emerald-900/50">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-6">
+          {/* Desktop Left Info / Mobile Left Quick Phone */}
+          <div className="flex items-center space-x-3 sm:space-x-6">
+            <a 
+              href={`tel:${companyInfo.phones[0]}`} 
+              className="flex items-center text-amber-300 hover:text-amber-200 font-semibold tracking-wide"
+            >
+              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 text-amber-400 flex-shrink-0 animate-pulse" />
+              <span>{companyInfo.phones[0]}</span>
+            </a>
+            
             <a 
               href={companyInfo.mapsUrl}
               target="_blank"
               rel="noopener noreferrer" 
-              className="flex items-center hover:text-white transition-colors"
+              className="hidden lg:flex items-center hover:text-white transition-colors"
             >
               <MapPin className="w-3.5 h-3.5 mr-1.5 text-amber-400" />
               <span>{companyInfo.address}</span>
             </a>
-            <span className="text-emerald-800">•</span>
-            <div className="flex items-center">
+            
+            <div className="hidden md:flex items-center">
+              <span className="text-emerald-800 mr-4">•</span>
               <Compass className="w-3.5 h-3.5 mr-1.5 text-amber-400" />
-              <span>{companyInfo.experienceYears}+ Years Field Excellence in Kashmir & Ladakh</span>
+              <span>{companyInfo.experienceYears}+ Yrs Local Team · Kashmir &amp; Ladakh</span>
             </div>
           </div>
-          <div className="flex items-center space-x-6">
+
+          {/* Desktop Right Info / Mobile Right Socials */}
+          <div className="flex items-center space-x-3 sm:space-x-5">
             <a 
-              href={`tel:${companyInfo.phones[0]}`} 
-              className="flex items-center hover:text-amber-300 transition-colors font-medium"
+              href={`tel:${companyInfo.phones[1]}`} 
+              className="hidden sm:flex items-center hover:text-amber-300 transition-colors font-medium"
             >
-              <Phone className="w-3.5 h-3.5 mr-1.5 text-amber-400" />
-              <span>{companyInfo.phoneDisplay}</span>
+              <span className="text-emerald-500 mr-1.5">Alt:</span>
+              <span>{companyInfo.phones[1]}</span>
             </a>
-            <span className="text-emerald-800">•</span>
-            <div className="flex items-center space-x-3">
+
+            <span className="hidden sm:inline text-emerald-800">•</span>
+
+            <div className="flex items-center space-x-2.5 sm:space-x-3">
               <a 
                 href={companyInfo.instagramUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-amber-300 transition-colors"
+                className="text-emerald-200 hover:text-amber-300 transition-colors p-0.5"
                 title="Instagram @shopatrip"
+                aria-label="Instagram"
               >
                 <InstagramIcon className="w-3.5 h-3.5" />
               </a>
@@ -91,8 +106,9 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
                 href={companyInfo.facebookUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-amber-300 transition-colors"
+                className="text-emerald-200 hover:text-amber-300 transition-colors p-0.5"
                 title="Facebook"
+                aria-label="Facebook"
               >
                 <FacebookIcon className="w-3.5 h-3.5" />
               </a>
@@ -193,8 +209,8 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
               <div className="pb-3 border-b border-slate-100 flex items-center justify-between">
                 <BrandLogo variant="green" showTagline={true} className="h-8 w-36" />
                 <span className="text-xs bg-emerald-100 text-emerald-800 font-medium px-2.5 py-1 rounded-full flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-emerald-600" />
-                  6+ Yrs Exp
+                  <Award className="w-3 h-3 text-emerald-700" />
+                  6+ Yrs Trusted
                 </span>
               </div>
 

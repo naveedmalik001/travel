@@ -117,7 +117,7 @@ Phone: ${userPhone || "Not provided"}
 Travel Season: ${travelMonth}
 Duration: ${days} Days / ${days - 1} Nights
 Travelers: ${travelers} Persons
-Stay Tier: ${hotelTier === "3star" ? "3-Star Deluxe (MAP)" : hotelTier === "4star" ? "4-Star Luxury (MAP)" : "Heritage Luxury Houseboat & 4★"}
+Stay Tier: ${hotelTier === "3star" ? "3-Star Deluxe (MAP)" : hotelTier === "4star" ? "4-Star Luxury (MAP)" : "Heritage Luxury Houseboat & 4-Star"}
 Vehicle: ${vehicle.toUpperCase()}
 Selected Destinations across Jammu, Kashmir & Ladakh:
 ${selectedDestinations.map((d) => `• ${d}`).join("\n")}

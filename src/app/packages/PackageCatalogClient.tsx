@@ -8,7 +8,7 @@ import Link from "next/link";
 import { 
   Search, 
   SlidersHorizontal, 
-  Sparkles, 
+  CheckCircle2,
   Calendar, 
   ShieldCheck, 
   Compass, 
@@ -108,13 +108,13 @@ export default function PackageCatalogClient() {
             <ShieldCheck className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-xs font-bold text-slate-900">Verified 3★ & 4★ Stays</div>
+            <div className="text-xs font-bold text-slate-900">Verified 3-Star &amp; 4-Star Stays</div>
             <div className="text-[11px] text-slate-500">Inspected room standards</div>
           </div>
         </div>
         <div className="flex items-center space-x-3 p-2">
           <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
-            <Sparkles className="w-5 h-5" />
+            <CheckCircle2 className="w-5 h-5" />
           </div>
           <div>
             <div className="text-xs font-bold text-slate-900">Transparent Pricing</div>

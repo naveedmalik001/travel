@@ -113,3 +113,34 @@
 .animate-subtle-pulse {
   animation: subtle-pulse 3s infinite ease-in-out;
 }
+
+/* Slide in from top — used for mobile menu */
+@keyframes slide-in-from-top {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in.slide-in-from-top {
+  animation: slide-in-from-top 0.2s ease-out both;
+}
+
+/* Mobile scroll snap for horizontal carousels */
+.snap-scroll-x {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.snap-scroll-x > * {
+  scroll-snap-align: start;
+}
+
+/* Focus ring utility for accessibility */
+.focus-ring:focus-visible {
+  outline: 2px solid #059669;
+  outline-offset: 2px;
+}
+
+/* Card hover lift */
+@keyframes card-hover {
+  from { transform: translateY(0); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  to { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+}

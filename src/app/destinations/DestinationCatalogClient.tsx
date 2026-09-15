@@ -10,7 +10,6 @@ import {
   Calendar, 
   Compass, 
   ArrowRight, 
-  Sparkles,
   Search,
   CheckCircle2
 } from "lucide-react";
