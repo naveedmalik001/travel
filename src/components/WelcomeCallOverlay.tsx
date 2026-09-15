@@ -71,7 +71,7 @@ export default function WelcomeCallOverlay() {
 
       const now = ctx.currentTime;
 
-      // Authentic Santoor string strike (Raga Pahadi notes)
+      // Authentic Santoor string strike (Raga Pahadi notes) with gentle ambient gain
       const playSantoorString = (freq: number, start: number, dur: number) => {
         const osc = ctx.createOscillator();
         const harm = ctx.createOscillator();
@@ -82,8 +82,9 @@ export default function WelcomeCallOverlay() {
         osc.frequency.setValueAtTime(freq, start);
         harm.frequency.setValueAtTime(freq * 2.01, start);
 
+        // Soft, gentle ambient volume (0.16)
         gain.gain.setValueAtTime(0, start);
-        gain.gain.linearRampToValueAtTime(0.35, start + 0.02);
+        gain.gain.linearRampToValueAtTime(0.16, start + 0.04);
         gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
 
         osc.connect(gain);
@@ -107,16 +108,30 @@ export default function WelcomeCallOverlay() {
     }
   }, [isMuted]);
 
-  // Master play audio function (prioritizes user-provided kashmir_calling.mp3, falls back to Santoor synthesis)
+  // Master play audio function: gentle, smooth volume (0.30) with smooth fade-in
   const startAudioPlayback = useCallback(() => {
     if (isMuted) return;
 
     if (audioElementRef.current) {
-      audioElementRef.current.volume = 1.0;
-      audioElementRef.current.play().catch(() => {
-        // If HTML5 audio is blocked by browser autoplay policy before first gesture, fallback to synthesized Santoor
-        playSantoorFallback();
-      });
+      const audio = audioElementRef.current;
+      audio.volume = 0.05; // Start softly
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // Smooth gradual volume fade-in to pleasant 0.30 level
+            let vol = 0.05;
+            const fadeInterval = setInterval(() => {
+              vol = Math.min(0.30, vol + 0.05);
+              if (audio) audio.volume = vol;
+              if (vol >= 0.30) clearInterval(fadeInterval);
+            }, 120);
+          })
+          .catch(() => {
+            // If HTML5 audio is blocked by browser policy before first touch, fallback to soft Santoor
+            playSantoorFallback();
+          });
+      }
     } else {
       playSantoorFallback();
     }
@@ -146,7 +161,7 @@ export default function WelcomeCallOverlay() {
         osc.type = "sine";
         osc.frequency.setValueAtTime(freq, now + idx * 0.09);
         gain.gain.setValueAtTime(0, now + idx * 0.09);
-        gain.gain.linearRampToValueAtTime(0.35, now + idx * 0.09 + 0.03);
+        gain.gain.linearRampToValueAtTime(0.20, now + idx * 0.09 + 0.03);
         gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.09 + 0.45);
         osc.connect(gain);
         gain.connect(ctx.destination);
