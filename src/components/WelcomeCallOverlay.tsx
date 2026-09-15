@@ -47,14 +47,15 @@ export default function WelcomeCallOverlay() {
   const [dragProgress, setDragProgress] = useState(0); // 0 to 1
   const [isDragging, setIsDragging] = useState(false);
   
+  const audioElementRef = useRef<HTMLAudioElement | null>(null);
   const audioCtxRef = useRef<AudioContext | null>(null);
   const ringIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const startXRef = useRef<number>(0);
   const currentDragRef = useRef<number>(0);
 
-  // Synthesize realistic harmonious incoming phone ringtone with high volume
-  const playRingBurst = useCallback(() => {
+  // Synthesize authentic Kashmiri Santoor modal raga (plucked acoustic strings) as fallback
+  const playSantoorFallback = useCallback(() => {
     if (isMuted) return;
     try {
       const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
@@ -70,47 +71,63 @@ export default function WelcomeCallOverlay() {
 
       const now = ctx.currentTime;
 
-      // Realistic bell / marimba ringtone chord with rich harmonics
-      const playTone = (freq1: number, freq2: number, start: number, dur: number) => {
-        const osc1 = ctx.createOscillator();
-        const osc2 = ctx.createOscillator();
+      // Authentic Santoor string strike (Raga Pahadi notes)
+      const playSantoorString = (freq: number, start: number, dur: number) => {
+        const osc = ctx.createOscillator();
+        const harm = ctx.createOscillator();
         const gain = ctx.createGain();
 
-        osc1.type = "sine";
-        osc2.type = "triangle";
-        osc1.frequency.setValueAtTime(freq1, start);
-        osc2.frequency.setValueAtTime(freq2, start);
+        osc.type = "sine";
+        harm.type = "triangle";
+        osc.frequency.setValueAtTime(freq, start);
+        harm.frequency.setValueAtTime(freq * 2.01, start);
 
-        // Louder, clear gain level (0.32)
         gain.gain.setValueAtTime(0, start);
-        gain.gain.linearRampToValueAtTime(0.32, start + 0.03);
+        gain.gain.linearRampToValueAtTime(0.35, start + 0.02);
         gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
 
-        osc1.connect(gain);
-        osc2.connect(gain);
+        osc.connect(gain);
+        harm.connect(gain);
         gain.connect(ctx.destination);
 
-        osc1.start(start);
-        osc2.start(start);
-        osc1.stop(start + dur);
-        osc2.stop(start + dur);
+        osc.start(start);
+        harm.start(start);
+        osc.stop(start + dur);
+        harm.stop(start + dur);
       };
 
-      // 1st Double Ring
-      playTone(523.25, 659.25, now + 0.05, 0.40); // C5 + E5
-      playTone(659.25, 783.99, now + 0.50, 0.45); // E5 + G5
-
-      // 2nd Double Ring
-      playTone(523.25, 659.25, now + 1.25, 0.40);
-      playTone(783.99, 1046.50, now + 1.70, 0.50); // G5 + C6
+      // Kashmiri Santoor folk raga: Sa - Ga - Pa - Dha - High Sa
+      playSantoorString(293.66, now + 0.05, 1.6); // D4
+      playSantoorString(369.99, now + 0.50, 1.5); // F#4
+      playSantoorString(440.00, now + 0.90, 1.5); // A4
+      playSantoorString(493.88, now + 1.35, 1.4); // B4
+      playSantoorString(587.33, now + 1.75, 2.0); // D5
     } catch {
-      // Audio autoplay policy fallback
+      // ignore
     }
   }, [isMuted]);
+
+  // Master play audio function (prioritizes real audio file, falls back to Santoor synthesis)
+  const startAudioPlayback = useCallback(() => {
+    if (isMuted) return;
+
+    if (audioElementRef.current) {
+      audioElementRef.current.volume = 0.85;
+      audioElementRef.current.play().catch(() => {
+        // If HTML5 audio is blocked by autoplay policy, fallback to synthesized Santoor
+        playSantoorFallback();
+      });
+    } else {
+      playSantoorFallback();
+    }
+  }, [isMuted, playSantoorFallback]);
 
   // Play pleasant "call connected / entrance" chime on Answer
   const playAnswerChime = useCallback(() => {
     try {
+      if (audioElementRef.current) {
+        audioElementRef.current.pause();
+      }
       if (ringIntervalRef.current) {
         clearInterval(ringIntervalRef.current);
       }
@@ -186,13 +203,16 @@ export default function WelcomeCallOverlay() {
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
 
-    // Initial ringtone attempt
-    playRingBurst();
+    // Initial audio playback attempt
+    startAudioPlayback();
 
-    // Repeat ringtone every 3.2 seconds until answered
+    // Loop periodic Santoor if using Web Audio fallback
     ringIntervalRef.current = setInterval(() => {
-      playRingBurst();
-    }, 3200);
+      if (audioElementRef.current && !audioElementRef.current.paused) {
+        return; // HTML5 audio is playing and looping
+      }
+      playSantoorFallback();
+    }, 3800);
 
     // Dynamic destination slide rotation
     const slideTimer = setInterval(() => {
@@ -201,13 +221,7 @@ export default function WelcomeCallOverlay() {
 
     // Unblock & start audio on ANY user touch or gesture anywhere on screen
     const unlockAudio = () => {
-      if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
-        audioCtxRef.current.resume().then(() => {
-          playRingBurst();
-        }).catch(() => {});
-      } else {
-        playRingBurst();
-      }
+      startAudioPlayback();
     };
     window.addEventListener("pointerdown", unlockAudio, { once: true });
     window.addEventListener("touchstart", unlockAudio, { once: true });
@@ -219,11 +233,15 @@ export default function WelcomeCallOverlay() {
       window.removeEventListener("pointerdown", unlockAudio);
       window.removeEventListener("touchstart", unlockAudio);
       window.removeEventListener("click", unlockAudio);
+      if (audioElementRef.current) {
+        audioElementRef.current.pause();
+      }
       if (audioCtxRef.current) {
         audioCtxRef.current.close().catch(() => {});
       }
     };
-  }, [playRingBurst]);
+  }, [startAudioPlayback, playSantoorFallback]);
+
 
   // Touch & Mouse Swipe Handlers for Slide-to-Answer
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -304,6 +322,17 @@ export default function WelcomeCallOverlay() {
         isFadingOut ? "opacity-0 scale-105 pointer-events-none" : "opacity-100 scale-100"
       }`}
     >
+      {/* Background Kashmir Acoustic Audio Track */}
+      <audio
+        ref={audioElementRef}
+        loop
+        preload="auto"
+        className="hidden"
+      >
+        <source src="/audio/kashmir_calling.mp3" type="audio/mpeg" />
+        <source src="/audio/kashmir_calling.wav" type="audio/wav" />
+      </audio>
+
       {/* Fullscreen HD Destination Background Slideshow */}
       <div className="absolute inset-0 z-0 bg-slate-950">
         {DESTINATION_SLIDES.map((slide, idx) => (
