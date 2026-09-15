@@ -36,33 +36,54 @@ export default function CustomTripPlanner() {
 
   const destinationGroups = [
     {
-      division: "Kashmir Division",
+      division: "Kashmir Valley & Meadows",
       options: [
         { id: "Srinagar & Dal Lake", name: "Srinagar & Dal Lake Houseboat" },
         { id: "Gulmarg (Tangmarg)", name: "Gulmarg Meadows & Gondola" },
         { id: "Pahalgam", name: "Pahalgam & Betaab Valley" },
         { id: "Sonmarg", name: "Sonmarg & Thajiwas Glacier" },
-        { id: "Gurez Valley", name: "Gurez Valley & Habba Khatoon" },
-        { id: "Keran Valley", name: "Keran Valley (Border Riverside)" },
         { id: "Doodhpathri", name: "Doodhpathri Valley of Milk" },
+        { id: "Yusmarg", name: "Yusmarg & Nilnag Lake" },
+        { id: "Aharbal Waterfall", name: "Aharbal Waterfall & Gorge" },
+        { id: "Kokernag & Verinag", name: "Kokernag & Verinag Springs" },
       ]
     },
     {
-      division: "Jammu Division",
+      division: "Offbeat Frontiers",
+      options: [
+        { id: "Gurez Valley", name: "Gurez Valley & Habba Khatoon" },
+        { id: "Keran Valley", name: "Keran Valley (Border Riverside)" },
+        { id: "Bangus Valley", name: "Bangus Valley Alpine Meadows" },
+        { id: "Lolab Valley", name: "Lolab Valley Fruit Belt" },
+        { id: "Sinthan & Margan Top", name: "Sinthan & Margan High Passes" },
+        { id: "Peer Ki Gali", name: "Peer Ki Gali & Mughal Road" },
+      ]
+    },
+    {
+      division: "Ladakh & Kargil Division",
+      options: [
+        { id: "Leh & Sham Valley", name: "Leh Town & Ancient Monasteries" },
+        { id: "Nubra Valley & Turtuk", name: "Nubra Valley Sand Dunes & Turtuk" },
+        { id: "Pangong Tso Lake", name: "Pangong Tso High-Altitude Lake" },
+        { id: "Tso Moriri & Tso Kar", name: "Tso Moriri & Changthang Lakes" },
+        { id: "Hanle & Umling La", name: "Hanle & Umling La (19,024 ft Pass)" },
+        { id: "Zanskar Valley", name: "Zanskar Valley & Phuktal Gompa" },
+        { id: "Kargil & Suru Valley", name: "Kargil, Drass & Suru Valley" },
+        { id: "Dah-Hanu Aryan Valley", name: "Dah-Hanu Aryan Culture" },
+      ]
+    },
+    {
+      division: "Jammu & Kishtwar Division",
       options: [
         { id: "Katra & Vaishno Devi", name: "Katra & Shri Mata Vaishno Devi" },
         { id: "Patnitop & Sanasar", name: "Patnitop Pine Ridge & Sanasar" },
-        { id: "Kishtwar & Sinthan Top", name: "Kishtwar Saffron Plateau & Sinthan" },
+        { id: "Kishtwar & Saffron Plateau", name: "Kishtwar & National Park" },
+        { id: "Paddar & Machail Mata", name: "Paddar Sapphire Valley & Machail" },
+        { id: "Warwan & Marwah", name: "Warwan & Marwah Isolated Valleys" },
         { id: "Bhaderwah & Jai Valley", name: "Bhaderwah (Mini Switzerland)" },
-      ]
-    },
-    {
-      division: "Ladakh Division",
-      options: [
-        { id: "Leh & Sham Valley", name: "Leh Town & Ancient Monasteries" },
-        { id: "Nubra Valley & Hunder", name: "Nubra Valley Sand Dunes & Camel" },
-        { id: "Pangong Tso Lake", name: "Pangong Tso High-Altitude Lake" },
-        { id: "Kargil & Zanskar", name: "Kargil, Drass & Suru Valley" },
+        { id: "Jammu City & Mansar", name: "Jammu City & Mansar Lake" },
+        { id: "Poonch & Rajouri", name: "Poonch Fort & Loran Valley" },
+        { id: "Basohli & Ranjit Sagar", name: "Basohli & Ranjit Sagar Lake" },
       ]
     }
   ];
