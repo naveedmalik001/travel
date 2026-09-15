@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import { Phone, PhoneCall, Volume2, VolumeX, Sparkles, MapPin, CheckCircle2, Waves, ArrowRight } from "lucide-react";
+import { Phone, PhoneCall, Volume2, VolumeX, MapPin, CheckCircle2, ChevronRight, Sparkles } from "lucide-react";
 
 // Authentic curated destinations across Kashmir & Ladakh
 const DESTINATION_SLIDES = [
@@ -44,12 +44,17 @@ export default function WelcomeCallOverlay() {
   const [isAnswered, setIsAnswered] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
+  const [dragProgress, setDragProgress] = useState(0); // 0 to 1
+  const [isDragging, setIsDragging] = useState(false);
   
   const audioCtxRef = useRef<AudioContext | null>(null);
   const ringIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const startXRef = useRef<number>(0);
+  const currentDragRef = useRef<number>(0);
 
-  // Synthesize realistic harmonious incoming phone ringtone
-  const playRingBurst = () => {
+  // Synthesize realistic harmonious incoming phone ringtone with high volume
+  const playRingBurst = useCallback(() => {
     if (isMuted) return;
     try {
       const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
@@ -65,7 +70,7 @@ export default function WelcomeCallOverlay() {
 
       const now = ctx.currentTime;
 
-      // Realistic marimba-like bell ringtone chord
+      // Realistic bell / marimba ringtone chord with rich harmonics
       const playTone = (freq1: number, freq2: number, start: number, dur: number) => {
         const osc1 = ctx.createOscillator();
         const osc2 = ctx.createOscillator();
@@ -76,8 +81,9 @@ export default function WelcomeCallOverlay() {
         osc1.frequency.setValueAtTime(freq1, start);
         osc2.frequency.setValueAtTime(freq2, start);
 
+        // Louder, clear gain level (0.32)
         gain.gain.setValueAtTime(0, start);
-        gain.gain.linearRampToValueAtTime(0.15, start + 0.03);
+        gain.gain.linearRampToValueAtTime(0.32, start + 0.03);
         gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
 
         osc1.connect(gain);
@@ -91,19 +97,19 @@ export default function WelcomeCallOverlay() {
       };
 
       // 1st Double Ring
-      playTone(523.25, 659.25, now + 0.05, 0.38); // C5 + E5
-      playTone(659.25, 783.99, now + 0.48, 0.42); // E5 + G5
+      playTone(523.25, 659.25, now + 0.05, 0.40); // C5 + E5
+      playTone(659.25, 783.99, now + 0.50, 0.45); // E5 + G5
 
       // 2nd Double Ring
-      playTone(523.25, 659.25, now + 1.20, 0.38);
-      playTone(783.99, 1046.50, now + 1.62, 0.48); // G5 + C6
+      playTone(523.25, 659.25, now + 1.25, 0.40);
+      playTone(783.99, 1046.50, now + 1.70, 0.50); // G5 + C6
     } catch {
       // Audio autoplay policy fallback
     }
-  };
+  }, [isMuted]);
 
   // Play pleasant "call connected / entrance" chime on Answer
-  const playAnswerChime = () => {
+  const playAnswerChime = useCallback(() => {
     try {
       if (ringIntervalRef.current) {
         clearInterval(ringIntervalRef.current);
@@ -120,19 +126,53 @@ export default function WelcomeCallOverlay() {
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
         osc.type = "sine";
-        osc.frequency.setValueAtTime(freq, now + idx * 0.1);
-        gain.gain.setValueAtTime(0, now + idx * 0.1);
-        gain.gain.linearRampToValueAtTime(0.20, now + idx * 0.1 + 0.04);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.1 + 0.4);
+        osc.frequency.setValueAtTime(freq, now + idx * 0.09);
+        gain.gain.setValueAtTime(0, now + idx * 0.09);
+        gain.gain.linearRampToValueAtTime(0.35, now + idx * 0.09 + 0.03);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.09 + 0.45);
         osc.connect(gain);
         gain.connect(ctx.destination);
-        osc.start(now + idx * 0.1);
-        osc.stop(now + idx * 0.1 + 0.4);
+        osc.start(now + idx * 0.09);
+        osc.stop(now + idx * 0.09 + 0.45);
       });
     } catch {
       // ignore
     }
-  };
+  }, []);
+
+  // Answer call action -> seamlessly enters the website and scrolls to absolute TOP
+  const handleAnswerCall = useCallback(() => {
+    if (isAnswered) return;
+    setIsAnswered(true);
+    setDragProgress(1);
+    playAnswerChime();
+
+    // Trigger haptic feedback if available on mobile
+    if (typeof navigator !== "undefined" && navigator.vibrate) {
+      try {
+        navigator.vibrate([80, 40, 100]);
+      } catch {
+        // ignore
+      }
+    }
+
+    // Ensure the viewport is at the top immediately
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
+
+    // Show "Welcome to Paradise on Earth" greeting, then smoothly fade out to reveal top of website
+    setTimeout(() => {
+      setIsFadingOut(true);
+      setTimeout(() => {
+        setIsVisible(false);
+        if (typeof window !== "undefined") {
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+          sessionStorage.setItem("sat_intro_answered", "true");
+        }
+      }, 700);
+    }, 1400);
+  }, [isAnswered, playAnswerChime]);
 
   useEffect(() => {
     // Show on page load (session based check so in-app page browsing doesn't re-trigger)
@@ -140,6 +180,11 @@ export default function WelcomeCallOverlay() {
     if (hasSeen) return;
 
     setIsVisible(true);
+
+    // Ensure view starts at the very top of the page
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
 
     // Initial ringtone attempt
     playRingBurst();
@@ -154,46 +199,92 @@ export default function WelcomeCallOverlay() {
       setCurrentSlide((prev) => (prev + 1) % DESTINATION_SLIDES.length);
     }, 4500);
 
-    // Resume audio context on any user touch/gesture
+    // Unblock & start audio on ANY user touch or gesture anywhere on screen
     const unlockAudio = () => {
       if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
-        audioCtxRef.current.resume();
+        audioCtxRef.current.resume().then(() => {
+          playRingBurst();
+        }).catch(() => {});
+      } else {
         playRingBurst();
       }
     };
     window.addEventListener("pointerdown", unlockAudio, { once: true });
+    window.addEventListener("touchstart", unlockAudio, { once: true });
+    window.addEventListener("click", unlockAudio, { once: true });
 
     return () => {
       if (ringIntervalRef.current) clearInterval(ringIntervalRef.current);
       clearInterval(slideTimer);
       window.removeEventListener("pointerdown", unlockAudio);
+      window.removeEventListener("touchstart", unlockAudio);
+      window.removeEventListener("click", unlockAudio);
       if (audioCtxRef.current) {
         audioCtxRef.current.close().catch(() => {});
       }
     };
-  }, []);
+  }, [playRingBurst]);
 
-  // Answer call action -> seamlessly enters the website
-  const handleAnswerCall = () => {
+  // Touch & Mouse Swipe Handlers for Slide-to-Answer
+  const handleTouchStart = (e: React.TouchEvent) => {
     if (isAnswered) return;
-    setIsAnswered(true);
-    playAnswerChime();
+    setIsDragging(true);
+    startXRef.current = e.touches[0].clientX;
+    currentDragRef.current = 0;
+  };
 
-    // Trigger haptic feedback if available
-    if (typeof navigator !== "undefined" && navigator.vibrate) {
-      navigator.vibrate([80, 50, 80]);
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || isAnswered || !trackRef.current) return;
+    const currentX = e.touches[0].clientX;
+    const deltaX = currentX - startXRef.current;
+    const maxTrack = trackRef.current.clientWidth - 64; // button width
+    const progress = Math.max(0, Math.min(1, deltaX / Math.max(1, maxTrack)));
+    currentDragRef.current = progress;
+    setDragProgress(progress);
+
+    if (progress >= 0.85) {
+      setIsDragging(false);
+      handleAnswerCall();
     }
+  };
 
-    // Show "Call Connected" animation, then smoothly fade out to reveal website
-    setTimeout(() => {
-      setIsFadingOut(true);
-      setTimeout(() => {
-        setIsVisible(false);
-        if (typeof window !== "undefined") {
-          sessionStorage.setItem("sat_intro_answered", "true");
-        }
-      }, 600);
-    }, 950);
+  const handleTouchEnd = () => {
+    if (isAnswered) return;
+    setIsDragging(false);
+    if (currentDragRef.current < 0.85) {
+      setDragProgress(0);
+      currentDragRef.current = 0;
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (isAnswered) return;
+    setIsDragging(true);
+    startXRef.current = e.clientX;
+    currentDragRef.current = 0;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || isAnswered || !trackRef.current) return;
+    const deltaX = e.clientX - startXRef.current;
+    const maxTrack = trackRef.current.clientWidth - 64;
+    const progress = Math.max(0, Math.min(1, deltaX / Math.max(1, maxTrack)));
+    currentDragRef.current = progress;
+    setDragProgress(progress);
+
+    if (progress >= 0.85) {
+      setIsDragging(false);
+      handleAnswerCall();
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (isAnswered) return;
+    setIsDragging(false);
+    if (currentDragRef.current < 0.85) {
+      setDragProgress(0);
+      currentDragRef.current = 0;
+    }
   };
 
   const toggleMute = (e: React.MouseEvent) => {
@@ -207,6 +298,8 @@ export default function WelcomeCallOverlay() {
 
   return (
     <div
+      onMouseMove={isDragging ? handleMouseMove : undefined}
+      onMouseUp={isDragging ? handleMouseUp : undefined}
       className={`fixed inset-0 z-[9999] flex flex-col items-center justify-between p-4 sm:p-8 overflow-hidden transition-all duration-700 select-none ${
         isFadingOut ? "opacity-0 scale-105 pointer-events-none" : "opacity-100 scale-100"
       }`}
@@ -217,7 +310,7 @@ export default function WelcomeCallOverlay() {
           <div
             key={slide.name}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === currentSlide ? "opacity-70 scale-105" : "opacity-0 scale-100"
+              idx === currentSlide ? "opacity-75 scale-105" : "opacity-0 scale-100"
             }`}
             style={{ transition: "opacity 1.5s ease, transform 8s ease" }}
           >
@@ -243,7 +336,7 @@ export default function WelcomeCallOverlay() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
           </span>
-          <span>{isAnswered ? "Call Connected" : "Incoming Travel Call"}</span>
+          <span>{isAnswered ? "Connecting to Paradise..." : "Incoming Travel Call"}</span>
         </div>
 
         <button
@@ -255,22 +348,22 @@ export default function WelcomeCallOverlay() {
           {isMuted ? (
             <>
               <VolumeX className="w-3.5 h-3.5 text-red-400" />
-              <span className="text-[11px] text-red-300">Muted</span>
+              <span className="text-[11px] text-red-300 font-medium">Muted</span>
             </>
           ) : (
             <>
               <Volume2 className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
-              <span className="text-[11px] text-emerald-300">Ringing</span>
+              <span className="text-[11px] text-emerald-300 font-medium">Ringing</span>
             </>
           )}
         </button>
       </header>
 
       {/* CENTER CALLER IDENTITY & DESTINATION SHOWCASE */}
-      <main className="relative z-10 w-full max-w-md my-auto flex flex-col items-center text-center animate-in zoom-in-95 duration-500 py-4">
+      <main className="relative z-10 w-full max-w-md my-auto flex flex-col items-center text-center animate-in zoom-in-95 duration-500 py-3">
         
         {/* Pulsing Destination Avatar */}
-        <div className="relative mb-6">
+        <div className="relative mb-5">
           {!isAnswered && (
             <>
               <span className="absolute -inset-4 rounded-full border-2 border-emerald-400/30 animate-ping opacity-60 pointer-events-none" />
@@ -312,13 +405,13 @@ export default function WelcomeCallOverlay() {
           Kashmir Calling...
         </h1>
         
-        <p className="text-emerald-400 font-bold text-base sm:text-lg mt-1.5 flex items-center gap-2 justify-center drop-shadow">
-          <Sparkles className="w-4 h-4 text-amber-300 animate-spin" />
-          <span>Shop A Trip Tour &amp; Travels</span>
+        {/* Clean Company Subtitle WITHOUT AI / Star Icon */}
+        <p className="text-emerald-400 font-bold text-base sm:text-lg mt-1 tracking-wide drop-shadow">
+          Shop A Trip Tour &amp; Travels
         </p>
 
         {/* Current Destination Feature Tag */}
-        <div className="mt-4 px-4 py-2.5 rounded-2xl bg-white/10 border border-white/15 max-w-xs backdrop-blur-md shadow-lg">
+        <div className="mt-3.5 px-4 py-2 rounded-2xl bg-white/10 border border-white/15 max-w-xs backdrop-blur-md shadow-lg">
           <p className="text-xs font-bold text-white flex items-center justify-center gap-1.5">
             <span>📍 {currentDestination.name}</span>
           </p>
@@ -328,55 +421,100 @@ export default function WelcomeCallOverlay() {
         </div>
 
         {/* Dynamic Animated Call Equalizer */}
-        <div className="flex items-center gap-1.5 mt-5 px-4 py-1.5 rounded-full bg-slate-900/60 border border-white/10">
+        <div className="flex items-center gap-1.5 mt-4 px-4 py-1.5 rounded-full bg-slate-900/60 border border-white/10">
           <span className="w-1 h-3.5 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
           <span className="w-1 h-6 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.15s]" />
           <span className="w-1 h-8 bg-emerald-400 rounded-full animate-bounce" />
           <span className="w-1 h-6 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.15s]" />
           <span className="w-1 h-3.5 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
           <span className="text-xs text-slate-200 ml-2 font-medium">
-            {isAnswered ? "Call Connected • Entering Site..." : "Audio Call • Kashmir Concierge"}
+            {isAnswered ? "Call Connected • Entering..." : "Kashmir Concierge Desk"}
           </span>
         </div>
       </main>
 
-      {/* BOTTOM FOOTER: Prominent Glowing Answer Button */}
+      {/* BOTTOM FOOTER: Interactive Swipe / Slide to Answer */}
       <footer className="relative z-10 w-full max-w-md flex flex-col items-center pb-4 sm:pb-8 animate-in fade-in slide-in-from-bottom-6 duration-500">
         {!isAnswered ? (
-          <div className="flex flex-col items-center gap-3 w-full">
-            {/* Glowing Answer Button */}
-            <button
-              onClick={handleAnswerCall}
-              className="group relative w-20 h-20 sm:w-22 sm:h-22 rounded-full bg-gradient-to-tr from-emerald-600 via-emerald-500 to-green-400 hover:from-emerald-500 hover:to-green-300 active:scale-95 border-3 border-white/70 text-white flex items-center justify-center shadow-[0_0_50px_rgba(34,197,94,0.8)] transition-all cursor-pointer transform hover:scale-110"
-              aria-label="Answer Call to Enter Website"
+          <div className="flex flex-col items-center gap-3 w-full px-2">
+            
+            {/* Interactive Swipe Track */}
+            <div
+              ref={trackRef}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              onMouseDown={handleMouseDown}
+              className="relative w-full h-16 rounded-full bg-slate-900/80 border-2 border-emerald-500/40 backdrop-blur-xl p-1.5 flex items-center shadow-[0_0_35px_rgba(16,185,129,0.3)] overflow-hidden cursor-pointer select-none"
             >
-              {/* Outer Pulsing Wave Rings */}
-              <span className="absolute -inset-3 rounded-full border-2 border-emerald-400/60 animate-ping pointer-events-none" />
-              <span className="absolute -inset-6 rounded-full border border-emerald-400/30 animate-pulse pointer-events-none" />
-              
-              <Phone className="w-9 h-9 sm:w-10 sm:h-10 fill-current animate-bounce group-hover:scale-110 transition-transform" />
-            </button>
+              {/* Dynamic Fill Gradient following drag progress */}
+              <div
+                className="absolute inset-y-0 left-0 bg-gradient-to-r from-emerald-600/60 via-emerald-500/70 to-green-400/80 rounded-full transition-all"
+                style={{
+                  width: `${Math.max(16, dragProgress * 100)}%`,
+                  transition: isDragging ? "none" : "width 0.3s ease"
+                }}
+              />
 
-            {/* Tap to Answer Guidance */}
-            <div className="flex flex-col items-center gap-1 mt-1">
-              <span className="text-sm font-extrabold text-white tracking-wide flex items-center gap-1.5 drop-shadow">
-                <span>Tap to Answer &amp; Enter</span>
-                <ArrowRight className="w-4 h-4 text-emerald-400 animate-pulse" />
-              </span>
-              <span className="text-[11px] text-slate-300 font-medium">
-                Answer the call to explore Kashmir tour packages
-              </span>
+              {/* Glowing Ambient Chevrons & Slide Instruction */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none pl-12 pr-4">
+                <span className="text-xs sm:text-sm font-extrabold text-white/90 tracking-wider uppercase flex items-center gap-1 drop-shadow">
+                  <span>Swipe to Answer</span>
+                  <ChevronRight className="w-4 h-4 text-emerald-300 animate-pulse [animation-delay:-0.3s]" />
+                  <ChevronRight className="w-4 h-4 text-emerald-300 animate-pulse [animation-delay:-0.15s]" />
+                  <ChevronRight className="w-4 h-4 text-emerald-300 animate-pulse" />
+                </span>
+              </div>
+
+              {/* Draggable & Tappable Answer Button Handle */}
+              <div
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleAnswerCall();
+                }}
+                className="relative z-10 w-13 h-13 rounded-full bg-gradient-to-tr from-emerald-600 via-emerald-500 to-green-400 border-2 border-white/80 flex items-center justify-center text-white shadow-[0_0_25px_rgba(34,197,94,0.9)] hover:scale-105 active:scale-95 transition-transform cursor-grab active:cursor-grabbing"
+                style={{
+                  transform: trackRef.current
+                    ? `translateX(${dragProgress * Math.max(0, trackRef.current.clientWidth - 64)}px)`
+                    : "none",
+                  transition: isDragging ? "none" : "transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28)"
+                }}
+              >
+                <Phone className="w-6 h-6 fill-current animate-bounce" />
+              </div>
+            </div>
+
+            {/* Direct Tap Alternative Hint */}
+            <div className="flex items-center justify-center gap-2 mt-0.5">
+              <button
+                type="button"
+                onClick={handleAnswerCall}
+                className="text-xs font-semibold text-emerald-300/90 hover:text-emerald-200 underline underline-offset-4 decoration-emerald-500/50 cursor-pointer transition-colors"
+              >
+                or tap here to answer directly
+              </button>
             </div>
           </div>
         ) : (
-          <div className="py-3.5 px-8 rounded-2xl bg-emerald-950/90 border border-emerald-400/60 text-emerald-200 text-sm font-bold flex items-center justify-center gap-2.5 shadow-2xl backdrop-blur-md animate-pulse">
-            <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-            <span>Welcome to Shop A Trip! Loading paradise...</span>
+          /* Welcome to Paradise on Earth Greeting Card upon Answering */
+          <div className="w-full max-w-sm py-4 px-6 rounded-2xl bg-emerald-950/95 border-2 border-emerald-400/80 text-center shadow-[0_0_50px_rgba(16,185,129,0.5)] backdrop-blur-xl animate-in zoom-in-90 duration-500 flex flex-col items-center gap-1.5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/80 text-amber-300 text-xs font-extrabold border border-amber-400/40">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <span>Call Connected</span>
+            </div>
+            
+            <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight mt-1 drop-shadow-md">
+              Welcome to Paradise on Earth
+            </h2>
+            
+            <p className="text-xs text-emerald-200/90 font-medium">
+              Shop A Trip Tour &amp; Travels • Entering website...
+            </p>
           </div>
         )}
 
-        <p className="text-[11px] text-slate-400/90 mt-5 text-center">
-          Shop A Trip Tour &amp; Travels • Kashmir, Gulmarg, Gurez &amp; Ladakh
+        <p className="text-[11px] text-slate-400/90 mt-4 text-center">
+          Shop A Trip Tour &amp; Travels • Tangmarg &amp; Gulmarg, Kashmir
         </p>
       </footer>
     </div>
