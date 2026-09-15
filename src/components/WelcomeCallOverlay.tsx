@@ -42,73 +42,18 @@ export default function WelcomeCallOverlay() {
   const [isVisible, setIsVisible] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
   const [dragProgress, setDragProgress] = useState(0); // 0 to 1
   const [isDragging, setIsDragging] = useState(false);
   
   const audioElementRef = useRef<HTMLAudioElement | null>(null);
-  const audioCtxRef = useRef<AudioContext | null>(null);
-  const ringIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const startXRef = useRef<number>(0);
   const currentDragRef = useRef<number>(0);
 
-  // Synthesize authentic Kashmiri Santoor modal raga (plucked acoustic strings) as fallback
-  const playSantoorFallback = useCallback(() => {
-    if (isMuted) return;
-    try {
-      const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-      if (!AudioContextClass) return;
-
-      if (!audioCtxRef.current || audioCtxRef.current.state === "closed") {
-        audioCtxRef.current = new AudioContextClass();
-      }
-      const ctx = audioCtxRef.current;
-      if (ctx.state === "suspended") {
-        ctx.resume().catch(() => {});
-      }
-
-      const now = ctx.currentTime;
-
-      // Authentic Santoor string strike (Raga Pahadi notes) with gentle ambient gain
-      const playSantoorString = (freq: number, start: number, dur: number) => {
-        const osc = ctx.createOscillator();
-        const harm = ctx.createOscillator();
-        const gain = ctx.createGain();
-
-        osc.type = "sine";
-        harm.type = "triangle";
-        osc.frequency.setValueAtTime(freq, start);
-        harm.frequency.setValueAtTime(freq * 2.01, start);
-
-        // Soft, gentle ambient volume (0.16)
-        gain.gain.setValueAtTime(0, start);
-        gain.gain.linearRampToValueAtTime(0.16, start + 0.04);
-        gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
-
-        osc.connect(gain);
-        harm.connect(gain);
-        gain.connect(ctx.destination);
-
-        osc.start(start);
-        harm.start(start);
-        osc.stop(start + dur);
-        harm.stop(start + dur);
-      };
-
-      // Kashmiri Santoor folk raga: Sa - Ga - Pa - Dha - High Sa
-      playSantoorString(293.66, now + 0.05, 1.6); // D4
-      playSantoorString(369.99, now + 0.50, 1.5); // F#4
-      playSantoorString(440.00, now + 0.90, 1.5); // A4
-      playSantoorString(493.88, now + 1.35, 1.4); // B4
-      playSantoorString(587.33, now + 1.75, 2.0); // D5
-    } catch {
-      // ignore
-    }
-  }, [isMuted]);
-
-  // Master play audio function: gentle, smooth volume (0.30) with smooth fade-in
+  // Master play audio function: ONLY plays the user's kashmir_calling.mp3 with gentle volume & smooth fade-in
   const startAudioPlayback = useCallback(() => {
     if (isMuted) return;
 
@@ -119,66 +64,33 @@ export default function WelcomeCallOverlay() {
       if (playPromise !== undefined) {
         playPromise
           .then(() => {
+            setIsPlayingAudio(true);
             // Smooth gradual volume fade-in to pleasant 0.30 level
             let vol = 0.05;
             const fadeInterval = setInterval(() => {
-              vol = Math.min(0.30, vol + 0.05);
+              vol = Math.min(0.30, vol + 0.04);
               if (audio) audio.volume = vol;
               if (vol >= 0.30) clearInterval(fadeInterval);
-            }, 120);
+            }, 100);
           })
           .catch(() => {
-            // If HTML5 audio is blocked by browser policy before first touch, fallback to soft Santoor
-            playSantoorFallback();
+            // Browser autoplay blocked until user gesture
+            setIsPlayingAudio(false);
           });
       }
-    } else {
-      playSantoorFallback();
     }
-  }, [isMuted, playSantoorFallback]);
-
-  // Play pleasant "call connected / entrance" chime on Answer
-  const playAnswerChime = useCallback(() => {
-    try {
-      if (audioElementRef.current) {
-        audioElementRef.current.pause();
-        audioElementRef.current.currentTime = 0;
-      }
-      if (ringIntervalRef.current) {
-        clearInterval(ringIntervalRef.current);
-      }
-      const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-      if (!AudioContextClass) return;
-
-      const ctx = audioCtxRef.current || new AudioContextClass();
-      if (ctx.state === "suspended") ctx.resume();
-
-      const now = ctx.currentTime;
-      const notes = [523.25, 659.25, 783.99, 1046.50]; // C - E - G - High C
-      notes.forEach((freq, idx) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = "sine";
-        osc.frequency.setValueAtTime(freq, now + idx * 0.09);
-        gain.gain.setValueAtTime(0, now + idx * 0.09);
-        gain.gain.linearRampToValueAtTime(0.20, now + idx * 0.09 + 0.03);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.09 + 0.45);
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start(now + idx * 0.09);
-        osc.stop(now + idx * 0.09 + 0.45);
-      });
-    } catch {
-      // ignore
-    }
-  }, []);
+  }, [isMuted]);
 
   // Answer call action -> seamlessly enters the website and scrolls to absolute TOP
   const handleAnswerCall = useCallback(() => {
     if (isAnswered) return;
     setIsAnswered(true);
     setDragProgress(1);
-    playAnswerChime();
+
+    if (audioElementRef.current) {
+      audioElementRef.current.pause();
+      audioElementRef.current.currentTime = 0;
+    }
 
     // Trigger haptic feedback if available on mobile
     if (typeof navigator !== "undefined" && navigator.vibrate) {
@@ -205,7 +117,7 @@ export default function WelcomeCallOverlay() {
         }
       }, 700);
     }, 1400);
-  }, [isAnswered, playAnswerChime]);
+  }, [isAnswered]);
 
   useEffect(() => {
     // Show on page load (session based check so in-app page browsing doesn't re-trigger)
@@ -222,14 +134,6 @@ export default function WelcomeCallOverlay() {
     // Initial audio playback attempt
     startAudioPlayback();
 
-    // Loop periodic Santoor if using Web Audio fallback
-    ringIntervalRef.current = setInterval(() => {
-      if (audioElementRef.current && !audioElementRef.current.paused) {
-        return; // HTML5 audio is playing and looping
-      }
-      playSantoorFallback();
-    }, 3800);
-
     // Dynamic destination slide rotation
     const slideTimer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % DESTINATION_SLIDES.length);
@@ -245,7 +149,6 @@ export default function WelcomeCallOverlay() {
     window.addEventListener("keydown", unlockAudio, { passive: true });
 
     return () => {
-      if (ringIntervalRef.current) clearInterval(ringIntervalRef.current);
       clearInterval(slideTimer);
       window.removeEventListener("pointerdown", unlockAudio);
       window.removeEventListener("touchstart", unlockAudio);
@@ -254,11 +157,8 @@ export default function WelcomeCallOverlay() {
       if (audioElementRef.current) {
         audioElementRef.current.pause();
       }
-      if (audioCtxRef.current) {
-        audioCtxRef.current.close().catch(() => {});
-      }
     };
-  }, [startAudioPlayback, playSantoorFallback]);
+  }, [startAudioPlayback]);
 
   // Touch & Mouse Swipe Handlers for Slide-to-Answer
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -411,8 +311,14 @@ export default function WelcomeCallOverlay() {
       {/* CENTER CALLER IDENTITY & DESTINATION SHOWCASE */}
       <main className="relative z-10 w-full max-w-md my-auto flex flex-col items-center text-center animate-in zoom-in-95 duration-500 py-3">
         
-        {/* Pulsing Destination Avatar */}
-        <div className="relative mb-5">
+        {/* Pulsing Destination Avatar with Click-to-Listen Trigger */}
+        <div 
+          onClick={() => {
+            if (!isPlayingAudio) startAudioPlayback();
+          }}
+          className="relative mb-4 cursor-pointer group"
+          title="Tap to play Kashmir music"
+        >
           {!isAnswered && (
             <>
               <span className="absolute -inset-4 rounded-full border-2 border-emerald-400/30 animate-ping opacity-60 pointer-events-none" />
@@ -421,7 +327,7 @@ export default function WelcomeCallOverlay() {
             </>
           )}
 
-          <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-amber-400 shadow-[0_0_40px_rgba(251,191,36,0.35)]">
+          <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-amber-400 shadow-[0_0_40px_rgba(251,191,36,0.35)] group-hover:scale-105 transition-transform duration-300">
             <Image
               src={currentDestination.image}
               alt={currentDestination.name}
@@ -460,7 +366,7 @@ export default function WelcomeCallOverlay() {
         </p>
 
         {/* Current Destination Feature Tag */}
-        <div className="mt-3.5 px-4 py-2 rounded-2xl bg-white/10 border border-white/15 max-w-xs backdrop-blur-md shadow-lg">
+        <div className="mt-3 px-4 py-2 rounded-2xl bg-white/10 border border-white/15 max-w-xs backdrop-blur-md shadow-lg">
           <p className="text-xs font-bold text-white flex items-center justify-center gap-1.5">
             <span>📍 {currentDestination.name}</span>
           </p>
@@ -469,16 +375,36 @@ export default function WelcomeCallOverlay() {
           </p>
         </div>
 
-        {/* Dynamic Animated Call Equalizer */}
-        <div className="flex items-center gap-1.5 mt-4 px-4 py-1.5 rounded-full bg-slate-900/60 border border-white/10">
-          <span className="w-1 h-3.5 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
-          <span className="w-1 h-6 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.15s]" />
-          <span className="w-1 h-8 bg-emerald-400 rounded-full animate-bounce" />
-          <span className="w-1 h-6 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.15s]" />
-          <span className="w-1 h-3.5 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
-          <span className="text-xs text-slate-200 ml-2 font-medium">
-            {isAnswered ? "Call Connected • Entering..." : "Kashmir Concierge Desk"}
-          </span>
+        {/* Interactive Tap-To-Listen Callout / Dynamic Equalizer */}
+        <div 
+          onClick={() => {
+            if (!isPlayingAudio) startAudioPlayback();
+          }}
+          className={`flex items-center gap-2 mt-4 px-4 py-2 rounded-full border transition-all cursor-pointer ${
+            isPlayingAudio 
+              ? "bg-slate-900/70 border-emerald-400/40 text-emerald-300 shadow-md"
+              : "bg-emerald-600/90 hover:bg-emerald-500 border-white/50 text-white shadow-[0_0_25px_rgba(16,185,129,0.7)] animate-bounce"
+          }`}
+        >
+          {isPlayingAudio ? (
+            <>
+              <span className="w-1.5 h-3.5 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
+              <span className="w-1.5 h-5 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.15s]" />
+              <span className="w-1.5 h-6 bg-emerald-400 rounded-full animate-bounce" />
+              <span className="w-1.5 h-5 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.15s]" />
+              <span className="w-1.5 h-3.5 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
+              <span className="text-xs text-slate-200 ml-1 font-semibold">
+                {isAnswered ? "Call Connected • Entering..." : "🎵 Playing Kashmir Calling"}
+              </span>
+            </>
+          ) : (
+            <>
+              <Volume2 className="w-4 h-4 text-amber-300 animate-pulse" />
+              <span className="text-xs font-extrabold text-white tracking-wide">
+                🔊 Tap to Hear Kashmir Ringtone
+              </span>
+            </>
+          )}
         </div>
       </main>
 
