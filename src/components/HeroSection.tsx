@@ -63,7 +63,7 @@ export default function HeroSection({
           {/* Local credibility badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-500/30 mb-4 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-[#38804e] flex-shrink-0" />
-            <span>Tangmarg &amp; Gulmarg Local Operators · {companyInfo.experienceYears}+ Years Field Experience</span>
+            <span>Local Operators · {companyInfo.experienceYears}+ Years Field Experience</span>
           </div>
 
           {/* Main Headline */}
@@ -73,7 +73,7 @@ export default function HeroSection({
           </h1>
 
           {/* Subheading */}
-          <h2 className="mt-4 text-lg sm:text-2xl font-bold text-white max-w-2xl leading-snug">
+          <h2 className="mt-4 text-lg sm:text-2xl font-bold text-emerald-100/95 max-w-2xl leading-snug">
             Handcrafted Jammu, Kashmir and Ladakh Holidays by Local Team
           </h2>
 
