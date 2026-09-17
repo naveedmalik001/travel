@@ -77,25 +77,25 @@ export default function HeroSection({
             Handcrafted Jammu, Kashmir and Ladakh Holidays by Local Team
           </h2>
 
-          <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-xl leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-white max-w-xl leading-relaxed font-normal">
             Handpicked itineraries, 4x4 snow-chain cabs, and 24/7 mountain support — managed by our native on-ground team in Tangmarg, not an outsourced call centre.
           </p>
 
           {/* Concrete trust signals */}
-          <div className="mt-6 flex flex-wrap gap-2.5 text-xs sm:text-sm text-emerald-100 font-medium">
-            <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/15">
+          <div className="mt-6 flex flex-wrap gap-2.5 text-xs sm:text-sm text-white font-medium">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
               Direct Local Operator
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/15">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
               Verified 3★ &amp; 4★ Stays
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/15">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
               Gondola &amp; Pass Assistance
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/15">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
               24/7 On-Ground Support
             </span>
