@@ -137,7 +137,7 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
               <ShieldCheck className="w-3.5 h-3.5 text-[#38804e]" />
               <span className="font-bold text-white">4.9 / 5.0 Rating</span>
             </div>
-            <span className="text-emerald-300/80">10,000+ Happy Guests</span>
+            <span className="text-emerald-300/80 font-medium">Verified Reviews</span>
           </div>
         </div>
 

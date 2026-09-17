@@ -119,7 +119,7 @@ export default function AboutPage() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
               {[
                 { value: "6+", label: "Years of Excellence" },
-                { value: "200+", label: "Happy Travelers" },
+                { value: "2,500+", label: "Happy Travelers" },
                 { value: "4.9", label: "Google Rating" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -155,7 +155,7 @@ export default function AboutPage() {
                   <span className="text-xs text-slate-500 font-medium mt-1 block">Years Field Excellence</span>
                 </div>
                 <div className="p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-white border border-emerald-100 shadow-sm">
-                  <span className="text-3xl font-extrabold text-emerald-800 block">200+</span>
+                  <span className="text-3xl font-extrabold text-emerald-800 block">2,500+</span>
                   <span className="text-xs text-slate-500 font-medium mt-1 block">Happy Travelers Hosted</span>
                 </div>
               </div>
@@ -249,7 +249,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
             {[
               { icon: ShieldCheck, label: "Govt. Registered", sub: "Tour Operator, J&K" },
-              { icon: Users, label: "200+ Guests", sub: "Hosted Successfully" },
+              { icon: Users, label: "2,500+ Guests", sub: "Hosted Successfully" },
               { icon: Award, label: "6+ Years", sub: "Kashmir Specialists" },
               { icon: CheckCircle2, label: "Zero Hidden Fees", sub: "Transparent Pricing" },
             ].map((item, i) => {
