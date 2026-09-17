@@ -133,7 +133,7 @@ export default function WhatsAppFloat() {
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <h4 className="font-bold text-xs text-white leading-tight">Tangmarg Support Desk</h4>
+                  <h4 className="font-bold text-xs text-white leading-tight">Shop2Trip Desk</h4>
                   <span className="px-1.5 py-0.2 rounded text-[8px] font-extrabold bg-[#38804e]/50 text-emerald-300 uppercase tracking-wide border border-emerald-500/30">
                     LIVE
                   </span>
