@@ -401,7 +401,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                     Package Pricing
                   </span>
                   <div className="mt-1 mb-3">
-                    <span className="text-2xl font-extrabold text-pine-950">Custom Quote for Trip</span>
+                    <span className="text-2xl font-extrabold text-slate-900">Custom Quote for Trip</span>
                     <span className="text-xs text-slate-500 block mt-0.5">Best direct rates based on your dates & group size</span>
                   </div>
 
@@ -414,7 +414,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 px-4 rounded-xl bg-[#38804e] hover:bg-[#2b693f] text-white font-bold text-sm transition-all text-center flex items-center justify-center space-x-2 shadow-md transform hover:-translate-y-0.5"
+                      className="w-full py-3.5 px-4 rounded-xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-sm transition-all text-center flex items-center justify-center space-x-2 shadow-md transform hover:-translate-y-0.5"
                     >
                       <MessageSquare className="w-4 h-4 fill-current" />
                       <span>Get Quote for Trip on WhatsApp</span>
@@ -422,9 +422,9 @@ export default async function PackageDetailPage({ params }: PageProps) {
 
                     <a
                       href={`tel:${companyInfo.phones[0]}`}
-                      className="w-full py-3 px-4 rounded-xl bg-pine-900 hover:bg-pine-800 text-white font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2"
+                      className="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2 border border-slate-200"
                     >
-                      <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                      <Phone className="w-3.5 h-3.5 text-[#38804e]" />
                       <span>Call {companyInfo.phones[0]}</span>
                     </a>
                   </div>

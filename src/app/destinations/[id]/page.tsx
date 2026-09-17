@@ -308,17 +308,17 @@ export default async function DestinationDetailPage({ params }: PageProps) {
 
                     <Link
                       href="/custom-planner"
-                      className="w-full py-3 px-4 rounded-xl bg-pine-900 hover:bg-pine-800 text-white font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2"
+                      className="w-full py-3 px-4 rounded-xl bg-white hover:bg-emerald-50 text-slate-800 border border-slate-200 font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2"
                     >
                       <span>Calculate Estimated Trip Cost</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#38804e]" />
                     </Link>
 
                     <a
                       href={`tel:${companyInfo.phones[0]}`}
-                      className="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2"
+                      className="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2 border border-slate-200"
                     >
-                      <Phone className="w-3.5 h-3.5 text-emerald-700" />
+                      <Phone className="w-3.5 h-3.5 text-[#38804e]" />
                       <span>Call {companyInfo.phoneDisplay}</span>
                     </a>
                   </div>

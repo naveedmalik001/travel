@@ -225,7 +225,7 @@ export default function ServicesPage() {
                       href={waUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3 px-4 rounded-xl bg-[#081f16] hover:bg-emerald-900 text-white font-semibold text-xs sm:text-sm transition-all flex items-center justify-center space-x-2 shadow-sm min-h-[44px]"
+                      className="w-full py-3 px-4 rounded-xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-xs sm:text-sm transition-all flex items-center justify-center space-x-2 shadow-sm min-h-[44px]"
                     >
                       <MessageSquare className="w-4 h-4" />
                       <span>{srv.ctaText}</span>
