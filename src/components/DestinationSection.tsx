@@ -153,7 +153,7 @@ export default function DestinationSection() {
         <div className="block lg:hidden mb-6">
           {/* Mobile Slider Controls Bar */}
           <div className="flex items-center justify-between mb-3 px-1">
-            <span className="text-xs text-pine-800 font-semibold flex items-center gap-1.5">
+            <span className="text-xs text-[#38804e] font-semibold flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-[#38804e] animate-pulse" />
               Swipe destinations ({activeMobileIndex + 1} of {filteredDestinations.length})
             </span>
@@ -236,7 +236,7 @@ export default function DestinationSection() {
                   onClick={() => scrollMobileToIndex(idx)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     activeMobileIndex === idx
-                      ? "w-6 bg-pine-900"
+                      ? "w-6 bg-[#38804e]"
                       : "w-2 bg-slate-300 hover:bg-slate-400"
                   }`}
                   aria-label={`Go to destination ${idx + 1}`}

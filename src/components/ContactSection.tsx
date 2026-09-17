@@ -219,7 +219,7 @@ Notes: ${cleanNotes || "None"}`;
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-2 text-xs text-pine-800 font-semibold underline"
+                  className="mt-2 text-xs text-[#38804e] font-semibold underline"
                 >
                   Send another inquiry
                 </button>
@@ -235,7 +235,7 @@ Notes: ${cleanNotes || "None"}`;
                       placeholder="e.g. Sameer Khan"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-800"
+                      className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804e]"
                     />
                   </div>
 
@@ -247,7 +247,7 @@ Notes: ${cleanNotes || "None"}`;
                       placeholder="e.g. 9876543210"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-800"
+                      className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804e]"
                     />
                   </div>
                 </div>
@@ -260,7 +260,7 @@ Notes: ${cleanNotes || "None"}`;
                       placeholder="e.g. you@gmail.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-800"
+                      className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804e]"
                     />
                   </div>
 
@@ -269,7 +269,7 @@ Notes: ${cleanNotes || "None"}`;
                     <select
                       value={formData.travelMonth}
                       onChange={(e) => setFormData({ ...formData, travelMonth: e.target.value })}
-                      className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-pine-800"
+                      className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#38804e]"
                     >
                       <option>Next 30 Days</option>
                       <option>Spring (Mar - Apr)</option>
@@ -284,7 +284,7 @@ Notes: ${cleanNotes || "None"}`;
                     <select
                       value={formData.guests}
                       onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                      className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-pine-800"
+                      className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#38804e]"
                     >
                       <option>2 Adults (Couple)</option>
                       <option>Family (2 Adults + Kids)</option>
@@ -300,7 +300,7 @@ Notes: ${cleanNotes || "None"}`;
                   <select
                     value={formData.destination}
                     onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
-                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-pine-800"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#38804e]"
                   >
                     <option>Kashmir Classic (Srinagar, Gulmarg, Pahalgam, Sonmarg)</option>
                     <option>Romantic Kashmir Honeymoon Special</option>
@@ -319,7 +319,7 @@ Notes: ${cleanNotes || "None"}`;
                     placeholder="Tell us about preferred dates, hotel choices (3-star / 4-star / Houseboat), or special celebrations..."
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                    className="w-full bg-white border border-slate-300 rounded-xl p-3 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-800"
+                    className="w-full bg-white border border-slate-300 rounded-xl p-3 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804e]"
                   />
                 </div>
 

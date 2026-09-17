@@ -137,7 +137,7 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
               <h3 className="text-base font-bold text-slate-900 border-b pb-2">Complete Day-by-Day Schedule</h3>
               <div className="space-y-5">
                 {pkg.itinerary.map((day) => (
-                  <div key={day.day} className="relative pl-7 border-l-2 border-pine-200">
+                  <div key={day.day} className="relative pl-7 border-l-2 border-emerald-200">
                     <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-[#38804e] text-white font-bold text-xs flex items-center justify-center shadow">
                       {day.day}
                     </div>
@@ -148,7 +148,7 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
                           {day.meals}
                         </span>
                       </div>
-                      <p className="text-xs font-semibold text-pine-700 mb-2">Route: {day.route}</p>
+                      <p className="text-xs font-semibold text-[#38804e] mb-2">Route: {day.route}</p>
                       <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-2.5">
                         {day.description}
                       </p>
@@ -223,7 +223,7 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {pkg.hotelDetails.map((h, i) => (
                   <div key={i} className="bg-white border border-slate-200 p-3.5 rounded-xl shadow-sm">
-                    <div className="text-xs font-bold text-pine-800 uppercase tracking-wider mb-1 flex items-center">
+                    <div className="text-xs font-bold text-[#38804e] uppercase tracking-wider mb-1 flex items-center">
                       <MapPin className="w-3.5 h-3.5 mr-1" />
                       {h.location}
                     </div>
@@ -241,7 +241,7 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
           <div>
             <span className="text-xs text-slate-500 block font-medium">Pricing & Availability</span>
             <div className="flex items-center space-x-2">
-              <span className="text-lg sm:text-xl font-bold text-pine-950">Custom Quote on Request</span>
+              <span className="text-lg sm:text-xl font-bold text-slate-900">Custom Quote on Request</span>
               <span className="text-[11px] text-[#38804e] font-semibold bg-[#38804e]/10 px-2 py-0.5 rounded-full">(Direct Local Rates)</span>
             </div>
           </div>

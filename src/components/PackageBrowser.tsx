@@ -236,7 +236,7 @@ export default function PackageBrowser({
                 placeholder="Search destination, valley, pass..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-8 pr-3 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-pine-800"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-8 pr-3 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#38804e]"
               />
               <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" />
             </div>
@@ -308,7 +308,7 @@ export default function PackageBrowser({
                       onClick={() => scrollToIndex(idx)}
                       className={`h-2 rounded-full transition-all duration-300 ${
                         activeSlideIndex === idx
-                          ? "w-6 bg-pine-900"
+                          ? "w-6 bg-[#38804e]"
                           : "w-2 bg-slate-300 hover:bg-slate-400"
                       }`}
                       aria-label={`Go to slide ${idx + 1}`}
