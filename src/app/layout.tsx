@@ -3,7 +3,7 @@ import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { companyInfo } from "@/data/company";
 import JsonLd from "@/components/JsonLd";
-import WelcomeCallOverlay from "@/components/WelcomeCallOverlay";
+import LeadPopupModal from "@/components/LeadPopupModal";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -166,7 +166,7 @@ export default function RootLayout({
     <html lang="en" className={`${jakarta.variable} ${playfair.variable} scroll-smooth`}>
       <body className="font-sans antialiased bg-[#fbfdfb] text-slate-900 selection:bg-pine-200 selection:text-pine-950">
         <JsonLd data={travelAgencySchema} />
-        <WelcomeCallOverlay />
+        <LeadPopupModal />
         {children}
       </body>
     </html>

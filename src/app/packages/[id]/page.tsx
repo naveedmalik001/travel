@@ -159,14 +159,14 @@ export default async function PackageDetailPage({ params }: PageProps) {
 
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-pine-950 shadow-sm">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#38804e] text-white shadow-sm">
                 {pkg.tag}
               </span>
               <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-500/40">
                 {pkg.category}
               </span>
               {pkg.featured && (
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-pine-800 text-amber-300 border border-amber-400/40 flex items-center gap-1">
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-900 text-emerald-300 border border-emerald-500/40 flex items-center gap-1">
                   <BadgeCheck className="w-3 h-3" />
                   Recommended Departure
                 </span>
@@ -185,7 +185,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
               <div>
                 <span className="text-slate-400 block text-xs">Duration:</span>
                 <span className="font-bold text-white flex items-center mt-0.5">
-                  <Clock className="w-3.5 h-3.5 mr-1.5 text-amber-400" />
+                  <Clock className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
                   {pkg.duration}
                 </span>
               </div>
@@ -199,16 +199,15 @@ export default async function PackageDetailPage({ params }: PageProps) {
               <div>
                 <span className="text-slate-400 block text-xs">Stay Category:</span>
                 <span className="font-bold text-white flex items-center mt-0.5 truncate">
-                  <Hotel className="w-3.5 h-3.5 mr-1.5 text-amber-400 flex-shrink-0" />
+                  <Hotel className="w-3.5 h-3.5 mr-1.5 text-emerald-400 flex-shrink-0" />
                   {pkg.hotelCategory}
                 </span>
               </div>
               <div>
-                <span className="text-slate-400 block text-xs">Starting From:</span>
-                <div className="flex items-baseline gap-1 mt-0.5">
-                  <span className="text-lg sm:text-xl font-extrabold text-amber-400">{pkg.priceFrom}</span>
-                  <span className="text-[11px] text-slate-300">/ person</span>
-                </div>
+                <span className="text-slate-400 block text-xs">Pricing Plan:</span>
+                <span className="font-bold text-white flex items-center mt-0.5 text-sm sm:text-base text-emerald-300">
+                  Custom Quote on WhatsApp
+                </span>
               </div>
             </div>
           </div>
@@ -274,7 +273,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                   {pkg.itinerary.map((day) => (
                     <div key={day.day} className="relative pl-10">
                       {/* Day number bullet */}
-                      <div className="absolute left-0 top-0 w-7 h-7 rounded-full bg-pine-900 text-amber-300 font-bold text-xs flex items-center justify-center border-2 border-white shadow-sm ring-2 ring-emerald-600/30">
+                      <div className="absolute left-0 top-0 w-7 h-7 rounded-full bg-[#38804e] text-white font-bold text-xs flex items-center justify-center border-2 border-white shadow-sm ring-2 ring-emerald-600/30">
                         {day.day}
                       </div>
 
@@ -315,7 +314,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                             <Hotel className="w-3.5 h-3.5 mr-1 text-pine-700" />
                             Stay: {day.stayLocation}
                           </span>
-                          <span className="flex items-center font-medium text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200/60">
+                          <span className="flex items-center font-medium text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/60">
                             <Utensils className="w-3.5 h-3.5 mr-1" />
                             {day.meals}
                           </span>
@@ -401,12 +400,9 @@ export default async function PackageDetailPage({ params }: PageProps) {
                   <span className="text-xs uppercase font-bold text-slate-400 block tracking-wider">
                     Package Pricing
                   </span>
-                  <div className="flex items-baseline gap-2 mt-1 mb-3">
-                    <span className="text-3xl font-extrabold text-pine-950">{pkg.priceFrom}</span>
-                    {pkg.originalPrice && (
-                      <span className="text-sm text-slate-400 line-through">{pkg.originalPrice}</span>
-                    )}
-                    <span className="text-xs text-slate-500">/ person</span>
+                  <div className="mt-1 mb-3">
+                    <span className="text-2xl font-extrabold text-pine-950">Custom Quote for Trip</span>
+                    <span className="text-xs text-slate-500 block mt-0.5">Best direct rates based on your dates & group size</span>
                   </div>
 
                   <p className="text-[11px] text-emerald-800 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200 mb-5">
@@ -418,17 +414,17 @@ export default async function PackageDetailPage({ params }: PageProps) {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm transition-all text-center flex items-center justify-center space-x-2 shadow-md transform hover:-translate-y-0.5"
+                      className="w-full py-3.5 px-4 rounded-xl bg-[#38804e] hover:bg-[#2b693f] text-white font-bold text-sm transition-all text-center flex items-center justify-center space-x-2 shadow-md transform hover:-translate-y-0.5"
                     >
                       <MessageSquare className="w-4 h-4 fill-current" />
-                      <span>Instant WhatsApp Quote</span>
+                      <span>Get Quote for Trip on WhatsApp</span>
                     </a>
 
                     <a
                       href={`tel:${companyInfo.phones[0]}`}
-                      className="w-full py-3 px-4 rounded-xl bg-pine-900 hover:bg-pine-800 text-amber-300 font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2"
+                      className="w-full py-3 px-4 rounded-xl bg-pine-900 hover:bg-pine-800 text-white font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2"
                     >
-                      <Phone className="w-3.5 h-3.5 text-amber-400" />
+                      <Phone className="w-3.5 h-3.5 text-emerald-400" />
                       <span>Call {companyInfo.phones[0]}</span>
                     </a>
                   </div>
@@ -479,7 +475,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                         fill
                         className="object-cover"
                       />
-                      <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500 text-pine-950">
+                      <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#38804e] text-white">
                         {rel.duration}
                       </div>
                     </div>
@@ -489,7 +485,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                         <p className="text-xs text-slate-500 line-clamp-2 mt-1">{rel.subtitle}</p>
                       </div>
                       <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between">
-                        <span className="text-sm font-bold text-pine-950">{rel.priceFrom}</span>
+                        <span className="text-xs font-bold text-[#38804e]">Custom Quote</span>
                         <Link
                           href={`/packages/${rel.id}`}
                           className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold transition-colors"

@@ -77,7 +77,7 @@ export default function ContactPage() {
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
               Get in Touch with Our{" "}
-              <span className="text-amber-400">Local Travel Team</span>
+              <span className="text-emerald-300">Local Travel Team</span>
             </h1>
             <p className="mt-5 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
               Have questions about snow conditions, cab permits, hotels, or want a custom quotation? We are here to help you 7 days a week.
@@ -101,11 +101,11 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="space-y-2 text-sm font-bold text-slate-900">
-                <a href={`tel:${companyInfo.phones[0]}`} className="hover:text-amber-600 transition-colors flex items-center gap-2 min-h-[44px] bg-slate-50 rounded-xl px-3 py-2 border border-slate-100">
+                <a href={`tel:${companyInfo.phones[0]}`} className="hover:text-emerald-700 transition-colors flex items-center gap-2 min-h-[44px] bg-slate-50 rounded-xl px-3 py-2 border border-slate-100">
                   <Phone className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                   {companyInfo.phones[0]}
                 </a>
-                <a href={`tel:${companyInfo.phones[1]}`} className="hover:text-amber-600 transition-colors flex items-center gap-2 min-h-[44px] bg-slate-50 rounded-xl px-3 py-2 border border-slate-100">
+                <a href={`tel:${companyInfo.phones[1]}`} className="hover:text-emerald-700 transition-colors flex items-center gap-2 min-h-[44px] bg-slate-50 rounded-xl px-3 py-2 border border-slate-100">
                   <Phone className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                   {companyInfo.phones[1]}
                 </a>
@@ -115,7 +115,7 @@ export default function ContactPage() {
             {/* WhatsApp Card */}
             <div className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-lg flex flex-col gap-4">
               <div className="flex items-center space-x-3">
-                <div className="w-11 h-11 rounded-xl bg-[#25D366]/10 text-[#25D366] flex items-center justify-center flex-shrink-0 border border-[#25D366]/20">
+                <div className="w-11 h-11 rounded-xl bg-[#38804e]/10 text-[#38804e] flex items-center justify-center flex-shrink-0 border border-[#38804e]/20">
                   <MessageSquare className="w-5 h-5 fill-current" />
                 </div>
                 <div>
@@ -124,14 +124,14 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="flex items-center gap-2 text-xs text-slate-500 bg-emerald-50 rounded-xl px-3 py-2.5 border border-emerald-100">
-                <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse flex-shrink-0" />
+                <span className="w-2 h-2 rounded-full bg-[#38804e] animate-pulse flex-shrink-0" />
                 <span className="font-medium text-emerald-800">Team is online — typically replies in minutes</span>
               </div>
               <a
                 href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hello Shop A Trip Team, I want to inquire about tour packages.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-sm font-bold text-center transition-colors flex items-center justify-center gap-2 shadow-sm min-h-[44px]"
+                className="w-full py-3 px-4 rounded-xl bg-[#38804e] hover:bg-[#2b693f] text-white text-sm font-bold text-center transition-colors flex items-center justify-center gap-2 shadow-sm min-h-[44px]"
               >
                 <MessageSquare className="w-4 h-4 fill-current" />
                 <span>Start WhatsApp Chat</span>
@@ -141,7 +141,7 @@ export default function ContactPage() {
             {/* Office Location Card */}
             <div className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-lg flex flex-col gap-4">
               <div className="flex items-center space-x-3">
-                <div className="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center flex-shrink-0 border border-amber-100">
+                <div className="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0 border border-emerald-100">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -149,14 +149,14 @@ export default function ContactPage() {
                   <span className="text-xs text-slate-500">Tangmarg, Baramulla</span>
                 </div>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed bg-amber-50/60 rounded-xl px-3 py-2.5 border border-amber-100/80">
+              <p className="text-xs text-slate-600 leading-relaxed bg-emerald-50/60 rounded-xl px-3 py-2.5 border border-emerald-100/80">
                 {companyInfo.fullAddress}
               </p>
               <a
                 href={companyInfo.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-white text-sm font-bold text-center transition-colors flex items-center justify-center gap-2 min-h-[44px]"
+                className="w-full py-3 px-4 rounded-xl bg-[#0B1E15] hover:bg-emerald-900 text-emerald-300 text-sm font-bold text-center transition-colors flex items-center justify-center gap-2 min-h-[44px]"
               >
                 <MapPin className="w-4 h-4" />
                 <span>Open in Google Maps</span>

@@ -90,7 +90,7 @@ export default function ServicesPage() {
       title: "Heritage Houseboat & Shikara Rides",
       desc: "Experience timeless Kashmiri romance aboard handcrafted cedarwood houseboats moored on peaceful Dal Lake and Nigeen Lake, complete with authentic Kashmiri Kahwa and twilight Shikara rides.",
       icon: MapPin,
-      accent: "amber",
+      accent: "emerald",
       features: [
         "Carved walnut furniture & antique chandeliers",
         "Private sun deck overlooking the Zabarwan hills",
@@ -143,7 +143,6 @@ export default function ServicesPage() {
   const accentClasses: Record<string, string> = {
     emerald: "bg-emerald-50 text-emerald-700 border-emerald-100",
     blue: "bg-blue-50 text-blue-700 border-blue-100",
-    amber: "bg-amber-50 text-amber-700 border-amber-100",
     rose: "bg-rose-50 text-rose-700 border-rose-100",
     violet: "bg-violet-50 text-violet-700 border-violet-100",
     teal: "bg-teal-50 text-teal-700 border-teal-100",
@@ -168,7 +167,7 @@ export default function ServicesPage() {
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
               Premium Services by{" "}
-              <span className="text-amber-400">Local Kashmir Specialists</span>
+              <span className="text-emerald-300">Local Kashmir Specialists</span>
             </h1>
             <p className="mt-5 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
               From dedicated taxi rentals and inspected mountain stays to Gulmarg Gondola guidance and frontier border permits, our Tangmarg headquarters has you covered.
@@ -226,7 +225,7 @@ export default function ServicesPage() {
                       href={waUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3 px-4 rounded-xl bg-[#081f16] hover:bg-emerald-900 text-amber-300 font-semibold text-xs sm:text-sm transition-all flex items-center justify-center space-x-2 shadow-sm min-h-[44px]"
+                      className="w-full py-3 px-4 rounded-xl bg-[#081f16] hover:bg-emerald-900 text-white font-semibold text-xs sm:text-sm transition-all flex items-center justify-center space-x-2 shadow-sm min-h-[44px]"
                     >
                       <MessageSquare className="w-4 h-4" />
                       <span>{srv.ctaText}</span>
@@ -314,7 +313,7 @@ export default function ServicesPage() {
                   href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hello Shop A Trip Team, I need help choosing the right service for my Kashmir trip.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm shadow-md transition-all min-h-[48px]"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#38804e] hover:bg-[#2b693f] text-white font-bold text-sm shadow-md transition-all min-h-[48px]"
                 >
                   <MessageSquare className="w-4 h-4 mr-2 fill-current" />
                   <span>WhatsApp Us</span>
@@ -323,7 +322,7 @@ export default function ServicesPage() {
                   href={`tel:${companyInfo.phones[0]}`}
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all min-h-[48px]"
                 >
-                  <Phone className="w-4 h-4 mr-2 text-amber-400" />
+                  <Phone className="w-4 h-4 mr-2 text-emerald-400" />
                   <span>Call Now</span>
                 </a>
               </div>

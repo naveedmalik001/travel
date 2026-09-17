@@ -160,13 +160,13 @@ export default function PackageBrowser({
                   }}
                   className={`py-2.5 sm:py-3 px-2 sm:px-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex flex-col items-center justify-center gap-0.5 ${
                     isSelected
-                      ? "bg-pine-900 text-amber-300 shadow-md scale-[1.02]"
+                      ? "bg-[#38804e] text-white shadow-md scale-[1.02]"
                       : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                   }`}
                 >
                   <span>{div.label}</span>
                   <span className={`text-[10px] font-normal px-2 py-0.2 rounded-full ${
-                    isSelected ? "bg-amber-400/20 text-amber-200" : "bg-slate-100 text-slate-500"
+                    isSelected ? "bg-white/20 text-white" : "bg-slate-100 text-slate-500"
                   }`}>
                     {div.count} Packages
                   </span>
@@ -190,7 +190,7 @@ export default function PackageBrowser({
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                     isSelected
-                      ? "bg-emerald-800 text-white shadow-sm"
+                      ? "bg-[#38804e] text-white shadow-sm"
                       : "bg-slate-100 hover:bg-slate-200 text-slate-700"
                   }`}
                 >
@@ -219,7 +219,7 @@ export default function PackageBrowser({
                     onClick={() => setDurationFilter(d.id)}
                     className={`px-2.5 sm:px-3 py-1.5 rounded-lg font-medium transition-colors ${
                       durationFilter === d.id
-                        ? "bg-pine-900 text-amber-300"
+                        ? "bg-[#38804e] text-white"
                         : "bg-slate-100 hover:bg-slate-200 text-slate-700"
                     }`}
                   >
@@ -352,7 +352,7 @@ export default function PackageBrowser({
               {/* Browse All Tour Packages CTA */}
               <Link
                 href="/packages"
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-7 py-3 rounded-2xl bg-pine-900 hover:bg-pine-800 text-amber-300 font-bold text-xs sm:text-sm shadow-md transition-all transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-7 py-3 rounded-2xl bg-[#38804e] hover:bg-[#2b693f] text-white font-bold text-xs sm:text-sm shadow-md transition-all transform hover:-translate-y-0.5"
               >
                 <span>Browse All Tour Packages</span>
                 <span>→</span>
@@ -373,7 +373,7 @@ export default function PackageBrowser({
                 setDurationFilter("all");
                 setSearchQuery("");
               }}
-              className="mt-4 px-4 py-2 bg-pine-900 text-amber-300 text-xs font-semibold rounded-xl"
+              className="mt-4 px-4 py-2 bg-[#38804e] text-white text-xs font-semibold rounded-xl"
             >
               Reset Filters
             </button>

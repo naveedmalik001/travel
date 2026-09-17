@@ -22,7 +22,7 @@ export function buildPackageWhatsAppUrl(pkg: TourPackage, customNote?: string): 
 🏨 *Stay Tier:* ${pkg.hotelCategory}
 🍽️ *Meal Plan:* MAP (Daily Breakfast & Dinner Included)
 🚗 *Transport:* Private Dedicated Cab with experienced mountain driver
-💰 *Starting Price:* ${pkg.priceFrom}/person ${pkg.originalPrice ? `(Regular: ${pkg.originalPrice})` : ""}
+💰 *Pricing:* Custom Quote on Request (Direct Local Operator Rates)
 
 📋 *Key Inclusions:*
 ${inclusionsList}

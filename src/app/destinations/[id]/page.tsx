@@ -150,7 +150,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
               <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/90 text-emerald-300 border border-emerald-500/40">
                 {dest.region}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-pine-950 flex items-center gap-1.5">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#38804e] text-white flex items-center gap-1.5">
                 <MapPin className="w-3 h-3" />
                 Himalayan Destination
               </span>
@@ -175,7 +175,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
               <div>
                 <span className="text-slate-400 block text-xs">Distance:</span>
                 <span className="font-bold text-white flex items-center mt-1 truncate">
-                  <MapPin className="w-3.5 h-3.5 mr-1.5 text-amber-400 flex-shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 mr-1.5 text-emerald-400 flex-shrink-0" />
                   {dest.distanceFromSrinagar}
                 </span>
               </div>
@@ -253,7 +253,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
               {/* Local Tangmarg Base Insider Tips */}
               <div className="bg-emerald-950 text-white rounded-2xl p-6 sm:p-8 border border-emerald-900 shadow-soft relative overflow-hidden">
                 <div className="relative z-10">
-                  <div className="flex items-center space-x-2 text-amber-400 text-xs uppercase font-bold tracking-wider mb-2">
+                  <div className="flex items-center space-x-2 text-emerald-300 text-xs uppercase font-bold tracking-wider mb-2">
                     <ShieldCheck className="w-4 h-4" />
                     <span>Tangmarg Base Expert Insider Tips</span>
                   </div>
@@ -262,15 +262,15 @@ export default async function DestinationDetailPage({ params }: PageProps) {
                   </h3>
                   <ul className="space-y-2.5 text-xs sm:text-sm text-emerald-100/90">
                     <li className="flex items-start">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 mr-2 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 mr-2 flex-shrink-0" />
                       <span><strong>Direct Cab Coordination:</strong> Private sanitized vehicles with experienced mountain drivers familiar with passes, snow chain checkpoints, and scenic halts.</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 mr-2 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 mr-2 flex-shrink-0" />
                       <span><strong>Permit & Pass Clearance:</strong> Full on-ground support for frontier border permits (Keran & Gurez) and Gondola Phase 1 & 2 slot reservations in Gulmarg.</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 mr-2 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 mr-2 flex-shrink-0" />
                       <span><strong>Inspected Stays:</strong> Guaranteed central heating / heated blankets, round-the-clock warm running water, and hot Kashmiri Wazwan / multi-cuisine food.</span>
                     </li>
                   </ul>
@@ -300,7 +300,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm transition-all text-center flex items-center justify-center space-x-2 shadow-md"
+                      className="w-full py-3.5 px-4 rounded-xl bg-[#38804e] hover:bg-[#2b693f] text-white font-bold text-sm transition-all text-center flex items-center justify-center space-x-2 shadow-md"
                     >
                       <MessageSquare className="w-4 h-4 fill-current" />
                       <span>WhatsApp {dest.name} Inquiry</span>
@@ -308,7 +308,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
 
                     <Link
                       href="/custom-planner"
-                      className="w-full py-3 px-4 rounded-xl bg-pine-900 hover:bg-pine-800 text-amber-300 font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2"
+                      className="w-full py-3 px-4 rounded-xl bg-pine-900 hover:bg-pine-800 text-white font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2"
                     >
                       <span>Calculate Estimated Trip Cost</span>
                       <ArrowRight className="w-3.5 h-3.5" />

@@ -10,8 +10,7 @@ import {
   ArrowRight, 
   PhoneCall, 
   CheckCircle2, 
-  Compass,
-  Star
+  Compass
 } from "lucide-react";
 
 export default function HeroSection({
@@ -61,72 +60,88 @@ export default function HeroSection({
         {/* ─── Text Stack ──────────────────────────────────── */}
         <div className="flex-1 text-white">
 
-          {/* Local credibility line — no generic eyebrow badge */}
-          <div className="flex items-center space-x-2 mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 pulse-dot flex-shrink-0" />
-            <span className="text-emerald-300/90 text-xs sm:text-sm font-medium tracking-wide">
-              Tangmarg · Gulmarg  ·  Local team, {companyInfo.experienceYears}+ years
+          {/* Local credibility badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-500/30 mb-4 backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-[#38804e] flex-shrink-0" />
+            <span>Tangmarg &amp; Gulmarg Local Operators · {companyInfo.experienceYears}+ Years Field Experience</span>
+          </div>
+
+          {/* Main Headline */}
+          <h1 className="text-[2.5rem] sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-3xl">
+            Discover Kashmir,{" "}
+            <span className="text-emerald-400 font-serif italic font-normal">Travel Your Way</span>
+          </h1>
+
+          {/* Subheading */}
+          <h2 className="mt-4 text-lg sm:text-2xl font-bold text-emerald-100/95 max-w-2xl leading-snug">
+            Handcrafted Jammu, Kashmir and Ladakh Holidays by Local Team
+          </h2>
+
+          <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-xl leading-relaxed">
+            Handpicked itineraries, 4x4 snow-chain cabs, and 24/7 mountain support — managed by our native on-ground team in Tangmarg, not an outsourced call centre.
+          </p>
+
+          {/* Concrete trust signals */}
+          <div className="mt-6 flex flex-wrap gap-2.5 text-xs sm:text-sm text-emerald-100 font-medium">
+            <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/15">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+              Direct Local Operator
+            </span>
+            <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/15">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+              Verified 3★ &amp; 4★ Stays
+            </span>
+            <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/15">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+              Gondola &amp; Pass Assistance
+            </span>
+            <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/15">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+              24/7 On-Ground Support
             </span>
           </div>
 
-          {/* Headline — short, specific, no clichés */}
-          <h1 className="text-[2.6rem] sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-2xl">
-            Kashmir & Ladakh,<br />
-            <span className="text-amber-400 font-serif italic font-bold">exactly as you imagined.</span>
-          </h1>
-
-          <p className="mt-4 text-sm sm:text-base text-slate-300 max-w-lg leading-relaxed">
-            Handpicked packages, snow-chain-ready cabs, and 24/7 mountain support — run from our physical office in Tangmarg, not a call centre.
-          </p>
-
-          {/* Three concrete trust signals — no generic checkmarks */}
-          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm text-emerald-200/80">
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />Zero hidden fees</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />Verified 3-Star &amp; 4-Star stays</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />Gondola & permit support</span>
-          </div>
-
-          {/* CTAs — primary + secondary, min 44px height */}
-          <div className="mt-7 flex flex-wrap items-center gap-3">
+          {/* CTAs — primary + secondary */}
+          <div className="mt-8 flex flex-wrap items-center gap-3.5">
             <a
               href="#packages"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-[#071410] font-bold text-sm shadow-lg shadow-amber-500/30 transition-all hover:-translate-y-0.5 min-h-[44px]"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-sm shadow-lg shadow-black/30 transition-all hover:-translate-y-0.5 min-h-[44px]"
             >
-              <span>See All Packages</span>
+              <span>Explore Packages</span>
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
-              href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hi! I'd like to plan a Kashmir trip. Can you share options?")}`}
+              href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hi Shop A Trip, I want to plan my Kashmir trip. Please help me with custom itinerary and quotes.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/18 active:bg-white/25 text-white font-semibold text-sm border border-white/20 backdrop-blur-sm transition-all min-h-[44px]"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/12 hover:bg-white/20 active:bg-white/25 text-white font-semibold text-sm border border-white/25 backdrop-blur-md transition-all min-h-[44px]"
             >
-              <PhoneCall className="w-4 h-4 text-amber-400" />
-              <span>Talk to a local</span>
+              <PhoneCall className="w-4 h-4 text-emerald-300" />
+              <span>Plan My Trip</span>
             </a>
           </div>
         </div>
 
         {/* ─── Search Widget ────────────────────────────────── */}
         <div className="mt-8 lg:mt-0 lg:w-[360px] xl:w-[400px] shrink-0">
-          <div className="bg-white rounded-2xl shadow-elevated border border-slate-100 overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
 
             {/* Header */}
             <div className="bg-[#081812] px-5 py-4 flex items-center gap-2.5">
-              <Compass className="w-4 h-4 text-amber-400 flex-shrink-0" />
+              <Compass className="w-4 h-4 text-[#38804e] flex-shrink-0" />
               <div>
-                <p className="text-white font-bold text-sm leading-tight">Find your trip</p>
-                <p className="text-emerald-400/80 text-[11px] mt-0.5">Tangmarg-managed packages</p>
+                <p className="text-white font-bold text-sm leading-tight">Plan Your Kashmir Journey</p>
+                <p className="text-emerald-400/80 text-[11px] mt-0.5">Direct Local Travel Desk</p>
               </div>
-              <span className="ml-auto text-[11px] bg-amber-500/15 text-amber-300 font-semibold px-2 py-0.5 rounded-full border border-amber-500/30">
-                Best rates
+              <span className="ml-auto text-[10px] uppercase tracking-wider bg-[#38804e]/20 text-emerald-300 font-bold px-2.5 py-0.5 rounded-full border border-[#38804e]/30">
+                Direct Rates
               </span>
             </div>
 
             <form onSubmit={handleSearch} className="p-5 space-y-4">
-              {/* Quick picks — pill chips instead of hidden label */}
+              {/* Quick picks */}
               <div>
-                <p className="text-[11px] text-slate-400 font-medium mb-2">Quick select</p>
+                <p className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider mb-2">Featured Trails</p>
                 <div className="flex flex-wrap gap-1.5">
                   {quickPicks.map((p) => (
                     <button
@@ -135,7 +150,7 @@ export default function HeroSection({
                       onClick={() => setSelectedCategory(p.value)}
                       className={`px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all min-h-[32px] ${
                         selectedCategory === p.value
-                          ? "bg-pine-900 text-amber-300 shadow-sm"
+                          ? "bg-[#38804e] text-white shadow-sm"
                           : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                       }`}
                     >
@@ -145,45 +160,45 @@ export default function HeroSection({
                 </div>
               </div>
 
-              {/* Category dropdown — full labels */}
+              {/* Category dropdown */}
               <div>
-                <label htmlFor="hero-category" className="block text-xs font-semibold text-slate-700 mb-1.5">
-                  Experience
+                <label htmlFor="hero-category" className="block text-xs font-bold text-slate-700 mb-1.5">
+                  Travel Category
                 </label>
                 <select
                   id="hero-category"
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:ring-2 focus:ring-pine-700/40 focus:border-pine-700 outline-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:ring-2 focus:ring-[#38804e] focus:border-[#38804e] outline-none"
                 >
-                  <option value="All">All Packages</option>
+                  <option value="All">All Curated Packages</option>
                   <option value="Classic Kashmir">Classic Kashmir (Srinagar, Gulmarg, Pahalgam)</option>
-                  <option value="Honeymoon & Romantic">Honeymoon Specials</option>
-                  <option value="Hot Deals">Hot Deals & Family</option>
-                  <option value="Offbeat Frontiers">Gurez & Keran Offbeat</option>
-                  <option value="Ladakh & Kargil">Ladakh Expedition</option>
-                  <option value="Pilgrimage & Heritage">Vaishno Devi & Jammu</option>
+                  <option value="Honeymoon & Romantic">Honeymoon & Romantic Getaways</option>
+                  <option value="Hot Deals">Hot Deals & Family Specials</option>
+                  <option value="Offbeat Frontiers">Gurez Valley & Keran Frontiers</option>
+                  <option value="Ladakh & Kargil">Ladakh Overland Expeditions</option>
+                  <option value="Pilgrimage & Heritage">Jammu & Katra Vaishno Devi</option>
                 </select>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-pine-900 hover:bg-pine-800 active:bg-pine-950 text-white font-bold text-sm transition-all flex items-center justify-center gap-2 min-h-[44px] shadow-md"
+                className="w-full py-3.5 rounded-xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-sm transition-all flex items-center justify-center gap-2 min-h-[44px] shadow-md cursor-pointer"
               >
-                <Search className="w-4 h-4 text-amber-400" />
-                <span>Show matching packages</span>
+                <Search className="w-4 h-4 text-white" />
+                <span>Show Matching Packages</span>
               </button>
             </form>
 
             {/* Trust footer */}
-            <div className="px-5 pb-4 pt-0 flex items-center justify-between text-[11px] text-slate-500">
-              <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                Govt. registered operator
+            <div className="px-5 pb-4 pt-0 flex items-center justify-between text-[11px] text-slate-500 border-t border-slate-100 pt-3">
+              <span className="flex items-center gap-1.5 font-medium">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#38804e]" />
+                Govt. Registered Agency
               </span>
-              <span className="flex items-center gap-1 font-semibold text-amber-600">
-                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                4.9 / 5.0
+              <span className="flex items-center gap-1.5 font-bold text-slate-700">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e]" />
+                100% Verified Local Team
               </span>
             </div>
           </div>

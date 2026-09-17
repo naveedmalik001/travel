@@ -57,7 +57,7 @@ export default function PackagesPage() {
               Handcrafted Himalayan Itineraries
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
-              Explore Our Curated <span className="text-amber-400">Kashmir &amp; Ladakh</span> Tour Packages
+              Explore Our Curated <span className="text-emerald-300">Kashmir &amp; Ladakh</span> Tour Packages
             </h1>
             <p className="mt-5 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
               From romantic honeymoon escapes on Dal Lake to rugged offbeat frontiers in Gurez and high-pass Ladakh expeditions, all managed by our local Tangmarg/Gulmarg operations team.

@@ -7,8 +7,9 @@ import TrustBar from "@/components/TrustBar";
 import PackageBrowser from "@/components/PackageBrowser";
 import CustomTripPlanner from "@/components/CustomTripPlanner";
 import DestinationSection from "@/components/DestinationSection";
-import LocalAdvantage from "@/components/LocalAdvantage";
+import WhyShopATrip from "@/components/WhyShopATrip";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import CertificationsSection from "@/components/CertificationsSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -48,11 +49,14 @@ export default function HomePage() {
       {/* Destination Guides & Visual Spotlights */}
       <DestinationSection />
 
-      {/* Why Choose Local Tangmarg/Gulmarg Base */}
-      <LocalAdvantage />
+      {/* Why Travel with ShopATrip */}
+      <WhyShopATrip />
 
       {/* Real Traveler Reviews */}
       <TestimonialsSection />
+
+      {/* Our Certifications & Partners */}
+      <CertificationsSection />
 
       {/* FAQs */}
       <FAQSection />

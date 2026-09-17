@@ -25,7 +25,7 @@ export default function TestimonialsSection() {
       tour: "5N/6D Honeymoon Package",
       rating: 5,
       date: "October 2025",
-      review: "The candlelit dinner on the Dal Lake houseboat was something out of a film. Our Tangmarg team had pre-arranged flower petals on arrival and had the Gondola slots booked for the exact morning we needed. Genuinely flawless.",
+      review: "The candlelit dinner on the Dal Lake houseboat was something out of a film. Our local team had pre-arranged flower petals on arrival and had the Gondola slots booked for the exact morning we needed. Genuinely flawless.",
       initials: "VS",
     },
     {
@@ -70,7 +70,7 @@ export default function TestimonialsSection() {
       tour: "6N/7D Winter Snow & Gulmarg Ski",
       rating: 5,
       date: "January 2026",
-      review: "Phenomenal ski guidance in Gulmarg! Having local specialists situated in Tangmarg right at the base of the mountain meant zero delays with snow chain vehicles and Phase 2 ski passes.",
+      review: "Phenomenal ski guidance in Gulmarg! Having local specialists situated right on the ground meant zero delays with snow chain vehicles and Phase 2 ski passes.",
       initials: "TW",
     },
   ];
@@ -212,7 +212,7 @@ export default function TestimonialsSection() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
                       {[...Array(r.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />
+                        <Star key={i} className="w-4 h-4 text-[#38804e] fill-[#38804e]" />
                       ))}
                     </div>
                     <span className="text-xs text-slate-400">{r.date}</span>
@@ -282,7 +282,7 @@ export default function TestimonialsSection() {
               <button
                 onClick={() => scrollDesktop("prev")}
                 disabled={desktopPage === 0}
-                className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-sm hover:bg-pine-900 hover:text-amber-300 disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-slate-800 transition-all"
+                className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-sm hover:bg-pine-900 hover:text-white disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-slate-800 transition-all"
                 aria-label="Previous reviews"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -306,7 +306,7 @@ export default function TestimonialsSection() {
               <button
                 onClick={() => scrollDesktop("next")}
                 disabled={desktopPage >= totalDesktopPages - 1}
-                className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-sm hover:bg-pine-900 hover:text-amber-300 disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-slate-800 transition-all"
+                className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-sm hover:bg-pine-900 hover:text-white disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-slate-800 transition-all"
                 aria-label="Next reviews"
               >
                 <ChevronRight className="w-4 h-4" />
@@ -330,7 +330,7 @@ export default function TestimonialsSection() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
                       {[...Array(r.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />
+                        <Star key={i} className="w-4 h-4 text-[#38804e] fill-[#38804e]" />
                       ))}
                     </div>
                     <span className="text-xs text-slate-400">{r.date}</span>
@@ -377,7 +377,7 @@ export default function TestimonialsSection() {
         <div className="mt-6 bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-slate-600 shadow-sm">
           <div className="flex items-center gap-1">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-5 h-5 text-amber-400 fill-amber-400" />
+              <Star key={i} className="w-5 h-5 text-[#38804e] fill-[#38804e]" />
             ))}
           </div>
           <span className="font-bold text-slate-900">4.9 / 5.0</span>

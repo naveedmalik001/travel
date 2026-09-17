@@ -119,7 +119,7 @@ export default function DestinationCatalogClient() {
                     <span className="truncate"><strong>Altitude:</strong> {dest.altitude}</span>
                   </div>
                   <div className="flex items-center text-slate-700">
-                    <Calendar className="w-3.5 h-3.5 mr-1.5 text-amber-600 flex-shrink-0" />
+                    <Calendar className="w-3.5 h-3.5 mr-1.5 text-emerald-700 flex-shrink-0" />
                     <span className="truncate"><strong>Best Time:</strong> {dest.bestTimeToVisit}</span>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ export default function DestinationCatalogClient() {
               <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
                 <Link
                   href={`/destinations/${dest.id}`}
-                  className="w-full py-2.5 px-3 rounded-xl bg-pine-900 hover:bg-pine-800 text-amber-300 font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-1.5 shadow-sm"
+                  className="w-full py-2.5 px-3 rounded-xl bg-pine-900 hover:bg-pine-800 text-white font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-1.5 shadow-sm"
                 >
                   <span>Explore {dest.name} Guide</span>
                   <ArrowRight className="w-3.5 h-3.5" />

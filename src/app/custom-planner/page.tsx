@@ -54,7 +54,7 @@ export default function CustomPlannerPage() {
               Interactive Cost &amp; Route Estimator
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
-              Design Your <span className="text-amber-400">Dream Himalayan</span> Journey
+              Design Your <span className="text-emerald-300">Dream Himalayan</span> Journey
             </h1>
             <p className="mt-5 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
               Pick your favourite destinations, select hotel categories (3-Star Deluxe, 4-Star Luxury, Houseboat), choose your vehicle, and get transparent, live price estimates instantly.

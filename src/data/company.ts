@@ -9,6 +9,7 @@ export interface CompanyInfo {
   phoneDisplay: string;
   whatsapp: string;
   email: string;
+  secondaryEmail?: string;
   mapsUrl: string;
   instagramUrl: string;
   facebookUrl: string;
@@ -25,7 +26,8 @@ export const companyInfo: CompanyInfo = {
   phones: ["+918082495885", "+917780871705"],
   phoneDisplay: "+91 8082495885 / +91 7780871705",
   whatsapp: "918082495885",
-  email: "contactshopatrip@gmail.com",
+  email: "contact@shopatrip.in",
+  secondaryEmail: "contactshopatrip@gmail.com",
   mapsUrl: "https://maps.app.goo.gl/x1P1uZTkX5PF2Jih6?g_st=ac",
   instagramUrl: "https://www.instagram.com/shopatrip",
   facebookUrl: "https://www.facebook.com/share/1K9vcCrdpW/",

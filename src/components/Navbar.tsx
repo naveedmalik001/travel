@@ -42,6 +42,7 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
     { name: "Destinations", href: "/destinations" },
     { name: "Custom Planner", href: "/custom-planner" },
     { name: "Services", href: "/services" },
+    { name: "Our Team", href: "/team" },
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -58,17 +59,17 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
             {/* Primary Phone */}
             <a 
               href={`tel:${companyInfo.phones[0]}`} 
-              className="flex items-center text-amber-300 hover:text-amber-200 font-semibold tracking-wide group"
+              className="flex items-center text-emerald-300 hover:text-white font-semibold tracking-wide group"
               title="Call Primary Support Line"
             >
-              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 text-amber-400 flex-shrink-0 animate-pulse group-hover:scale-110 transition-transform" />
+              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 text-[#38804e] flex-shrink-0 animate-pulse group-hover:scale-110 transition-transform" />
               <span>{companyInfo.phones[0]}</span>
             </a>
 
-            {/* Secondary Phone (Displaying actual phone number directly) */}
+            {/* Secondary Phone */}
             <a 
               href={`tel:${companyInfo.phones[1]}`} 
-              className="flex items-center text-emerald-200 hover:text-amber-300 transition-colors font-medium tracking-tight sm:tracking-wide group whitespace-nowrap"
+              className="flex items-center text-emerald-200 hover:text-white transition-colors font-medium tracking-tight sm:tracking-wide group whitespace-nowrap"
               title="Call Helpline 2"
             >
               <PhoneCall className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 text-emerald-400 group-hover:scale-110 transition-transform flex-shrink-0" />
@@ -81,7 +82,7 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
               rel="noopener noreferrer" 
               className="hidden xl:flex items-center hover:text-white transition-colors"
             >
-              <MapPin className="w-3.5 h-3.5 mr-1.5 text-amber-400" />
+              <MapPin className="w-3.5 h-3.5 mr-1.5 text-[#38804e]" />
               <span>{companyInfo.address}</span>
             </a>
           </div>
@@ -89,7 +90,7 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
           {/* Right Socials & Experience Tag */}
           <div className="flex items-center space-x-2.5 sm:space-x-4 flex-shrink-0">
             <div className="hidden md:flex items-center text-emerald-300/90">
-              <Compass className="w-3.5 h-3.5 mr-1.5 text-amber-400" />
+              <Compass className="w-3.5 h-3.5 mr-1.5 text-[#38804e]" />
               <span>{companyInfo.experienceYears}+ Yrs Local Team</span>
             </div>
 
@@ -99,8 +100,8 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
               <a 
                 href={companyInfo.instagramUrl} 
                 target="_blank" 
-                rel="noopener noreferrer"
-                className="text-emerald-200 hover:text-amber-300 transition-colors p-1 rounded hover:bg-white/10"
+                rel="noopener noreferrer" 
+                className="text-emerald-200 hover:text-white transition-colors p-1 rounded hover:bg-white/10"
                 title="Instagram @shopatrip"
                 aria-label="Instagram"
               >
@@ -109,8 +110,8 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
               <a 
                 href={companyInfo.facebookUrl} 
                 target="_blank" 
-                rel="noopener noreferrer"
-                className="text-emerald-200 hover:text-amber-300 transition-colors p-1 rounded hover:bg-white/10"
+                rel="noopener noreferrer" 
+                className="text-emerald-200 hover:text-white transition-colors p-1 rounded hover:bg-white/10"
                 title="Facebook"
                 aria-label="Facebook"
               >
@@ -140,21 +141,21 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center space-x-6 text-sm font-medium">
+          <div className="hidden lg:flex items-center space-x-5 text-sm font-medium">
             {navLinks.map((link) => {
               const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(`${link.href}/`));
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`transition-all py-1.5 px-2 rounded-md ${
+                  className={`transition-all py-1.5 px-2 rounded-md text-xs xl:text-sm ${
                     isLightNav
                       ? isActive
-                        ? "text-emerald-700 font-semibold bg-emerald-50 border-b-2 border-emerald-600"
-                        : "text-slate-700 hover:text-emerald-700 hover:bg-slate-50"
+                        ? "text-[#38804e] font-bold bg-[#38804e]/10 border-b-2 border-[#38804e]"
+                        : "text-slate-700 hover:text-[#38804e] hover:bg-slate-50"
                       : isActive
-                        ? "text-amber-300 font-semibold border-b-2 border-amber-300"
-                        : "text-white/90 hover:text-amber-300"
+                        ? "text-emerald-300 font-bold border-b-2 border-[#38804e]"
+                        : "text-white/90 hover:text-emerald-300"
                   }`}
                 >
                   {link.name}
@@ -164,12 +165,12 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
           </div>
 
           {/* Action CTAs */}
-          <div className="hidden sm:flex items-center space-x-3">
+          <div className="hidden sm:flex items-center space-x-2.5">
             <a
-              href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hello Shop A Trip Team, I would like to plan a trip to Kashmir/Ladakh. Please share details.")}`}
+              href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hi Shop A Trip, I am planning a trip to Kashmir. Please help me with itinerary and quotes.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2.5 rounded-full text-xs font-semibold bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-sm transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center px-4 py-2.5 rounded-full text-xs font-semibold bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white shadow-sm transition-all transform hover:-translate-y-0.5 cursor-pointer"
             >
               <MessageSquare className="w-3.5 h-3.5 mr-1.5 fill-current" />
               <span>WhatsApp Us</span>
@@ -178,20 +179,24 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
             <Link
               href="/custom-planner"
               onClick={onOpenCustomPlanner}
-              className="inline-flex items-center px-4 py-2.5 rounded-full text-xs font-semibold bg-pine-900 hover:bg-pine-800 text-amber-300 border border-amber-400/40 shadow-sm transition-all transform hover:-translate-y-0.5"
+              className={`inline-flex items-center px-4 py-2.5 rounded-full text-xs font-semibold transition-all transform hover:-translate-y-0.5 ${
+                isLightNav
+                  ? "bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200"
+                  : "bg-white/15 hover:bg-white/25 text-white border border-white/25 backdrop-blur-sm"
+              }`}
             >
-              <Calculator className="w-3.5 h-3.5 mr-1.5 text-amber-400" />
-              <span>Custom Quote</span>
+              <Calculator className="w-3.5 h-3.5 mr-1.5" />
+              <span>Custom Planner</span>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex lg:hidden items-center space-x-2">
             <a
-              href={`https://wa.me/${companyInfo.whatsapp}`}
+              href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hi ShopATrip, I am planning a trip to Kashmir. Please help me with itinerary.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full bg-[#25D366] text-white"
+              className="p-2 rounded-full bg-[#38804e] text-white"
               aria-label="WhatsApp"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
@@ -212,11 +217,11 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
             <div className="flex flex-col space-y-4">
               <div className="pb-3 border-b border-slate-100 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Compass className="w-4 h-4 text-emerald-700" />
+                  <Compass className="w-4 h-4 text-[#38804e]" />
                   <span className="text-xs font-bold text-slate-800 uppercase tracking-wider">Explore Kashmir</span>
                 </div>
-                <span className="text-xs bg-emerald-100 text-emerald-800 font-medium px-2.5 py-1 rounded-full flex items-center gap-1">
-                  <Award className="w-3 h-3 text-emerald-700" />
+                <span className="text-xs bg-[#38804e]/10 text-[#38804e] font-medium px-2.5 py-1 rounded-full flex items-center gap-1 border border-[#38804e]/20">
+                  <Award className="w-3 h-3 text-[#38804e]" />
                   6+ Yrs Trusted
                 </span>
               </div>
@@ -230,12 +235,12 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
                     onClick={() => setMobileMenuOpen(false)}
                     className={`flex items-center justify-between py-2 text-sm font-medium rounded-lg px-2 transition-colors ${
                       isActive
-                        ? "bg-emerald-50 text-emerald-800 font-semibold"
-                        : "text-slate-700 hover:text-emerald-800 hover:bg-slate-50"
+                        ? "bg-[#38804e]/10 text-[#38804e] font-semibold"
+                        : "text-slate-700 hover:text-[#38804e] hover:bg-slate-50"
                     }`}
                   >
                     <span>{link.name}</span>
-                    <ChevronRight className={`w-4 h-4 ${isActive ? "text-emerald-600" : "text-slate-400"}`} />
+                    <ChevronRight className={`w-4 h-4 ${isActive ? "text-[#38804e]" : "text-slate-400"}`} />
                   </Link>
                 );
               })}
@@ -244,7 +249,7 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <a
                     href={`tel:${companyInfo.phones[0]}`}
-                    className="flex items-center justify-center py-2.5 px-3 rounded-xl bg-pine-900 text-amber-300 text-xs font-bold text-center gap-1.5 shadow-sm"
+                    className="flex items-center justify-center py-2.5 px-3 rounded-xl bg-[#38804e] text-white text-xs font-bold text-center gap-1.5 shadow-sm"
                   >
                     <Phone className="w-3.5 h-3.5" />
                     <span>Call {companyInfo.phones[0]}</span>
@@ -253,16 +258,16 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
                     href={`tel:${companyInfo.phones[1]}`}
                     className="flex items-center justify-center py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold text-center gap-1.5 border border-slate-200"
                   >
-                    <PhoneCall className="w-3.5 h-3.5 text-emerald-700" />
+                    <PhoneCall className="w-3.5 h-3.5 text-[#38804e]" />
                     <span>Call {companyInfo.phones[1]}</span>
                   </a>
                 </div>
                 
                 <a
-                  href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hello Shop A Trip Team, I want to inquire about tour packages.")}`}
+                  href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hi ShopATrip, I am planning a trip to Kashmir. Please help me with itinerary.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center py-2.5 px-4 rounded-xl bg-[#25D366] text-white text-xs font-bold text-center shadow-sm"
+                  className="flex items-center justify-center py-2.5 px-4 rounded-xl bg-[#38804e] text-white text-xs font-bold text-center shadow-sm"
                 >
                   <MessageSquare className="w-4 h-4 mr-2 fill-current" />
                   <span>Chat on WhatsApp</span>
@@ -275,4 +280,3 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
     </header>
   );
 }
-

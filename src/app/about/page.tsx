@@ -22,6 +22,8 @@ import {
   ArrowRight,
   BadgeCheck
 } from "lucide-react";
+import TeamMemberCard from "@/components/TeamMemberCard";
+import { teamMembers } from "@/data/team";
 
 export const metadata: Metadata = {
   title: "About Us | Shop A Trip Tour & Travels (Peace & You) - Tangmarg Kashmir",
@@ -107,7 +109,7 @@ export default function AboutPage() {
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
               Rooted in the Valleys,{" "}
-              <span className="text-amber-400">Trusted by Thousands</span>
+              <span className="text-emerald-300">Trusted by Thousands</span>
             </h1>
             <p className="mt-5 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
               With 6+ years of dedicated service in Jammu, Kashmir, and Ladakh, Shop A Trip Tour &amp; Travels was founded to provide authentic, safe, and transparent Himalayan travel experiences.
@@ -121,7 +123,7 @@ export default function AboutPage() {
                 { value: "4.9", label: "Google Rating" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <span className="block text-2xl sm:text-3xl font-extrabold text-amber-400">{stat.value}</span>
+                  <span className="block text-2xl sm:text-3xl font-extrabold text-emerald-300">{stat.value}</span>
                   <span className="block text-xs text-emerald-300/80 mt-0.5">{stat.label}</span>
                 </div>
               ))}
@@ -152,8 +154,8 @@ export default function AboutPage() {
                   <span className="text-3xl font-extrabold text-emerald-800 block">6+</span>
                   <span className="text-xs text-slate-500 font-medium mt-1 block">Years Field Excellence</span>
                 </div>
-                <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-white border border-amber-100 shadow-sm">
-                  <span className="text-3xl font-extrabold text-amber-700 block">200+</span>
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-white border border-emerald-100 shadow-sm">
+                  <span className="text-3xl font-extrabold text-emerald-800 block">200+</span>
                   <span className="text-xs text-slate-500 font-medium mt-1 block">Happy Travelers Hosted</span>
                 </div>
               </div>
@@ -169,7 +171,7 @@ export default function AboutPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <div className="flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase mb-2">
+                <div className="flex items-center space-x-2 text-emerald-400 text-xs font-bold uppercase mb-2">
                   <MapPin className="w-3.5 h-3.5" />
                   <span>Tangmarg Operations Base</span>
                 </div>
@@ -217,6 +219,31 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Meet the Team CTA Banner */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+          <div className="rounded-3xl bg-[#081f16] text-white p-8 sm:p-12 border border-emerald-900 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 text-center md:text-left">
+              <span className="text-xs uppercase font-bold text-emerald-300 tracking-wider flex items-center justify-center md:justify-start gap-1.5">
+                <Users className="w-3.5 h-3.5 text-emerald-400" />
+                Tangmarg Field Specialists
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                Meet the Native Team Behind Your Journeys
+              </h3>
+              <p className="text-xs sm:text-sm text-emerald-100/80 max-w-xl">
+                Creative Directors, Senior Travel Consultants, Trip Coordinators, and experienced Mountain Drivers based in Tangmarg, Kashmir.
+              </p>
+            </div>
+            <Link
+              href="/team"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-xs sm:text-sm transition-all shadow-md whitespace-nowrap"
+            >
+              <span>View Full Team</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </section>
+
         {/* Trust Credentials Strip */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
@@ -247,7 +274,7 @@ export default function AboutPage() {
           <div className="rounded-3xl bg-[#061e15] text-white p-8 sm:p-12 border border-emerald-900 shadow-xl">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
               <div className="max-w-xl space-y-3">
-                <span className="inline-flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                <span className="inline-flex items-center gap-2 text-emerald-300 text-xs font-bold uppercase tracking-wider">
                   <Phone className="w-3.5 h-3.5" />
                   Ready to plan your journey?
                 </span>
@@ -264,7 +291,7 @@ export default function AboutPage() {
                   href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hello Shop A Trip Team, I would like to plan a trip to Kashmir/Ladakh.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm shadow-md transition-all min-h-[48px]"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#38804e] hover:bg-[#2b693f] text-white font-bold text-sm shadow-md transition-all min-h-[48px]"
                 >
                   <MessageSquare className="w-4 h-4 mr-2 fill-current" />
                   <span>WhatsApp Us</span>
@@ -273,7 +300,7 @@ export default function AboutPage() {
                   href={`tel:${companyInfo.phones[0]}`}
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all min-h-[48px]"
                 >
-                  <Phone className="w-4 h-4 mr-2 text-amber-400" />
+                  <Phone className="w-4 h-4 mr-2 text-emerald-400" />
                   <span>Call {companyInfo.phones[0]}</span>
                 </a>
               </div>

@@ -56,7 +56,7 @@ export default function LocalAdvantage() {
               {/* Stat card pinned inside photo */}
               <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-lg border border-slate-100">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-xl bg-[#0B1E15] text-amber-300 font-extrabold flex flex-col items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#0B1E15] text-emerald-400 font-extrabold flex flex-col items-center justify-center flex-shrink-0">
                     <span className="text-base leading-none">6+</span>
                     <span className="text-[9px] font-bold uppercase tracking-wider mt-0.5">yrs</span>
                   </div>
@@ -72,8 +72,8 @@ export default function LocalAdvantage() {
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -top-4 -right-3 sm:-right-5 bg-[#0B1E15] text-amber-300 px-4 py-2 rounded-2xl shadow-xl border border-amber-400/30 text-xs font-bold flex items-center gap-2">
-              <Award className="w-4 h-4 text-amber-400" />
+            <div className="absolute -top-4 -right-3 sm:-right-5 bg-[#0B1E15] text-emerald-300 px-4 py-2 rounded-2xl shadow-xl border border-emerald-600/30 text-xs font-bold flex items-center gap-2">
+              <Award className="w-4 h-4 text-emerald-400" />
               <span>Peace &amp; You · est. {companyInfo.foundedYear}</span>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function LocalAdvantage() {
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
                 href={`tel:${companyInfo.phones[0]}`}
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#0B1E15] hover:bg-emerald-900 text-amber-300 font-bold text-sm shadow-md transition-all min-h-[48px]"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#0B1E15] hover:bg-emerald-900 text-emerald-300 font-bold text-sm shadow-md transition-all min-h-[48px]"
               >
                 <PhoneCall className="w-4 h-4" />
                 <span>{companyInfo.phones[0]}</span>

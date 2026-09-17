@@ -56,7 +56,7 @@ export default function DestinationsPage() {
               Local Himalayan Destination Guide
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
-              Iconic Valleys &amp; <span className="text-amber-400">Untouched Frontiers</span>
+              Iconic Valleys &amp; <span className="text-emerald-300">Untouched Frontiers</span>
             </h1>
             <p className="mt-5 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
               Whether you are chasing alpine snows in Gulmarg, mystical folklore in Gurez Valley, or the high passes of Ladakh, our local experts have mapped out every trail, view, and stay.

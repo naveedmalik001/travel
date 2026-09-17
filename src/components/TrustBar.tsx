@@ -5,24 +5,24 @@ import { Mountain, Award, Hotel, PhoneCall, BadgeCheck } from "lucide-react";
 export default function TrustBar() {
   const features = [
     {
-      icon: Mountain,
-      title: "Tangmarg base",
-      subtitle: "Office on the Gulmarg highway. When snow falls, our crew is physically there.",
-    },
-    {
-      icon: Award,
-      title: `${companyInfo.experienceYears}+ years, Kashmir only`,
-      subtitle: "Dedicated entirely to J&K and Ladakh — no multi-city generic packages.",
+      icon: BadgeCheck,
+      title: "Zero Hidden Fee",
+      subtitle: "100% transparent pricing with MAP meal plans and dedicated cabs included.",
     },
     {
       icon: Hotel,
-      title: "Inspected stays",
-      subtitle: "Every room checked for heating, hot water, and hygiene before we recommend it.",
+      title: "Verified Stays",
+      subtitle: "Inspected hotels, luxury resorts & cozy houseboats checked for comfort and heating.",
+    },
+    {
+      icon: Mountain,
+      title: "Gondola & Permit Support",
+      subtitle: "Advance Gulmarg Gondola slot assistance and frontier border permit guidance.",
     },
     {
       icon: PhoneCall,
-      title: "24/7 on the ground",
-      subtitle: "Gondola slots, snow chains, weather updates — one call to your trip manager.",
+      title: "24x7 Trip Support",
+      subtitle: "Direct on-ground local team assistance before and throughout your holiday.",
     },
   ];
 
@@ -36,7 +36,7 @@ export default function TrustBar() {
               <div key={idx} className={`flex flex-col gap-2.5 ${idx !== 0 ? "sm:pl-8" : ""}`}>
                 <div className="flex items-center gap-2.5">
                   <div className="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center flex-shrink-0 border border-emerald-100/60">
-                    <Icon className="w-4 h-4 text-emerald-700" strokeWidth={2} />
+                    <Icon className="w-4 h-4 text-[#38804e]" strokeWidth={2} />
                   </div>
                   <h3 className="font-bold text-slate-900 text-xs sm:text-sm leading-tight">{item.title}</h3>
                 </div>

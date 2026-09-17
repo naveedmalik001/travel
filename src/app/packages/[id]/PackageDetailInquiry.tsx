@@ -210,7 +210,7 @@ export default function PackageDetailInquiry({ packageTitle, packageDuration }: 
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="w-full py-3 px-4 rounded-xl bg-pine-900 hover:bg-pine-800 text-amber-300 font-bold text-xs transition-all flex items-center justify-center space-x-2 shadow-sm disabled:opacity-50"
+            className="w-full py-3 px-4 rounded-xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-xs transition-all flex items-center justify-center space-x-2 shadow-sm disabled:opacity-50 cursor-pointer"
           >
             <Send className="w-3.5 h-3.5" />
             <span>{status === "submitting" ? "Processing..." : "Get Free Custom Quote"}</span>

@@ -61,7 +61,7 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
           </button>
 
           <div className="absolute top-4 left-4">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-pine-950 shadow-md">
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#38804e] text-white shadow-md">
               {pkg.tag}
             </span>
           </div>
@@ -89,7 +89,7 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
             onClick={() => setActiveTab("itinerary")}
             className={`py-3 px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors flex items-center space-x-1.5 ${
               activeTab === "itinerary"
-                ? "border-pine-800 text-pine-900 bg-white"
+                ? "border-[#38804e] text-[#38804e] bg-white"
                 : "border-transparent text-slate-500 hover:text-slate-900"
             }`}
           >
@@ -100,22 +100,22 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
             onClick={() => setActiveTab("inclusions")}
             className={`py-3 px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors flex items-center space-x-1.5 ${
               activeTab === "inclusions"
-                ? "border-pine-800 text-pine-900 bg-white"
+                ? "border-[#38804e] text-[#38804e] bg-white"
                 : "border-transparent text-slate-500 hover:text-slate-900"
             }`}
           >
-            <Check className="w-4 h-4 text-emerald-600" />
+            <Check className="w-4 h-4 text-[#38804e]" />
             <span>Inclusions & Exclusions</span>
           </button>
           <button
             onClick={() => setActiveTab("hotels")}
             className={`py-3 px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors flex items-center space-x-1.5 ${
               activeTab === "hotels"
-                ? "border-pine-800 text-pine-900 bg-white"
+                ? "border-[#38804e] text-[#38804e] bg-white"
                 : "border-transparent text-slate-500 hover:text-slate-900"
             }`}
           >
-            <Hotel className="w-4 h-4 text-amber-600" />
+            <Hotel className="w-4 h-4 text-[#38804e]" />
             <span>Hotels & Houseboats</span>
           </button>
         </div>
@@ -124,8 +124,8 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
         <div className="overflow-y-auto p-6 flex-grow space-y-6">
           {/* Overview banner */}
           <div className="bg-emerald-50/70 border border-emerald-100 rounded-xl p-4 text-slate-700 text-xs sm:text-sm leading-relaxed">
-            <p className="font-semibold text-pine-900 mb-1 flex items-center">
-              <Compass className="w-4 h-4 text-pine-800 mr-1.5" />
+            <p className="font-semibold text-[#38804e] mb-1 flex items-center">
+              <Compass className="w-4 h-4 text-[#38804e] mr-1.5" />
               Tour Overview & Highlights
             </p>
             <p>{pkg.overview}</p>
@@ -138,7 +138,7 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
               <div className="space-y-5">
                 {pkg.itinerary.map((day) => (
                   <div key={day.day} className="relative pl-7 border-l-2 border-pine-200">
-                    <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-pine-900 text-amber-300 font-bold text-xs flex items-center justify-center shadow">
+                    <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-[#38804e] text-white font-bold text-xs flex items-center justify-center shadow">
                       {day.day}
                     </div>
                     <div>
@@ -239,13 +239,10 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
         {/* Sticky Footer Action Bar */}
         <div className="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex-shrink-0 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>
-            <span className="text-xs text-slate-500 block">Estimated Price Per Person</span>
-            <div className="flex items-baseline space-x-2">
-              <span className="text-xl sm:text-2xl font-bold text-pine-950">{pkg.priceFrom}</span>
-              {pkg.originalPrice && (
-                <span className="text-xs text-slate-400 line-through">{pkg.originalPrice}</span>
-              )}
-              <span className="text-xs text-emerald-700 font-medium">(MAP Plan + Cab)</span>
+            <span className="text-xs text-slate-500 block font-medium">Pricing & Availability</span>
+            <div className="flex items-center space-x-2">
+              <span className="text-lg sm:text-xl font-bold text-pine-950">Custom Quote on Request</span>
+              <span className="text-[11px] text-[#38804e] font-semibold bg-[#38804e]/10 px-2 py-0.5 rounded-full">(Direct Local Rates)</span>
             </div>
           </div>
 
@@ -260,10 +257,10 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 sm:flex-initial px-6 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs shadow-md transition-all flex items-center justify-center space-x-1.5"
+              className="flex-1 sm:flex-initial px-6 py-2.5 rounded-xl bg-[#38804e] hover:bg-[#2b693f] text-white font-bold text-xs shadow-md transition-all flex items-center justify-center space-x-1.5"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
-              <span>Book via WhatsApp</span>
+              <span>Get Quote on WhatsApp</span>
             </a>
           </div>
         </div>

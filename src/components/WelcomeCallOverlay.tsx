@@ -586,7 +586,7 @@ export default function WelcomeCallOverlay() {
                 </>
               ) : (
                 <>
-                  <Volume2 className="w-4 h-4 text-amber-300" />
+                  <Volume2 className="w-4 h-4 text-emerald-300" />
                   <span className="text-xs font-extrabold tracking-wide">Tap to hear Kashmir ringtone</span>
                 </>
               )}

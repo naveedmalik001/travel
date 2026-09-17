@@ -127,8 +127,8 @@ export default function PackageCatalogClient() {
             <CheckCircle2 className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-xs font-bold text-slate-900">Transparent Pricing</div>
-            <div className="text-[11px] text-slate-500">No hidden surprises or union fees</div>
+            <div className="text-xs font-bold text-slate-900">Direct Operator Rates</div>
+            <div className="text-[11px] text-slate-500">Custom tailored quotes for your group</div>
           </div>
         </div>
         <div className="flex items-center space-x-3 p-2">
@@ -167,8 +167,6 @@ export default function PackageCatalogClient() {
               className="py-2 px-3 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 cursor-pointer"
             >
               <option value="popular">Recommended / Featured</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
               <option value="duration-asc">Duration: Short to Long</option>
               <option value="duration-desc">Duration: Long to Short</option>
             </select>
@@ -183,7 +181,7 @@ export default function PackageCatalogClient() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
                 selectedCategory === cat
-                  ? "bg-pine-900 text-amber-300 shadow-sm"
+                  ? "bg-pine-900 text-white shadow-sm"
                   : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
               }`}
             >
@@ -224,7 +222,7 @@ export default function PackageCatalogClient() {
               setSelectedDuration("All");
               setSearchQuery("");
             }}
-            className="px-4 py-2 rounded-xl bg-pine-900 text-amber-300 text-xs font-semibold hover:bg-pine-800 transition-colors"
+            className="px-4 py-2 rounded-xl bg-pine-900 text-white text-xs font-semibold hover:bg-pine-800 transition-colors"
           >
             Reset All Filters
           </button>
@@ -247,7 +245,7 @@ export default function PackageCatalogClient() {
               {visibleCount < filteredPackages.length && (
                 <button
                   onClick={() => setVisibleCount((prev) => Math.min(prev + 3, filteredPackages.length))}
-                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-2xl bg-pine-900 hover:bg-pine-800 text-amber-300 font-bold text-xs sm:text-sm shadow-md transition-all transform hover:-translate-y-0.5"
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-2xl bg-pine-900 hover:bg-pine-800 text-white font-bold text-xs sm:text-sm shadow-md transition-all transform hover:-translate-y-0.5"
                 >
                   <span>View More Packages (+{Math.min(3, filteredPackages.length - visibleCount)} More)</span>
                   <ChevronDown className="w-4 h-4" />
@@ -271,7 +269,7 @@ export default function PackageCatalogClient() {
       {/* Custom Quote Banner */}
       <div className="mt-14 rounded-3xl bg-gradient-to-r from-[#08281d] to-[#041a12] text-white p-8 md:p-12 relative overflow-hidden shadow-xl border border-emerald-900">
         <div className="relative z-10 max-w-2xl">
-          <span className="text-amber-400 text-xs uppercase font-bold tracking-wider mb-2 block">
+          <span className="text-emerald-300 text-xs uppercase font-bold tracking-wider mb-2 block">
             Don't see your ideal itinerary?
           </span>
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-white">
@@ -283,7 +281,7 @@ export default function PackageCatalogClient() {
           <div className="flex flex-wrap gap-3">
             <Link
               href="/custom-planner"
-              className="inline-flex items-center px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-pine-950 text-xs sm:text-sm font-bold shadow-lg transition-all"
+              className="inline-flex items-center px-5 py-3 rounded-xl bg-[#38804e] hover:bg-[#2b693f] text-white text-xs sm:text-sm font-bold shadow-lg transition-all"
             >
               <Calculator className="w-4 h-4 mr-2" />
               <span>Launch Trip Planner & Estimator</span>

@@ -5,7 +5,7 @@ interface SupportAgentIconProps {
   size?: number;
 }
 
-export default function SupportAgentIcon({ className = "w-7 h-7 text-amber-300", size }: SupportAgentIconProps) {
+export default function SupportAgentIcon({ className = "w-7 h-7 text-emerald-400", size }: SupportAgentIconProps) {
   return (
     <svg
       viewBox="0 0 48 48"

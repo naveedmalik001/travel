@@ -10,40 +10,45 @@ import {
   Award,
   ChevronRight,
   ShieldCheck,
-  Compass
+  Compass,
+  FileText,
+  Lock,
+  CalendarX
 } from "lucide-react";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-[#08150f] text-slate-300 border-t border-emerald-950 pt-16 pb-10">
+    <footer className="bg-[#08150f] text-slate-300 border-t border-emerald-950 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-emerald-950/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-emerald-950/80">
           
-          {/* Col 1 & 2: Brand & About */}
-          <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block">
+          {/* Col 1: Brand & About (Span 4) */}
+          <div className="lg:col-span-4 space-y-4">
+            <Link href="/" className="inline-block" aria-label="Shop A Trip Home">
               <BrandLogo variant="white" showTagline={true} className="h-10 w-44 sm:w-48" />
             </Link>
 
-            <p className="text-xs text-slate-400 leading-relaxed max-w-sm pt-2">
-              Premier mountain travel specialist headquartered in Tangmarg at the base of Gulmarg, Baramulla. Specializing in authentic Kashmir tours, offbeat frontier valleys (Gurez, Keran, Tulail), Leh-Ladakh expeditions, and Katra Vaishno Devi pilgrimages.
+            <p className="text-xs text-slate-400 leading-relaxed max-w-sm pt-1">
+              Registered mountain tour operator headquartered in Tangmarg at the base of Gulmarg, Baramulla. We specialize in authentic Kashmir holidays, frontier valley expeditions (Gurez, Keran, Tulail), Leh-Ladakh road trips, and Katra pilgrimages with verified local drivers.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs">
+            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs text-slate-400">
               <span className="text-emerald-400 font-semibold flex items-center">
-                <Award className="w-3.5 h-3.5 mr-1 text-amber-400" />
-                {companyInfo.experienceYears}+ Years Field Experience
+                <Award className="w-3.5 h-3.5 mr-1 text-[#38804e]" />
+                {companyInfo.experienceYears}+ Years Experience
               </span>
-              <span className="text-slate-600">•</span>
+              <span className="text-slate-700">•</span>
               <span className="text-emerald-400 font-semibold flex items-center">
-                <Compass className="w-3.5 h-3.5 mr-1 text-amber-400" />
-                Tangmarg Local Base
+                <Compass className="w-3.5 h-3.5 mr-1 text-[#38804e]" />
+                Tangmarg HQ
               </span>
-              <span className="text-slate-600">•</span>
+              <span className="text-slate-700">•</span>
               <span className="text-emerald-400 font-semibold flex items-center">
-                <ShieldCheck className="w-3.5 h-3.5 mr-1 text-amber-400" />
+                <ShieldCheck className="w-3.5 h-3.5 mr-1 text-[#38804e]" />
                 Verified Fleet
               </span>
             </div>
@@ -54,8 +59,9 @@ export default function Footer() {
                 href={companyInfo.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-emerald-950/80 hover:bg-amber-500 hover:text-pine-950 text-slate-300 flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-emerald-950/80 hover:bg-[#38804e] hover:text-white text-slate-300 flex items-center justify-center transition-colors"
                 title="Instagram @shopatrip"
+                aria-label="Instagram"
               >
                 <InstagramIcon className="w-4 h-4" />
               </a>
@@ -63,8 +69,9 @@ export default function Footer() {
                 href={companyInfo.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-emerald-950/80 hover:bg-amber-500 hover:text-pine-950 text-slate-300 flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-emerald-950/80 hover:bg-[#38804e] hover:text-white text-slate-300 flex items-center justify-center transition-colors"
                 title="Facebook"
+                aria-label="Facebook"
               >
                 <FacebookIcon className="w-4 h-4" />
               </a>
@@ -72,153 +79,170 @@ export default function Footer() {
                 href={companyInfo.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-emerald-950/80 hover:bg-amber-500 hover:text-pine-950 text-slate-300 flex items-center justify-center transition-colors"
-                title="Google Maps"
+                className="w-8 h-8 rounded-full bg-emerald-950/80 hover:bg-[#38804e] hover:text-white text-slate-300 flex items-center justify-center transition-colors"
+                title="Google Maps Office Location"
+                aria-label="Google Maps"
               >
                 <MapPin className="w-4 h-4" />
               </a>
             </div>
           </div>
 
-          {/* Col 3: Popular Packages */}
-          <div className="space-y-3 text-xs">
-            <h4 className="text-sm font-bold text-white tracking-wider uppercase text-amber-400">
+          {/* Col 2: Tour Packages (Span 2) */}
+          <div className="lg:col-span-2 space-y-3 text-xs">
+            <h4 className="text-xs font-bold text-white tracking-wider uppercase text-emerald-400">
               Tour Packages
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-slate-400">
               <li>
-                <Link href="/packages" className="hover:text-amber-300 transition-colors flex items-center font-medium text-emerald-300">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-500" />
-                  View All Packages →
+                <Link href="/packages" className="hover:text-emerald-300 transition-colors flex items-center font-semibold text-emerald-300">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-500 flex-shrink-0" />
+                  All Kashmir Packages →
                 </Link>
               </li>
               <li>
-                <Link href="/packages/3n-4d-kashmir-glimpse" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
+                <Link href="/packages/3n-4d-kashmir-glimpse" className="hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
                   3N/4D Kashmir Glimpse
                 </Link>
               </li>
               <li>
-                <Link href="/packages/5n-6d-honeymoon-special" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
-                  5N/6D Romantic Honeymoon
+                <Link href="/packages/5n-6d-honeymoon-special" className="hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  5N/6D Honeymoon Special
                 </Link>
               </li>
               <li>
-                <Link href="/packages/gurez-valley-7d-4star" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
-                  6N/7D Gurez Frontier (4-Star)
+                <Link href="/packages/gurez-valley-7d-4star" className="hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  6N/7D Gurez Frontier
                 </Link>
               </li>
               <li>
-                <Link href="/packages/keran-valley-escape-6n7d" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
-                  6N/7D Keran Valley Escape
+                <Link href="/packages/keran-valley-escape-6n7d" className="hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  6N/7D Keran Border Valley
                 </Link>
               </li>
               <li>
-                <Link href="/packages/ladakh-grand-tour-11n12d" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
+                <Link href="/packages/ladakh-grand-tour-11n12d" className="hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
                   11N/12D Ladakh Grand Tour
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Himalayan Destinations */}
-          <div className="space-y-3 text-xs">
-            <h4 className="text-sm font-bold text-white tracking-wider uppercase text-amber-400">
+          {/* Col 3: Destinations (Span 2) */}
+          <div className="lg:col-span-2 space-y-3 text-xs">
+            <h4 className="text-xs font-bold text-white tracking-wider uppercase text-emerald-400">
               Destinations
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-slate-400">
               <li>
-                <Link href="/destinations" className="hover:text-amber-300 transition-colors flex items-center font-medium text-emerald-300">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-500" />
-                  Explore All Destinations →
+                <Link href="/destinations" className="hover:text-emerald-300 transition-colors flex items-center font-semibold text-emerald-300">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-500 flex-shrink-0" />
+                  All Destinations →
                 </Link>
               </li>
               <li>
-                <Link href="/destinations/gulmarg" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
-                  Gulmarg & Apharwat Peak
+                <Link href="/destinations/gulmarg" className="hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  Gulmarg & Gondola
                 </Link>
               </li>
               <li>
-                <Link href="/destinations/srinagar" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
+                <Link href="/destinations/srinagar" className="hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
                   Srinagar & Dal Lake
                 </Link>
               </li>
               <li>
-                <Link href="/destinations/pahalgam" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
+                <Link href="/destinations/pahalgam" className="hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
                   Pahalgam & Betaab Valley
                 </Link>
               </li>
               <li>
-                <Link href="/destinations/gurez-valley" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
-                  Gurez Valley & Habba Khatoon
+                <Link href="/destinations/gurez-valley" className="hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  Gurez Valley
                 </Link>
               </li>
               <li>
-                <Link href="/destinations/keran-valley" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
-                  Keran Border Valley
-                </Link>
-              </li>
-              <li>
-                <Link href="/destinations/leh-ladakh" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
-                  Leh Ladakh & Pangong Tso
+                <Link href="/destinations/leh-ladakh" className="hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  Leh Ladakh & Pangong
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 5: Quick Links & Contact */}
-          <div className="space-y-3 text-xs">
-            <h4 className="text-sm font-bold text-white tracking-wider uppercase text-amber-400">
-              Quick Links
+          {/* Col 4: Company & Legal Policies (Span 2) */}
+          <div className="lg:col-span-2 space-y-3 text-xs">
+            <h4 className="text-xs font-bold text-white tracking-wider uppercase text-emerald-400">
+              Company & Legal
             </h4>
-            <div className="space-y-2">
-              <div>
-                <Link href="/about" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
+            <ul className="space-y-2 text-slate-400">
+              <li>
+                <Link href="/team" className="hover:text-white transition-colors flex items-center text-emerald-300 font-semibold">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-500 flex-shrink-0" />
+                  Our Local Team
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
                   About Our Company
                 </Link>
-              </div>
-              <div>
-                <Link href="/services" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
-                  Services & Cab Rentals
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  Cab Rentals & Services
                 </Link>
-              </div>
-              <div>
-                <Link href="/custom-planner" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
-                  Custom Trip Estimator
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-white transition-colors flex items-center font-medium">
+                  <FileText className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
+                  Terms & Conditions
                 </Link>
-              </div>
-              <div>
-                <Link href="/contact" className="hover:text-amber-300 transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-600" />
-                  Contact Us & Map
+              </li>
+              <li>
+                <Link href="/cancellation-policy" className="hover:text-white transition-colors flex items-center font-medium">
+                  <CalendarX className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
+                  Cancellation Policy
                 </Link>
-              </div>
-            </div>
+              </li>
+              <li>
+                <Link href="/privacy" className="hover:text-white transition-colors flex items-center font-medium">
+                  <Lock className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-            <div className="pt-3 border-t border-emerald-950/60 space-y-2 text-slate-400">
+          {/* Col 5: Contact & Inquiries (Span 2) */}
+          <div className="lg:col-span-2 space-y-3 text-xs">
+            <h4 className="text-xs font-bold text-white tracking-wider uppercase text-emerald-400">
+              Contact & Help
+            </h4>
+            <div className="space-y-2.5 text-slate-400">
+              <p className="flex items-start">
+                <MapPin className="w-3.5 h-3.5 mr-1.5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                <span>Tangmarg, Baramulla, Kashmir 193404</span>
+              </p>
               <p className="flex items-center">
-                <Phone className="w-3.5 h-3.5 mr-2 text-amber-400 flex-shrink-0" />
+                <Phone className="w-3.5 h-3.5 mr-1.5 text-emerald-400 flex-shrink-0" />
                 <a href={`tel:${companyInfo.phones[0]}`} className="hover:text-white">
                   {companyInfo.phoneDisplay}
                 </a>
               </p>
               <p className="flex items-center">
-                <Mail className="w-3.5 h-3.5 mr-2 text-amber-400 flex-shrink-0" />
-                <a href={`mailto:${companyInfo.email}`} className="hover:text-white truncate">
-                  {companyInfo.email}
+                <Mail className="w-3.5 h-3.5 mr-1.5 text-emerald-400 flex-shrink-0" />
+                <a href="mailto:contact@shopatrip.in" className="hover:text-white truncate font-medium text-slate-300">
+                  contact@shopatrip.in
                 </a>
               </p>
             </div>
@@ -228,7 +252,7 @@ export default function Footer() {
                 href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hello Shop A Trip Team, I want to inquire about custom Kashmir & Ladakh tour packages.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-3.5 py-2 rounded-xl bg-[#25D366] text-white text-xs font-bold hover:bg-[#20ba5a] transition-all w-full justify-center shadow-sm"
+                className="inline-flex items-center px-3 py-2 rounded-xl bg-[#38804e] text-white text-xs font-bold hover:bg-[#2b693f] transition-all w-full justify-center shadow-sm"
               >
                 <span>Direct WhatsApp Chat</span>
               </a>
@@ -237,21 +261,53 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Copyright & Tagline */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} {companyInfo.name}. All rights reserved.</p>
-          <p className="font-serif italic text-amber-400/90 text-sm">
-            {companyInfo.tagline}
-          </p>
-          <div className="flex flex-wrap items-center gap-3">
-            <Link href="/packages" className="hover:text-slate-300">Packages</Link>
-            <span>•</span>
-            <Link href="/destinations" className="hover:text-slate-300">Destinations</Link>
-            <span>•</span>
-            <Link href="/about" className="hover:text-slate-300">About Us</Link>
-            <span>•</span>
-            <Link href="/contact" className="hover:text-slate-300">Contact Us</Link>
+        {/* Bottom Bar: Legal Links & Copyright */}
+        <div className="pt-6 pb-2 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4 border-b border-emerald-950/40">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-1 gap-x-3 text-slate-400">
+            <span>© {currentYear} {companyInfo.name}. All rights reserved.</span>
+            <span className="hidden sm:inline text-slate-700">•</span>
+            <span className="font-serif italic text-emerald-400 text-xs">
+              {companyInfo.tagline}
+            </span>
           </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-400">
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms & Conditions
+            </Link>
+            <span className="text-slate-700">•</span>
+            <Link href="/cancellation-policy" className="hover:text-white transition-colors">
+              Cancellation & Refund Policy
+            </Link>
+            <span className="text-slate-700">•</span>
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+          </div>
+        </div>
+
+        {/* Developer & Strategist Credit Line */}
+        <div className="pt-4 text-center text-xs text-slate-500">
+          <p className="leading-relaxed">
+            Designed and Developed by{" "}
+            <a
+              href="https://www.instagram.com/immnaveed"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-300 font-semibold hover:text-emerald-400 transition-colors underline decoration-emerald-600/40 underline-offset-2 tracking-wide"
+            >
+              IMM NAVEED
+            </a>
+            ,{" "}
+            <a
+              href="https://www.immnaveed.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-300 font-semibold hover:text-emerald-400 transition-colors underline decoration-emerald-600/40 underline-offset-2"
+            >
+              Brand Strategist & Growth Consultant
+            </a>
+          </p>
         </div>
 
       </div>
