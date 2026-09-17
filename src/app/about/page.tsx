@@ -104,12 +104,12 @@ export default function AboutPage() {
           <div className="absolute bottom-0 left-0 right-0 h-12 bg-[#fbfdfb] rounded-tl-[2rem] rounded-tr-[2rem] hidden md:block" />
           <div className="max-w-7xl mx-auto relative z-10 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/90 text-emerald-300 border border-emerald-500/30 mb-5">
-              <BadgeCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <BadgeCheck className="w-3.5 h-3.5 text-[#38804e]" />
               Peace &amp; You · Local Kashmiri Hospitality
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
               Rooted in the Valleys,{" "}
-              <span className="text-emerald-300">Trusted by Thousands</span>
+              <span className="text-[#38804e]">Trusted by Thousands</span>
             </h1>
             <p className="mt-5 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
               With 6+ years of dedicated service in Jammu, Kashmir, and Ladakh, Shop A Trip Tour &amp; Travels was founded to provide authentic, safe, and transparent Himalayan travel experiences.

@@ -63,11 +63,11 @@ export default function TeamPage() {
           <div className="absolute bottom-0 left-0 right-0 h-12 bg-[#fbfdfb] rounded-tl-[2rem] rounded-tr-[2rem] hidden md:block" />
           <div className="max-w-7xl mx-auto relative z-10 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/90 text-emerald-300 border border-emerald-500/30 mb-5">
-              <BadgeCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <BadgeCheck className="w-3.5 h-3.5 text-[#38804e]" />
               Direct On-Ground Specialists
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
-              Meet Our <span className="text-emerald-300">Local Team</span>
+              Meet Our <span className="text-[#38804e]">Local Team</span>
             </h1>
             <p className="mt-5 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
               From our Creative Director and Senior Travel Consultants to dedicated Trip Coordinators, Social Media team, and experienced Mountain Drivers — meet the real people crafting your Himalayan journey.

@@ -56,14 +56,14 @@ export default function LocalAdvantage() {
               {/* Stat card pinned inside photo */}
               <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-lg border border-slate-100">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-xl bg-[#0B1E15] text-emerald-400 font-extrabold flex flex-col items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#08150f] text-[#38804e] font-extrabold flex flex-col items-center justify-center flex-shrink-0">
                     <span className="text-base leading-none">6+</span>
                     <span className="text-[9px] font-bold uppercase tracking-wider mt-0.5">yrs</span>
                   </div>
                   <div>
                     <h4 className="font-bold text-sm text-slate-900">Shop A Trip</h4>
                     <p className="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5">
-                      <MapPin className="w-3 h-3 text-emerald-600 flex-shrink-0" />
+                      <MapPin className="w-3 h-3 text-[#38804e] flex-shrink-0" />
                       Gokhama Kunzer, Tangmarg, Baramulla
                     </p>
                   </div>
@@ -72,8 +72,8 @@ export default function LocalAdvantage() {
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -top-4 -right-3 sm:-right-5 bg-[#0B1E15] text-emerald-300 px-4 py-2 rounded-2xl shadow-xl border border-emerald-600/30 text-xs font-bold flex items-center gap-2">
-              <Award className="w-4 h-4 text-emerald-400" />
+            <div className="absolute -top-4 -right-3 sm:-right-5 bg-[#08150f] text-emerald-300 px-4 py-2 rounded-2xl shadow-xl border border-emerald-600/30 text-xs font-bold flex items-center gap-2">
+              <Award className="w-4 h-4 text-[#38804e]" />
               <span>Peace &amp; You · est. {companyInfo.foundedYear}</span>
             </div>
           </div>
@@ -82,8 +82,8 @@ export default function LocalAdvantage() {
           <div className="lg:col-span-7 order-1 lg:order-2 space-y-7">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                <span className="text-sm font-semibold text-emerald-700">Why local matters in the Himalayas</span>
+                <ShieldCheck className="w-4 h-4 text-[#38804e]" />
+                <span className="text-sm font-semibold text-[#38804e]">Why local matters in the Himalayas</span>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
                 The difference between a<br className="hidden sm:block" />

@@ -37,17 +37,17 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2 text-xs text-slate-400">
-              <span className="text-emerald-400 font-semibold flex items-center">
+              <span className="text-[#38804e] font-semibold flex items-center">
                 <Award className="w-3.5 h-3.5 mr-1 text-[#38804e]" />
                 {companyInfo.experienceYears}+ Years Experience
               </span>
               <span className="text-slate-700">•</span>
-              <span className="text-emerald-400 font-semibold flex items-center">
+              <span className="text-[#38804e] font-semibold flex items-center">
                 <Compass className="w-3.5 h-3.5 mr-1 text-[#38804e]" />
                 Tangmarg HQ
               </span>
               <span className="text-slate-700">•</span>
-              <span className="text-emerald-400 font-semibold flex items-center">
+              <span className="text-[#38804e] font-semibold flex items-center">
                 <ShieldCheck className="w-3.5 h-3.5 mr-1 text-[#38804e]" />
                 Verified Fleet
               </span>
@@ -90,43 +90,43 @@ export default function Footer() {
 
           {/* Col 2: Tour Packages (Span 2) */}
           <div className="lg:col-span-2 space-y-3 text-xs">
-            <h4 className="text-xs font-bold text-white tracking-wider uppercase text-emerald-400">
+            <h4 className="text-xs font-bold text-white tracking-wider uppercase text-[#38804e]">
               Tour Packages
             </h4>
             <ul className="space-y-2 text-slate-400">
               <li>
                 <Link href="/packages" className="hover:text-emerald-300 transition-colors flex items-center font-semibold text-emerald-300">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-500 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   All Kashmir Packages →
                 </Link>
               </li>
               <li>
                 <Link href="/packages/3n-4d-kashmir-glimpse" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   3N/4D Kashmir Glimpse
                 </Link>
               </li>
               <li>
                 <Link href="/packages/5n-6d-honeymoon-special" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   5N/6D Honeymoon Special
                 </Link>
               </li>
               <li>
                 <Link href="/packages/gurez-valley-7d-4star" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   6N/7D Gurez Frontier
                 </Link>
               </li>
               <li>
                 <Link href="/packages/keran-valley-escape-6n7d" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   6N/7D Keran Border Valley
                 </Link>
               </li>
               <li>
                 <Link href="/packages/ladakh-grand-tour-11n12d" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   11N/12D Ladakh Grand Tour
                 </Link>
               </li>
@@ -135,43 +135,43 @@ export default function Footer() {
 
           {/* Col 3: Destinations (Span 2) */}
           <div className="lg:col-span-2 space-y-3 text-xs">
-            <h4 className="text-xs font-bold text-white tracking-wider uppercase text-emerald-400">
+            <h4 className="text-xs font-bold text-white tracking-wider uppercase text-[#38804e]">
               Destinations
             </h4>
             <ul className="space-y-2 text-slate-400">
               <li>
                 <Link href="/destinations" className="hover:text-emerald-300 transition-colors flex items-center font-semibold text-emerald-300">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-500 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   All Destinations →
                 </Link>
               </li>
               <li>
                 <Link href="/destinations/gulmarg" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   Gulmarg & Gondola
                 </Link>
               </li>
               <li>
                 <Link href="/destinations/srinagar" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   Srinagar & Dal Lake
                 </Link>
               </li>
               <li>
                 <Link href="/destinations/pahalgam" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   Pahalgam & Betaab Valley
                 </Link>
               </li>
               <li>
                 <Link href="/destinations/gurez-valley" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   Gurez Valley
                 </Link>
               </li>
               <li>
                 <Link href="/destinations/leh-ladakh" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   Leh Ladakh & Pangong
                 </Link>
               </li>
@@ -180,25 +180,25 @@ export default function Footer() {
 
           {/* Col 4: Company & Legal Policies (Span 2) */}
           <div className="lg:col-span-2 space-y-3 text-xs">
-            <h4 className="text-xs font-bold text-white tracking-wider uppercase text-emerald-400">
+            <h4 className="text-xs font-bold text-white tracking-wider uppercase text-[#38804e]">
               Company & Legal
             </h4>
             <ul className="space-y-2 text-slate-400">
               <li>
                 <Link href="/team" className="hover:text-white transition-colors flex items-center text-emerald-300 font-semibold">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-500 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   Our Local Team
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   About Our Company
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-emerald-700 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804e] flex-shrink-0" />
                   Cab Rentals & Services
                 </Link>
               </li>
@@ -225,22 +225,22 @@ export default function Footer() {
 
           {/* Col 5: Contact & Inquiries (Span 2) */}
           <div className="lg:col-span-2 space-y-3 text-xs">
-            <h4 className="text-xs font-bold text-white tracking-wider uppercase text-emerald-400">
+            <h4 className="text-xs font-bold text-white tracking-wider uppercase text-[#38804e]">
               Contact & Help
             </h4>
             <div className="space-y-2.5 text-slate-400">
               <p className="flex items-start">
-                <MapPin className="w-3.5 h-3.5 mr-1.5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-3.5 h-3.5 mr-1.5 text-[#38804e] flex-shrink-0 mt-0.5" />
                 <span>Tangmarg, Baramulla, Kashmir 193404</span>
               </p>
               <p className="flex items-center">
-                <Phone className="w-3.5 h-3.5 mr-1.5 text-emerald-400 flex-shrink-0" />
+                <Phone className="w-3.5 h-3.5 mr-1.5 text-[#38804e] flex-shrink-0" />
                 <a href={`tel:${companyInfo.phones[0]}`} className="hover:text-white">
                   {companyInfo.phoneDisplay}
                 </a>
               </p>
               <p className="flex items-center">
-                <Mail className="w-3.5 h-3.5 mr-1.5 text-emerald-400 flex-shrink-0" />
+                <Mail className="w-3.5 h-3.5 mr-1.5 text-[#38804e] flex-shrink-0" />
                 <a href="mailto:contact@shopatrip.in" className="hover:text-white truncate font-medium text-slate-300">
                   contact@shopatrip.in
                 </a>
@@ -266,7 +266,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-1 gap-x-3 text-slate-400">
             <span>© {currentYear} {companyInfo.name}. All rights reserved.</span>
             <span className="hidden sm:inline text-slate-700">•</span>
-            <span className="font-serif italic text-emerald-400 text-xs">
+            <span className="font-serif italic text-[#38804e] text-xs">
               {companyInfo.tagline}
             </span>
           </div>
