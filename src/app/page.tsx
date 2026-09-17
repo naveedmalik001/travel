@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TrustBar from "@/components/TrustBar";
+import HowItWorks from "@/components/HowItWorks";
 import PackageBrowser from "@/components/PackageBrowser";
 import CustomTripPlanner from "@/components/CustomTripPlanner";
 import DestinationSection from "@/components/DestinationSection";
@@ -39,6 +40,9 @@ export default function HomePage() {
 
       {/* Trust & Local credentials bar */}
       <TrustBar />
+
+      {/* How It Works - 4-Step Booking Process */}
+      <HowItWorks />
 
       {/* Interactive Package Browser with Day-Wise Itineraries */}
       <PackageBrowser initialCategory={selectedCategory} />

@@ -6,6 +6,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import CustomTripPlanner from "@/components/CustomTripPlanner";
+import HowItWorks from "@/components/HowItWorks";
 import { BadgeCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -64,6 +65,9 @@ export default function CustomPlannerPage() {
 
         {/* Custom Planner Component */}
         <CustomTripPlanner />
+
+        {/* How It Works - 4 Step Booking Process */}
+        <HowItWorks />
       </div>
 
       <Footer />
