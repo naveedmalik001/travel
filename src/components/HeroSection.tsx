@@ -69,11 +69,11 @@ export default function HeroSection({
           {/* Main Headline */}
           <h1 className="text-[2.5rem] sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-3xl">
             Discover Kashmir,{" "}
-            <span className="text-emerald-400 font-serif italic font-normal">Travel Your Way</span>
+            <span className="text-[#38804e] font-serif italic font-normal">Travel Your Way</span>
           </h1>
 
           {/* Subheading */}
-          <h2 className="mt-4 text-lg sm:text-2xl font-bold text-emerald-100/95 max-w-2xl leading-snug">
+          <h2 className="mt-4 text-lg sm:text-2xl font-bold text-white max-w-2xl leading-snug">
             Handcrafted Jammu, Kashmir and Ladakh Holidays by Local Team
           </h2>
 
@@ -84,19 +84,19 @@ export default function HeroSection({
           {/* Concrete trust signals */}
           <div className="mt-6 flex flex-wrap gap-2.5 text-xs sm:text-sm text-white font-medium">
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e] flex-shrink-0" />
               Direct Local Operator
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e] flex-shrink-0" />
               Verified 3★ &amp; 4★ Stays
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e] flex-shrink-0" />
               Gondola &amp; Pass Assistance
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e] flex-shrink-0" />
               24/7 On-Ground Support
             </span>
           </div>
@@ -116,7 +116,7 @@ export default function HeroSection({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/12 hover:bg-white/20 active:bg-white/25 text-white font-semibold text-sm border border-white/25 backdrop-blur-md transition-all min-h-[44px]"
             >
-              <PhoneCall className="w-4 h-4 text-emerald-300" />
+              <PhoneCall className="w-4 h-4 text-[#38804e]" />
               <span>Plan My Trip</span>
             </a>
           </div>
