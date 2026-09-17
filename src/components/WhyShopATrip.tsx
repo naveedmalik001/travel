@@ -46,7 +46,7 @@ export default function WhyShopATrip() {
               <span className="block text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Years On Ground</span>
             </div>
             <div className="px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm">
-              <span className="block text-lg sm:text-xl font-extrabold font-mono text-emerald-400">2,500+</span>
+              <span className="block text-lg sm:text-xl font-extrabold font-mono text-emerald-400">200+</span>
               <span className="block text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Guests Hosted</span>
             </div>
             <div className="px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm">
