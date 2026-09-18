@@ -205,10 +205,10 @@ export default function DestinationSection() {
                 </div>
 
                 {/* Bottom Card Content */}
-                <div className="absolute bottom-5 left-5 right-5 space-y-2">
-                  <div className="flex items-center text-xs text-emerald-300 font-medium">
-                    <Mountain className="w-3.5 h-3.5 mr-1 text-[#38804e]" />
-                    <span>{dest.altitude}</span>
+                <div className="absolute bottom-5 left-5 right-5 space-y-1.5">
+                  <div className="flex items-center gap-1.5 text-xs text-emerald-300 font-medium">
+                    <Mountain className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span className="truncate">{dest.altitude}</span>
                   </div>
 
                   <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
@@ -218,7 +218,7 @@ export default function DestinationSection() {
                     {dest.tagline}
                   </p>
 
-                  <div className="pt-2 flex items-center justify-between border-t border-white/15 text-xs text-[#38804e] font-semibold group-hover:translate-x-1 transition-transform">
+                  <div className="pt-2.5 flex items-center justify-between border-t border-white/15 text-xs text-emerald-400 font-semibold group-hover:text-emerald-300 group-hover:translate-x-1 transition-all">
                     <span>View Travel Guide</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
@@ -326,10 +326,10 @@ export default function DestinationSection() {
                   </div>
 
                   {/* Bottom Card Content */}
-                  <div className="absolute bottom-5 left-5 right-5 space-y-2">
-                    <div className="flex items-center text-xs text-emerald-300 font-medium">
-                      <Mountain className="w-3.5 h-3.5 mr-1 text-[#38804e]" />
-                      <span>{dest.altitude}</span>
+                  <div className="absolute bottom-5 left-5 right-5 space-y-1.5">
+                    <div className="flex items-center gap-1.5 text-xs text-emerald-300 font-medium">
+                      <Mountain className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span className="truncate">{dest.altitude}</span>
                     </div>
 
                     <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
@@ -339,7 +339,7 @@ export default function DestinationSection() {
                       {dest.tagline}
                     </p>
 
-                    <div className="pt-2 flex items-center justify-between border-t border-white/15 text-xs text-[#38804e] font-semibold group-hover:translate-x-1 transition-transform">
+                    <div className="pt-2.5 flex items-center justify-between border-t border-white/15 text-xs text-emerald-400 font-semibold group-hover:text-emerald-300 group-hover:translate-x-1 transition-all">
                       <span>View Travel Guide</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
