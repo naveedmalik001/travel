@@ -289,18 +289,18 @@ export default function Footer() {
         {/* Developer & Strategist Credit Line */}
         <div className="pt-4 text-center text-xs text-slate-500">
           <p className="leading-relaxed">
-            Designed and Developed by{" "}
+            Designed & Developed by{" "}
             <a
-              href="https://www.instagram.com/immnaveed"
+              href="https://instagram.com/immnaveed"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-300 font-semibold hover:text-emerald-400 transition-colors underline decoration-emerald-600/40 underline-offset-2 tracking-wide"
             >
-              IMM NAVEED
+              IMMNAVEED
             </a>
-            ,{" "}
+            {" | "}
             <a
-              href="https://www.immnaveed.in"
+              href="https://www.immnaveed.in/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-300 font-semibold hover:text-emerald-400 transition-colors underline decoration-emerald-600/40 underline-offset-2"
