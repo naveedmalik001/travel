@@ -14,7 +14,7 @@ module.exports = {
           200: '#bce4ca',
           300: '#8eccaa',
           400: '#5caf85',
-          500: '#38804e', // Primary Brand Green (#38804e)
+          500: '#38804b', // Primary Brand Green (#38804b)
           600: '#2b693f',
           700: '#245434',
           800: '#1f432b',
@@ -27,7 +27,7 @@ module.exports = {
           200: '#bbf7d0',
           300: '#86efac',
           400: '#4ade80',
-          500: '#38804e',
+          500: '#38804b',
           600: '#2b693f',
           700: '#245434',
           800: '#1f432b',
@@ -38,7 +38,7 @@ module.exports = {
           deep: '#0B1E15',
           forest: '#133928',
           pine: '#1E533C',
-          brand: '#38804e',
+          brand: '#38804b',
           sage: '#417B60',
           light: '#EDF5F0',
           mist: '#F6FAF7',

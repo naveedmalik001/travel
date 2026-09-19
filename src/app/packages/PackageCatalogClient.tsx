@@ -105,7 +105,7 @@ export default function PackageCatalogClient() {
       {/* Trust strip */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-soft mb-8">
         <div className="flex items-center space-x-3 p-2">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0">
             <Compass className="w-5 h-5" />
           </div>
           <div>
@@ -114,7 +114,7 @@ export default function PackageCatalogClient() {
           </div>
         </div>
         <div className="flex items-center space-x-3 p-2">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0">
             <ShieldCheck className="w-5 h-5" />
           </div>
           <div>
@@ -123,7 +123,7 @@ export default function PackageCatalogClient() {
           </div>
         </div>
         <div className="flex items-center space-x-3 p-2">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0">
             <CheckCircle2 className="w-5 h-5" />
           </div>
           <div>
@@ -132,7 +132,7 @@ export default function PackageCatalogClient() {
           </div>
         </div>
         <div className="flex items-center space-x-3 p-2">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0">
             <Calendar className="w-5 h-5" />
           </div>
           <div>
@@ -153,7 +153,7 @@ export default function PackageCatalogClient() {
               placeholder="Search by destination (e.g., Gurez, Gulmarg, Ladakh)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 transition-all"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#38804b]/20 focus:border-[#38804b]/30 transition-all"
             />
           </div>
 
@@ -164,7 +164,7 @@ export default function PackageCatalogClient() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="py-2 px-3 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 cursor-pointer"
+              className="py-2 px-3 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#38804b]/20 focus:border-[#38804b]/30 cursor-pointer"
             >
               <option value="popular">Recommended / Featured</option>
               <option value="duration-asc">Duration: Short to Long</option>
@@ -199,7 +199,7 @@ export default function PackageCatalogClient() {
               onClick={() => setSelectedDuration(dur.value)}
               className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
                 selectedDuration === dur.value
-                  ? "bg-emerald-100 text-emerald-800 font-semibold border border-emerald-300"
+                  ? "bg-[#38804b]/10 text-[#38804b] font-semibold border border-[#38804b]/30"
                   : "bg-white text-slate-500 border border-slate-200 hover:border-slate-300"
               }`}
             >
@@ -267,21 +267,21 @@ export default function PackageCatalogClient() {
       )}
 
       {/* Custom Quote Banner */}
-      <div className="mt-14 rounded-3xl bg-gradient-to-r from-[#08281d] to-[#041a12] text-white p-8 md:p-12 relative overflow-hidden shadow-xl border border-emerald-900">
+      <div className="mt-14 rounded-3xl bg-gradient-to-r from-[#08281d] to-[#041a12] text-white p-8 md:p-12 relative overflow-hidden shadow-xl border border-[#38804b]/20">
         <div className="relative z-10 max-w-2xl">
-          <span className="text-emerald-300 text-xs uppercase font-bold tracking-wider mb-2 block">
+          <span className="text-[#38804b] text-xs uppercase font-bold tracking-wider mb-2 block">
             Don't see your ideal itinerary?
           </span>
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-white">
             Build Your Own Custom Kashmir or Ladakh Trip
           </h3>
-          <p className="text-emerald-100/80 text-xs sm:text-sm mb-6 leading-relaxed">
+          <p className="text-slate-200 text-xs sm:text-sm mb-6 leading-relaxed">
             Choose your preferred destinations, number of days, hotel category (3-Star Deluxe, 4-Star Luxury, Houseboat), vehicle type, and calculate real-time estimated rates.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
               href="/custom-planner"
-              className="inline-flex items-center px-5 py-3 rounded-xl bg-[#38804e] hover:bg-[#2b693f] text-white text-xs sm:text-sm font-bold shadow-lg transition-all"
+              className="inline-flex items-center px-5 py-3 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white text-xs sm:text-sm font-bold shadow-lg transition-all"
             >
               <Calculator className="w-4 h-4 mr-2" />
               <span>Launch Trip Planner & Estimator</span>

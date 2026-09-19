@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { companyInfo } from "@/data/company";
+import { WhatsAppIcon } from "@/components/SocialIcons";
 import { 
   ShieldAlert, 
   Clock, 
@@ -29,23 +30,23 @@ export default function CancellationPolicyPage() {
   const lastUpdated = "September 2026";
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col selection:bg-[#38804b]/20 selection:text-[#38804b]">
       <Navbar />
 
       <main className="flex-grow pt-28 sm:pt-32 pb-20">
         {/* Header Banner */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
           <div className="flex items-center space-x-2 text-xs font-medium text-slate-500 mb-4">
-            <Link href="/" className="hover:text-[#38804e] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#38804b] transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3 text-slate-400" />
-            <Link href="/terms" className="hover:text-[#38804e] transition-colors">Terms</Link>
+            <Link href="/terms" className="hover:text-[#38804b] transition-colors">Terms</Link>
             <ChevronRight className="w-3 h-3 text-slate-400" />
-            <span className="text-[#38804e] font-semibold">Cancellation & Refund Policy</span>
+            <span className="text-[#38804b] font-semibold">Cancellation & Refund Policy</span>
           </div>
 
-          <div className="bg-[#08150f] rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl border border-emerald-950">
+          <div className="bg-[#08150f] rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl border border-[#38804b]/20">
             <div className="relative z-10 max-w-2xl">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#38804e]/20 text-emerald-400 border border-[#38804e]/30 mb-4">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#38804b]/20 text-[#38804b] border border-[#38804b]/30 mb-4">
                 <CalendarX className="w-3.5 h-3.5" />
                 <span>Transparent Policy</span>
               </span>
@@ -55,13 +56,13 @@ export default function CancellationPolicyPage() {
               <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
                 Clear rules and timelines regarding advance deposits, cancellation requests, and refund eligibility for all Kashmir and Ladakh travel itineraries.
               </p>
-              <p className="mt-4 text-xs text-emerald-400 font-medium">
+              <p className="mt-4 text-xs text-[#38804b] font-medium">
                 Last Updated: {lastUpdated} • Enforced by {companyInfo.name}
               </p>
             </div>
 
             {/* Decorative accent */}
-            <div className="absolute -right-16 -bottom-16 w-80 h-80 bg-[#38804e]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -right-16 -bottom-16 w-80 h-80 bg-[#38804b]/10 rounded-full blur-3xl pointer-events-none" />
           </div>
         </div>
 
@@ -80,7 +81,7 @@ export default function CancellationPolicyPage() {
                   </h2>
                   <div className="space-y-3 text-xs text-slate-600">
                     <div className="flex items-start gap-2">
-                      <Clock className="w-4 h-4 text-[#38804e] flex-shrink-0 mt-0.5" />
+                      <Clock className="w-4 h-4 text-[#38804b] flex-shrink-0 mt-0.5" />
                       <span><strong>Eligible Window:</strong> 24 to 48 hours post booking confirmation.</span>
                     </div>
                     <div className="flex items-start gap-2">
@@ -88,15 +89,15 @@ export default function CancellationPolicyPage() {
                       <span><strong>Post 48 Hours:</strong> Non-refundable advance payment.</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <Mail className="w-4 h-4 text-[#38804e] flex-shrink-0 mt-0.5" />
+                      <Mail className="w-4 h-4 text-[#38804b] flex-shrink-0 mt-0.5" />
                       <span><strong>Request Channel:</strong> contact@shopatrip.in</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Need Assistance card */}
-                <div className="bg-emerald-950 text-white rounded-2xl p-6 border border-emerald-900/60 shadow-lg space-y-3">
-                  <h3 className="text-sm font-bold text-emerald-300">
+                <div className="bg-[#0B1E15] text-white rounded-2xl p-6 border border-[#38804b]/20/60 shadow-lg space-y-3">
+                  <h3 className="text-sm font-bold text-[#38804b]">
                     Have an Urgent Reschedule?
                   </h3>
                   <p className="text-xs text-slate-300 leading-relaxed">
@@ -106,9 +107,10 @@ export default function CancellationPolicyPage() {
                     href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hello Shop A Trip Team, I have a query regarding my booking and itinerary status.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-full px-4 py-2 rounded-xl bg-[#38804e] text-white text-xs font-bold hover:bg-[#2b693f] transition-colors"
+                    className="inline-flex items-center justify-center gap-1.5 w-full px-4 py-2 rounded-xl bg-[#38804b] text-white text-xs font-bold hover:bg-[#2b693f] transition-colors"
                   >
-                    Chat With Coordinator
+                    <WhatsAppIcon className="w-3.5 h-3.5" />
+                    <span>Chat With Coordinator</span>
                   </a>
                 </div>
 
@@ -129,7 +131,7 @@ export default function CancellationPolicyPage() {
                     All travel packages, private cab bookings, and customized itineraries booked through <strong>{companyInfo.name}</strong> (shopatrip.in) are subject to our standard cancellation window:
                   </p>
                   <div className="bg-white rounded-xl p-4 border border-amber-200 space-y-2">
-                    <p className="font-bold text-[#38804e] flex items-center gap-2">
+                    <p className="font-bold text-[#38804b] flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4" /> 1. Within 24 to 48 Hours:
                     </p>
                     <p className="text-xs text-slate-600 pl-6">
@@ -156,7 +158,7 @@ export default function CancellationPolicyPage() {
                     To ensure transparent verification and timestamp accuracy, all cancellation notices must be officially communicated in writing via email:
                   </p>
                   <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-2 text-xs">
-                    <p>• <strong>Official Email:</strong> <a href="mailto:contact@shopatrip.in" className="font-bold text-[#38804e] hover:underline">contact@shopatrip.in</a></p>
+                    <p>• <strong>Official Email:</strong> <a href="mailto:contact@shopatrip.in" className="font-bold text-[#38804b] hover:underline">contact@shopatrip.in</a></p>
                     <p>• <strong>Subject Line:</strong> <code>Cancellation Request - [Booking ID / Guest Name]</code></p>
                     <p>• <strong>Required Details:</strong> Booking Date, Lead Traveler Name, Contact Number, and Reason for Cancellation.</p>
                   </div>
@@ -214,7 +216,7 @@ export default function CancellationPolicyPage() {
                       <span className="text-slate-500 font-semibold block mb-1">Email for Dispute Notices:</span>
                       <a 
                         href="mailto:contact@shopatrip.in" 
-                        className="text-sm font-bold text-[#38804e] hover:underline flex items-center gap-1"
+                        className="text-sm font-bold text-[#38804b] hover:underline flex items-center gap-1"
                       >
                         <Mail className="w-3.5 h-3.5" /> contact@shopatrip.in
                       </a>
@@ -243,10 +245,10 @@ export default function CancellationPolicyPage() {
               {/* Quick Navigation Footer */}
               <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-600">
                 <div className="flex items-center gap-4">
-                  <Link href="/terms" className="text-[#38804e] font-bold hover:underline">
+                  <Link href="/terms" className="text-[#38804b] font-bold hover:underline">
                     ← Full Terms & Conditions
                   </Link>
-                  <Link href="/privacy" className="text-[#38804e] font-bold hover:underline">
+                  <Link href="/privacy" className="text-[#38804b] font-bold hover:underline">
                     Privacy Policy →
                   </Link>
                 </div>

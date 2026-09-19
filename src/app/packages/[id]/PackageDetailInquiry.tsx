@@ -68,7 +68,7 @@ export default function PackageDetailInquiry({ packageTitle, packageDuration }: 
   return (
     <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-soft">
       <div className="flex items-center space-x-2 mb-3">
-        <Send className="w-4 h-4 text-emerald-600" />
+        <Send className="w-4 h-4 text-[#38804b]" />
         <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
           Request Custom Itinerary
         </h3>
@@ -78,17 +78,17 @@ export default function PackageDetailInquiry({ packageTitle, packageDuration }: 
       </p>
 
       {status === "success" ? (
-        <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs space-y-2">
-          <div className="flex items-center space-x-2 font-bold text-emerald-800">
-            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+        <div className="p-4 rounded-xl bg-[#38804b]/10 border border-[#38804b]/20 text-slate-900 text-xs space-y-2">
+          <div className="flex items-center space-x-2 font-bold text-[#38804b]">
+            <CheckCircle2 className="w-4 h-4 text-[#38804b]" />
             <span>Inquiry Sent Successfully!</span>
           </div>
-          <p className="text-[11px] text-emerald-700">
+          <p className="text-[11px] text-[#38804b]">
             We have opened your WhatsApp to connect directly with our reservation team. If WhatsApp didn't open automatically, please call us directly at <strong>{companyInfo.phones[0]}</strong>.
           </p>
           <button
             onClick={() => setStatus("idle")}
-            className="mt-2 text-xs font-semibold text-emerald-800 underline block"
+            className="mt-2 text-xs font-semibold text-[#38804b] underline block"
           >
             Send another inquiry
           </button>
@@ -115,7 +115,7 @@ export default function PackageDetailInquiry({ packageTitle, packageDuration }: 
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="e.g., Rajesh Sharma"
-                className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 bg-slate-50/50 text-xs focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 outline-none"
+                className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 bg-slate-50/50 text-xs focus:ring-2 focus:ring-[#38804b]/20 focus:border-[#38804b]/30 outline-none"
               />
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function PackageDetailInquiry({ packageTitle, packageDuration }: 
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="+91 98765 43210"
-                className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 bg-slate-50/50 text-xs focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 outline-none"
+                className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 bg-slate-50/50 text-xs focus:ring-2 focus:ring-[#38804b]/20 focus:border-[#38804b]/30 outline-none"
               />
             </div>
           </div>
@@ -150,7 +150,7 @@ export default function PackageDetailInquiry({ packageTitle, packageDuration }: 
                   name="travelDate"
                   value={formData.travelDate}
                   onChange={handleChange}
-                  className="w-full pl-8 pr-2 py-2 rounded-xl border border-slate-200 bg-slate-50/50 text-[11px] focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 outline-none"
+                  className="w-full pl-8 pr-2 py-2 rounded-xl border border-slate-200 bg-slate-50/50 text-[11px] focus:ring-2 focus:ring-[#38804b]/20 focus:border-[#38804b]/30 outline-none"
                 />
               </div>
             </div>
@@ -165,7 +165,7 @@ export default function PackageDetailInquiry({ packageTitle, packageDuration }: 
                   name="travelers"
                   value={formData.travelers}
                   onChange={handleChange}
-                  className="w-full pl-8 pr-2 py-2 rounded-xl border border-slate-200 bg-slate-50/50 text-[11px] focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 outline-none"
+                  className="w-full pl-8 pr-2 py-2 rounded-xl border border-slate-200 bg-slate-50/50 text-[11px] focus:ring-2 focus:ring-[#38804b]/20 focus:border-[#38804b]/30 outline-none"
                 >
                   <option value="2">2 Adults (Couple)</option>
                   <option value="3-4">3–4 Persons (Family)</option>
@@ -188,7 +188,7 @@ export default function PackageDetailInquiry({ packageTitle, packageDuration }: 
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="you@email.com"
-                className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 bg-slate-50/50 text-xs focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 outline-none"
+                className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 bg-slate-50/50 text-xs focus:ring-2 focus:ring-[#38804b]/20 focus:border-[#38804b]/30 outline-none"
               />
             </div>
           </div>
@@ -203,14 +203,14 @@ export default function PackageDetailInquiry({ packageTitle, packageDuration }: 
               value={formData.notes}
               onChange={handleChange}
               placeholder="e.g. need candlelight dinner on houseboat, 4-star hotel upgrade, or Gondola Phase 2 guide..."
-              className="w-full p-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-xs focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 outline-none resize-none"
+              className="w-full p-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-xs focus:ring-2 focus:ring-[#38804b]/20 focus:border-[#38804b]/30 outline-none resize-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="w-full py-3 px-4 rounded-xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-xs transition-all flex items-center justify-center space-x-2 shadow-sm disabled:opacity-50 cursor-pointer"
+            className="w-full py-3 px-4 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-xs transition-all flex items-center justify-center space-x-2 shadow-sm disabled:opacity-50 cursor-pointer"
           >
             <Send className="w-3.5 h-3.5" />
             <span>{status === "submitting" ? "Processing..." : "Get Free Custom Quote"}</span>

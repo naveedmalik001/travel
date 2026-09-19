@@ -53,7 +53,7 @@ export default function DestinationCatalogClient() {
               placeholder="Search destinations (e.g. Gulmarg, Gurez, Pangong)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-xs sm:text-sm focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 outline-none"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-xs sm:text-sm focus:ring-2 focus:ring-[#38804b]/20 focus:border-[#38804b]/30 outline-none"
             />
           </div>
 
@@ -93,7 +93,7 @@ export default function DestinationCatalogClient() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               
-              <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-500/40 backdrop-blur-sm">
+              <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#0B1E15]/80 text-[#38804b] border border-[#38804b]/30 backdrop-blur-sm">
                 {dest.region}
               </div>
 
@@ -119,7 +119,7 @@ export default function DestinationCatalogClient() {
                     <span className="truncate"><strong>Altitude:</strong> {dest.altitude}</span>
                   </div>
                   <div className="flex items-center text-slate-700">
-                    <Calendar className="w-3.5 h-3.5 mr-1.5 text-emerald-700 flex-shrink-0" />
+                    <Calendar className="w-3.5 h-3.5 mr-1.5 text-[#38804b] flex-shrink-0" />
                     <span className="truncate"><strong>Best Time:</strong> {dest.bestTimeToVisit}</span>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ export default function DestinationCatalogClient() {
                   </span>
                   {dest.highlights.slice(0, 3).map((hl, i) => (
                     <div key={i} className="flex items-center text-xs text-slate-600">
-                      <CheckCircle2 className="w-3.5 h-3.5 mr-1.5 text-emerald-600 flex-shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 mr-1.5 text-[#38804b] flex-shrink-0" />
                       <span className="line-clamp-1">{hl}</span>
                     </div>
                   ))}

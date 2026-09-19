@@ -1,123 +1,226 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { 
+  MessageSquare, 
+  MapPin, 
+  CreditCard, 
+  Mountain, 
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight
+} from "lucide-react";
 
 export default function HowItWorks() {
-  const [activeStep, setActiveStep] = useState<number | null>(null);
+  const [activeStep, setActiveStep] = useState(0);
+  const [isMobilePaused, setIsMobilePaused] = useState(false);
 
   const steps = [
     {
       num: "01",
+      stepTag: "Step 01",
+      stage: "PLAN",
       title: "Tell Us Your Plan",
-      desc: "Share your dates, travellers and preferences.",
-      tag: "Step 01",
+      desc: "Share your travel dates, group size, and preferred comfort tier with our local team.",
+      icon: MessageSquare,
     },
     {
       num: "02",
-      title: "Get Your Itinerary",
-      desc: "We create a personalised plan for you.",
-      tag: "Step 02",
+      stepTag: "Step 02",
+      stage: "DRAFT",
+      title: "Get Custom Itinerary",
+      desc: "Receive a day-wise mountain route and direct local quote within 2 hours.",
+      icon: MapPin,
     },
     {
       num: "03",
+      stepTag: "Step 03",
+      stage: "BOOK",
       title: "Confirm Your Trip",
-      desc: "Approve the itinerary and booking details.",
-      tag: "Step 03",
+      desc: "Lock dates with 20% advance and get your verified cab & stay vouchers.",
+      icon: CreditCard,
     },
     {
       num: "04",
+      stepTag: "Step 04",
+      stage: "TRAVEL",
       title: "Travel With Confidence",
-      desc: "Our team supports you throughout your journey.",
-      tag: "Step 04",
+      desc: "Native driver, heated rooms, and 24/7 on-ground Tangmarg desk support.",
+      icon: Mountain,
     },
   ];
 
-  return (
-    <section id="how-it-works" className="py-12 sm:py-16 bg-[#06140e] text-white relative overflow-hidden border-b border-emerald-950/80">
-      {/* Subtle Luxury Ambient Mesh */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(56,128,78,0.18),transparent)] pointer-events-none" />
-      <div className="absolute top-1/2 -left-20 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 -right-20 w-72 h-72 bg-[#38804e]/10 rounded-full blur-3xl pointer-events-none" />
+  // Auto slide on mobile every 3.2 seconds
+  useEffect(() => {
+    if (isMobilePaused) return;
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    const timer = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, 3200);
+
+    return () => clearInterval(timer);
+  }, [isMobilePaused, steps.length]);
+
+  const scrollToPlanner = () => {
+    const el = document.getElementById("custom-planner");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const nextStep = () => {
+    setActiveStep((prev) => (prev + 1) % steps.length);
+  };
+
+  const prevStep = () => {
+    setActiveStep((prev) => (prev - 1 + steps.length) % steps.length);
+  };
+
+  const currentMobileStep = steps[activeStep];
+  const CurrentIcon = currentMobileStep.icon;
+
+  return (
+    <section id="how-it-works" className="py-5 sm:py-8 bg-white border-b border-slate-200/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-emerald-400 text-[11px] font-semibold tracking-[0.2em] uppercase mb-3 backdrop-blur-md">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span>HOW IT WORKS</span>
+        {/* Compact Header Bar */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-4">
+          <div>
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-[#38804b]/10 text-[#38804b] text-[10px] font-bold tracking-widest uppercase mb-0.5">
+              <span>HOW IT WORKS</span>
+            </div>
+            <h2 className="text-lg sm:text-2xl font-extrabold tracking-tight text-slate-900 leading-tight">
+              Your Journey <span className="text-[#38804b]">Starts Here</span>
+            </h2>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
-            Your Journey <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-200">Starts Here</span>
-          </h2>
+
+          <button
+            onClick={scrollToPlanner}
+            className="self-start sm:self-auto inline-flex items-center gap-1.5 text-xs font-bold text-[#38804b] hover:text-[#2a6339] group transition-colors"
+          >
+            <span>Plan custom trip</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
 
-        {/* 4 Steps Interactive Architectural Rail */}
-        <div className="relative">
-          
-          {/* Connecting Track Line on Desktop */}
-          <div className="hidden lg:block absolute top-[28px] left-[6%] right-[6%] h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent z-0" />
+        {/* Desktop View: Connected Horizontal Ribbon Track */}
+        <div className="hidden md:block relative">
+          {/* Continuous Connected Ribbon Spine */}
+          <div className="absolute top-1/2 -translate-y-1/2 left-8 right-8 h-1 bg-gradient-to-r from-[#38804b]/20 via-[#38804b] to-[#38804b]/20 rounded-full z-0" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 relative z-10">
+          <div className="grid grid-cols-4 gap-3 relative z-10">
             {steps.map((item, idx) => {
-              const isHovered = activeStep === idx;
+              const Icon = item.icon;
               return (
                 <div
                   key={idx}
-                  onMouseEnter={() => setActiveStep(idx)}
-                  onMouseLeave={() => setActiveStep(null)}
-                  className={`group relative rounded-2xl p-5 sm:p-6 transition-all duration-300 backdrop-blur-sm flex flex-col justify-between ${
-                    isHovered
-                      ? "bg-white/[0.07] border-emerald-500/50 shadow-[0_10px_30px_-10px_rgba(56,128,78,0.3)] -translate-y-1"
-                      : "bg-white/[0.03] border-white/[0.08] hover:bg-white/[0.05] hover:border-white/20"
-                  } border`}
+                  className="bg-white hover:bg-slate-50/90 rounded-xl p-3.5 border border-slate-200 hover:border-[#38804b]/60 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
                 >
-                  {/* Top Step Number Badge & Indicator */}
                   <div>
-                    <div className="flex items-center justify-between mb-5">
-                      <div className="flex items-center gap-2.5">
-                        <div className={`w-8 h-8 rounded-xl flex items-center justify-center font-mono font-bold text-xs transition-all duration-300 ${
-                          isHovered 
-                            ? "bg-[#38804e] text-white shadow-lg shadow-emerald-900/50 scale-105" 
-                            : "bg-white/10 text-emerald-300 border border-white/10"
-                        }`}>
-                          {item.num}
-                        </div>
-                        <span className="text-[10px] font-mono tracking-wider uppercase text-emerald-400/70">
-                          {item.tag}
-                        </span>
+                    {/* Ribbon Node Header */}
+                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                      <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-[#38804b] text-white text-[10px] font-mono font-bold tracking-wider uppercase shadow-xs">
+                        <span>{item.stepTag}</span>
                       </div>
-
-                      {/* Directional Accent Line */}
-                      <span className={`h-px transition-all duration-300 ${
-                        isHovered ? "w-10 bg-emerald-400" : "w-5 bg-white/15"
-                      }`} />
+                      <div className="w-7 h-7 rounded-lg bg-[#38804b]/10 text-[#38804b] flex items-center justify-center border border-[#38804b]/20 group-hover:bg-[#38804b] group-hover:text-white transition-colors">
+                        <Icon className="w-3.5 h-3.5" />
+                      </div>
                     </div>
 
-                    {/* Step Title */}
-                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-emerald-300 transition-colors leading-snug">
-                      <span className="font-mono text-emerald-400 font-semibold mr-1.5">{item.num} —</span>
+                    <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#38804b] transition-colors leading-snug">
                       {item.title}
                     </h3>
-
-                    {/* Step Description */}
-                    <p className="mt-2 text-xs sm:text-[13px] text-slate-300/80 leading-relaxed font-normal">
+                    <p className="mt-1 text-xs text-slate-600 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
 
-                  {/* Bottom hairline progress anchor */}
-                  <div className="mt-5 pt-3 border-t border-white/[0.06] flex items-center justify-between">
-                    <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">
-                      Shop A Trip
-                    </span>
-                    <span className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                      isHovered ? "bg-emerald-400 scale-125" : "bg-white/20"
-                    }`} />
+                  <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400">
+                    <span className="font-semibold text-slate-600">Tangmarg Desk</span>
+                    <span className="font-mono text-[#38804b] font-bold">0{idx + 1}/04</span>
                   </div>
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        {/* Mobile View: Automatic Slide with Pause on Touch & Smooth Navigation */}
+        <div 
+          className="md:hidden"
+          onTouchStart={() => setIsMobilePaused(true)}
+          onTouchEnd={() => setIsMobilePaused(false)}
+          onMouseEnter={() => setIsMobilePaused(true)}
+          onMouseLeave={() => setIsMobilePaused(false)}
+        >
+          <div className="relative bg-slate-50/90 rounded-xl p-3.5 border border-[#38804b]/40 shadow-xs transition-all duration-300">
+            
+            {/* Top Slide Header: Stage Badge + Icon + Arrows */}
+            <div className="flex items-center justify-between gap-2 mb-2">
+              <div className="flex items-center gap-2">
+                <span className="px-2 py-0.5 rounded bg-[#38804b] text-white text-[10px] font-mono font-bold tracking-wide uppercase shadow-2xs">
+                  {currentMobileStep.stepTag} • {currentMobileStep.stage}
+                </span>
+                <span className="text-[10px] font-mono text-slate-400 font-semibold">
+                  0{activeStep + 1} of 04
+                </span>
+              </div>
+
+              {/* Mobile Prev / Next Buttons */}
+              <div className="flex items-center gap-1">
+                <button
+                  onClick={prevStep}
+                  className="p-1 rounded bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 active:scale-95 transition-all shadow-2xs"
+                  aria-label="Previous step"
+                >
+                  <ChevronLeft className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  onClick={nextStep}
+                  className="p-1 rounded bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 active:scale-95 transition-all shadow-2xs"
+                  aria-label="Next step"
+                >
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Slide Body */}
+            <div className="flex items-start gap-3">
+              <div className="w-9 h-9 rounded-lg bg-[#38804b]/10 text-[#38804b] border border-[#38804b]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <CurrentIcon className="w-4 h-4" />
+              </div>
+
+              <div className="min-w-0 flex-1">
+                <h3 className="text-sm font-bold text-slate-900 leading-tight">
+                  {currentMobileStep.title}
+                </h3>
+                <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                  {currentMobileStep.desc}
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom Progress Indicator Bar */}
+            <div className="mt-3 pt-2 border-t border-slate-200/80 flex items-center justify-between">
+              <div className="flex items-center gap-1.5">
+                {steps.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveStep(idx)}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      idx === activeStep 
+                        ? "w-6 bg-[#38804b]" 
+                        : "w-2 bg-slate-300 hover:bg-slate-400"
+                    }`}
+                    aria-label={`Go to step ${idx + 1}`}
+                  />
+                ))}
+              </div>
+
+              <span className="text-[10px] text-slate-400 font-medium">
+                Auto-sliding • Tap to pause
+              </span>
+            </div>
+
           </div>
         </div>
 

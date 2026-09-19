@@ -3,10 +3,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { companyInfo } from "@/data/company";
-import { InstagramIcon, FacebookIcon } from "@/components/SocialIcons";
+import { InstagramIcon, FacebookIcon, WhatsAppIcon } from "@/components/SocialIcons";
 import SupportAgentIcon from "@/components/SupportAgentIcon";
 import { 
-  MessageSquare, 
   X, 
   Phone, 
   FileText, 
@@ -93,13 +92,13 @@ export default function WhatsAppFloat() {
             setIsFolded(false);
             handleOpenWidget();
           }}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#08150f]/95 text-emerald-400 hover:text-white border border-[#38804e]/60 shadow-xl backdrop-blur-md text-[11px] font-bold hover:bg-[#38804e] transition-all hover:scale-105 active:scale-95 group cursor-pointer"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#38804b] text-white border border-[#38804b] shadow-xl backdrop-blur-md text-[11px] font-bold hover:bg-[#2b693f] transition-all hover:scale-105 active:scale-95 group cursor-pointer"
           title="Unhide Live Support Desk"
         >
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <Headphones className="w-3.5 h-3.5 text-emerald-300 group-hover:text-white" />
+          <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+          <Headphones className="w-3.5 h-3.5 text-white" />
           <span>Support</span>
-          <ChevronUp className="w-3 h-3 text-emerald-400 group-hover:text-white" />
+          <ChevronUp className="w-3 h-3 text-white" />
         </button>
       </aside>
     );
@@ -123,22 +122,22 @@ export default function WhatsAppFloat() {
       {isOpen && (
         <div className="relative z-40 mb-2.5 w-[295px] sm:w-[330px] bg-white rounded-3xl shadow-2xl border border-slate-200/90 overflow-hidden animate-in slide-in-from-bottom-4 duration-200 pointer-events-auto">
           {/* Card Header */}
-          <div className="bg-[#08150f] text-white p-4 flex items-center justify-between border-b border-emerald-950">
+          <div className="bg-[#08150f] text-white p-4 flex items-center justify-between border-b border-[#38804b]/20">
             <div className="flex items-center space-x-3">
               <div className="relative">
-                <div className="w-9 h-9 rounded-full bg-[#38804e] border border-emerald-400/40 flex items-center justify-center text-white shadow-inner">
+                <div className="w-9 h-9 rounded-full bg-[#38804b] border border-[#38804b]/40 flex items-center justify-center text-white shadow-inner">
                   <SupportAgentIcon className="w-5 h-5 text-white" />
                 </div>
-                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border border-[#08150f] animate-pulse" />
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#38804b] border border-[#08150f] animate-pulse" />
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
                   <h4 className="font-bold text-xs text-white leading-tight">Shop A Trip Desk</h4>
-                  <span className="px-1.5 py-0.2 rounded text-[8px] font-extrabold bg-[#38804e]/50 text-emerald-300 uppercase tracking-wide border border-emerald-500/30">
+                  <span className="px-1.5 py-0.2 rounded text-[8px] font-extrabold bg-[#38804b]/50 text-white uppercase tracking-wide border border-[#38804b]/40">
                     LIVE
                   </span>
                 </div>
-                <p className="text-[10px] text-emerald-300/90 mt-0.5">
+                <p className="text-[10px] text-slate-300 mt-0.5">
                   Instant quotes &amp; mountain help
                 </p>
               </div>
@@ -175,15 +174,15 @@ export default function WhatsAppFloat() {
               href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hi Shop A Trip, I am planning a holiday in Kashmir & Ladakh. Please help me with itinerary and pricing.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between p-3 rounded-2xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white shadow-sm transition-all group"
+              className="flex items-center justify-between p-3 rounded-2xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#225433] text-white shadow-sm transition-all group"
             >
               <div className="flex items-center space-x-2.5">
                 <div className="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
-                  <MessageSquare className="w-4 h-4 fill-current" />
+                  <WhatsAppIcon className="w-4 h-4" />
                 </div>
                 <div className="text-left">
                   <p className="font-bold text-xs leading-tight">Chat on WhatsApp</p>
-                  <p className="text-[10px] text-emerald-100">Direct response from local team</p>
+                  <p className="text-[10px] text-slate-200">Direct response from local team</p>
                 </div>
               </div>
               <span className="text-[9px] bg-white/20 text-white font-bold px-2 py-0.5 rounded-full">
@@ -195,18 +194,18 @@ export default function WhatsAppFloat() {
             <Link
               href="/custom-planner"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-between p-2.5 rounded-2xl bg-white hover:bg-emerald-50 text-slate-800 border border-slate-200 shadow-2xs transition-all hover:border-[#38804e]/50 group"
+              className="flex items-center justify-between p-2.5 rounded-2xl bg-white hover:bg-[#38804b]/5 text-slate-800 border border-slate-200 shadow-2xs transition-all hover:border-[#38804b]/50 group"
             >
               <div className="flex items-center space-x-2.5">
-                <div className="w-8 h-8 rounded-xl bg-[#38804e]/10 text-[#38804e] flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0">
                   <FileText className="w-4 h-4" />
                 </div>
                 <div className="text-left">
-                  <p className="font-bold text-xs text-slate-900 group-hover:text-[#38804e]">Custom Itinerary Planner</p>
+                  <p className="font-bold text-xs text-slate-900 group-hover:text-[#38804b]">Custom Itinerary Planner</p>
                   <p className="text-[10px] text-slate-500">Pick dates, hotel tier &amp; cabs</p>
                 </div>
               </div>
-              <span className="text-[9px] bg-[#38804e]/10 text-[#38804e] font-bold px-1.5 py-0.5 rounded">
+              <span className="text-[9px] bg-[#38804b]/10 text-[#38804b] font-bold px-1.5 py-0.5 rounded">
                 Plan
               </span>
             </Link>
@@ -217,7 +216,7 @@ export default function WhatsAppFloat() {
               className="flex items-center justify-between p-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 border border-slate-200 transition-colors"
             >
               <div className="flex items-center space-x-2">
-                <div className="w-6 h-6 rounded-lg bg-[#38804e] text-white flex items-center justify-center flex-shrink-0">
+                <div className="w-6 h-6 rounded-lg bg-[#38804b] text-white flex items-center justify-center flex-shrink-0">
                   <Phone className="w-3 h-3" />
                 </div>
                 <div className="text-left">
@@ -225,7 +224,7 @@ export default function WhatsAppFloat() {
                   <p className="text-[10px] text-slate-500">{companyInfo.phones[0]}</p>
                 </div>
               </div>
-              <span className="text-[9px] text-[#38804e] font-bold bg-[#38804e]/10 px-2 py-0.5 rounded">Call</span>
+              <span className="text-[9px] text-[#38804b] font-bold bg-[#38804b]/10 px-2 py-0.5 rounded">Call</span>
             </a>
 
             {/* Social channels */}
@@ -258,7 +257,7 @@ export default function WhatsAppFloat() {
 
           {/* Footer Bar with Fold Option */}
           <div className="px-3.5 py-1.5 bg-slate-100 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-500">
-            <span className="flex items-center gap-1 font-medium text-[#38804e]">
+            <span className="flex items-center gap-1 font-medium text-[#38804b]">
               <CheckCircle2 className="w-3 h-3" />
               Tangmarg Head Office
             </span>
@@ -282,7 +281,7 @@ export default function WhatsAppFloat() {
         {showPill && !isOpen && (
           <div 
             onClick={handleOpenWidget}
-            className="cursor-pointer flex items-center space-x-2 bg-white/95 backdrop-blur-md text-slate-900 px-3 py-1.5 rounded-full shadow-lg border border-slate-200 text-xs font-semibold hover:border-[#38804e] transition-all hover:scale-102 active:scale-95"
+            className="cursor-pointer flex items-center space-x-2 bg-white/95 backdrop-blur-md text-slate-900 px-3 py-1.5 rounded-full shadow-lg border border-slate-200 text-xs font-semibold hover:border-[#38804b] transition-all hover:scale-102 active:scale-95"
             role="button"
             tabIndex={0}
             onKeyDown={(e) => {
@@ -290,11 +289,11 @@ export default function WhatsAppFloat() {
             }}
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#38804e] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#38804e]" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#38804b] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#38804b]" />
             </span>
             
-            <span className="text-[11px] font-bold text-slate-800 hover:text-[#38804e]">
+            <span className="text-[11px] font-bold text-slate-800 hover:text-[#38804b]">
               Need any help contact our Team.
             </span>
 
@@ -318,7 +317,7 @@ export default function WhatsAppFloat() {
             className={`w-12 h-12 sm:w-13 sm:h-13 rounded-full shadow-xl flex items-center justify-center transform hover:scale-105 active:scale-95 transition-all duration-300 relative group cursor-pointer ${
               isOpen
                 ? "bg-slate-900 text-white ring-2 ring-slate-300"
-                : "bg-[#08150f] text-white ring-2 ring-[#38804e]/60 hover:ring-[#38804e]"
+                : "bg-[#08150f] text-white ring-2 ring-[#38804b]/60 hover:ring-[#38804b]"
             }`}
             aria-label={isOpen ? "Close customer support" : "Open live travel desk"}
             title="Live Travel Support"
@@ -327,10 +326,10 @@ export default function WhatsAppFloat() {
               <X className="w-5 h-5" />
             ) : (
               <div className="relative flex items-center justify-center">
-                <SupportAgentIcon className="w-6 h-6 text-emerald-400 group-hover:text-white transition-colors" />
+                <SupportAgentIcon className="w-6 h-6 text-[#38804b] group-hover:text-white transition-colors" />
                 <span className="absolute -bottom-0.5 -right-0.5 flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-80" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 border border-slate-950" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#38804b] opacity-80" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#38804b] border border-slate-950" />
                 </span>
               </div>
             )}

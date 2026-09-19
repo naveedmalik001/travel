@@ -5,7 +5,7 @@ interface SupportAgentIconProps {
   size?: number;
 }
 
-export default function SupportAgentIcon({ className = "w-7 h-7 text-emerald-400", size }: SupportAgentIconProps) {
+export default function SupportAgentIcon({ className = "w-7 h-7 text-[#38804b]", size }: SupportAgentIconProps) {
   return (
     <svg
       viewBox="0 0 48 48"
@@ -67,7 +67,7 @@ export default function SupportAgentIcon({ className = "w-7 h-7 text-emerald-400
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <circle cx="23.5" cy="32" r="2" fill="#10B981" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="23.5" cy="32" r="2" fill="#38804b" stroke="currentColor" strokeWidth="1.5" />
 
       {/* Shoulders & Collar (Customer Support Uniform) */}
       <path

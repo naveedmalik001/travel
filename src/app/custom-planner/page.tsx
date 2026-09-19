@@ -38,7 +38,7 @@ export default function CustomPlannerPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#fbfdfb] text-slate-900 selection:bg-emerald-100 selection:text-emerald-950 flex flex-col justify-between">
+    <main className="min-h-screen bg-[#fbfdfb] text-slate-900 selection:bg-[#38804b]/20 selection:text-[#38804b] flex flex-col justify-between">
       <JsonLd data={plannerSchema} />
       <Navbar />
 
@@ -47,17 +47,17 @@ export default function CustomPlannerPage() {
 
         {/* Hero Banner */}
         <section className="relative bg-[#081f16] text-white py-14 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-800/30 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#38804b]/20 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-0 left-0 right-0 h-12 bg-[#fbfdfb] rounded-tl-[2rem] rounded-tr-[2rem] hidden md:block" />
           <div className="max-w-7xl mx-auto relative z-10 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/90 text-emerald-300 border border-emerald-500/30 mb-5">
-              <BadgeCheck className="w-3.5 h-3.5 text-[#38804e]" />
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#0B1E15]/90 text-[#38804b] border border-[#38804b]/30 mb-5">
+              <BadgeCheck className="w-3.5 h-3.5 text-[#38804b]" />
               Interactive Cost &amp; Route Estimator
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
-              Design Your <span className="text-[#38804e]">Dream Himalayan</span> Journey
+              Design Your <span className="text-[#38804b]">Dream Himalayan</span> Journey
             </h1>
-            <p className="mt-5 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
               Pick your favourite destinations, select hotel categories (3-Star Deluxe, 4-Star Luxury, Houseboat), choose your vehicle, and get transparent, live price estimates instantly.
             </p>
           </div>

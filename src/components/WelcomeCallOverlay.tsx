@@ -50,7 +50,7 @@ function EqualizerBars() {
       {[0, 1, 2, 3, 4].map((i) => (
         <span
           key={i}
-          className="block w-[3px] rounded-full bg-emerald-400"
+          className="block w-[3px] rounded-full bg-[#38804b]"
           style={{
             height: `${[10, 18, 14, 20, 12][i]}px`,
             animation: `equalizerPulse 0.9s ease-in-out ${i * 0.12}s infinite alternate`,
@@ -68,7 +68,7 @@ function RippleRings() {
       {[1, 2, 3].map((i) => (
         <span
           key={i}
-          className="absolute rounded-full border border-emerald-400/25 pointer-events-none"
+          className="absolute rounded-full border border-[#38804b]/25 pointer-events-none"
           style={{
             inset: `-${i * 20}px`,
             animation: `ripple 2.4s ease-out ${i * 0.6}s infinite`,
@@ -400,8 +400,8 @@ export default function WelcomeCallOverlay() {
               }}
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-70" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#38804b] opacity-70" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#38804b]" />
               </span>
               <span>{isAnswered ? "Connecting…" : "Incoming Call"}</span>
             </div>
@@ -586,7 +586,7 @@ export default function WelcomeCallOverlay() {
                 </>
               ) : (
                 <>
-                  <Volume2 className="w-4 h-4 text-emerald-300" />
+                  <Volume2 className="w-4 h-4 text-[#38804b]" />
                   <span className="text-xs font-extrabold tracking-wide">Tap to hear Kashmir ringtone</span>
                 </>
               )}
@@ -633,9 +633,9 @@ export default function WelcomeCallOverlay() {
                   >
                     <span className="text-xs sm:text-sm font-extrabold tracking-[0.08em] uppercase flex items-center gap-0.5" style={{ color: "rgba(255,255,255,0.75)" }}>
                       Swipe to Answer
-                      <ChevronRight className="w-4 h-4 text-emerald-400" style={{ opacity: 0.6, animation: "pulse 1.5s 0.0s infinite" }} />
-                      <ChevronRight className="w-4 h-4 text-emerald-400" style={{ opacity: 0.8, animation: "pulse 1.5s 0.15s infinite" }} />
-                      <ChevronRight className="w-4 h-4 text-emerald-400" style={{ animation: "pulse 1.5s 0.3s infinite" }} />
+                      <ChevronRight className="w-4 h-4 text-[#38804b]" style={{ opacity: 0.6, animation: "pulse 1.5s 0.0s infinite" }} />
+                      <ChevronRight className="w-4 h-4 text-[#38804b]" style={{ opacity: 0.8, animation: "pulse 1.5s 0.15s infinite" }} />
+                      <ChevronRight className="w-4 h-4 text-[#38804b]" style={{ animation: "pulse 1.5s 0.3s infinite" }} />
                     </span>
                   </div>
 
@@ -700,7 +700,7 @@ export default function WelcomeCallOverlay() {
                     color: "#6ee7b7",
                   }}
                 >
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b]" />
                   <span>Call Connected</span>
                 </div>
 

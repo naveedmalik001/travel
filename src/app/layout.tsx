@@ -164,7 +164,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${jakarta.variable} ${playfair.variable} scroll-smooth`}>
-      <body className="font-sans antialiased bg-[#fbfdfb] text-slate-900 selection:bg-pine-200 selection:text-pine-950">
+      <body className="font-sans antialiased bg-[#fbfdfb] text-slate-900 selection:bg-pine-200 selection:text-pine-950 overflow-x-hidden w-full max-w-[100vw]">
         <JsonLd data={travelAgencySchema} />
         <LeadPopupModal />
         {children}

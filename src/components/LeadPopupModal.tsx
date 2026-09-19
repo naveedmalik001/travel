@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { companyInfo } from "@/data/company";
+import { WhatsAppIcon } from "@/components/SocialIcons";
 import { 
   X, 
   Send, 
@@ -98,15 +99,15 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
           </div>
 
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#38804e]/30 text-emerald-300 border border-[#38804e]/50 text-[11px] font-bold mb-3">
-              <Compass className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#38804b]/30 text-white border border-[#38804b]/50 text-[11px] font-bold mb-3">
+              <Compass className="w-3.5 h-3.5 text-white" />
               <span>Free Custom Itinerary</span>
             </div>
 
             <h3 className="text-xl sm:text-2xl font-extrabold leading-tight tracking-tight text-white">
               Plan Your Kashmir &amp; Ladakh Trip
             </h3>
-            <p className="text-xs text-emerald-200/90 mt-1.5 leading-relaxed">
+            <p className="text-xs text-slate-200 mt-1.5 leading-relaxed">
               Curated by local team • 100% transparent pricing with MAP meals &amp; private cab.
             </p>
           </div>
@@ -114,30 +115,30 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
           {/* Key trust bullets */}
           <div className="relative z-10 my-4 space-y-2 text-xs text-slate-200 hidden md:block">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e] shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] shrink-0" />
               <span>Zero hidden fee • Direct local rates</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e] shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] shrink-0" />
               <span>Verified 3-Star, 4-Star &amp; Houseboats</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e] shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] shrink-0" />
               <span>Gulmarg Gondola &amp; permit assistance</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e] shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] shrink-0" />
               <span>24x7 on-ground trip support</span>
             </div>
           </div>
 
           {/* Rating Badge */}
-          <div className="relative z-10 pt-3 border-t border-emerald-800/60 flex items-center justify-between text-[11px]">
+          <div className="relative z-10 pt-3 border-t border-[#38804b]/30 flex items-center justify-between text-[11px]">
             <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#38804e]" />
+              <ShieldCheck className="w-3.5 h-3.5 text-[#38804b]" />
               <span className="font-bold text-white">4.9 / 5.0 Rating</span>
             </div>
-            <span className="text-emerald-300/80 font-medium">Verified Reviews</span>
+            <span className="text-slate-300 font-medium">Verified Reviews</span>
           </div>
         </div>
 
@@ -155,7 +156,7 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center gap-1">
-                  <Calendar className="w-3 h-3 text-[#38804e]" />
+                  <Calendar className="w-3 h-3 text-[#38804b]" />
                   <span>Travel Date / Month *</span>
                 </label>
                 <input
@@ -163,14 +164,14 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
                   placeholder="e.g. 15th Oct, Next month"
                   value={travelDate}
                   onChange={(e) => setTravelDate(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804e] focus:bg-white transition-all"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white transition-all"
                   required
                 />
               </div>
 
               <div>
                 <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center gap-1">
-                  <Users className="w-3 h-3 text-[#38804e]" />
+                  <Users className="w-3 h-3 text-[#38804b]" />
                   <span>Travelers</span>
                 </label>
                 <div className="grid grid-cols-4 gap-1">
@@ -181,7 +182,7 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
                       onClick={() => setTravelers(num)}
                       className={`py-1.5 text-xs font-bold rounded-lg border transition-all ${
                         travelers === num
-                          ? "bg-[#38804e] text-white border-[#38804e] shadow-sm"
+                          ? "bg-[#38804b] text-white border-[#38804b] shadow-sm"
                           : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                       }`}
                     >
@@ -195,13 +196,13 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
             {/* Row 2: Preferred Destination */}
             <div>
               <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center gap-1">
-                <MapPin className="w-3 h-3 text-[#38804e]" />
+                <MapPin className="w-3 h-3 text-[#38804b]" />
                 <span>Preferred Destination</span>
               </label>
               <select
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#38804e] focus:bg-white transition-all"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white transition-all"
               >
                 <option value="Kashmir Classic (Srinagar, Gulmarg, Pahalgam)">Kashmir Classic (Srinagar, Gulmarg, Pahalgam)</option>
                 <option value="Honeymoon Special (Houseboat + Candlelight)">Honeymoon Special (Houseboat + Candlelight)</option>
@@ -214,7 +215,7 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
             {/* Row 3: Hotel Category */}
             <div>
               <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center gap-1">
-                <Hotel className="w-3 h-3 text-[#38804e]" />
+                <Hotel className="w-3 h-3 text-[#38804b]" />
                 <span>Hotel Category</span>
               </label>
               <div className="grid grid-cols-3 gap-1.5">
@@ -229,7 +230,7 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
                     onClick={() => setHotelCategory(tier.value)}
                     className={`py-1.5 px-1 text-[11px] font-bold rounded-lg border transition-all text-center ${
                       hotelCategory === tier.value
-                        ? "bg-[#38804e] text-white border-[#38804e] shadow-sm"
+                        ? "bg-[#38804b] text-white border-[#38804b] shadow-sm"
                         : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                     }`}
                   >
@@ -242,13 +243,13 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
             {/* Row 4: Budget */}
             <div>
               <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center gap-1">
-                <Wallet className="w-3 h-3 text-[#38804e]" />
+                <Wallet className="w-3 h-3 text-[#38804b]" />
                 <span>Approximate Budget (Per Person)</span>
               </label>
               <select
                 value={budget}
                 onChange={(e) => setBudget(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#38804e] focus:bg-white transition-all"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white transition-all"
               >
                 <option value="₹10k - ₹15k / person (Budget)">₹10,000 - ₹15,000 / person (Budget)</option>
                 <option value="₹15k - ₹25k / person (Standard / Popular)">₹15,000 - ₹25,000 / person (Standard / Popular)</option>
@@ -268,13 +269,13 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
                   placeholder="e.g. Rahul Sharma"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804e] focus:bg-white"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white"
                 />
               </div>
 
               <div>
                 <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center gap-1">
-                  <Phone className="w-3 h-3 text-[#38804e]" />
+                  <Phone className="w-3 h-3 text-[#38804b]" />
                   <span>WhatsApp Number *</span>
                 </label>
                 <input
@@ -283,7 +284,7 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   required
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804e] focus:bg-white"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white"
                 />
               </div>
             </div>
@@ -292,14 +293,14 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full py-3 px-4 rounded-xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#245434] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5"
+                className="w-full py-3 px-4 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#245434] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5"
               >
-                <Send className="w-4 h-4 fill-current" />
+                <WhatsAppIcon className="w-4 h-4" />
                 <span>Create My Trip (Get WhatsApp Itinerary)</span>
               </button>
               
               <div className="flex items-center justify-center gap-1.5 text-[10px] text-slate-500 mt-1.5">
-                <Clock className="w-3 h-3 text-[#38804e]" />
+                <Clock className="w-3 h-3 text-[#38804b]" />
                 <span>⚡ Fast 5-minute response from local travel desk</span>
               </div>
             </div>

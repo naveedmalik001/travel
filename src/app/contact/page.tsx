@@ -7,12 +7,12 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import ContactSection from "@/components/ContactSection";
 import { companyInfo } from "@/data/company";
+import { WhatsAppIcon } from "@/components/SocialIcons";
 import { 
   MapPin, 
   Phone, 
   Mail, 
   Clock, 
-  MessageSquare, 
   ShieldCheck, 
   BadgeCheck
 } from "lucide-react";
@@ -59,7 +59,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#fbfdfb] text-slate-900 selection:bg-emerald-100 selection:text-emerald-950 flex flex-col justify-between">
+    <main className="min-h-screen bg-[#fbfdfb] text-slate-900 selection:bg-[#38804b]/20 selection:text-[#38804b] flex flex-col justify-between">
       <JsonLd data={contactSchema} />
       <Navbar />
 
@@ -68,18 +68,18 @@ export default function ContactPage() {
 
         {/* Hero Banner */}
         <section className="relative bg-[#081f16] text-white py-14 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-800/30 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#38804b]/20 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-0 left-0 right-0 h-12 bg-[#fbfdfb] rounded-tl-[2rem] rounded-tr-[2rem] hidden md:block" />
           <div className="max-w-7xl mx-auto relative z-10 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/90 text-emerald-300 border border-emerald-500/30 mb-5">
-              <BadgeCheck className="w-3.5 h-3.5 text-[#38804e]" />
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#0B1E15]/90 text-[#38804b] border border-[#38804b]/30 mb-5">
+              <BadgeCheck className="w-3.5 h-3.5 text-[#38804b]" />
               Direct Tangmarg Operations Office
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
               Get in Touch with Our{" "}
-              <span className="text-[#38804e]">Local Travel Team</span>
+              <span className="text-[#38804b]">Local Travel Team</span>
             </h1>
-            <p className="mt-5 text-sm sm:text-base text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
               Have questions about snow conditions, cab permits, hotels, or want a custom quotation? We are here to help you 7 days a week.
             </p>
           </div>
@@ -92,7 +92,7 @@ export default function ContactPage() {
             {/* Phone Card */}
             <div className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-lg flex flex-col gap-4">
               <div className="flex items-center space-x-3">
-                <div className="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0 border border-emerald-100">
+                <div className="w-11 h-11 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0 border border-[#38804b]/20">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
@@ -101,12 +101,12 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="space-y-2 text-sm font-bold text-slate-900">
-                <a href={`tel:${companyInfo.phones[0]}`} className="hover:text-emerald-700 transition-colors flex items-center gap-2 min-h-[44px] bg-slate-50 rounded-xl px-3 py-2 border border-slate-100">
-                  <Phone className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
+                <a href={`tel:${companyInfo.phones[0]}`} className="hover:text-[#38804b] transition-colors flex items-center gap-2 min-h-[44px] bg-slate-50 rounded-xl px-3 py-2 border border-slate-100">
+                  <Phone className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
                   {companyInfo.phones[0]}
                 </a>
-                <a href={`tel:${companyInfo.phones[1]}`} className="hover:text-emerald-700 transition-colors flex items-center gap-2 min-h-[44px] bg-slate-50 rounded-xl px-3 py-2 border border-slate-100">
-                  <Phone className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
+                <a href={`tel:${companyInfo.phones[1]}`} className="hover:text-[#38804b] transition-colors flex items-center gap-2 min-h-[44px] bg-slate-50 rounded-xl px-3 py-2 border border-slate-100">
+                  <Phone className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
                   {companyInfo.phones[1]}
                 </a>
               </div>
@@ -115,25 +115,25 @@ export default function ContactPage() {
             {/* WhatsApp Card */}
             <div className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-lg flex flex-col gap-4">
               <div className="flex items-center space-x-3">
-                <div className="w-11 h-11 rounded-xl bg-[#38804e]/10 text-[#38804e] flex items-center justify-center flex-shrink-0 border border-[#38804e]/20">
-                  <MessageSquare className="w-5 h-5 fill-current" />
+                <div className="w-11 h-11 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0 border border-[#38804b]/20">
+                  <WhatsAppIcon className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-slate-900">Instant WhatsApp Chat</h3>
                   <span className="text-xs text-slate-500">Quick 15-min response</span>
                 </div>
               </div>
-              <div className="flex items-center gap-2 text-xs text-slate-500 bg-emerald-50 rounded-xl px-3 py-2.5 border border-emerald-100">
-                <span className="w-2 h-2 rounded-full bg-[#38804e] animate-pulse flex-shrink-0" />
-                <span className="font-medium text-emerald-800">Team is online — typically replies in minutes</span>
+              <div className="flex items-center gap-2 text-xs text-slate-500 bg-[#38804b]/10 rounded-xl px-3 py-2.5 border border-[#38804b]/20">
+                <span className="w-2 h-2 rounded-full bg-[#38804b] animate-pulse flex-shrink-0" />
+                <span className="font-medium text-[#38804b]">Team is online — typically replies in minutes</span>
               </div>
               <a
                 href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hello Shop A Trip Team, I want to inquire about tour packages.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 px-4 rounded-xl bg-[#38804e] hover:bg-[#2b693f] text-white text-sm font-bold text-center transition-colors flex items-center justify-center gap-2 shadow-sm min-h-[44px]"
+                className="w-full py-3 px-4 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white text-sm font-bold text-center transition-colors flex items-center justify-center gap-2 shadow-sm min-h-[44px]"
               >
-                <MessageSquare className="w-4 h-4 fill-current" />
+                <WhatsAppIcon className="w-4 h-4" />
                 <span>Start WhatsApp Chat</span>
               </a>
             </div>
@@ -141,7 +141,7 @@ export default function ContactPage() {
             {/* Office Location Card */}
             <div className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-lg flex flex-col gap-4">
               <div className="flex items-center space-x-3">
-                <div className="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0 border border-emerald-100">
+                <div className="w-11 h-11 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0 border border-[#38804b]/20">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -149,14 +149,14 @@ export default function ContactPage() {
                   <span className="text-xs text-slate-500">Tangmarg, Baramulla</span>
                 </div>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed bg-emerald-50/60 rounded-xl px-3 py-2.5 border border-emerald-100/80">
+              <p className="text-xs text-slate-600 leading-relaxed bg-[#38804b]/10/60 rounded-xl px-3 py-2.5 border border-[#38804b]/20/80">
                 {companyInfo.fullAddress}
               </p>
               <a
                 href={companyInfo.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 px-4 rounded-xl bg-[#0B1E15] hover:bg-emerald-900 text-emerald-300 text-sm font-bold text-center transition-colors flex items-center justify-center gap-2 min-h-[44px]"
+                className="w-full py-3 px-4 rounded-xl bg-[#0B1E15] hover:bg-[#0B1E15] text-[#38804b] text-sm font-bold text-center transition-colors flex items-center justify-center gap-2 min-h-[44px]"
               >
                 <MapPin className="w-4 h-4" />
                 <span>Open in Google Maps</span>
@@ -177,7 +177,7 @@ export default function ContactPage() {
               const Icon = item.icon;
               return (
                 <div key={i} className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0">
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>

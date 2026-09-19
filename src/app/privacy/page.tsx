@@ -27,21 +27,21 @@ export default function PrivacyPolicyPage() {
   const lastUpdated = "September 2026";
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col selection:bg-[#38804b]/20 selection:text-[#38804b]">
       <Navbar />
 
       <main className="flex-grow pt-28 sm:pt-32 pb-20">
         {/* Header Banner */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
           <div className="flex items-center space-x-2 text-xs font-medium text-slate-500 mb-4">
-            <Link href="/" className="hover:text-[#38804e] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#38804b] transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3 text-slate-400" />
-            <span className="text-[#38804e] font-semibold">Privacy Policy</span>
+            <span className="text-[#38804b] font-semibold">Privacy Policy</span>
           </div>
 
-          <div className="bg-[#08150f] rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl border border-emerald-950">
+          <div className="bg-[#08150f] rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl border border-[#38804b]/20">
             <div className="relative z-10 max-w-2xl">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#38804e]/20 text-emerald-400 border border-[#38804e]/30 mb-4">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#38804b]/20 text-[#38804b] border border-[#38804b]/30 mb-4">
                 <Lock className="w-3.5 h-3.5" />
                 <span>Guest Data Privacy</span>
               </span>
@@ -51,13 +51,13 @@ export default function PrivacyPolicyPage() {
               <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
                 We respect your personal privacy. Discover how we protect your personal details, travel preferences, and border identification records.
               </p>
-              <p className="mt-4 text-xs text-emerald-400 font-medium">
+              <p className="mt-4 text-xs text-[#38804b] font-medium">
                 Last Updated: {lastUpdated} • {companyInfo.name} (shopatrip.in)
               </p>
             </div>
 
             {/* Decorative accent */}
-            <div className="absolute -right-16 -bottom-16 w-80 h-80 bg-[#38804e]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -right-16 -bottom-16 w-80 h-80 bg-[#38804b]/10 rounded-full blur-3xl pointer-events-none" />
           </div>
         </div>
 
@@ -72,17 +72,17 @@ export default function PrivacyPolicyPage() {
                   Policy Summary
                 </h2>
                 <nav className="space-y-2 text-xs font-medium text-slate-600">
-                  <a href="#collection" className="block hover:text-[#38804e] py-1 transition-colors">1. Data We Collect</a>
-                  <a href="#usage" className="block hover:text-[#38804e] py-1 transition-colors">2. How We Use Your Data</a>
-                  <a href="#permits-hotels" className="block hover:text-[#38804e] py-1 transition-colors">3. Hotel & Permit Sharing</a>
-                  <a href="#security" className="block hover:text-[#38804e] py-1 transition-colors">4. Data Security Standards</a>
-                  <a href="#cookies" className="block hover:text-[#38804e] py-1 transition-colors">5. Cookies & Analytics</a>
-                  <a href="#rights-contact" className="block hover:text-[#38804e] py-1 transition-colors">6. Your Rights & Disputes</a>
+                  <a href="#collection" className="block hover:text-[#38804b] py-1 transition-colors">1. Data We Collect</a>
+                  <a href="#usage" className="block hover:text-[#38804b] py-1 transition-colors">2. How We Use Your Data</a>
+                  <a href="#permits-hotels" className="block hover:text-[#38804b] py-1 transition-colors">3. Hotel & Permit Sharing</a>
+                  <a href="#security" className="block hover:text-[#38804b] py-1 transition-colors">4. Data Security Standards</a>
+                  <a href="#cookies" className="block hover:text-[#38804b] py-1 transition-colors">5. Cookies & Analytics</a>
+                  <a href="#rights-contact" className="block hover:text-[#38804b] py-1 transition-colors">6. Your Rights & Disputes</a>
                 </nav>
 
                 <div className="pt-4 border-t border-slate-100">
-                  <div className="bg-emerald-50 rounded-xl p-3.5 border border-emerald-100 text-xs space-y-2">
-                    <p className="font-bold text-[#38804e] flex items-center gap-1.5">
+                  <div className="bg-[#38804b]/10 rounded-xl p-3.5 border border-[#38804b]/20 text-xs space-y-2">
+                    <p className="font-bold text-[#38804b] flex items-center gap-1.5">
                       <Mail className="w-3.5 h-3.5" /> Privacy Officer
                     </p>
                     <p className="text-slate-600 text-[11px] leading-snug">
@@ -90,7 +90,7 @@ export default function PrivacyPolicyPage() {
                     </p>
                     <a 
                       href={`mailto:${companyInfo.email}`} 
-                      className="font-bold text-[#38804e] hover:underline block text-[11px]"
+                      className="font-bold text-[#38804b] hover:underline block text-[11px]"
                     >
                       {companyInfo.email}
                     </a>
@@ -113,15 +113,15 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <div className="space-y-2 text-sm text-slate-600">
                   <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#38804e] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#38804b] flex-shrink-0 mt-0.5" />
                     <span><strong>Contact Information:</strong> Full name, phone/WhatsApp number, email address, and city of origin.</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#38804e] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#38804b] flex-shrink-0 mt-0.5" />
                     <span><strong>Trip Preferences:</strong> Travel dates, passenger count, preferred hotel tier, vehicle class (Sedan, Innova Crysta, Tempo Traveller), and special dietary or room needs.</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#38804e] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#38804b] flex-shrink-0 mt-0.5" />
                     <span><strong>Regulatory Documents:</strong> Government photo ID cards (Aadhaar / Passport / Voter ID) strictly when required for frontier zone permits (e.g. Gurez Valley, Keran Valley, Bangus) or hotel check-in compliance.</span>
                   </div>
                 </div>
@@ -205,7 +205,7 @@ export default function PrivacyPolicyPage() {
                       <span className="text-slate-500 font-semibold block mb-1">Official Privacy Email:</span>
                       <a 
                         href="mailto:contact@shopatrip.in" 
-                        className="text-sm font-bold text-[#38804e] hover:underline flex items-center gap-1"
+                        className="text-sm font-bold text-[#38804b] hover:underline flex items-center gap-1"
                       >
                         <Mail className="w-3.5 h-3.5" /> contact@shopatrip.in
                       </a>
@@ -234,10 +234,10 @@ export default function PrivacyPolicyPage() {
               {/* Related Policies */}
               <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-600">
                 <div className="flex items-center gap-4">
-                  <Link href="/terms" className="text-[#38804e] font-bold hover:underline">
+                  <Link href="/terms" className="text-[#38804b] font-bold hover:underline">
                     Terms & Conditions →
                   </Link>
-                  <Link href="/cancellation-policy" className="text-[#38804e] font-bold hover:underline">
+                  <Link href="/cancellation-policy" className="text-[#38804b] font-bold hover:underline">
                     Cancellation Policy →
                   </Link>
                 </div>

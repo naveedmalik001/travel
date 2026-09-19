@@ -113,14 +113,14 @@ export default function DestinationSection() {
   };
 
   return (
-    <section id="destinations" className="py-16 sm:py-20 bg-white">
+    <section id="destinations" className="py-16 sm:py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-6">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#38804e]/10 text-[#38804e] text-xs font-semibold mb-2 border border-[#38804e]/20">
-              <Compass className="w-3.5 h-3.5 text-[#38804e]" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#38804b]/10 text-[#38804b] text-xs font-semibold mb-2 border border-[#38804b]/20">
+              <Compass className="w-3.5 h-3.5 text-[#38804b]" />
               <span>Explore The Himalayas</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
@@ -139,7 +139,7 @@ export default function DestinationSection() {
                 onClick={() => setSelectedRegion(r)}
                 className={`px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-semibold transition-all ${
                   selectedRegion === r
-                    ? "bg-[#38804e] text-white shadow-sm"
+                    ? "bg-[#38804b] text-white shadow-sm"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                 }`}
               >
@@ -153,8 +153,8 @@ export default function DestinationSection() {
         <div className="block lg:hidden mb-6">
           {/* Mobile Slider Controls Bar */}
           <div className="flex items-center justify-between mb-3 px-1">
-            <span className="text-xs text-[#38804e] font-semibold flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#38804e] animate-pulse" />
+            <span className="text-xs text-[#38804b] font-semibold flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#38804b] animate-pulse" />
               Swipe destinations ({activeMobileIndex + 1} of {filteredDestinations.length})
             </span>
             <div className="flex items-center gap-1.5">
@@ -206,19 +206,19 @@ export default function DestinationSection() {
 
                 {/* Bottom Card Content */}
                 <div className="absolute bottom-5 left-5 right-5 space-y-1.5">
-                  <div className="flex items-center gap-1.5 text-xs text-emerald-300 font-medium">
-                    <Mountain className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <div className="flex items-center gap-1.5 text-xs text-[#38804b] font-medium">
+                    <Mountain className="w-3.5 h-3.5 text-[#38804b] shrink-0" />
                     <span className="truncate">{dest.altitude}</span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                  <h3 className="text-xl font-bold text-white group-hover:text-[#38804b] transition-colors">
                     {dest.name}
                   </h3>
                   <p className="text-xs text-slate-300 line-clamp-2 leading-relaxed">
                     {dest.tagline}
                   </p>
 
-                  <div className="pt-2.5 flex items-center justify-between border-t border-white/15 text-xs text-emerald-400 font-semibold group-hover:text-emerald-300 group-hover:translate-x-1 transition-all">
+                  <div className="pt-2.5 flex items-center justify-between border-t border-white/15 text-xs text-white font-semibold group-hover:text-[#38804b] group-hover:translate-x-1 transition-all">
                     <span>View Travel Guide</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
@@ -236,7 +236,7 @@ export default function DestinationSection() {
                   onClick={() => scrollMobileToIndex(idx)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     activeMobileIndex === idx
-                      ? "w-6 bg-[#38804e]"
+                      ? "w-6 bg-[#38804b]"
                       : "w-2 bg-slate-300 hover:bg-slate-400"
                   }`}
                   aria-label={`Go to destination ${idx + 1}`}
@@ -253,8 +253,8 @@ export default function DestinationSection() {
         <div className="hidden lg:block mb-8">
           {/* Desktop Slider Header Controls & Counter */}
           <div className="flex items-center justify-between mb-4">
-            <span className="text-xs font-bold text-emerald-800 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-xs font-bold text-[#38804b] flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#38804b] animate-pulse" />
               Showing 4 of {filteredDestinations.length} destinations ({desktopPageIndex * 4 + 1}–{Math.min((desktopPageIndex + 1) * 4, filteredDestinations.length)})
             </span>
 
@@ -262,7 +262,7 @@ export default function DestinationSection() {
               <button
                 onClick={() => scrollDesktop("prev")}
                 disabled={desktopPageIndex === 0}
-                className="p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 shadow-sm hover:bg-[#38804e] hover:text-white disabled:opacity-40 disabled:hover:bg-slate-100 disabled:hover:text-slate-800 transition-all"
+                className="p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 shadow-sm hover:bg-[#38804b] hover:text-white disabled:opacity-40 disabled:hover:bg-slate-100 disabled:hover:text-slate-800 transition-all"
                 aria-label="Previous 4 destinations"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -275,7 +275,7 @@ export default function DestinationSection() {
                     onClick={() => scrollDesktopToPage(pIdx)}
                     className={`h-2 rounded-full transition-all duration-300 ${
                       desktopPageIndex === pIdx
-                        ? "w-6 bg-[#38804e]"
+                        ? "w-6 bg-[#38804b]"
                         : "w-2 bg-slate-300 hover:bg-slate-400"
                     }`}
                     aria-label={`Go to page ${pIdx + 1}`}
@@ -286,7 +286,7 @@ export default function DestinationSection() {
               <button
                 onClick={() => scrollDesktop("next")}
                 disabled={desktopPageIndex >= totalDesktopPages - 1}
-                className="p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 shadow-sm hover:bg-[#38804e] hover:text-white disabled:opacity-40 disabled:hover:bg-slate-100 disabled:hover:text-slate-800 transition-all"
+                className="p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 shadow-sm hover:bg-[#38804b] hover:text-white disabled:opacity-40 disabled:hover:bg-slate-100 disabled:hover:text-slate-800 transition-all"
                 aria-label="Next 4 destinations"
               >
                 <ChevronRight className="w-4 h-4" />
@@ -327,19 +327,19 @@ export default function DestinationSection() {
 
                   {/* Bottom Card Content */}
                   <div className="absolute bottom-5 left-5 right-5 space-y-1.5">
-                    <div className="flex items-center gap-1.5 text-xs text-emerald-300 font-medium">
-                      <Mountain className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <div className="flex items-center gap-1.5 text-xs text-[#38804b] font-medium">
+                      <Mountain className="w-3.5 h-3.5 text-[#38804b] shrink-0" />
                       <span className="truncate">{dest.altitude}</span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                    <h3 className="text-xl font-bold text-white group-hover:text-[#38804b] transition-colors">
                       {dest.name}
                     </h3>
                     <p className="text-xs text-slate-300 line-clamp-2 leading-relaxed">
                       {dest.tagline}
                     </p>
 
-                    <div className="pt-2.5 flex items-center justify-between border-t border-white/15 text-xs text-emerald-400 font-semibold group-hover:text-emerald-300 group-hover:translate-x-1 transition-all">
+                    <div className="pt-2.5 flex items-center justify-between border-t border-white/15 text-xs text-white font-semibold group-hover:text-[#38804b] group-hover:translate-x-1 transition-all">
                       <span>View Travel Guide</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
@@ -354,7 +354,7 @@ export default function DestinationSection() {
         <div className="mt-4 sm:mt-8 text-center">
           <Link
             href="/destinations"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-2xl bg-[#38804e] hover:bg-[#2b693f] text-white font-bold text-xs sm:text-sm shadow-md transition-all space-x-2 transform hover:-translate-y-0.5"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-2xl bg-[#38804b] hover:bg-[#2b693f] text-white font-bold text-xs sm:text-sm shadow-md transition-all space-x-2 transform hover:-translate-y-0.5"
           >
             <span>Browse All {destinations.length} Destination Guides</span>
             <ArrowRight className="w-4 h-4" />

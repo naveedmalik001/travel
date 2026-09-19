@@ -56,14 +56,14 @@ export default function LocalAdvantage() {
               {/* Stat card pinned inside photo */}
               <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-lg border border-slate-100">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-xl bg-[#08150f] text-[#38804e] font-extrabold flex flex-col items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#08150f] text-[#38804b] font-extrabold flex flex-col items-center justify-center flex-shrink-0">
                     <span className="text-base leading-none">6+</span>
                     <span className="text-[9px] font-bold uppercase tracking-wider mt-0.5">yrs</span>
                   </div>
                   <div>
                     <h4 className="font-bold text-sm text-slate-900">Shop A Trip</h4>
                     <p className="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5">
-                      <MapPin className="w-3 h-3 text-[#38804e] flex-shrink-0" />
+                      <MapPin className="w-3 h-3 text-[#38804b] flex-shrink-0" />
                       Gokhama Kunzer, Tangmarg, Baramulla
                     </p>
                   </div>
@@ -72,8 +72,8 @@ export default function LocalAdvantage() {
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -top-4 -right-3 sm:-right-5 bg-[#08150f] text-emerald-300 px-4 py-2 rounded-2xl shadow-xl border border-emerald-600/30 text-xs font-bold flex items-center gap-2">
-              <Award className="w-4 h-4 text-[#38804e]" />
+            <div className="absolute -top-4 -right-3 sm:-right-5 bg-[#08150f] text-[#38804b] px-4 py-2 rounded-2xl shadow-xl border border-[#38804b]/40 text-xs font-bold flex items-center gap-2">
+              <Award className="w-4 h-4 text-[#38804b]" />
               <span>Peace &amp; You · est. {companyInfo.foundedYear}</span>
             </div>
           </div>
@@ -82,8 +82,8 @@ export default function LocalAdvantage() {
           <div className="lg:col-span-7 order-1 lg:order-2 space-y-7">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <ShieldCheck className="w-4 h-4 text-[#38804e]" />
-                <span className="text-sm font-semibold text-[#38804e]">Why local matters in the Himalayas</span>
+                <ShieldCheck className="w-4 h-4 text-[#38804b]" />
+                <span className="text-sm font-semibold text-[#38804b]">Why local matters in the Himalayas</span>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
                 The difference between a<br className="hidden sm:block" />
@@ -98,7 +98,7 @@ export default function LocalAdvantage() {
               {advantages.map((adv, idx) => (
                 <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                   <div className="flex items-start gap-3 mb-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#38804b] flex-shrink-0 mt-0.5" />
                     <h3 className="font-bold text-slate-900 text-sm leading-snug">
                       {adv.title}
                     </h3>
@@ -114,9 +114,9 @@ export default function LocalAdvantage() {
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
                 href={`tel:${companyInfo.phones[0]}`}
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#0B1E15] hover:bg-emerald-900 text-emerald-300 font-bold text-sm shadow-md transition-all min-h-[48px]"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white font-bold text-sm shadow-md transition-all min-h-[48px]"
               >
-                <PhoneCall className="w-4 h-4" />
+                <PhoneCall className="w-4 h-4 text-white" />
                 <span>{companyInfo.phones[0]}</span>
               </a>
               <a

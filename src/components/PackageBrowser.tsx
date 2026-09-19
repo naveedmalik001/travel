@@ -129,13 +129,13 @@ export default function PackageBrowser({
   const visiblePackages = showAll ? filteredPackages : filteredPackages.slice(0, 3);
 
   return (
-    <section id="packages" className="py-16 sm:py-20 bg-slate-50 border-t border-slate-200/80">
+    <section id="packages" className="py-16 sm:py-20 bg-slate-50 border-t border-slate-200/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto mb-8 sm:mb-10 text-center sm:text-left">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold mb-2">
-            <Compass className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#38804b]/10 text-[#38804b] text-xs font-semibold mb-2">
+            <Compass className="w-3.5 h-3.5 text-[#38804b]" />
             <span>Handcrafted Itineraries</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
@@ -160,7 +160,7 @@ export default function PackageBrowser({
                   }}
                   className={`py-2.5 sm:py-3 px-2 sm:px-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex flex-col items-center justify-center gap-0.5 ${
                     isSelected
-                      ? "bg-[#38804e] text-white shadow-md scale-[1.02]"
+                      ? "bg-[#38804b] text-white shadow-md scale-[1.02]"
                       : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                   }`}
                 >
@@ -190,7 +190,7 @@ export default function PackageBrowser({
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                     isSelected
-                      ? "bg-[#38804e] text-white shadow-sm"
+                      ? "bg-[#38804b] text-white shadow-sm"
                       : "bg-slate-100 hover:bg-slate-200 text-slate-700"
                   }`}
                 >
@@ -219,7 +219,7 @@ export default function PackageBrowser({
                     onClick={() => setDurationFilter(d.id)}
                     className={`px-2.5 sm:px-3 py-1.5 rounded-lg font-medium transition-colors ${
                       durationFilter === d.id
-                        ? "bg-[#38804e] text-white"
+                        ? "bg-[#38804b] text-white"
                         : "bg-slate-100 hover:bg-slate-200 text-slate-700"
                     }`}
                   >
@@ -236,7 +236,7 @@ export default function PackageBrowser({
                 placeholder="Search destination, valley, pass..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-8 pr-3 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#38804e]"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-8 pr-3 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#38804b]"
               />
               <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" />
             </div>
@@ -257,8 +257,8 @@ export default function PackageBrowser({
             <div className="block lg:hidden">
               {/* Slider Header / Navigation Controls for Mobile & Tablet */}
               <div className="flex items-center justify-between mb-3 px-1">
-                <span className="text-xs text-emerald-800 font-semibold flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-xs text-[#38804b] font-semibold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#38804b] animate-pulse" />
                   Swipe left or right ({activeSlideIndex + 1} of {filteredPackages.length})
                 </span>
                 <div className="flex items-center gap-1.5">
@@ -308,7 +308,7 @@ export default function PackageBrowser({
                       onClick={() => scrollToIndex(idx)}
                       className={`h-2 rounded-full transition-all duration-300 ${
                         activeSlideIndex === idx
-                          ? "w-6 bg-[#38804e]"
+                          ? "w-6 bg-[#38804b]"
                           : "w-2 bg-slate-300 hover:bg-slate-400"
                       }`}
                       aria-label={`Go to slide ${idx + 1}`}
@@ -352,7 +352,7 @@ export default function PackageBrowser({
               {/* Browse All Tour Packages CTA */}
               <Link
                 href="/packages"
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-7 py-3 rounded-2xl bg-[#38804e] hover:bg-[#2b693f] text-white font-bold text-xs sm:text-sm shadow-md transition-all transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-7 py-3 rounded-2xl bg-[#38804b] hover:bg-[#2b693f] text-white font-bold text-xs sm:text-sm shadow-md transition-all transform hover:-translate-y-0.5"
               >
                 <span>Browse All Tour Packages</span>
                 <span>→</span>
@@ -373,7 +373,7 @@ export default function PackageBrowser({
                 setDurationFilter("all");
                 setSearchQuery("");
               }}
-              className="mt-4 px-4 py-2 bg-[#38804e] text-white text-xs font-semibold rounded-xl"
+              className="mt-4 px-4 py-2 bg-[#38804b] text-white text-xs font-semibold rounded-xl"
             >
               Reset Filters
             </button>

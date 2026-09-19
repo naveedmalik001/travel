@@ -12,6 +12,7 @@ import { tourPackages } from "@/data/packages";
 import { companyInfo } from "@/data/company";
 import { buildPackageWhatsAppUrl } from "@/data/whatsapp";
 import PackageDetailInquiry from "./PackageDetailInquiry";
+import { WhatsAppIcon } from "@/components/SocialIcons";
 import { 
   Clock, 
   MapPin, 
@@ -22,7 +23,6 @@ import {
   Car, 
   ShieldCheck, 
   Phone, 
-  MessageSquare, 
   ArrowLeft, 
   Share2, 
   Calendar,
@@ -132,7 +132,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
     .slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-[#fbfdfb] text-slate-900 selection:bg-emerald-100 selection:text-emerald-950 flex flex-col justify-between">
+    <main className="min-h-screen bg-[#fbfdfb] text-slate-900 selection:bg-[#38804b]/20 selection:text-[#38804b] flex flex-col justify-between">
       <JsonLd data={touristTripSchema} />
       <Navbar />
 
@@ -145,7 +145,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
         />
 
         {/* Hero Banner Section */}
-        <section className="relative bg-[#061811] text-white overflow-hidden py-10 sm:py-16 px-4 sm:px-6 lg:px-8 border-b border-emerald-950">
+        <section className="relative bg-[#061811] text-white overflow-hidden py-10 sm:py-16 px-4 sm:px-6 lg:px-8 border-b border-[#38804b]/20">
           <div className="absolute inset-0 z-0">
             <Image
               src={pkg.image}
@@ -159,14 +159,14 @@ export default async function PackageDetailPage({ params }: PageProps) {
 
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#38804e] text-white shadow-sm">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#38804b] text-white shadow-sm">
                 {pkg.tag}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-500/40">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#0B1E15]/80 text-[#38804b] border border-[#38804b]/30">
                 {pkg.category}
               </span>
               {pkg.featured && (
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-900 text-emerald-300 border border-emerald-500/40 flex items-center gap-1">
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#0B1E15] text-[#38804b] border border-[#38804b]/30 flex items-center gap-1">
                   <BadgeCheck className="w-3 h-3" />
                   Recommended Departure
                 </span>
@@ -176,7 +176,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white max-w-4xl leading-tight">
               {pkg.title}
             </h1>
-            <p className="mt-3 text-base sm:text-lg text-emerald-100/90 max-w-3xl leading-relaxed">
+            <p className="mt-3 text-base sm:text-lg text-slate-100 max-w-3xl leading-relaxed">
               {pkg.subtitle}
             </p>
 
@@ -185,27 +185,27 @@ export default async function PackageDetailPage({ params }: PageProps) {
               <div>
                 <span className="text-slate-400 block text-xs">Duration:</span>
                 <span className="font-bold text-white flex items-center mt-0.5">
-                  <Clock className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
+                  <Clock className="w-3.5 h-3.5 mr-1.5 text-[#38804b]" />
                   {pkg.duration}
                 </span>
               </div>
               <div>
                 <span className="text-slate-400 block text-xs">Route:</span>
                 <span className="font-bold text-white flex items-center mt-0.5 truncate">
-                  <MapPin className="w-3.5 h-3.5 mr-1.5 text-emerald-400 flex-shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 mr-1.5 text-[#38804b] flex-shrink-0" />
                   {pkg.startingPoint} → {pkg.endingPoint}
                 </span>
               </div>
               <div>
                 <span className="text-slate-400 block text-xs">Stay Category:</span>
                 <span className="font-bold text-white flex items-center mt-0.5 truncate">
-                  <Hotel className="w-3.5 h-3.5 mr-1.5 text-emerald-400 flex-shrink-0" />
+                  <Hotel className="w-3.5 h-3.5 mr-1.5 text-[#38804b] flex-shrink-0" />
                   {pkg.hotelCategory}
                 </span>
               </div>
               <div>
                 <span className="text-slate-400 block text-xs">Pricing Plan:</span>
-                <span className="font-bold text-white flex items-center mt-0.5 text-sm sm:text-base text-emerald-300">
+                <span className="font-bold text-white flex items-center mt-0.5 text-sm sm:text-base text-[#38804b]">
                   Custom Quote on WhatsApp
                 </span>
               </div>
@@ -223,7 +223,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
               {/* Tour Overview */}
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-soft">
                 <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-                  <Compass className="w-5 h-5 mr-2 text-emerald-600" />
+                  <Compass className="w-5 h-5 mr-2 text-[#38804b]" />
                   Package Overview
                 </h2>
                 <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
@@ -257,27 +257,27 @@ export default async function PackageDetailPage({ params }: PageProps) {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-100 gap-2">
                   <div>
                     <h2 className="text-xl font-bold text-slate-900 flex items-center">
-                      <Calendar className="w-5 h-5 mr-2 text-emerald-600" />
+                      <Calendar className="w-5 h-5 mr-2 text-[#38804b]" />
                       Day-Wise Detailed Itinerary
                     </h2>
                     <p className="text-xs text-slate-500 mt-1">
                       Customizable according to your arrival flight and flight departure times.
                     </p>
                   </div>
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 self-start sm:self-auto">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#38804b]/10 text-[#38804b] border border-[#38804b]/20 self-start sm:self-auto">
                     {pkg.days} Days / {pkg.nights} Nights
                   </span>
                 </div>
 
-                <div className="mt-8 space-y-8 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-emerald-100">
+                <div className="mt-8 space-y-8 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-[#38804b]/10">
                   {pkg.itinerary.map((day) => (
                     <div key={day.day} className="relative pl-10">
                       {/* Day number bullet */}
-                      <div className="absolute left-0 top-0 w-7 h-7 rounded-full bg-[#38804e] text-white font-bold text-xs flex items-center justify-center border-2 border-white shadow-sm ring-2 ring-emerald-600/30">
+                      <div className="absolute left-0 top-0 w-7 h-7 rounded-full bg-[#38804b] text-white font-bold text-xs flex items-center justify-center border-2 border-white shadow-sm ring-2 ring-[#38804b]/30">
                         {day.day}
                       </div>
 
-                      <div className="bg-slate-50/70 rounded-2xl p-5 sm:p-6 border border-slate-100 hover:border-emerald-200 transition-colors">
+                      <div className="bg-slate-50/70 rounded-2xl p-5 sm:p-6 border border-slate-100 hover:border-[#38804b]/20 transition-colors">
                         <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                           <h3 className="text-base sm:text-lg font-bold text-slate-900">
                             Day {day.day}: {day.title}
@@ -285,8 +285,8 @@ export default async function PackageDetailPage({ params }: PageProps) {
                         </div>
 
                         {/* Route Tag */}
-                        <div className="flex items-center text-xs font-semibold text-emerald-800 bg-emerald-100/60 px-2.5 py-1 rounded-md mb-3 w-fit">
-                          <MapPin className="w-3 h-3 mr-1 text-emerald-600" />
+                        <div className="flex items-center text-xs font-semibold text-[#38804b] bg-[#38804b]/10 px-2.5 py-1 rounded-md mb-3 w-fit">
+                          <MapPin className="w-3 h-3 mr-1 text-[#38804b]" />
                           <span>{day.route}</span>
                         </div>
 
@@ -314,7 +314,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                             <Hotel className="w-3.5 h-3.5 mr-1 text-pine-700" />
                             Stay: {day.stayLocation}
                           </span>
-                          <span className="flex items-center font-medium text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/60">
+                          <span className="flex items-center font-medium text-[#38804b] bg-[#38804b]/10 px-2 py-0.5 rounded border border-[#38804b]/20">
                             <Utensils className="w-3.5 h-3.5 mr-1" />
                             {day.meals}
                           </span>
@@ -328,15 +328,15 @@ export default async function PackageDetailPage({ params }: PageProps) {
               {/* Inclusions & Exclusions */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Inclusions */}
-                <div className="bg-emerald-50/50 rounded-2xl p-6 border border-emerald-200/80">
-                  <h3 className="text-base font-bold text-emerald-950 mb-4 flex items-center">
-                    <CheckCircle2 className="w-5 h-5 mr-2 text-emerald-600" />
+                <div className="bg-[#38804b]/5 rounded-2xl p-6 border border-[#38804b]/20">
+                  <h3 className="text-base font-bold text-slate-900 mb-4 flex items-center">
+                    <CheckCircle2 className="w-5 h-5 mr-2 text-[#38804b]" />
                     What's Included
                   </h3>
                   <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700">
                     {pkg.inclusions.map((inc, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 mr-2 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#38804b] mt-2 mr-2 flex-shrink-0" />
                         <span>{inc}</span>
                       </li>
                     ))}
@@ -363,7 +363,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
               {/* Hotel Category & Accommodation details */}
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-soft">
                 <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center">
-                  <Hotel className="w-5 h-5 mr-2 text-emerald-600" />
+                  <Hotel className="w-5 h-5 mr-2 text-[#38804b]" />
                   Accommodation & Verified Hotel Standards
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 mb-4">
@@ -396,7 +396,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
               <div className="sticky top-28 space-y-6">
                 
                 {/* Price & Instant WhatsApp Box */}
-                <div className="bg-white rounded-2xl p-6 border-2 border-emerald-600/30 shadow-card">
+                <div className="bg-white rounded-2xl p-6 border-2 border-[#38804b]/30 shadow-card">
                   <span className="text-xs uppercase font-bold text-slate-400 block tracking-wider">
                     Package Pricing
                   </span>
@@ -405,7 +405,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                     <span className="text-xs text-slate-500 block mt-0.5">Best direct rates based on your dates & group size</span>
                   </div>
 
-                  <p className="text-[11px] text-emerald-800 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200 mb-5">
+                  <p className="text-[11px] text-[#38804b] bg-[#38804b]/10 p-2.5 rounded-xl border border-[#38804b]/20 mb-5">
                     Includes 3-Star/4-Star stay, MAP meal plan (Breakfast &amp; Dinner), private cab for all days, airport transfers &amp; taxes.
                   </p>
 
@@ -414,9 +414,9 @@ export default async function PackageDetailPage({ params }: PageProps) {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 px-4 rounded-xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-sm transition-all text-center flex items-center justify-center space-x-2 shadow-md transform hover:-translate-y-0.5"
+                      className="w-full py-3.5 px-4 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-sm transition-all text-center flex items-center justify-center space-x-2 shadow-md transform hover:-translate-y-0.5"
                     >
-                      <MessageSquare className="w-4 h-4 fill-current" />
+                      <WhatsAppIcon className="w-4 h-4" />
                       <span>Get Quote for Trip on WhatsApp</span>
                     </a>
 
@@ -424,14 +424,14 @@ export default async function PackageDetailPage({ params }: PageProps) {
                       href={`tel:${companyInfo.phones[0]}`}
                       className="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2 border border-slate-200"
                     >
-                      <Phone className="w-3.5 h-3.5 text-[#38804e]" />
+                      <Phone className="w-3.5 h-3.5 text-[#38804b]" />
                       <span>Call {companyInfo.phones[0]}</span>
                     </a>
                   </div>
 
                   {/* Local base badge */}
                   <div className="mt-5 pt-4 border-t border-slate-100 flex items-center space-x-3 text-xs text-slate-600">
-                    <ShieldCheck className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                    <ShieldCheck className="w-5 h-5 text-[#38804b] flex-shrink-0" />
                     <span>Tangmarg Headquarters: On-ground coordination for snow chains, cable car, & union taxis.</span>
                   </div>
                 </div>
@@ -458,7 +458,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                 </div>
                 <Link
                   href="/packages"
-                  className="text-xs font-semibold text-emerald-700 hover:text-emerald-800 flex items-center"
+                  className="text-xs font-semibold text-[#38804b] hover:text-[#38804b] flex items-center"
                 >
                   <span>View All Packages</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1" />
@@ -475,7 +475,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                         fill
                         className="object-cover"
                       />
-                      <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#38804e] text-white">
+                      <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#38804b] text-white">
                         {rel.duration}
                       </div>
                     </div>
@@ -485,7 +485,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
                         <p className="text-xs text-slate-500 line-clamp-2 mt-1">{rel.subtitle}</p>
                       </div>
                       <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between">
-                        <span className="text-xs font-bold text-[#38804e]">Custom Quote</span>
+                        <span className="text-xs font-bold text-[#38804b]">Custom Quote</span>
                         <Link
                           href={`/packages/${rel.id}`}
                           className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold transition-colors"

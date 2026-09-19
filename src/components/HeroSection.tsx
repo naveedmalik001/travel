@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { companyInfo } from "@/data/company";
+import { WhatsAppIcon } from "@/components/SocialIcons";
 import { 
   ShieldCheck, 
   Search, 
@@ -61,19 +62,19 @@ export default function HeroSection({
         <div className="flex-1 text-white">
 
           {/* Local credibility badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-500/30 mb-4 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-[#38804e] flex-shrink-0" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#0B1E15]/90 text-[#38804b] border border-[#38804b]/40 mb-4 backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-[#38804b] flex-shrink-0" />
             <span>Local Operators · {companyInfo.experienceYears}+ Years Field Experience</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-[2.5rem] sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-3xl">
             Discover Kashmir,{" "}
-            <span className="text-[#38804e] font-serif italic font-normal">Travel Your Way</span>
+            <span className="text-[#38804b] font-serif italic font-normal">Travel Your Way</span>
           </h1>
 
           {/* Subheading */}
-          <h2 className="mt-4 text-lg sm:text-2xl font-bold text-emerald-100/95 max-w-2xl leading-snug">
+          <h2 className="mt-4 text-lg sm:text-2xl font-bold text-slate-100 max-w-2xl leading-snug">
             Handcrafted Jammu, Kashmir and Ladakh Holidays by Local Team
           </h2>
 
@@ -84,19 +85,19 @@ export default function HeroSection({
           {/* Concrete trust signals */}
           <div className="mt-6 flex flex-wrap gap-2.5 text-xs sm:text-sm text-white font-medium">
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e] flex-shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
               Direct Local Operator
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e] flex-shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
               Verified 3★ &amp; 4★ Stays
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e] flex-shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
               Gondola &amp; Pass Assistance
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e] flex-shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
               24/7 On-Ground Support
             </span>
           </div>
@@ -105,7 +106,7 @@ export default function HeroSection({
           <div className="mt-8 flex flex-wrap items-center gap-3.5">
             <a
               href="#packages"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-sm shadow-lg shadow-black/30 transition-all hover:-translate-y-0.5 min-h-[44px]"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-sm shadow-lg shadow-black/30 transition-all hover:-translate-y-0.5 min-h-[44px]"
             >
               <span>Explore Packages</span>
               <ArrowRight className="w-4 h-4" />
@@ -116,7 +117,7 @@ export default function HeroSection({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/12 hover:bg-white/20 active:bg-white/25 text-white font-semibold text-sm border border-white/25 backdrop-blur-md transition-all min-h-[44px]"
             >
-              <PhoneCall className="w-4 h-4 text-[#38804e]" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span>Plan My Trip</span>
             </a>
           </div>
@@ -127,13 +128,13 @@ export default function HeroSection({
           <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
 
             {/* Header */}
-            <div className="bg-[#081812] px-5 py-4 flex items-center gap-2.5">
-              <Compass className="w-4 h-4 text-[#38804e] flex-shrink-0" />
+            <div className="bg-[#38804b] px-5 py-4 flex items-center gap-2.5 shadow-xs">
+              <Compass className="w-4 h-4 text-white flex-shrink-0" />
               <div>
                 <p className="text-white font-bold text-sm leading-tight">Plan Your Kashmir Journey</p>
-                <p className="text-emerald-400/80 text-[11px] mt-0.5">Direct Local Travel Desk</p>
+                <p className="text-emerald-100 text-[11px] mt-0.5">Direct Local Travel Desk</p>
               </div>
-              <span className="ml-auto text-[10px] uppercase tracking-wider bg-[#38804e]/20 text-emerald-300 font-bold px-2.5 py-0.5 rounded-full border border-[#38804e]/30">
+              <span className="ml-auto text-[10px] uppercase tracking-wider bg-[#071710] text-white font-bold px-2.5 py-0.5 rounded-full border border-white/20 shadow-xs">
                 Direct Rates
               </span>
             </div>
@@ -150,7 +151,7 @@ export default function HeroSection({
                       onClick={() => setSelectedCategory(p.value)}
                       className={`px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all min-h-[32px] ${
                         selectedCategory === p.value
-                          ? "bg-[#38804e] text-white shadow-sm"
+                          ? "bg-[#38804b] text-white shadow-sm"
                           : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                       }`}
                     >
@@ -169,7 +170,7 @@ export default function HeroSection({
                   id="hero-category"
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:ring-2 focus:ring-[#38804e] focus:border-[#38804e] outline-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:ring-2 focus:ring-[#38804b] focus:border-[#38804b] outline-none"
                 >
                   <option value="All">All Curated Packages</option>
                   <option value="Classic Kashmir">Classic Kashmir (Srinagar, Gulmarg, Pahalgam)</option>
@@ -183,7 +184,7 @@ export default function HeroSection({
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-sm transition-all flex items-center justify-center gap-2 min-h-[44px] shadow-md cursor-pointer"
+                className="w-full py-3.5 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-sm transition-all flex items-center justify-center gap-2 min-h-[44px] shadow-md cursor-pointer"
               >
                 <Search className="w-4 h-4 text-white" />
                 <span>Show Matching Packages</span>
@@ -193,11 +194,11 @@ export default function HeroSection({
             {/* Trust footer */}
             <div className="px-5 pb-4 pt-0 flex items-center justify-between text-[11px] text-slate-500 border-t border-slate-100 pt-3">
               <span className="flex items-center gap-1.5 font-medium">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#38804e]" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#38804b]" />
                 Govt. Registered Agency
               </span>
               <span className="flex items-center gap-1.5 font-bold text-slate-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#38804e]" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b]" />
                 100% Verified Local Team
               </span>
             </div>

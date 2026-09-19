@@ -138,14 +138,14 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-white border-t border-slate-200/80">
+    <section className="py-16 sm:py-24 bg-white border-t border-slate-200/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header row with navigation arrows */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-10 sm:mb-12">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-[#38804e] text-xs font-semibold border border-emerald-200/80 mb-2.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#38804e]" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#38804b]/10 text-[#38804b] text-xs font-semibold border border-[#38804b]/20 mb-2.5">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#38804b]" />
               <span>Verified Guest Experiences</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 font-serif">
@@ -173,7 +173,7 @@ export default function TestimonialsSection() {
         <div className="block lg:hidden mb-6">
           <div className="flex items-center justify-between mb-3 px-1">
             <span className="text-xs text-slate-600 font-medium flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#38804e] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#38804b] animate-pulse" />
               Review {activeMobileIdx + 1} of {reviews.length}
             </span>
             <div className="flex items-center gap-1.5">
@@ -217,7 +217,7 @@ export default function TestimonialsSection() {
                   </div>
 
                   <div className="relative">
-                    <Quote className="w-6 h-6 text-emerald-100 absolute -top-1 -left-1 fill-emerald-100" />
+                    <Quote className="w-6 h-6 text-[#38804b]/15 absolute -top-1 -left-1 fill-[#38804b]/15" />
                     <p className="text-xs sm:text-sm text-slate-700 leading-relaxed pl-3">
                       &ldquo;{r.review}&rdquo;
                     </p>
@@ -227,7 +227,7 @@ export default function TestimonialsSection() {
                 <div className="pt-4 border-t border-slate-200/80">
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-emerald-100 text-[#38804e] font-bold text-xs flex items-center justify-center flex-shrink-0 border border-emerald-200">
+                      <div className="w-9 h-9 rounded-full bg-[#38804b]/10 text-[#38804b] font-bold text-xs flex items-center justify-center flex-shrink-0 border border-[#38804b]/20">
                         {r.initials}
                       </div>
                       <div>
@@ -238,12 +238,12 @@ export default function TestimonialsSection() {
                         </p>
                       </div>
                     </div>
-                    <span className="text-[10px] bg-emerald-50 text-[#38804e] font-semibold px-2 py-0.5 rounded-md border border-emerald-100 whitespace-nowrap flex items-center gap-1">
-                      <ShieldCheck className="w-3 h-3 text-[#38804e]" />
+                    <span className="text-[10px] bg-[#38804b]/10 text-[#38804b] font-semibold px-2 py-0.5 rounded-md border border-[#38804b]/20 whitespace-nowrap flex items-center gap-1">
+                      <ShieldCheck className="w-3 h-3 text-[#38804b]" />
                       Verified
                     </span>
                   </div>
-                  <p className="text-[11px] text-[#38804e] font-semibold mt-2.5 ml-12">
+                  <p className="text-[11px] text-[#38804b] font-semibold mt-2.5 ml-12">
                     {r.tour}
                   </p>
                 </div>
@@ -259,7 +259,7 @@ export default function TestimonialsSection() {
                 onClick={() => scrollMobileToIndex(idx)}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
                   activeMobileIdx === idx
-                    ? "w-6 bg-[#38804e]"
+                    ? "w-6 bg-[#38804b]"
                     : "w-2 bg-slate-300 hover:bg-slate-400"
                 }`}
                 aria-label={`Go to review ${idx + 1}`}
@@ -278,7 +278,7 @@ export default function TestimonialsSection() {
               <button
                 onClick={() => scrollDesktop("prev")}
                 disabled={desktopPage === 0}
-                className="p-2 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-2xs hover:bg-[#38804e] hover:text-white disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-slate-800 transition-all cursor-pointer"
+                className="p-2 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-2xs hover:bg-[#38804b] hover:text-white disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-slate-800 transition-all cursor-pointer"
                 aria-label="Previous reviews"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -291,7 +291,7 @@ export default function TestimonialsSection() {
                     onClick={() => scrollDesktopToPage(pIdx)}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
                       desktopPage === pIdx
-                        ? "w-6 bg-[#38804e]"
+                        ? "w-6 bg-[#38804b]"
                         : "w-2 bg-slate-300 hover:bg-slate-400"
                     }`}
                     aria-label={`Go to page ${pIdx + 1}`}
@@ -302,7 +302,7 @@ export default function TestimonialsSection() {
               <button
                 onClick={() => scrollDesktop("next")}
                 disabled={desktopPage >= totalDesktopPages - 1}
-                className="p-2 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-2xs hover:bg-[#38804e] hover:text-white disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-slate-800 transition-all cursor-pointer"
+                className="p-2 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-2xs hover:bg-[#38804b] hover:text-white disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-slate-800 transition-all cursor-pointer"
                 aria-label="Next reviews"
               >
                 <ChevronRight className="w-4 h-4" />
@@ -332,7 +332,7 @@ export default function TestimonialsSection() {
                   </div>
 
                   <div className="relative">
-                    <Quote className="w-6 h-6 text-emerald-100 absolute -top-1 -left-1 fill-emerald-100" />
+                    <Quote className="w-6 h-6 text-[#38804b]/15 absolute -top-1 -left-1 fill-[#38804b]/15" />
                     <p className="text-xs sm:text-sm text-slate-700 leading-relaxed pl-3 min-h-[76px]">
                       &ldquo;{r.review}&rdquo;
                     </p>
@@ -342,7 +342,7 @@ export default function TestimonialsSection() {
                 <div className="pt-4 border-t border-slate-200/80">
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-emerald-100 text-[#38804e] font-bold text-xs flex items-center justify-center flex-shrink-0 border border-emerald-200">
+                      <div className="w-9 h-9 rounded-full bg-[#38804b]/10 text-[#38804b] font-bold text-xs flex items-center justify-center flex-shrink-0 border border-[#38804b]/20">
                         {r.initials}
                       </div>
                       <div>
@@ -353,12 +353,12 @@ export default function TestimonialsSection() {
                         </p>
                       </div>
                     </div>
-                    <span className="text-[10px] bg-emerald-50 text-[#38804e] font-semibold px-2 py-0.5 rounded-md border border-emerald-100 whitespace-nowrap flex items-center gap-1">
-                      <ShieldCheck className="w-3 h-3 text-[#38804e]" />
+                    <span className="text-[10px] bg-[#38804b]/10 text-[#38804b] font-semibold px-2 py-0.5 rounded-md border border-[#38804b]/20 whitespace-nowrap flex items-center gap-1">
+                      <ShieldCheck className="w-3 h-3 text-[#38804b]" />
                       Verified
                     </span>
                   </div>
-                  <p className="text-[11px] text-[#38804e] font-semibold mt-2.5 ml-12">
+                  <p className="text-[11px] text-[#38804b] font-semibold mt-2.5 ml-12">
                     {r.tour}
                   </p>
                 </div>

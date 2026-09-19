@@ -12,13 +12,13 @@ import PackageCard from "@/components/PackageCard";
 import { destinations } from "@/data/destinations";
 import { tourPackages } from "@/data/packages";
 import { companyInfo } from "@/data/company";
+import { WhatsAppIcon } from "@/components/SocialIcons";
 import { 
   Mountain, 
   Calendar, 
   MapPin, 
   Compass, 
   CheckCircle2, 
-  MessageSquare, 
   Phone, 
   ArrowRight,
   ShieldCheck
@@ -120,7 +120,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
   )}`;
 
   return (
-    <main className="min-h-screen bg-[#fbfdfb] text-slate-900 selection:bg-emerald-100 selection:text-emerald-950 flex flex-col justify-between">
+    <main className="min-h-screen bg-[#fbfdfb] text-slate-900 selection:bg-[#38804b]/20 selection:text-[#38804b] flex flex-col justify-between">
       <JsonLd data={destinationSchema} />
       <Navbar />
 
@@ -133,7 +133,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
         />
 
         {/* Hero Section */}
-        <section className="relative bg-[#061811] text-white overflow-hidden py-12 sm:py-20 px-4 sm:px-6 lg:px-8 border-b border-emerald-950">
+        <section className="relative bg-[#061811] text-white overflow-hidden py-12 sm:py-20 px-4 sm:px-6 lg:px-8 border-b border-[#38804b]/20">
           <div className="absolute inset-0 z-0">
             <Image
               src={dest.image}
@@ -147,10 +147,10 @@ export default async function DestinationDetailPage({ params }: PageProps) {
 
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/90 text-emerald-300 border border-emerald-500/40">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#0B1E15]/90 text-[#38804b] border border-[#38804b]/30">
                 {dest.region}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#38804e] text-white flex items-center gap-1.5">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#38804b] text-white flex items-center gap-1.5">
                 <MapPin className="w-3 h-3" />
                 Himalayan Destination
               </span>
@@ -159,7 +159,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white max-w-4xl leading-tight">
               {dest.name}
             </h1>
-            <p className="mt-3 text-lg sm:text-xl text-emerald-200/90 font-medium max-w-3xl">
+            <p className="mt-3 text-lg sm:text-xl text-slate-200 font-medium max-w-3xl">
               {dest.tagline}
             </p>
 
@@ -168,21 +168,21 @@ export default async function DestinationDetailPage({ params }: PageProps) {
               <div>
                 <span className="text-slate-400 block text-xs">Altitude:</span>
                 <span className="font-bold text-white flex items-center mt-1">
-                  <Mountain className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
+                  <Mountain className="w-3.5 h-3.5 mr-1.5 text-[#38804b]" />
                   {dest.altitude}
                 </span>
               </div>
               <div>
                 <span className="text-slate-400 block text-xs">Distance:</span>
                 <span className="font-bold text-white flex items-center mt-1 truncate">
-                  <MapPin className="w-3.5 h-3.5 mr-1.5 text-emerald-400 flex-shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 mr-1.5 text-[#38804b] flex-shrink-0" />
                   {dest.distanceFromSrinagar}
                 </span>
               </div>
               <div>
                 <span className="text-slate-400 block text-xs">Best Season:</span>
                 <span className="font-bold text-white flex items-center mt-1 truncate">
-                  <Calendar className="w-3.5 h-3.5 mr-1.5 text-emerald-400 flex-shrink-0" />
+                  <Calendar className="w-3.5 h-3.5 mr-1.5 text-[#38804b] flex-shrink-0" />
                   {dest.bestTimeToVisit}
                 </span>
               </div>
@@ -200,7 +200,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
               {/* About Destination */}
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-soft">
                 <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-                  <Compass className="w-5 h-5 mr-2 text-emerald-600" />
+                  <Compass className="w-5 h-5 mr-2 text-[#38804b]" />
                   About {dest.name}
                 </h2>
                 <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
@@ -215,7 +215,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {dest.highlights.map((hl, i) => (
                       <div key={i} className="flex items-center text-xs sm:text-sm text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                        <CheckCircle2 className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 mr-2 text-[#38804b] flex-shrink-0" />
                         <span className="font-medium">{hl}</span>
                       </div>
                     ))}
@@ -226,7 +226,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
               {/* Top Attractions in Detail */}
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-soft">
                 <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center">
-                  <Compass className="w-5 h-5 mr-2 text-emerald-600" />
+                  <Compass className="w-5 h-5 mr-2 text-[#38804b]" />
                   Top Attractions & Sightseeing Spots
                 </h2>
 
@@ -234,10 +234,10 @@ export default async function DestinationDetailPage({ params }: PageProps) {
                   {dest.topAttractions.map((att, idx) => (
                     <div
                       key={idx}
-                      className="p-5 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-emerald-200 transition-colors"
+                      className="p-5 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-[#38804b]/20 transition-colors"
                     >
                       <h3 className="text-base font-bold text-slate-900 mb-1.5 flex items-center">
-                        <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold flex items-center justify-center mr-2.5 flex-shrink-0">
+                        <span className="w-6 h-6 rounded-full bg-[#38804b]/10 text-[#38804b] text-xs font-bold flex items-center justify-center mr-2.5 flex-shrink-0">
                           {idx + 1}
                         </span>
                         {att.name}
@@ -251,26 +251,26 @@ export default async function DestinationDetailPage({ params }: PageProps) {
               </div>
 
               {/* Local Tangmarg Base Insider Tips */}
-              <div className="bg-emerald-950 text-white rounded-2xl p-6 sm:p-8 border border-emerald-900 shadow-soft relative overflow-hidden">
+              <div className="bg-[#0B1E15] text-white rounded-2xl p-6 sm:p-8 border border-[#38804b]/20 shadow-soft relative overflow-hidden">
                 <div className="relative z-10">
-                  <div className="flex items-center space-x-2 text-emerald-300 text-xs uppercase font-bold tracking-wider mb-2">
+                  <div className="flex items-center space-x-2 text-[#38804b] text-xs uppercase font-bold tracking-wider mb-2">
                     <ShieldCheck className="w-4 h-4" />
                     <span>Tangmarg Base Expert Insider Tips</span>
                   </div>
                   <h3 className="text-lg font-bold text-white mb-3">
                     How We Make Your {dest.name} Journey Hassle-Free
                   </h3>
-                  <ul className="space-y-2.5 text-xs sm:text-sm text-emerald-100/90">
+                  <ul className="space-y-2.5 text-xs sm:text-sm text-slate-100">
                     <li className="flex items-start">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 mr-2 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#38804b] mt-2 mr-2 flex-shrink-0" />
                       <span><strong>Direct Cab Coordination:</strong> Private sanitized vehicles with experienced mountain drivers familiar with passes, snow chain checkpoints, and scenic halts.</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 mr-2 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#38804b] mt-2 mr-2 flex-shrink-0" />
                       <span><strong>Permit & Pass Clearance:</strong> Full on-ground support for frontier border permits (Keran & Gurez) and Gondola Phase 1 & 2 slot reservations in Gulmarg.</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 mr-2 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#38804b] mt-2 mr-2 flex-shrink-0" />
                       <span><strong>Inspected Stays:</strong> Guaranteed central heating / heated blankets, round-the-clock warm running water, and hot Kashmiri Wazwan / multi-cuisine food.</span>
                     </li>
                   </ul>
@@ -284,7 +284,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
               <div className="sticky top-28 space-y-6">
                 
                 {/* Book Custom Trip Box */}
-                <div className="bg-white rounded-2xl p-6 border-2 border-emerald-600/30 shadow-card">
+                <div className="bg-white rounded-2xl p-6 border-2 border-[#38804b]/30 shadow-card">
                   <span className="text-xs uppercase font-bold text-slate-400 block tracking-wider">
                     Plan Your Visit
                   </span>
@@ -300,25 +300,25 @@ export default async function DestinationDetailPage({ params }: PageProps) {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 px-4 rounded-xl bg-[#38804e] hover:bg-[#2b693f] text-white font-bold text-sm transition-all text-center flex items-center justify-center space-x-2 shadow-md"
+                      className="w-full py-3.5 px-4 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white font-bold text-sm transition-all text-center flex items-center justify-center space-x-2 shadow-md"
                     >
-                      <MessageSquare className="w-4 h-4 fill-current" />
+                      <WhatsAppIcon className="w-4 h-4" />
                       <span>WhatsApp {dest.name} Inquiry</span>
                     </a>
 
                     <Link
                       href="/custom-planner"
-                      className="w-full py-3 px-4 rounded-xl bg-white hover:bg-emerald-50 text-slate-800 border border-slate-200 font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2"
+                      className="w-full py-3 px-4 rounded-xl bg-white hover:bg-[#38804b]/10 text-slate-800 border border-slate-200 font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2"
                     >
                       <span>Calculate Estimated Trip Cost</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#38804e]" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#38804b]" />
                     </Link>
 
                     <a
                       href={`tel:${companyInfo.phones[0]}`}
                       className="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-2 border border-slate-200"
                     >
-                      <Phone className="w-3.5 h-3.5 text-[#38804e]" />
+                      <Phone className="w-3.5 h-3.5 text-[#38804b]" />
                       <span>Call {companyInfo.phoneDisplay}</span>
                     </a>
                   </div>
@@ -333,7 +333,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
                     {dest.idealFor.map((t, i) => (
                       <span
                         key={i}
-                        className="text-xs font-medium bg-emerald-50 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200"
+                        className="text-xs font-medium bg-[#38804b]/10 text-[#38804b] px-3 py-1 rounded-full border border-[#38804b]/20"
                       >
                         {t}
                       </span>
@@ -360,7 +360,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
                 </div>
                 <Link
                   href="/packages"
-                  className="text-xs font-semibold text-emerald-700 hover:text-emerald-800 flex items-center"
+                  className="text-xs font-semibold text-[#38804b] hover:text-[#38804b] flex items-center"
                 >
                   <span>View All Packages</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1" />

@@ -35,8 +35,8 @@ export default function TrustBar() {
             return (
               <div key={idx} className={`flex flex-col gap-2.5 ${idx !== 0 ? "sm:pl-8" : ""}`}>
                 <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center flex-shrink-0 border border-emerald-100/60">
-                    <Icon className="w-4 h-4 text-[#38804e]" strokeWidth={2} />
+                  <div className="w-9 h-9 rounded-xl bg-[#38804b]/10 flex items-center justify-center flex-shrink-0 border border-[#38804b]/20">
+                    <Icon className="w-4 h-4 text-[#38804b]" strokeWidth={2} />
                   </div>
                   <h3 className="font-bold text-slate-900 text-xs sm:text-sm leading-tight">{item.title}</h3>
                 </div>

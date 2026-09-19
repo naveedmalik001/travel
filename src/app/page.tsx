@@ -31,7 +31,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#fbfdfb] text-slate-900 selection:bg-emerald-100 selection:text-emerald-950">
+    <main className="min-h-screen bg-[#fbfdfb] text-slate-900 selection:bg-[#38804b]/20 selection:text-[#38804b] overflow-x-hidden w-full max-w-full">
       {/* Navigation */}
       <Navbar onOpenCustomPlanner={scrollToCustomPlanner} />
 

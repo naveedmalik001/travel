@@ -5,7 +5,6 @@ import Link from "next/link";
 import { 
   ChevronDown, 
   HelpCircle, 
-  MessageSquare, 
   Phone, 
   Calendar, 
   Hotel, 
@@ -14,6 +13,7 @@ import {
   FileText
 } from "lucide-react";
 import { companyInfo } from "@/data/company";
+import { WhatsAppIcon } from "@/components/SocialIcons";
 
 interface FAQItem {
   id: string;
@@ -94,7 +94,7 @@ export default function FAQSection() {
         
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-[#38804e] border border-emerald-200/80 mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#38804b]/10 text-[#38804b] border border-[#38804b]/20 mb-3">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Clear Answers &amp; Guidelines</span>
           </div>
@@ -123,7 +123,7 @@ export default function FAQSection() {
                 }}
                 className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                   isActive
-                    ? "bg-[#38804e] text-white shadow-xs"
+                    ? "bg-[#38804b] text-white shadow-xs"
                     : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
                 }`}
               >
@@ -143,7 +143,7 @@ export default function FAQSection() {
                 key={faq.id}
                 className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? "bg-white border-[#38804e]/50 shadow-sm ring-1 ring-[#38804e]/10"
+                    ? "bg-white border-[#38804b]/50 shadow-sm ring-1 ring-[#38804b]/10"
                     : "bg-white border-slate-200/90 hover:border-slate-300"
                 }`}
               >
@@ -153,12 +153,12 @@ export default function FAQSection() {
                   aria-expanded={isOpen}
                 >
                   <span className={`text-sm sm:text-base font-bold leading-snug transition-colors ${
-                    isOpen ? "text-[#38804e]" : "text-slate-800"
+                    isOpen ? "text-[#38804b]" : "text-slate-800"
                   }`}>
                     {faq.q}
                   </span>
                   <div className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
-                    isOpen ? "bg-[#38804e] text-white rotate-180" : "bg-slate-100 text-slate-500"
+                    isOpen ? "bg-[#38804b] text-white rotate-180" : "bg-slate-100 text-slate-500"
                   }`}>
                     <ChevronDown className="w-3.5 h-3.5" />
                   </div>
@@ -185,16 +185,16 @@ export default function FAQSection() {
               href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hi Shop A Trip, I have a few questions regarding my upcoming Kashmir tour.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#38804e] hover:bg-[#2b693f] active:bg-[#225433] text-white text-xs font-bold transition-all shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#225433] text-white text-xs font-bold transition-all shadow-xs cursor-pointer"
             >
-              <MessageSquare className="w-3.5 h-3.5 fill-current" />
+              <WhatsAppIcon className="w-3.5 h-3.5" />
               <span>Ask on WhatsApp</span>
             </a>
             <Link
               href="/terms"
               className="inline-flex items-center gap-1 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-all border border-slate-200"
             >
-              <FileText className="w-3.5 h-3.5 text-[#38804e]" />
+              <FileText className="w-3.5 h-3.5 text-[#38804b]" />
               <span>Full Policy</span>
             </Link>
           </div>
@@ -202,7 +202,7 @@ export default function FAQSection() {
 
         {/* Verification footer badge */}
         <div className="mt-6 flex items-center justify-center gap-2 text-xs text-slate-500 font-medium text-center">
-          <ShieldCheck className="w-4 h-4 text-[#38804e] flex-shrink-0" />
+          <ShieldCheck className="w-4 h-4 text-[#38804b] flex-shrink-0" />
           <span>Shop A Trip Tour &amp; Travels · Registered Tour Operator · Tangmarg, Baramulla (J&amp;K)</span>
         </div>
 
