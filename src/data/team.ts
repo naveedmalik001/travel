@@ -10,6 +10,15 @@ export interface TeamMember {
 
 export const teamMembers: TeamMember[] = [
   {
+    id: "rayees",
+    name: "Rayees Ahmad",
+    role: "Founder & CEO",
+    category: "Leadership",
+    experience: "Founder & CEO",
+    image: "/team/rayees.jpeg",
+    specialty: "Himalayan Travel Vision & Operations Leadership",
+  },
+  {
     id: "aarif",
     name: "Mr. Aarif",
     role: "Creative Director",
@@ -89,14 +98,5 @@ export const teamMembers: TeamMember[] = [
     experience: "5+ Years Experience",
     image: "/team/manzoor.jpeg",
     specialty: "Valley Transit & Safe Family Driving",
-  },
-  {
-    id: "rayees",
-    name: "Rayees Ahmad",
-    role: "Trip Specialist",
-    category: "Guest Hospitality",
-    experience: "5 Years Experience",
-    image: "/team/rayees.jpeg",
-    specialty: "Local Guest Relations & Field Hospitality",
   },
 ];
