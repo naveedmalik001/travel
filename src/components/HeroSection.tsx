@@ -61,46 +61,27 @@ export default function HeroSection({
         {/* ─── Text Stack ──────────────────────────────────── */}
         <div className="flex-1 text-white">
 
-          {/* Local credibility badge */}
+          {/* Small Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#0B1E15]/90 text-[#38804b] border border-[#38804b]/40 mb-4 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-[#38804b] flex-shrink-0" />
-            <span>Local Operators · {companyInfo.experienceYears}+ Years Field Experience</span>
+            <span className="font-bold tracking-wider uppercase text-[11px] sm:text-xs text-slate-100">KASHMIR • LADAKH • BEYOND</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-[2.5rem] sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-3xl">
-            Discover Kashmir,{" "}
-            <span className="text-[#38804b] font-serif italic font-normal">Travel Your Way</span>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-3xl">
+            KASHMIR<br />
+            <span className="text-[#38804b] font-serif italic font-semibold">EXPERIENCE THE UNFORGETTABLE</span>
           </h1>
 
-          {/* Subheading */}
-          <h2 className="mt-4 text-lg sm:text-2xl font-bold text-slate-100 max-w-2xl leading-snug">
-            Handcrafted Jammu, Kashmir and Ladakh Holidays by Local Team
-          </h2>
-
-          <p className="mt-3 text-sm sm:text-base text-white max-w-xl leading-relaxed font-normal">
-            Handpicked itineraries, 4x4 snow-chain cabs, and 24/7 mountain support — managed by our native on-ground team in Kashmir, not an outsourced call centre.
+          {/* Tagline */}
+          <p className="mt-3 text-base sm:text-xl font-serif italic text-emerald-200">
+            Peace &amp; You
           </p>
 
-          {/* Concrete trust signals */}
-          <div className="mt-6 flex flex-wrap gap-2.5 text-xs sm:text-sm text-white font-medium">
-            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
-              Direct Local Operator
-            </span>
-            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
-              Verified 3★ &amp; 4★ Stays
-            </span>
-            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
-              Gondola &amp; Pass Assistance
-            </span>
-            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
-              24/7 Assistance
-            </span>
-          </div>
+          {/* Supporting Text */}
+          <p className="mt-2.5 text-sm sm:text-base text-slate-200 max-w-xl leading-relaxed font-normal">
+            Curated journeys, beautiful stays and seamless travel experiences across Kashmir and beyond.
+          </p>
 
           {/* CTAs — primary + secondary */}
           <div className="mt-8 flex flex-wrap items-center gap-3.5">
@@ -112,13 +93,11 @@ export default function HeroSection({
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
-              href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hi Shop A Trip, I want to plan my Kashmir trip. Please help me with custom itinerary and quotes.")}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#custom-planner"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/12 hover:bg-white/20 active:bg-white/25 text-white font-semibold text-sm border border-white/25 backdrop-blur-md transition-all min-h-[44px]"
             >
-              <WhatsAppIcon className="w-4 h-4" />
-              <span>Plan My Trip</span>
+              <Compass className="w-4 h-4 text-emerald-300" />
+              <span>Customize Your Trip</span>
             </a>
           </div>
         </div>
