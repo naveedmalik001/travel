@@ -26,19 +26,19 @@ import TeamMemberCard from "@/components/TeamMemberCard";
 import { teamMembers } from "@/data/team";
 
 export const metadata: Metadata = {
-  title: "About Us | Shop A Trip Tour & Travels (Peace & You) - Tangmarg Kashmir",
-  description: "Learn about Shop A Trip Tour & Travels. Headquartered in Tangmarg at the base of Gulmarg, Baramulla with 3+ years of excellence in curating authentic Kashmir, Gurez, Keran, and Ladakh tours.",
+  title: "About Us | Shop A Trip Tour & Travels (peace & you) - Kashmir",
+  description: "Learn about Shop A Trip Tour & Travels. Premier Kashmir travel specialists with 3+ years of excellence in curating authentic Kashmir, Gurez, Keran, and Ladakh tours.",
   keywords: [
     "About Shop A Trip",
-    "Peace & You Kashmir",
+    "peace & you Kashmir",
     "Tangmarg Travel Agency",
     "Gulmarg Tour Operator",
     "Kashmir Local Travel Company",
     "Baramulla Travel Agency"
   ],
   openGraph: {
-    title: "About Shop A Trip Tour & Travels | Peace & You",
-    description: "3+ Years of field excellence based in Tangmarg, Baramulla, Jammu & Kashmir.",
+    title: "About Shop A Trip Tour & Travels | peace & you",
+    description: "3+ Years of field excellence based in Jammu & Kashmir.",
     url: "https://shopatrip.in/about",
     images: ["/logo.jpg"],
   },
@@ -49,12 +49,12 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "About Shop A Trip Tour & Travels",
-    description: "Company profile, origins, local Tangmarg base, and tourism philosophy of Shop A Trip Tour & Travels.",
+    description: "Company profile, origins, local base, and tourism philosophy of Shop A Trip Tour & Travels.",
     url: "https://shopatrip.in/about",
     mainEntity: {
       "@type": "TravelAgency",
       name: companyInfo.name,
-      alternateName: "Peace & You",
+      alternateName: "peace & you",
       address: {
         "@type": "PostalAddress",
         streetAddress: companyInfo.address,
@@ -105,7 +105,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto relative z-10 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#0B1E15]/90 text-[#38804b] border border-[#38804b]/30 mb-5">
               <BadgeCheck className="w-3.5 h-3.5 text-[#38804b]" />
-              Peace &amp; You · Local Kashmiri Hospitality
+              peace &amp; you · Local Kashmiri Hospitality
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
               Rooted in the Valleys,{" "}
@@ -140,10 +140,10 @@ export default function AboutPage() {
                 Our Story &amp; Philosophy
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
-                Why &ldquo;Peace &amp; You&rdquo; is More Than Just a Tagline
+                Why &ldquo;peace &amp; you&rdquo; is More Than Just a Tagline
               </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Shop A Trip Tour &amp; Travels was established with a singular mission: to let travelers experience Kashmir's breathtaking serenity (&ldquo;Peace&rdquo;) tailored intimately to each guest (&ldquo;You&rdquo;).
+                Shop A Trip Tour &amp; Travels was established with a singular mission: to let travelers experience Kashmir's breathtaking serenity (&ldquo;peace&rdquo;) tailored intimately to each guest (&ldquo;you&rdquo;).
               </p>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                 Operating directly from Gokhama Kunzer, Tangmarg—right at the gateway of Gulmarg—our founders realized that mainstream travel portals often sell cookie-cutter tours without understanding real mountain conditions, winter snow chain requirements, or authentic local connections. We bridge that gap with genuine local warmth, private vehicle networks, and 24/7 on-ground supervision.

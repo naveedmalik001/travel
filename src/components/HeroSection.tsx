@@ -75,7 +75,7 @@ export default function HeroSection({
 
           {/* Tagline */}
           <p className="mt-3 text-base sm:text-xl font-serif italic text-emerald-200">
-            Peace &amp; You
+            peace &amp; you
           </p>
 
           {/* Supporting Text */}

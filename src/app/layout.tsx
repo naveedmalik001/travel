@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     default: "Shop A Trip Tour & Travels | Kashmir, Gulmarg, Gurez & Ladakh Packages",
     template: "%s | Shop A Trip Tour & Travels",
   },
-  description: "Shop A Trip Tour & Travels (Peace & You) - Tangmarg/Gulmarg based premier Kashmir travel specialist with 3+ years experience. Verified Kashmir tour packages, Honeymoon specials, Gurez Valley, Keran Valley, Leh-Ladakh expeditions, and Vaishno Devi tours.",
+  description: "Shop A Trip Tour & Travels (peace & you) - Kashmir based premier travel specialist with 3+ years experience. Verified Kashmir tour packages, Honeymoon specials, Gurez Valley, Keran Valley, Leh-Ladakh expeditions, and Vaishno Devi tours.",
   keywords: [
     "Shop A Trip",
     "Shop A Trip Tour and Travels",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "Kashmir Honeymoon Packages",
     "Vaishno Devi Tour",
     "Srinagar Taxi Services",
-    "Peace and You Kashmir"
+    "peace and you Kashmir"
   ],
   authors: [{ name: "Shop A Trip Tour & Travels", url: "https://shopatrip.in" }],
   creator: "Shop A Trip Tour & Travels",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Shop A Trip Tour & Travels | Peace & You Kashmir",
+    title: "Shop A Trip Tour & Travels | peace & you Kashmir",
     description: "Explore the paradise of Kashmir & Ladakh with 3+ years experienced local operators based in Tangmarg/Gulmarg. Handcrafted itineraries, verified stays, and 24/7 on-ground mountain support.",
     url: "https://shopatrip.in",
     siteName: "Shop A Trip Tour & Travels",
@@ -106,7 +106,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "TravelAgency",
     name: companyInfo.name,
-    alternateName: "Peace & You",
+    alternateName: "peace & you",
     image: "https://shopatrip.in/logo.jpg",
     logo: "https://shopatrip.in/logo.png",
     "@id": "https://shopatrip.in",

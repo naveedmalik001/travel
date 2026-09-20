@@ -18,7 +18,7 @@ export interface CompanyInfo {
 
 export const companyInfo: CompanyInfo = {
   name: "Shop A Trip Tour & Travels",
-  tagline: "Peace & You",
+  tagline: "peace & you",
   experienceYears: 3,
   address: "Gokhama Kunzer, Tangmarg, Baramulla, Jammu and Kashmir 193404",
   fullAddress: "Gokhama Kunzer, Tangmarg, Baramulla, Jammu and Kashmir - 193404, India",
