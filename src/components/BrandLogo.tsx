@@ -37,9 +37,7 @@ export default function BrandLogo({
         )}
       </div>
       {showTagline && (
-        <span className={`text-[10px] sm:text-xs font-serif italic tracking-wider text-center mt-0.5 block w-full ${
-          variant === "white" ? "text-emerald-300" : "text-[#38804b]"
-        }`}>
+        <span className="text-[10px] sm:text-xs font-serif italic tracking-wider text-center text-[#38804b] mt-0.5 block w-full">
           peace &amp; you
         </span>
       )}

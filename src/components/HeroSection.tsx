@@ -74,7 +74,7 @@ export default function HeroSection({
           </h1>
 
           {/* Tagline */}
-          <p className="mt-3 text-base sm:text-xl font-serif italic text-emerald-200">
+          <p className="mt-3 text-base sm:text-xl font-serif italic text-[#38804b]">
             peace &amp; you
           </p>
 
@@ -96,7 +96,7 @@ export default function HeroSection({
               href="#custom-planner"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/12 hover:bg-white/20 active:bg-white/25 text-white font-semibold text-sm border border-white/25 backdrop-blur-md transition-all min-h-[44px]"
             >
-              <Compass className="w-4 h-4 text-emerald-300" />
+              <Compass className="w-4 h-4 text-[#38804b]" />
               <span>Customize Your Trip</span>
             </a>
           </div>
