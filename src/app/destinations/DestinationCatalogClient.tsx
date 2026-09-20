@@ -64,7 +64,7 @@ export default function DestinationCatalogClient() {
                 onClick={() => setSelectedRegion(reg)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
                   selectedRegion === reg
-                    ? "bg-pine-900 text-white shadow-sm"
+                    ? "bg-[#38804b] text-white shadow-sm"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
                 }`}
               >
@@ -105,7 +105,7 @@ export default function DestinationCatalogClient() {
             {/* Content */}
             <div className="p-5 flex-grow flex flex-col justify-between space-y-4">
               <div>
-                <p className="text-xs font-semibold text-pine-800 mb-2">
+                <p className="text-xs font-semibold text-[#38804b] mb-2">
                   {dest.tagline}
                 </p>
                 <p className="text-xs text-slate-600 line-clamp-2 mb-3">
@@ -115,7 +115,7 @@ export default function DestinationCatalogClient() {
                 {/* Altitude & Best time */}
                 <div className="space-y-1.5 py-2.5 px-3 bg-slate-50 rounded-xl text-xs border border-slate-100 mb-3">
                   <div className="flex items-center text-slate-700">
-                    <Mountain className="w-3.5 h-3.5 mr-1.5 text-pine-700 flex-shrink-0" />
+                    <Mountain className="w-3.5 h-3.5 mr-1.5 text-[#38804b] flex-shrink-0" />
                     <span className="truncate"><strong>Altitude:</strong> {dest.altitude}</span>
                   </div>
                   <div className="flex items-center text-slate-700">
@@ -141,7 +141,7 @@ export default function DestinationCatalogClient() {
               <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
                 <Link
                   href={`/destinations/${dest.id}`}
-                  className="w-full py-2.5 px-3 rounded-xl bg-pine-900 hover:bg-pine-800 text-white font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-1.5 shadow-sm"
+                  className="w-full py-2.5 px-3 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white font-semibold text-xs transition-colors text-center flex items-center justify-center space-x-1.5 shadow-sm"
                 >
                   <span>Explore {dest.name} Guide</span>
                   <ArrowRight className="w-3.5 h-3.5" />
