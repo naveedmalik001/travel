@@ -30,9 +30,9 @@ export default function PackageCard({ pkg, onOpenDetails }: PackageCardProps) {
     : "Dedicated Private Cab";
 
   return (
-    <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group hover:-translate-y-1">
+    <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 h-full">
       {/* ─── Image & Badges ──────────────────────────────── */}
-      <Link href={`/packages/${pkg.id}`} className="relative h-56 w-full overflow-hidden bg-slate-950 block cursor-pointer">
+      <Link href={`/packages/${pkg.id}`} className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-950 block cursor-pointer flex-shrink-0">
         <Image
           src={pkg.image}
           alt={pkg.title}
@@ -54,71 +54,71 @@ export default function PackageCard({ pkg, onOpenDetails }: PackageCardProps) {
         </div>
 
         {/* Main Destination Tag on Image Bottom */}
-        <div className="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold flex items-center gap-1.5 drop-shadow z-10 line-clamp-1">
+        <div className="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold flex items-center gap-1.5 drop-shadow z-10">
           <MapPin className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
-          <span className="line-clamp-1">{pkg.subtitle || `${pkg.startingPoint} → ${pkg.endingPoint}`}</span>
+          <span className="truncate">{pkg.subtitle || `${pkg.startingPoint} → ${pkg.endingPoint}`}</span>
         </div>
       </Link>
 
       {/* ─── Card Body ───────────────────────────────────── */}
-      <div className="p-5 flex-grow flex flex-col justify-between space-y-4">
+      <div className="p-4 sm:p-5 flex-grow flex flex-col justify-between space-y-3.5">
         <div>
           {/* Category Eyebrow */}
-          <div className="flex items-center justify-between text-[11px] font-bold text-[#38804b] uppercase tracking-wider mb-1.5">
-            <span>{pkg.category}</span>
-            <span className="text-slate-400 font-normal lowercase">curated by local team</span>
+          <div className="flex items-center justify-between text-[11px] font-bold text-[#38804b] uppercase tracking-wider mb-1">
+            <span className="truncate">{pkg.category}</span>
+            <span className="text-slate-400 font-normal lowercase flex-shrink-0">local team</span>
           </div>
 
-          {/* Package Name */}
+          {/* Package Name - Fixed 2-Line Height (h-11) for Perfect Alignment */}
           <Link href={`/packages/${pkg.id}`} className="block">
-            <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#38804b] transition-colors line-clamp-1 leading-snug">
+            <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#38804b] transition-colors line-clamp-2 h-11 leading-snug flex items-center" title={pkg.title}>
               {pkg.title}
             </h3>
           </Link>
 
           {/* 4 Clean Spec Badges (Destination, Hotel, Meal, Vehicle) */}
-          <div className="mt-3.5 grid grid-cols-2 gap-2 text-xs">
+          <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
             {/* Hotel Category */}
-            <div className="p-2 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-2">
+            <div className="p-2 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-2 h-[52px]">
               <Hotel className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0 mt-0.5" />
               <div className="min-w-0">
-                <span className="text-[10px] text-slate-400 block font-medium">Hotel Stay</span>
+                <span className="text-[10px] text-slate-400 block font-medium leading-none mb-0.5">Hotel Stay</span>
                 <span className="font-semibold text-slate-800 text-[11px] line-clamp-1">{pkg.hotelCategory}</span>
               </div>
             </div>
 
             {/* Meal Plan */}
-            <div className="p-2 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-2">
+            <div className="p-2 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-2 h-[52px]">
               <Utensils className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0 mt-0.5" />
               <div className="min-w-0">
-                <span className="text-[10px] text-slate-400 block font-medium">Meal Plan</span>
+                <span className="text-[10px] text-slate-400 block font-medium leading-none mb-0.5">Meal Plan</span>
                 <span className="font-semibold text-slate-800 text-[11px] line-clamp-1">MAP (Breakfast &amp; Dinner)</span>
               </div>
             </div>
 
             {/* Vehicle */}
-            <div className="p-2 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-2">
+            <div className="p-2 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-2 h-[52px]">
               <Car className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0 mt-0.5" />
               <div className="min-w-0">
-                <span className="text-[10px] text-slate-400 block font-medium">Vehicle</span>
+                <span className="text-[10px] text-slate-400 block font-medium leading-none mb-0.5">Vehicle</span>
                 <span className="font-semibold text-slate-800 text-[11px] line-clamp-1">{vehicleText}</span>
               </div>
             </div>
 
             {/* Support / Region */}
-            <div className="p-2 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-2">
+            <div className="p-2 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-2 h-[52px]">
               <BadgeCheck className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0 mt-0.5" />
               <div className="min-w-0">
-                <span className="text-[10px] text-slate-400 block font-medium">Trip Support</span>
-                <span className="font-semibold text-slate-800 text-[11px] line-clamp-1">24x7 Local Team</span>
+                <span className="text-[10px] text-slate-400 block font-medium leading-none mb-0.5">Trip Support</span>
+                <span className="font-semibold text-slate-800 text-[11px] line-clamp-1">24/7 Assistance</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* ─── Pricing & Actions ────────────────────────────── */}
-        <div className="pt-3.5 border-t border-slate-100">
-          <div className="mb-3.5 px-3.5 py-2.5 rounded-xl bg-slate-50/90 border border-slate-100">
+        <div className="pt-3 border-t border-slate-100">
+          <div className="mb-3 px-3.5 py-2 rounded-xl bg-slate-50/90 border border-slate-100">
             <span className="text-[10px] text-slate-400 uppercase font-bold block tracking-wider">Pricing</span>
             <span className="text-xs font-bold text-slate-900">Custom Quote on Request</span>
           </div>
@@ -127,7 +127,7 @@ export default function PackageCard({ pkg, onOpenDetails }: PackageCardProps) {
           <div className="grid grid-cols-2 gap-2">
             <Link
               href={`/packages/${pkg.id}`}
-              className="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-800 font-bold text-xs transition-all text-center flex items-center justify-center gap-1.5"
+              className="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-800 font-bold text-xs transition-all text-center flex items-center justify-center gap-1.5 min-h-[40px]"
             >
               <span>View Plan</span>
               <ArrowRight className="w-3.5 h-3.5 text-slate-500" />
@@ -137,7 +137,7 @@ export default function PackageCard({ pkg, onOpenDetails }: PackageCardProps) {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-2.5 px-3 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-xs transition-all text-center flex items-center justify-center gap-1.5 shadow-sm hover:shadow-md cursor-pointer"
+              className="py-2.5 px-3 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-xs transition-all text-center flex items-center justify-center gap-1.5 shadow-sm hover:shadow-md cursor-pointer min-h-[40px]"
             >
               <WhatsAppIcon className="w-3.5 h-3.5" />
               <span>Get Trip Quote</span>

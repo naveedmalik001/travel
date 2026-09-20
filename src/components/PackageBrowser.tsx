@@ -283,13 +283,13 @@ export default function PackageBrowser({
               <div
                 ref={sliderRef}
                 onScroll={handleScroll}
-                className="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory no-scrollbar scroll-smooth -mx-4 px-4 sm:-mx-6 sm:px-6"
+                className="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory no-scrollbar scroll-smooth -mx-4 px-4 sm:-mx-6 sm:px-6 items-stretch"
                 style={{ WebkitOverflowScrolling: "touch" }}
               >
                 {filteredPackages.map((pkg) => (
                   <div
                     key={pkg.id}
-                    className="w-[85vw] sm:w-[350px] flex-shrink-0 snap-center"
+                    className="w-[85vw] sm:w-[350px] flex-shrink-0 snap-center flex flex-col h-full"
                   >
                     <PackageCard
                       pkg={pkg}
