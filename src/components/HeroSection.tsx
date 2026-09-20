@@ -128,15 +128,14 @@ export default function HeroSection({
           <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
 
             {/* Header */}
-            <div className="bg-[#38804b] px-5 py-4 flex items-center gap-2.5 shadow-xs">
-              <Compass className="w-4 h-4 text-white flex-shrink-0" />
-              <div>
-                <p className="text-white font-bold text-sm leading-tight">Plan Your Kashmir Journey</p>
-                <p className="text-emerald-100 text-[11px] mt-0.5">Direct Local Travel Desk</p>
+            <div className="bg-[#38804b] px-5 py-4 flex items-center justify-between shadow-xs">
+              <div className="flex items-center gap-2.5">
+                <Compass className="w-4 h-4 text-white flex-shrink-0" />
+                <div>
+                  <p className="text-white font-bold text-sm leading-tight">Plan Your Kashmir Journey</p>
+                  <p className="text-emerald-100 text-[11px] mt-0.5">Local Travel Desk</p>
+                </div>
               </div>
-              <span className="ml-auto text-[10px] uppercase tracking-wider bg-[#071710] text-white font-bold px-2.5 py-0.5 rounded-full border border-white/20 shadow-xs">
-                Direct Rates
-              </span>
             </div>
 
             <form onSubmit={handleSearch} className="p-5 space-y-4">
