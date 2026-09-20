@@ -39,7 +39,6 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
   const navLinks = [
     { name: "Tour Packages", href: "/packages" },
     { name: "Destinations", href: "/destinations" },
-    { name: "Services", href: "/services" },
     { name: "Our Team", href: "/team" },
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },

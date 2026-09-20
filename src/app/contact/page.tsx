@@ -73,7 +73,7 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto relative z-10 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#0B1E15]/90 text-[#38804b] border border-[#38804b]/30 mb-5">
               <BadgeCheck className="w-3.5 h-3.5 text-[#38804b]" />
-              Direct Tangmarg Operations Office
+              Contact Us
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
               Get in Touch with Our{" "}

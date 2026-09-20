@@ -45,7 +45,7 @@ export default function HowItWorks() {
       stepTag: "Step 04",
       stage: "TRAVEL",
       title: "Travel With Confidence",
-      desc: "Native driver, heated rooms, and 24/7 on-ground Tangmarg desk support.",
+      desc: "Native driver, heated rooms, and 24/7 on-ground assistance.",
       icon: Mountain,
     },
   ];
@@ -134,7 +134,7 @@ export default function HowItWorks() {
                   </div>
 
                   <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400">
-                    <span className="font-semibold text-slate-600">Tangmarg Desk</span>
+                    <span className="font-semibold text-slate-600">Local Desk</span>
                     <span className="font-mono text-[#38804b] font-bold">0{idx + 1}/04</span>
                   </div>
                 </div>

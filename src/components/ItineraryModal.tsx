@@ -239,10 +239,9 @@ export default function ItineraryModal({ pkg, isOpen, onClose }: ItineraryModalP
         {/* Sticky Footer Action Bar */}
         <div className="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex-shrink-0 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>
-            <span className="text-xs text-slate-500 block font-medium">Pricing & Availability</span>
+            <span className="text-xs text-slate-500 block font-medium">Pricing &amp; Availability</span>
             <div className="flex items-center space-x-2">
               <span className="text-lg sm:text-xl font-bold text-slate-900">Custom Quote on Request</span>
-              <span className="text-[11px] text-[#38804b] font-semibold bg-[#38804b]/10 px-2 py-0.5 rounded-full">(Direct Local Rates)</span>
             </div>
           </div>
 

@@ -15,7 +15,10 @@ import {
   Calculator,
   ArrowRight,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Users,
+  Star,
+  PhoneCall
 } from "lucide-react";
 
 export default function PackageCatalogClient() {
@@ -106,38 +109,38 @@ export default function PackageCatalogClient() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-soft mb-8">
         <div className="flex items-center space-x-3 p-2">
           <div className="w-10 h-10 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0">
+            <Users className="w-5 h-5" />
+          </div>
+          <div>
+            <div className="text-xs font-bold text-slate-900">200+ Happy Travelers</div>
+            <div className="text-[11px] text-slate-500">Verified guests hosted</div>
+          </div>
+        </div>
+        <div className="flex items-center space-x-3 p-2">
+          <div className="w-10 h-10 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0">
             <Compass className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-xs font-bold text-slate-900">Tangmarg Local Base</div>
-            <div className="text-[11px] text-slate-500">Direct Gulmarg gate roots</div>
+            <div className="text-xs font-bold text-slate-900">20+ Destinations</div>
+            <div className="text-[11px] text-slate-500">Kashmir &amp; Ladakh circuits</div>
           </div>
         </div>
         <div className="flex items-center space-x-3 p-2">
           <div className="w-10 h-10 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0">
-            <ShieldCheck className="w-5 h-5" />
+            <Star className="w-5 h-5 text-amber-500 fill-amber-500" />
           </div>
           <div>
-            <div className="text-xs font-bold text-slate-900">Verified 3-Star &amp; 4-Star Stays</div>
-            <div className="text-[11px] text-slate-500">Inspected room standards</div>
+            <div className="text-xs font-bold text-slate-900">4.9 Star Rating</div>
+            <div className="text-[11px] text-slate-500">Top-rated traveler feedback</div>
           </div>
         </div>
         <div className="flex items-center space-x-3 p-2">
           <div className="w-10 h-10 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0">
-            <CheckCircle2 className="w-5 h-5" />
+            <PhoneCall className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-xs font-bold text-slate-900">Direct Operator Rates</div>
-            <div className="text-[11px] text-slate-500">Custom tailored quotes for your group</div>
-          </div>
-        </div>
-        <div className="flex items-center space-x-3 p-2">
-          <div className="w-10 h-10 rounded-xl bg-[#38804b]/10 text-[#38804b] flex items-center justify-center flex-shrink-0">
-            <Calendar className="w-5 h-5" />
-          </div>
-          <div>
-            <div className="text-xs font-bold text-slate-900">100% Tailored Plans</div>
-            <div className="text-[11px] text-slate-500">Custom dates & routes</div>
+            <div className="text-xs font-bold text-slate-900">24/7 Assistance</div>
+            <div className="text-[11px] text-slate-500">Continuous on-ground support</div>
           </div>
         </div>
       </div>

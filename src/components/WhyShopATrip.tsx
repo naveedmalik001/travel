@@ -18,9 +18,9 @@ export default function WhyShopATrip() {
   const advantages = [
     {
       icon: TrendingDown,
-      tag: "Direct Tangmarg HQ",
+      tag: "Direct Local HQ",
       title: "Zero Middleman Markup",
-      desc: "Online aggregators resell local services with 20–30% markups. Booking directly with our Tangmarg desk ensures authentic local pricing on cabs, stays, and activities.",
+      desc: "Online aggregators resell local services with 20–30% markups. Booking directly with our Kashmir desk ensures authentic local pricing on cabs, stays, and activities.",
       highlight: "Save 20-30% Direct",
     },
     {
@@ -40,7 +40,7 @@ export default function WhyShopATrip() {
     {
       icon: ShieldCheck,
       tag: "Ground Desk",
-      title: "24/7 On-Ground Field Assistance",
+      title: "24/7 Assistance",
       desc: "Direct local coordination for Gulmarg Gondola slots, pony union fair rates, winter boot rentals, and immediate roadside or health support.",
       highlight: "Dedicated Local Host",
     },
@@ -55,7 +55,7 @@ export default function WhyShopATrip() {
           <div>
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-[#38804b]/10 text-[#38804b] text-[10px] font-bold tracking-widest uppercase mb-1.5">
               <MapPin className="w-3.5 h-3.5" />
-              <span>THE TANGMARG FIELD ADVANTAGE</span>
+              <span>THE LOCAL FIELD ADVANTAGE</span>
             </div>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Why Travelers Choose <span className="text-[#38804b]">Shop A Trip</span>
@@ -116,7 +116,7 @@ export default function WhyShopATrip() {
 
                 <div className="mt-3 pt-2 border-t border-slate-100 flex items-center gap-1.5 text-[10px] text-[#38804b] font-medium">
                   <CheckCircle2 className="w-3 h-3 shrink-0" />
-                  <span>Tangmarg Guaranteed Standard</span>
+                  <span>Local Guaranteed Standard</span>
                 </div>
               </div>
             );
@@ -130,13 +130,13 @@ export default function WhyShopATrip() {
               Need honest advice on current snow conditions or road status?
             </p>
             <p className="text-[11px] text-slate-500">
-              Speak directly with our Tangmarg desk before locking any dates.
+              Speak directly with our local desk before locking any dates.
             </p>
           </div>
 
           <div className="flex items-center gap-2 flex-shrink-0">
             <a
-              href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hi Shop A Trip, I want to talk to your Tangmarg local team about planning my Kashmir trip.")}`}
+              href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hi Shop A Trip, I want to talk to your local team about planning my Kashmir trip.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-3.5 py-1.5 rounded-lg bg-[#38804b] hover:bg-[#2c693e] text-white font-bold text-xs flex items-center gap-1.5 shadow-xs transition-colors"

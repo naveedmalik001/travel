@@ -21,8 +21,8 @@ export default function TrustBar() {
     },
     {
       icon: PhoneCall,
-      title: "24x7 Trip Support",
-      subtitle: "Direct on-ground local team assistance before and throughout your holiday.",
+      title: "24/7 Assistance",
+      subtitle: "Direct on-ground assistance before and throughout your holiday.",
     },
   ];
 

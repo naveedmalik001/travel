@@ -130,7 +130,7 @@ export default function TeamPage() {
                   <div className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-slate-200">
                     <CheckCircle2 className="w-5 h-5 text-[#38804b] flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-bold text-sm text-slate-900">24/7 On-Ground Support</h4>
+                      <h4 className="font-bold text-sm text-slate-900">24/7 Assistance</h4>
                       <p className="text-xs text-slate-500 mt-0.5">If you ever need medical help, vehicle swap, or permit assistance, we are already there.</p>
                     </div>
                   </div>

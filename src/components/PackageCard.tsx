@@ -118,14 +118,9 @@ export default function PackageCard({ pkg, onOpenDetails }: PackageCardProps) {
 
         {/* ─── Pricing & Actions ────────────────────────────── */}
         <div className="pt-3.5 border-t border-slate-100">
-          <div className="flex items-center justify-between mb-3.5 px-3 py-2 rounded-xl bg-slate-50/90 border border-slate-100">
-            <div>
-              <span className="text-[10px] text-slate-400 uppercase font-bold block tracking-wider">Pricing</span>
-              <span className="text-xs font-bold text-slate-900">Custom Quote on Request</span>
-            </div>
-            <span className="text-[10px] text-[#38804b] font-bold bg-[#38804b]/10 px-2.5 py-1 rounded-full border border-[#38804b]/20">
-              Direct Local Rates
-            </span>
+          <div className="mb-3.5 px-3.5 py-2.5 rounded-xl bg-slate-50/90 border border-slate-100">
+            <span className="text-[10px] text-slate-400 uppercase font-bold block tracking-wider">Pricing</span>
+            <span className="text-xs font-bold text-slate-900">Custom Quote on Request</span>
           </div>
 
           {/* Action Buttons: View Plan & WhatsApp Quote */}

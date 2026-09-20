@@ -79,7 +79,7 @@ export default function HeroSection({
           </h2>
 
           <p className="mt-3 text-sm sm:text-base text-white max-w-xl leading-relaxed font-normal">
-            Handpicked itineraries, 4x4 snow-chain cabs, and 24/7 mountain support — managed by our native on-ground team in Tangmarg, not an outsourced call centre.
+            Handpicked itineraries, 4x4 snow-chain cabs, and 24/7 mountain support — managed by our native on-ground team in Kashmir, not an outsourced call centre.
           </p>
 
           {/* Concrete trust signals */}
@@ -98,7 +98,7 @@ export default function HeroSection({
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 text-white">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
-              24/7 On-Ground Support
+              24/7 Assistance
             </span>
           </div>
 

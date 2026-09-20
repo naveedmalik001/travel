@@ -33,7 +33,7 @@ const faqs: FAQItem[] = [
     id: "faq-2",
     category: "itinerary",
     q: "Can you customise the itinerary?",
-    a: "Yes, 100%! Every itinerary on Shop A Trip can be tailored to match your travel dates, pace, group size, and preferences. Whether you want to include offbeat frontier valleys (Gurez, Keran, Tulail), upgrade to premium 4-star boutique resorts, arrange romantic honeymoon surprises, or design senior-citizen friendly schedules, our Tangmarg travel specialists will curate a personalized plan for you.",
+    a: "Yes, 100%! Every itinerary on Shop A Trip can be tailored to match your travel dates, pace, group size, and preferences. Whether you want to include offbeat frontier valleys (Gurez, Keran, Tulail), upgrade to premium 4-star boutique resorts, arrange romantic honeymoon surprises, or design senior-citizen friendly schedules, our local travel specialists will curate a personalized plan for you.",
   },
   {
     id: "faq-3",
@@ -51,7 +51,7 @@ const faqs: FAQItem[] = [
     id: "faq-5",
     category: "transfers",
     q: "Is Gulmarg Gondola included?",
-    a: "Gulmarg Gondola cable car tickets are issued directly through the official J&K Cable Car Corporation online portal with government-regulated fixed rates. While tickets are subject to official portal slot availability, our Tangmarg base team provides timely slot booking assistance, boarding time advisory for Phase 1 (Kongdoori) & Phase 2 (Apharwat Peak), and on-ground coordination.",
+    a: "Gulmarg Gondola cable car tickets are issued directly through the official J&K Cable Car Corporation online portal with government-regulated fixed rates. While tickets are subject to official portal slot availability, our local team provides timely slot booking assistance, boarding time advisory for Phase 1 (Kongdoori) & Phase 2 (Apharwat Peak), and on-ground coordination.",
   },
   {
     id: "faq-6",
@@ -63,7 +63,7 @@ const faqs: FAQItem[] = [
     id: "faq-7",
     category: "stays",
     q: "What is included in the package?",
-    a: "Our standard holiday packages are comprehensive and transparent:\n\n• Verified 3-Star or 4-Star hotel accommodation and luxury cedarwood houseboat stay\n• MAP Meal Plan (Daily fresh breakfast and dinner included)\n• Dedicated private vehicle (Sedan/SUV/Innova) with mountain-experienced driver for all days\n• Srinagar Airport pickup and drop transfers\n• Sightseeing as per chosen itinerary with toll taxes, fuel, parking, and driver allowances\n• 24/7 on-ground assistance from our Tangmarg base operations desk",
+    a: "Our standard holiday packages are comprehensive and transparent:\n\n• Verified 3-Star or 4-Star hotel accommodation and luxury cedarwood houseboat stay\n• MAP Meal Plan (Daily fresh breakfast and dinner included)\n• Dedicated private vehicle (Sedan/SUV/Innova) with mountain-experienced driver for all days\n• Srinagar Airport pickup and drop transfers\n• Sightseeing as per chosen itinerary with toll taxes, fuel, parking, and driver allowances\n• 24/7 on-ground assistance throughout your trip",
   },
   {
     id: "faq-8",
@@ -178,7 +178,7 @@ export default function FAQSection() {
         <div className="mt-10 p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
             <h4 className="text-sm sm:text-base font-bold text-slate-900">Have a custom question about your dates?</h4>
-            <p className="text-xs text-slate-500 mt-0.5">Our local Tangmarg office desk is available every day for assistance.</p>
+            <p className="text-xs text-slate-500 mt-0.5">Our local team desk is available every day for assistance.</p>
           </div>
           <div className="flex items-center gap-2 flex-shrink-0">
             <a

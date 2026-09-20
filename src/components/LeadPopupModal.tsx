@@ -154,7 +154,7 @@ Hello Shop A Trip Team, please share a customized itinerary and price quote for 
             </div>
             <div className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-[#38804b] shrink-0 mt-0.5" />
-              <span>24x7 on-ground assistance from Tangmarg</span>
+              <span>24/7 on-ground assistance</span>
             </div>
           </div>
 
@@ -162,7 +162,7 @@ Hello Shop A Trip Team, please share a customized itinerary and price quote for 
           <div className="relative z-10 pt-3.5 border-t border-white/10 hidden md:flex items-center justify-between text-[11px] text-slate-400">
             <div className="flex items-center gap-1.5">
               <Compass className="w-3.5 h-3.5 text-[#38804b]" />
-              <span>Tangmarg Office &bull; Gulmarg Base</span>
+              <span>Kashmir Base &bull; Local Team</span>
             </div>
             <span>3+ Yrs Experience</span>
           </div>

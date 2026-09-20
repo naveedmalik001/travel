@@ -135,7 +135,7 @@ Notes: ${cleanNotes || "None"}`;
                   </div>
                   <div>
                     <span className="font-semibold text-white block">Experience &amp; Office Hours:</span>
-                    <p className="text-xs text-slate-300">3+ Years Field Experience • 24/7 On-Ground Support</p>
+                    <p className="text-xs text-slate-300">3+ Years Field Experience • 24/7 Assistance</p>
                   </div>
                 </div>
               </div>

@@ -44,7 +44,7 @@ export default function Footer() {
               <span className="text-slate-700">•</span>
               <span className="text-[#38804b] font-semibold flex items-center">
                 <Compass className="w-3.5 h-3.5 mr-1 text-[#38804b]" />
-                Tangmarg HQ
+                Kashmir HQ
               </span>
               <span className="text-slate-700">•</span>
               <span className="text-[#38804b] font-semibold flex items-center">
@@ -194,12 +194,6 @@ export default function Footer() {
                 <Link href="/about" className="hover:text-white transition-colors flex items-center">
                   <ChevronRight className="w-3 h-3 mr-1 text-[#38804b] flex-shrink-0" />
                   About Our Company
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="hover:text-white transition-colors flex items-center">
-                  <ChevronRight className="w-3 h-3 mr-1 text-[#38804b] flex-shrink-0" />
-                  Cab Rentals & Services
                 </Link>
               </li>
               <li>
