@@ -68,7 +68,7 @@ export default function WhyShopATrip() {
           {/* Key Metric Chips */}
           <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
             <div className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs text-center">
-              <span className="block text-sm font-bold text-[#38804b]">6+ Yrs</span>
+              <span className="block text-sm font-bold text-[#38804b]">3+ Yrs</span>
               <span className="block text-[9px] text-slate-500 uppercase">Himalayan Ops</span>
             </div>
             <div className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs text-center">

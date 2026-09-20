@@ -164,7 +164,7 @@ Hello Shop A Trip Team, please share a customized itinerary and price quote for 
               <Compass className="w-3.5 h-3.5 text-[#38804b]" />
               <span>Tangmarg Office &bull; Gulmarg Base</span>
             </div>
-            <span>6+ Yrs Experience</span>
+            <span>3+ Yrs Experience</span>
           </div>
         </div>
 

@@ -27,7 +27,7 @@ import { teamMembers } from "@/data/team";
 
 export const metadata: Metadata = {
   title: "About Us | Shop A Trip Tour & Travels (Peace & You) - Tangmarg Kashmir",
-  description: "Learn about Shop A Trip Tour & Travels. Headquartered in Tangmarg at the base of Gulmarg, Baramulla with 6+ years of excellence in curating authentic Kashmir, Gurez, Keran, and Ladakh tours.",
+  description: "Learn about Shop A Trip Tour & Travels. Headquartered in Tangmarg at the base of Gulmarg, Baramulla with 3+ years of excellence in curating authentic Kashmir, Gurez, Keran, and Ladakh tours.",
   keywords: [
     "About Shop A Trip",
     "Peace & You Kashmir",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "About Shop A Trip Tour & Travels | Peace & You",
-    description: "6+ Years of field excellence based in Tangmarg, Baramulla, Jammu & Kashmir.",
+    description: "3+ Years of field excellence based in Tangmarg, Baramulla, Jammu & Kashmir.",
     url: "https://shopatrip.in/about",
     images: ["/logo.jpg"],
   },
@@ -112,13 +112,13 @@ export default function AboutPage() {
               <span className="text-[#38804b]">Trusted by Thousands</span>
             </h1>
             <p className="mt-5 text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
-              With 6+ years of dedicated service in Jammu, Kashmir, and Ladakh, Shop A Trip Tour &amp; Travels was founded to provide authentic, safe, and transparent Himalayan travel experiences.
+              With 3+ years of dedicated service in Jammu, Kashmir, and Ladakh, Shop A Trip Tour &amp; Travels was founded to provide authentic, safe, and transparent Himalayan travel experiences.
             </p>
 
             {/* Stat row */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
               {[
-                { value: "6+", label: "Years of Excellence" },
+                { value: "3+", label: "Years of Excellence" },
                 { value: "200+", label: "Happy Travelers" },
                 { value: "4.9", label: "Google Rating" },
               ].map((stat) => (
@@ -151,7 +151,7 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="p-5 rounded-2xl bg-gradient-to-br from-[#38804b]/10 to-white border border-[#38804b]/20 shadow-sm">
-                  <span className="text-3xl font-extrabold text-[#38804b] block">6+</span>
+                  <span className="text-3xl font-extrabold text-[#38804b] block">3+</span>
                   <span className="text-xs text-slate-500 font-medium mt-1 block">Years Field Excellence</span>
                 </div>
                 <div className="p-5 rounded-2xl bg-gradient-to-br from-[#38804b]/10 to-white border border-[#38804b]/20 shadow-sm">
@@ -250,7 +250,7 @@ export default function AboutPage() {
             {[
               { icon: ShieldCheck, label: "Govt. Registered", sub: "Tour Operator, J&K" },
               { icon: Users, label: "200+ Guests", sub: "Hosted Successfully" },
-              { icon: Award, label: "6+ Years", sub: "Kashmir Specialists" },
+              { icon: Award, label: "3+ Years", sub: "Kashmir Specialists" },
               { icon: CheckCircle2, label: "Zero Hidden Fees", sub: "Transparent Pricing" },
             ].map((item, i) => {
               const Icon = item.icon;

@@ -20,9 +20,9 @@ export default function LocalAdvantage() {
       stat: null
     },
     {
-      title: "Six years, only Kashmir & Ladakh",
+      title: "Three years, only Kashmir & Ladakh",
       desc: "We don't split attention across Rajasthan or Kerala. Every pass, every houseboat owner, every hotel manager — we know them personally.",
-      stat: "6+"
+      stat: "3+"
     },
     {
       title: "Snow-chain fleet, always ready",
@@ -57,7 +57,7 @@ export default function LocalAdvantage() {
               <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-lg border border-slate-100">
                 <div className="flex items-center gap-3.5">
                   <div className="w-12 h-12 rounded-xl bg-[#08150f] text-[#38804b] font-extrabold flex flex-col items-center justify-center flex-shrink-0">
-                    <span className="text-base leading-none">6+</span>
+                    <span className="text-base leading-none">3+</span>
                     <span className="text-[9px] font-bold uppercase tracking-wider mt-0.5">yrs</span>
                   </div>
                   <div>

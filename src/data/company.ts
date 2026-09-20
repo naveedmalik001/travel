@@ -19,7 +19,7 @@ export interface CompanyInfo {
 export const companyInfo: CompanyInfo = {
   name: "Shop A Trip Tour & Travels",
   tagline: "Peace & You",
-  experienceYears: 6,
+  experienceYears: 3,
   address: "Gokhama Kunzer, Tangmarg, Baramulla, Jammu and Kashmir 193404",
   fullAddress: "Gokhama Kunzer, Tangmarg, Baramulla, Jammu and Kashmir - 193404, India",
   location: "Tangmarg, Baramulla, Kashmir",
@@ -31,7 +31,7 @@ export const companyInfo: CompanyInfo = {
   mapsUrl: "https://maps.app.goo.gl/x1P1uZTkX5PF2Jih6?g_st=ac",
   instagramUrl: "https://www.instagram.com/shopatrip",
   facebookUrl: "https://www.facebook.com/share/1K9vcCrdpW/",
-  foundedYear: "2018",
+  foundedYear: "2021",
 };
 
 export const trustHighlights = [
@@ -41,8 +41,8 @@ export const trustHighlights = [
     icon: "Mountain",
   },
   {
-    title: "6+ Years of Field Excellence",
-    desc: "Over six years curating seamless journeys for thousands of families, honeymoon couples, solo explorers, and group departures.",
+    title: "3+ Years of Field Excellence",
+    desc: "Over three years curating seamless journeys for thousands of families, honeymoon couples, solo explorers, and group departures.",
     icon: "ShieldCheck",
   },
   {

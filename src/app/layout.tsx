@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     default: "Shop A Trip Tour & Travels | Kashmir, Gulmarg, Gurez & Ladakh Packages",
     template: "%s | Shop A Trip Tour & Travels",
   },
-  description: "Shop A Trip Tour & Travels (Peace & You) - Tangmarg/Gulmarg based premier Kashmir travel specialist with 6+ years experience. Verified Kashmir tour packages, Honeymoon specials, Gurez Valley, Keran Valley, Leh-Ladakh expeditions, and Vaishno Devi tours.",
+  description: "Shop A Trip Tour & Travels (Peace & You) - Tangmarg/Gulmarg based premier Kashmir travel specialist with 3+ years experience. Verified Kashmir tour packages, Honeymoon specials, Gurez Valley, Keran Valley, Leh-Ladakh expeditions, and Vaishno Devi tours.",
   keywords: [
     "Shop A Trip",
     "Shop A Trip Tour and Travels",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Shop A Trip Tour & Travels | Peace & You Kashmir",
-    description: "Explore the paradise of Kashmir & Ladakh with 6+ years experienced local operators based in Tangmarg/Gulmarg. Handcrafted itineraries, verified stays, and 24/7 on-ground mountain support.",
+    description: "Explore the paradise of Kashmir & Ladakh with 3+ years experienced local operators based in Tangmarg/Gulmarg. Handcrafted itineraries, verified stays, and 24/7 on-ground mountain support.",
     url: "https://shopatrip.in",
     siteName: "Shop A Trip Tour & Travels",
     images: [

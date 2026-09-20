@@ -220,7 +220,7 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
                 </div>
                 <span className="text-xs bg-[#38804b]/10 text-[#38804b] font-medium px-2.5 py-1 rounded-full flex items-center gap-1 border border-[#38804b]/20">
                   <Award className="w-3 h-3 text-[#38804b]" />
-                  6+ Yrs Trusted
+                  3+ Yrs Trusted
                 </span>
               </div>
 
