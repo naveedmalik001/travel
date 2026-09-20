@@ -157,19 +157,19 @@ export default function ServicesPage() {
         <Breadcrumbs items={[{ name: "Services", href: "/services" }]} />
 
         {/* Hero Banner */}
-        <section className="relative bg-[#081f16] text-white py-14 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#38804b]/20 via-transparent to-transparent pointer-events-none" />
+        <section className="relative bg-[#38804b] text-white py-14 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-0 left-0 right-0 h-12 bg-[#fbfdfb] rounded-tl-[2rem] rounded-tr-[2rem] hidden md:block" />
           <div className="max-w-7xl mx-auto relative z-10 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#0B1E15]/90 text-[#38804b] border border-[#38804b]/30 mb-5">
-              <BadgeCheck className="w-3.5 h-3.5 text-[#38804b]" />
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/20 text-white border border-white/30 mb-5">
+              <BadgeCheck className="w-3.5 h-3.5 text-white" />
               Comprehensive Travel &amp; Transport Solutions
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
               Premium Services by{" "}
-              <span className="text-[#38804b]">Local Kashmir Specialists</span>
+              <span className="text-emerald-100">Local Kashmir Specialists</span>
             </h1>
-            <p className="mt-5 text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-sm sm:text-base text-emerald-50 max-w-2xl mx-auto leading-relaxed">
               From dedicated taxi rentals and inspected mountain stays to Gulmarg Gondola guidance and frontier border permits, our Tangmarg headquarters has you covered.
             </p>
           </div>
@@ -298,13 +298,13 @@ export default function ServicesPage() {
 
         {/* CTA Strip */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <div className="rounded-3xl bg-[#061e15] text-white p-8 sm:p-12 border border-[#38804b]/20 shadow-xl">
+          <div className="rounded-3xl bg-[#38804b] text-white p-8 sm:p-12 border border-[#2e6d3f] shadow-xl">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
               <div className="max-w-xl">
                 <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-3">
                   Not sure which service you need?
                 </h3>
-                <p className="text-sm text-slate-200 leading-relaxed">
+                <p className="text-sm text-emerald-50 leading-relaxed">
                   Call or WhatsApp our Tangmarg team. We'll craft the perfect package matching your budget, group size, and dates.
                 </p>
               </div>
@@ -313,16 +313,16 @@ export default function ServicesPage() {
                   href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hello Shop A Trip Team, I need help choosing the right service for my Kashmir trip.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white font-bold text-sm shadow-md transition-all min-h-[48px]"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white hover:bg-emerald-50 text-[#38804b] font-bold text-sm shadow-md transition-all min-h-[48px]"
                 >
                   <WhatsAppIcon className="w-4 h-4 mr-2" />
                   <span>WhatsApp Us</span>
                 </a>
                 <a
                   href={`tel:${companyInfo.phones[0]}`}
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all min-h-[48px]"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-semibold text-sm border border-white/30 transition-all min-h-[48px]"
                 >
-                  <Phone className="w-4 h-4 mr-2 text-[#38804b]" />
+                  <Phone className="w-4 h-4 mr-2 text-white" />
                   <span>Call Now</span>
                 </a>
               </div>

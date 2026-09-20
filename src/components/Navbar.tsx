@@ -49,27 +49,27 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Top Notification / Contact Bar */}
-      <div className="bg-[#0B1E15] text-slate-200 text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-[#38804b]/20 overflow-hidden">
+      <div className="bg-[#38804b] text-white text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-[#2e6d3f] overflow-hidden">
         <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto flex justify-between items-center gap-3">
           {/* Left Contact & Address */}
           <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
             {/* Primary Phone */}
             <a 
               href={`tel:${companyInfo.phones[0]}`} 
-              className="flex items-center text-slate-200 hover:text-white transition-colors font-medium tracking-tight sm:tracking-wide group whitespace-nowrap"
+              className="flex items-center text-white hover:text-emerald-100 transition-colors font-medium tracking-tight sm:tracking-wide group whitespace-nowrap"
               title="Call Primary Support Line"
             >
-              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 text-[#38804b] flex-shrink-0 group-hover:scale-110 transition-transform" />
+              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 text-white flex-shrink-0 group-hover:scale-110 transition-transform" />
               <span className="whitespace-nowrap">{companyInfo.phones[0]}</span>
             </a>
 
             {/* Secondary Phone (hidden on small mobile to prevent header overflow) */}
             <a 
               href={`tel:${companyInfo.phones[1]}`} 
-              className="hidden sm:flex items-center text-slate-200 hover:text-white transition-colors font-medium tracking-tight sm:tracking-wide group whitespace-nowrap"
+              className="hidden sm:flex items-center text-white hover:text-emerald-100 transition-colors font-medium tracking-tight sm:tracking-wide group whitespace-nowrap"
               title="Call Helpline 2"
             >
-              <PhoneCall className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 text-[#38804b] group-hover:scale-110 transition-transform flex-shrink-0" />
+              <PhoneCall className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 text-white group-hover:scale-110 transition-transform flex-shrink-0" />
               <span className="whitespace-nowrap">{companyInfo.phones[1]}</span>
             </a>
             
@@ -77,28 +77,28 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
               href={companyInfo.mapsUrl}
               target="_blank"
               rel="noopener noreferrer" 
-              className="hidden xl:flex items-center hover:text-white transition-colors whitespace-nowrap text-slate-300"
+              className="hidden xl:flex items-center hover:text-emerald-100 transition-colors whitespace-nowrap text-emerald-100"
             >
-              <MapPin className="w-3.5 h-3.5 mr-1.5 text-[#38804b] flex-shrink-0" />
+              <MapPin className="w-3.5 h-3.5 mr-1.5 text-white flex-shrink-0" />
               <span className="truncate max-w-xs 2xl:max-w-none">{companyInfo.address}</span>
             </a>
           </div>
 
           {/* Right Socials & Experience Tag */}
           <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
-            <div className="hidden md:flex items-center text-slate-200 whitespace-nowrap">
-              <Compass className="w-3.5 h-3.5 mr-1.5 text-[#38804b] flex-shrink-0" />
+            <div className="hidden md:flex items-center text-white whitespace-nowrap">
+              <Compass className="w-3.5 h-3.5 mr-1.5 text-white flex-shrink-0" />
               <span>{companyInfo.experienceYears}+ Yrs Local Team</span>
             </div>
 
-            <span className="hidden md:inline text-slate-600">•</span>
+            <span className="hidden md:inline text-white/40">•</span>
 
             <div className="flex items-center space-x-2 sm:space-x-2.5">
               <a 
                 href={companyInfo.instagramUrl} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-slate-300 hover:text-white transition-colors p-1 rounded hover:bg-white/10"
+                className="text-white hover:text-emerald-100 transition-colors p-1 rounded hover:bg-white/10"
                 title="Instagram @shopatrip"
                 aria-label="Instagram"
               >
@@ -108,11 +108,21 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
                 href={companyInfo.facebookUrl} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-slate-300 hover:text-white transition-colors p-1 rounded hover:bg-white/10"
+                className="text-white hover:text-emerald-100 transition-colors p-1 rounded hover:bg-white/10"
                 title="Facebook"
                 aria-label="Facebook"
               >
                 <FacebookIcon className="w-3.5 h-3.5" />
+              </a>
+              <a 
+                href={`https://wa.me/${companyInfo.whatsapp}`} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white hover:text-emerald-100 transition-colors p-1 rounded hover:bg-white/10"
+                title="Direct WhatsApp"
+                aria-label="WhatsApp"
+              >
+                <WhatsAppIcon className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>

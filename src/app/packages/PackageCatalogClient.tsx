@@ -270,24 +270,24 @@ export default function PackageCatalogClient() {
       )}
 
       {/* Custom Quote Banner */}
-      <div className="mt-14 rounded-3xl bg-gradient-to-r from-[#08281d] to-[#041a12] text-white p-8 md:p-12 relative overflow-hidden shadow-xl border border-[#38804b]/20">
+      <div className="mt-14 rounded-3xl bg-[#38804b] text-white p-8 md:p-12 relative overflow-hidden shadow-xl border border-[#2e6d3f]">
         <div className="relative z-10 max-w-2xl">
-          <span className="text-[#38804b] text-xs uppercase font-bold tracking-wider mb-2 block">
-            Don't see your ideal itinerary?
+          <span className="text-emerald-100 text-xs uppercase font-bold tracking-wider mb-2 block">
+            Don&apos;t see your ideal itinerary?
           </span>
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-white">
             Build Your Own Custom Kashmir or Ladakh Trip
           </h3>
-          <p className="text-slate-200 text-xs sm:text-sm mb-6 leading-relaxed">
+          <p className="text-emerald-50 text-xs sm:text-sm mb-6 leading-relaxed">
             Choose your preferred destinations, number of days, hotel category (3-Star Deluxe, 4-Star Luxury, Houseboat), vehicle type, and calculate real-time estimated rates.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
               href="/custom-planner"
-              className="inline-flex items-center px-5 py-3 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white text-xs sm:text-sm font-bold shadow-lg transition-all"
+              className="inline-flex items-center px-5 py-3 rounded-xl bg-white hover:bg-emerald-50 text-[#38804b] text-xs sm:text-sm font-bold shadow-lg transition-all"
             >
               <Calculator className="w-4 h-4 mr-2" />
-              <span>Launch Trip Planner & Estimator</span>
+              <span>Launch Trip Planner &amp; Estimator</span>
               <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </div>

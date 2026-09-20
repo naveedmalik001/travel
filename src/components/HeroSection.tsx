@@ -62,9 +62,9 @@ export default function HeroSection({
         <div className="flex-1 text-white">
 
           {/* Small Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#0B1E15]/90 text-[#38804b] border border-[#38804b]/40 mb-4 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-[#38804b] flex-shrink-0" />
-            <span className="font-bold tracking-wider uppercase text-[11px] sm:text-xs text-slate-100">KASHMIR • LADAKH • BEYOND</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#38804b]/90 text-white border border-white/20 mb-4 backdrop-blur-md shadow-lg">
+            <span className="w-2 h-2 rounded-full bg-white flex-shrink-0 animate-pulse" />
+            <span className="font-bold tracking-wider uppercase text-[11px] sm:text-xs text-white">KASHMIR • LADAKH • BEYOND</span>
           </div>
 
           {/* Main Headline */}

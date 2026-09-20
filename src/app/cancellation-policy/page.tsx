@@ -44,25 +44,25 @@ export default function CancellationPolicyPage() {
             <span className="text-[#38804b] font-semibold">Cancellation & Refund Policy</span>
           </div>
 
-          <div className="bg-[#08150f] rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl border border-[#38804b]/20">
+          <div className="bg-[#38804b] rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl border border-[#2e6d3f]">
             <div className="relative z-10 max-w-2xl">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#38804b]/20 text-[#38804b] border border-[#38804b]/30 mb-4">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-white border border-white/30 mb-4">
                 <CalendarX className="w-3.5 h-3.5" />
                 <span>Transparent Policy</span>
               </span>
               <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-serif">
-                Cancellation & Refund Policy
+                Cancellation &amp; Refund Policy
               </h1>
-              <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+              <p className="mt-3 text-emerald-100 text-sm sm:text-base leading-relaxed">
                 Clear rules and timelines regarding advance deposits, cancellation requests, and refund eligibility for all Kashmir and Ladakh travel itineraries.
               </p>
-              <p className="mt-4 text-xs text-[#38804b] font-medium">
+              <p className="mt-4 text-xs text-emerald-100/90 font-medium">
                 Last Updated: {lastUpdated} • Enforced by {companyInfo.name}
               </p>
             </div>
 
             {/* Decorative accent */}
-            <div className="absolute -right-16 -bottom-16 w-80 h-80 bg-[#38804b]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -right-16 -bottom-16 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           </div>
         </div>
 
@@ -96,18 +96,18 @@ export default function CancellationPolicyPage() {
                 </div>
 
                 {/* Need Assistance card */}
-                <div className="bg-[#0B1E15] text-white rounded-2xl p-6 border border-[#38804b]/20/60 shadow-lg space-y-3">
-                  <h3 className="text-sm font-bold text-[#38804b]">
+                <div className="bg-[#38804b] text-white rounded-2xl p-6 border border-white/20 shadow-lg space-y-3">
+                  <h3 className="text-sm font-bold text-white">
                     Have an Urgent Reschedule?
                   </h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">
+                  <p className="text-xs text-emerald-100 leading-relaxed">
                     If your flights are delayed or mountain roads are blocked, contact our 24/7 team immediately for rescheduling support.
                   </p>
                   <a
                     href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hello Shop A Trip Team, I have a query regarding my booking and itinerary status.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 w-full px-4 py-2 rounded-xl bg-[#38804b] text-white text-xs font-bold hover:bg-[#2b693f] transition-colors"
+                    className="inline-flex items-center justify-center gap-1.5 w-full px-4 py-2.5 rounded-xl bg-white text-[#38804b] text-xs font-bold hover:bg-emerald-50 transition-colors shadow-sm"
                   >
                     <WhatsAppIcon className="w-3.5 h-3.5" />
                     <span>Chat With Coordinator</span>

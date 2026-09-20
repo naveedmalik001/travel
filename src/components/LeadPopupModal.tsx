@@ -110,7 +110,7 @@ Hello Shop A Trip Team, please share a customized itinerary and price quote for 
         </button>
 
         {/* ── Left Editorial Panel ── */}
-        <div className="relative md:w-5/12 bg-[#0A1C14] text-white p-6 sm:p-7 flex flex-col justify-between overflow-hidden shrink-0 border-r border-[#38804b]/20">
+        <div className="relative md:w-5/12 bg-[#38804b] text-white p-6 sm:p-7 flex flex-col justify-between overflow-hidden shrink-0 border-r border-[#2e6d3f]">
           {/* Authentic Kashmir landscape image */}
           <div className="absolute inset-0 opacity-20 mix-blend-luminosity pointer-events-none">
             <Image
@@ -124,8 +124,8 @@ Hello Shop A Trip Team, please share a customized itinerary and price quote for 
           <div className="relative z-10">
             {/* Clean text eyebrow without sparkle or neon tags */}
             <div className="flex items-center gap-2 mb-3.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#38804b]" />
-              <span className="text-[11px] font-bold uppercase tracking-widest text-slate-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+              <span className="text-[11px] font-bold uppercase tracking-widest text-emerald-100">
                 Direct Local Desk
               </span>
             </div>
@@ -133,35 +133,35 @@ Hello Shop A Trip Team, please share a customized itinerary and price quote for 
             <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white leading-snug">
               Plan Your Perfect Kashmir Trip
             </h3>
-            <p className="text-xs text-slate-300 mt-2.5 leading-relaxed font-normal">
+            <p className="text-xs text-emerald-100 mt-2.5 leading-relaxed font-normal">
               Tell us a few details. Our Team will create a personalised itinerary for you.
             </p>
           </div>
 
           {/* Key value propositions in clean typography */}
-          <div className="relative z-10 my-6 space-y-3 text-xs text-slate-300 hidden md:block border-t border-white/10 pt-5">
+          <div className="relative z-10 my-6 space-y-3 text-xs text-emerald-100 hidden md:block border-t border-white/20 pt-5">
             <div className="flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#38804b] shrink-0 mt-0.5" />
-              <span>Direct native operator &bull; Zero middleman fees</span>
+              <CheckCircle2 className="w-4 h-4 text-white shrink-0 mt-0.5" />
+              <span className="text-white font-medium">Direct native operator &bull; Zero middleman fees</span>
             </div>
             <div className="flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#38804b] shrink-0 mt-0.5" />
-              <span>Verified 3-Star, 4-Star &amp; Luxury Houseboats</span>
+              <CheckCircle2 className="w-4 h-4 text-white shrink-0 mt-0.5" />
+              <span className="text-white font-medium">Verified 3-Star, 4-Star &amp; Luxury Houseboats</span>
             </div>
             <div className="flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#38804b] shrink-0 mt-0.5" />
-              <span>Gulmarg Gondola &amp; pass coordination</span>
+              <CheckCircle2 className="w-4 h-4 text-white shrink-0 mt-0.5" />
+              <span className="text-white font-medium">Gulmarg Gondola &amp; pass coordination</span>
             </div>
             <div className="flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#38804b] shrink-0 mt-0.5" />
-              <span>24/7 on-ground assistance</span>
+              <CheckCircle2 className="w-4 h-4 text-white shrink-0 mt-0.5" />
+              <span className="text-white font-medium">24/7 on-ground assistance</span>
             </div>
           </div>
 
           {/* Bottom badge */}
-          <div className="relative z-10 pt-3.5 border-t border-white/10 hidden md:flex items-center justify-between text-[11px] text-slate-400">
+          <div className="relative z-10 pt-3.5 border-t border-white/20 hidden md:flex items-center justify-between text-[11px] text-emerald-100">
             <div className="flex items-center gap-1.5">
-              <Compass className="w-3.5 h-3.5 text-[#38804b]" />
+              <Compass className="w-3.5 h-3.5 text-white" />
               <span>Kashmir Base &bull; Local Team</span>
             </div>
             <span>3+ Yrs Experience</span>

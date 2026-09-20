@@ -51,12 +51,12 @@ export default function LocalAdvantage() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1E15]/90 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
               {/* Stat card pinned inside photo */}
               <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-lg border border-slate-100">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-xl bg-[#08150f] text-[#38804b] font-extrabold flex flex-col items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#38804b] text-white font-extrabold flex flex-col items-center justify-center flex-shrink-0">
                     <span className="text-base leading-none">3+</span>
                     <span className="text-[9px] font-bold uppercase tracking-wider mt-0.5">yrs</span>
                   </div>
@@ -72,8 +72,8 @@ export default function LocalAdvantage() {
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -top-4 -right-3 sm:-right-5 bg-[#08150f] text-[#38804b] px-4 py-2 rounded-2xl shadow-xl border border-[#38804b]/40 text-xs font-bold flex items-center gap-2">
-              <Award className="w-4 h-4 text-[#38804b]" />
+            <div className="absolute -top-4 -right-3 sm:-right-5 bg-[#38804b] text-white px-4 py-2 rounded-2xl shadow-xl border border-white/20 text-xs font-bold flex items-center gap-2">
+              <Award className="w-4 h-4 text-white" />
               <span>peace &amp; you · est. {companyInfo.foundedYear}</span>
             </div>
           </div>

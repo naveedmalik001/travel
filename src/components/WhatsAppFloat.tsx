@@ -122,22 +122,22 @@ export default function WhatsAppFloat() {
       {isOpen && (
         <div className="relative z-40 mb-2.5 w-[295px] sm:w-[330px] bg-white rounded-3xl shadow-2xl border border-slate-200/90 overflow-hidden animate-in slide-in-from-bottom-4 duration-200 pointer-events-auto">
           {/* Card Header */}
-          <div className="bg-[#08150f] text-white p-4 flex items-center justify-between border-b border-[#38804b]/20">
+          <div className="bg-[#38804b] text-white p-4 flex items-center justify-between border-b border-[#2e6d3f]">
             <div className="flex items-center space-x-3">
               <div className="relative">
-                <div className="w-9 h-9 rounded-full bg-[#38804b] border border-[#38804b]/40 flex items-center justify-center text-white shadow-inner">
+                <div className="w-9 h-9 rounded-full bg-white/20 border border-white/30 flex items-center justify-center text-white shadow-inner">
                   <SupportAgentIcon className="w-5 h-5 text-white" />
                 </div>
-                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#38804b] border border-[#08150f] animate-pulse" />
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-white border border-[#38804b] animate-pulse" />
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
                   <h4 className="font-bold text-xs text-white leading-tight">Shop A Trip Desk</h4>
-                  <span className="px-1.5 py-0.2 rounded text-[8px] font-extrabold bg-[#38804b]/50 text-white uppercase tracking-wide border border-[#38804b]/40">
+                  <span className="px-1.5 py-0.2 rounded text-[8px] font-extrabold bg-white/20 text-white uppercase tracking-wide border border-white/30">
                     LIVE
                   </span>
                 </div>
-                <p className="text-[10px] text-slate-300 mt-0.5">
+                <p className="text-[10px] text-emerald-100 mt-0.5">
                   Instant quotes &amp; mountain help
                 </p>
               </div>
@@ -317,7 +317,7 @@ export default function WhatsAppFloat() {
             className={`w-12 h-12 sm:w-13 sm:h-13 rounded-full shadow-xl flex items-center justify-center transform hover:scale-105 active:scale-95 transition-all duration-300 relative group cursor-pointer ${
               isOpen
                 ? "bg-slate-900 text-white ring-2 ring-slate-300"
-                : "bg-[#08150f] text-white ring-2 ring-[#38804b]/60 hover:ring-[#38804b]"
+                : "bg-[#38804b] text-white ring-2 ring-white/60 hover:ring-white"
             }`}
             aria-label={isOpen ? "Close customer support" : "Open live travel desk"}
             title="Live Travel Support"
@@ -326,10 +326,10 @@ export default function WhatsAppFloat() {
               <X className="w-5 h-5" />
             ) : (
               <div className="relative flex items-center justify-center">
-                <SupportAgentIcon className="w-6 h-6 text-[#38804b] group-hover:text-white transition-colors" />
+                <SupportAgentIcon className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
                 <span className="absolute -bottom-0.5 -right-0.5 flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#38804b] opacity-80" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#38804b] border border-slate-950" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-80" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white border border-[#38804b]" />
                 </span>
               </div>
             )}

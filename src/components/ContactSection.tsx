@@ -66,32 +66,32 @@ Notes: ${cleanNotes || "None"}`;
           
           {/* Left: Office Information & Location Card */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="relative overflow-hidden bg-gradient-to-br from-[#0B1E15] via-[#112a1f] to-[#081710] text-white p-7 sm:p-8 rounded-3xl shadow-2xl border border-[#38804b]/30 space-y-6">
+            <div className="relative overflow-hidden bg-[#38804b] text-white p-7 sm:p-8 rounded-3xl shadow-2xl border border-white/20 space-y-6">
               {/* Subtle ambient light effect */}
-              <div className="absolute top-0 right-0 w-48 h-48 bg-[#38804b]/15 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full blur-3xl pointer-events-none" />
               
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-[#38804b]/20 text-[#38804b] border border-[#38804b]/40 uppercase tracking-wider mb-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#38804b] animate-pulse" />
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-white/20 text-white border border-white/30 uppercase tracking-wider mb-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                   Curated by Local Team
                 </div>
                 <h3 className="text-2xl font-extrabold text-white mt-1">{companyInfo.name}</h3>
-                <p className="text-xs text-slate-300 font-serif italic mt-0.5">{companyInfo.tagline}</p>
+                <p className="text-xs text-emerald-100 font-serif italic mt-0.5">{companyInfo.tagline}</p>
               </div>
 
-              <div className="relative z-10 space-y-4 text-xs sm:text-sm text-slate-200">
+              <div className="relative z-10 space-y-4 text-xs sm:text-sm text-emerald-50">
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-[#38804b]/20 text-[#38804b] flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#38804b]/40 shadow-sm">
+                  <div className="w-9 h-9 rounded-xl bg-white/20 text-white flex items-center justify-center flex-shrink-0 mt-0.5 border border-white/30 shadow-sm">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="font-semibold text-white block">Official Physical Address:</span>
-                    <p className="text-slate-300 text-xs leading-relaxed mt-0.5">{companyInfo.fullAddress}</p>
+                    <p className="text-emerald-100 text-xs leading-relaxed mt-0.5">{companyInfo.fullAddress}</p>
                     <a
                       href={companyInfo.mapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-xs font-semibold text-[#38804b] hover:text-white mt-1.5 transition-colors"
+                      className="inline-flex items-center text-xs font-semibold text-white hover:text-emerald-200 underline decoration-white/40 underline-offset-2 mt-1.5 transition-colors"
                     >
                       <span>Open in Google Maps</span>
                       <ExternalLink className="w-3 h-3 ml-1" />
@@ -100,17 +100,17 @@ Notes: ${cleanNotes || "None"}`;
                 </div>
 
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-[#38804b]/20 text-[#38804b] flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#38804b]/40 shadow-sm">
+                  <div className="w-9 h-9 rounded-xl bg-white/20 text-white flex items-center justify-center flex-shrink-0 mt-0.5 border border-white/30 shadow-sm">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="font-semibold text-white block">Direct Desk &amp; WhatsApp:</span>
                     <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1">
-                      <a href={`tel:${companyInfo.phones[0]}`} className="text-[#38804b] hover:text-white font-semibold text-xs transition-colors">
+                      <a href={`tel:${companyInfo.phones[0]}`} className="text-white hover:text-emerald-200 font-semibold text-xs transition-colors">
                         +91 8082495885
                       </a>
-                      <span className="text-slate-500">•</span>
-                      <a href={`tel:${companyInfo.phones[1]}`} className="text-[#38804b] hover:text-white font-semibold text-xs transition-colors">
+                      <span className="text-emerald-200/60">•</span>
+                      <a href={`tel:${companyInfo.phones[1]}`} className="text-white hover:text-emerald-200 font-semibold text-xs transition-colors">
                         +91 7780871705
                       </a>
                     </div>
@@ -118,37 +118,37 @@ Notes: ${cleanNotes || "None"}`;
                 </div>
 
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-[#38804b]/20 text-[#38804b] flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#38804b]/40 shadow-sm">
+                  <div className="w-9 h-9 rounded-xl bg-white/20 text-white flex items-center justify-center flex-shrink-0 mt-0.5 border border-white/30 shadow-sm">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="font-semibold text-white block">Official Email:</span>
-                    <a href={`mailto:${companyInfo.email}`} className="hover:text-white text-xs text-slate-300 transition-colors">
+                    <a href={`mailto:${companyInfo.email}`} className="hover:text-emerald-200 text-xs text-white transition-colors">
                       {companyInfo.email}
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-[#38804b]/20 text-[#38804b] flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#38804b]/40 shadow-sm">
+                  <div className="w-9 h-9 rounded-xl bg-white/20 text-white flex items-center justify-center flex-shrink-0 mt-0.5 border border-white/30 shadow-sm">
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="font-semibold text-white block">Experience &amp; Office Hours:</span>
-                    <p className="text-xs text-slate-300">3+ Years Field Experience • 24/7 Assistance</p>
+                    <p className="text-xs text-emerald-100">3+ Years Field Experience • 24/7 Assistance</p>
                   </div>
                 </div>
               </div>
 
               {/* Social Channels */}
-              <div className="relative z-10 pt-4 border-t border-[#38804b]/20 flex items-center justify-between">
-                <span className="text-xs text-slate-300 font-medium">Follow Our Journeys:</span>
+              <div className="relative z-10 pt-4 border-t border-white/20 flex items-center justify-between">
+                <span className="text-xs text-emerald-100 font-medium">Follow Our Journeys:</span>
                 <div className="flex items-center space-x-2">
                   <a
                     href={companyInfo.instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white flex items-center justify-center transition-colors shadow-xs"
+                    className="w-8 h-8 rounded-xl bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-colors shadow-xs"
                     title="Instagram @shopatrip"
                     aria-label="Instagram"
                   >
@@ -158,7 +158,7 @@ Notes: ${cleanNotes || "None"}`;
                     href={companyInfo.facebookUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white flex items-center justify-center transition-colors shadow-xs"
+                    className="w-8 h-8 rounded-xl bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-colors shadow-xs"
                     title="Facebook"
                     aria-label="Facebook"
                   >
@@ -168,7 +168,7 @@ Notes: ${cleanNotes || "None"}`;
                     href={`https://wa.me/${companyInfo.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white flex items-center justify-center transition-colors shadow-xs"
+                    className="w-8 h-8 rounded-xl bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-colors shadow-xs"
                     title="WhatsApp"
                     aria-label="WhatsApp"
                   >

@@ -133,7 +133,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
         />
 
         {/* Hero Section */}
-        <section className="relative bg-[#061811] text-white overflow-hidden py-12 sm:py-20 px-4 sm:px-6 lg:px-8 border-b border-[#38804b]/20">
+        <section className="relative bg-[#38804b] text-white overflow-hidden py-12 sm:py-20 px-4 sm:px-6 lg:px-8 border-b border-[#2e6d3f]">
           <div className="absolute inset-0 z-0">
             <Image
               src={dest.image}
@@ -142,15 +142,15 @@ export default async function DestinationDetailPage({ params }: PageProps) {
               priority
               className="object-cover object-center opacity-30"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#061811] via-[#061811]/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#38804b] via-[#38804b]/80 to-transparent" />
           </div>
 
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#0B1E15]/90 text-[#38804b] border border-[#38804b]/30">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white border border-white/30">
                 {dest.region}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#38804b] text-white flex items-center gap-1.5">
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-white text-[#38804b] flex items-center gap-1.5 shadow-sm">
                 <MapPin className="w-3 h-3" />
                 Himalayan Destination
               </span>
@@ -159,30 +159,30 @@ export default async function DestinationDetailPage({ params }: PageProps) {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white max-w-4xl leading-tight">
               {dest.name}
             </h1>
-            <p className="mt-3 text-lg sm:text-xl text-slate-200 font-medium max-w-3xl">
+            <p className="mt-3 text-lg sm:text-xl text-emerald-100 font-medium max-w-3xl">
               {dest.tagline}
             </p>
 
             {/* Quick Metrics Bar */}
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl p-4 sm:p-5 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-xs sm:text-sm">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm">
               <div>
-                <span className="text-slate-400 block text-xs">Altitude:</span>
+                <span className="text-emerald-100 block text-xs">Altitude:</span>
                 <span className="font-bold text-white flex items-center mt-1">
-                  <Mountain className="w-3.5 h-3.5 mr-1.5 text-[#38804b]" />
+                  <Mountain className="w-3.5 h-3.5 mr-1.5 text-white" />
                   {dest.altitude}
                 </span>
               </div>
               <div>
-                <span className="text-slate-400 block text-xs">Distance:</span>
+                <span className="text-emerald-100 block text-xs">Distance:</span>
                 <span className="font-bold text-white flex items-center mt-1 truncate">
-                  <MapPin className="w-3.5 h-3.5 mr-1.5 text-[#38804b] flex-shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 mr-1.5 text-white flex-shrink-0" />
                   {dest.distanceFromSrinagar}
                 </span>
               </div>
               <div>
-                <span className="text-slate-400 block text-xs">Best Season:</span>
+                <span className="text-emerald-100 block text-xs">Best Season:</span>
                 <span className="font-bold text-white flex items-center mt-1 truncate">
-                  <Calendar className="w-3.5 h-3.5 mr-1.5 text-[#38804b] flex-shrink-0" />
+                  <Calendar className="w-3.5 h-3.5 mr-1.5 text-white flex-shrink-0" />
                   {dest.bestTimeToVisit}
                 </span>
               </div>
@@ -251,26 +251,26 @@ export default async function DestinationDetailPage({ params }: PageProps) {
               </div>
 
               {/* Local Tangmarg Base Insider Tips */}
-              <div className="bg-[#0B1E15] text-white rounded-2xl p-6 sm:p-8 border border-[#38804b]/20 shadow-soft relative overflow-hidden">
+              <div className="bg-[#38804b] text-white rounded-2xl p-6 sm:p-8 border border-[#2e6d3f] shadow-soft relative overflow-hidden">
                 <div className="relative z-10">
-                  <div className="flex items-center space-x-2 text-[#38804b] text-xs uppercase font-bold tracking-wider mb-2">
-                    <ShieldCheck className="w-4 h-4" />
+                  <div className="flex items-center space-x-2 text-emerald-100 text-xs uppercase font-bold tracking-wider mb-2">
+                    <ShieldCheck className="w-4 h-4 text-white" />
                     <span>Tangmarg Base Expert Insider Tips</span>
                   </div>
                   <h3 className="text-lg font-bold text-white mb-3">
                     How We Make Your {dest.name} Journey Hassle-Free
                   </h3>
-                  <ul className="space-y-2.5 text-xs sm:text-sm text-slate-100">
+                  <ul className="space-y-2.5 text-xs sm:text-sm text-emerald-50">
                     <li className="flex items-start">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#38804b] mt-2 mr-2 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white mt-2 mr-2 flex-shrink-0" />
                       <span><strong>Direct Cab Coordination:</strong> Private sanitized vehicles with experienced mountain drivers familiar with passes, snow chain checkpoints, and scenic halts.</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#38804b] mt-2 mr-2 flex-shrink-0" />
-                      <span><strong>Permit & Pass Clearance:</strong> Full on-ground support for frontier border permits (Keran & Gurez) and Gondola Phase 1 & 2 slot reservations in Gulmarg.</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-white mt-2 mr-2 flex-shrink-0" />
+                      <span><strong>Permit &amp; Pass Clearance:</strong> Full on-ground support for frontier border permits (Keran &amp; Gurez) and Gondola Phase 1 &amp; 2 slot reservations in Gulmarg.</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#38804b] mt-2 mr-2 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white mt-2 mr-2 flex-shrink-0" />
                       <span><strong>Inspected Stays:</strong> Guaranteed central heating / heated blankets, round-the-clock warm running water, and hot Kashmiri Wazwan / multi-cuisine food.</span>
                     </li>
                   </ul>

@@ -58,14 +58,14 @@ export default function TeamPage() {
         <Breadcrumbs items={[{ name: "About Us", href: "/about" }, { name: "Our Team", href: "/team" }]} />
 
         {/* Hero Section */}
-        <section className="relative bg-[#081f16] text-white py-14 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#38804b]/20 via-transparent to-transparent pointer-events-none" />
+        <section className="relative bg-[#38804b] text-white py-14 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-0 left-0 right-0 h-12 bg-[#fbfdfb] rounded-tl-[2rem] rounded-tr-[2rem] hidden md:block" />
           <div className="max-w-7xl mx-auto relative z-10 text-center">
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
-              Meet Our <span className="text-[#38804b]">Local Team</span>
+              Meet Our <span className="text-emerald-100">Local Team</span>
             </h1>
-            <p className="mt-5 text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-sm sm:text-base text-emerald-50 max-w-2xl mx-auto leading-relaxed">
               From our Creative Director and Senior Travel Consultants to dedicated Trip Coordinators, Social Media team, and experienced Mountain Drivers — meet the real people crafting your Himalayan journey.
             </p>
           </div>
@@ -158,17 +158,17 @@ export default function TeamPage() {
 
         {/* CTA Strip */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <div className="rounded-3xl bg-[#061e15] text-white p-8 sm:p-12 border border-[#38804b]/20 shadow-xl">
+          <div className="rounded-3xl bg-[#38804b] text-white p-8 sm:p-12 border border-[#2e6d3f] shadow-xl">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
               <div className="max-w-xl space-y-3">
-                <span className="inline-flex items-center gap-2 text-[#38804b] text-xs font-bold uppercase tracking-wider">
-                  <Phone className="w-3.5 h-3.5" />
+                <span className="inline-flex items-center gap-2 text-emerald-100 text-xs font-bold uppercase tracking-wider">
+                  <Phone className="w-3.5 h-3.5 text-white" />
                   Direct Access to Our Specialists
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
                   Speak Directly with Our Local Travel Team
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                <p className="text-xs sm:text-sm text-emerald-50 leading-relaxed">
                   Call or WhatsApp our team today for custom quotes, winter tips, and verified hotel stays across Jammu, Kashmir, and Ladakh.
                 </p>
               </div>
@@ -178,16 +178,16 @@ export default function TeamPage() {
                   href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hello Shop A Trip Team, I would like to consult your local team for trip planning.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white font-bold text-sm shadow-md transition-all min-h-[48px]"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white hover:bg-emerald-50 text-[#38804b] font-bold text-sm shadow-md transition-all min-h-[48px]"
                 >
                   <WhatsAppIcon className="w-4 h-4 mr-2" />
                   <span>WhatsApp Our Team</span>
                 </a>
                 <a
                   href={`tel:${companyInfo.phones[0]}`}
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all min-h-[48px]"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-semibold text-sm border border-white/30 transition-all min-h-[48px]"
                 >
-                  <Phone className="w-4 h-4 mr-2 text-[#38804b]" />
+                  <Phone className="w-4 h-4 mr-2 text-white" />
                   <span>Call {companyInfo.phones[0]}</span>
                 </a>
               </div>

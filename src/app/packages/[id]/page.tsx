@@ -145,7 +145,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
         />
 
         {/* Hero Banner Section */}
-        <section className="relative bg-[#061811] text-white overflow-hidden py-10 sm:py-16 px-4 sm:px-6 lg:px-8 border-b border-[#38804b]/20">
+        <section className="relative bg-[#38804b] text-white overflow-hidden py-10 sm:py-16 px-4 sm:px-6 lg:px-8 border-b border-[#2e6d3f]">
           <div className="absolute inset-0 z-0">
             <Image
               src={pkg.image}
@@ -154,20 +154,20 @@ export default async function PackageDetailPage({ params }: PageProps) {
               priority
               className="object-cover object-center opacity-25"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#061811] via-[#061811]/85 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#38804b] via-[#38804b]/85 to-transparent" />
           </div>
 
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#38804b] text-white shadow-sm">
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-white text-[#38804b] shadow-sm">
                 {pkg.tag}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#0B1E15]/80 text-[#38804b] border border-[#38804b]/30">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white border border-white/30">
                 {pkg.category}
               </span>
               {pkg.featured && (
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#0B1E15] text-[#38804b] border border-[#38804b]/30 flex items-center gap-1">
-                  <BadgeCheck className="w-3 h-3" />
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white border border-white/30 flex items-center gap-1">
+                  <BadgeCheck className="w-3 h-3 text-white" />
                   Recommended Departure
                 </span>
               )}
@@ -176,23 +176,23 @@ export default async function PackageDetailPage({ params }: PageProps) {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white max-w-4xl leading-tight">
               {pkg.title}
             </h1>
-            <p className="mt-3 text-base sm:text-lg text-slate-100 max-w-3xl leading-relaxed">
+            <p className="mt-3 text-base sm:text-lg text-emerald-100 max-w-3xl leading-relaxed">
               {pkg.subtitle}
             </p>
 
             {/* Key Metrics Bar */}
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-4xl p-4 sm:p-5 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-xs sm:text-sm">
+            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-4xl p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm">
               <div>
-                <span className="text-slate-400 block text-xs">Duration:</span>
+                <span className="text-emerald-100 block text-xs">Duration:</span>
                 <span className="font-bold text-white flex items-center mt-0.5">
-                  <Clock className="w-3.5 h-3.5 mr-1.5 text-[#38804b]" />
+                  <Clock className="w-3.5 h-3.5 mr-1.5 text-white" />
                   {pkg.duration}
                 </span>
               </div>
               <div>
-                <span className="text-slate-400 block text-xs">Route:</span>
+                <span className="text-emerald-100 block text-xs">Route:</span>
                 <span className="font-bold text-white flex items-center mt-0.5 truncate">
-                  <MapPin className="w-3.5 h-3.5 mr-1.5 text-[#38804b] flex-shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 mr-1.5 text-white flex-shrink-0" />
                   {pkg.startingPoint} → {pkg.endingPoint}
                 </span>
               </div>

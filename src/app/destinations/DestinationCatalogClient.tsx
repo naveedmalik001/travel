@@ -93,7 +93,7 @@ export default function DestinationCatalogClient() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               
-              <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#0B1E15]/80 text-[#38804b] border border-[#38804b]/30 backdrop-blur-sm">
+              <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#38804b] text-white border border-white/20 shadow-sm backdrop-blur-sm">
                 {dest.region}
               </div>
 

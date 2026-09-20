@@ -96,20 +96,20 @@ export default function AboutPage() {
         <Breadcrumbs items={[{ name: "About Us", href: "/about" }]} />
 
         {/* Hero Banner */}
-        <section className="relative bg-[#081f16] text-white py-14 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#38804b]/20 via-transparent to-transparent pointer-events-none" />
+        <section className="relative bg-[#38804b] text-white py-14 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none" />
           {/* Decorative bottom wave */}
           <div className="absolute bottom-0 left-0 right-0 h-12 bg-[#fbfdfb] rounded-tl-[2rem] rounded-tr-[2rem] hidden md:block" />
           <div className="max-w-7xl mx-auto relative z-10 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#0B1E15]/90 text-[#38804b] border border-[#38804b]/30 mb-5">
-              <BadgeCheck className="w-3.5 h-3.5 text-[#38804b]" />
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/20 text-white border border-white/30 mb-5">
+              <BadgeCheck className="w-3.5 h-3.5 text-white" />
               peace &amp; you · Local Kashmiri Hospitality
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
               Rooted in the Valleys,{" "}
-              <span className="text-[#38804b]">Trusted by Thousands</span>
+              <span className="text-emerald-100">Trusted by Thousands</span>
             </h1>
-            <p className="mt-5 text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-sm sm:text-base text-emerald-50 max-w-2xl mx-auto leading-relaxed">
               With 3+ years of dedicated service in Jammu, Kashmir, and Ladakh, Shop A Trip Tour &amp; Travels was founded to provide authentic, safe, and transparent Himalayan travel experiences.
             </p>
 
@@ -121,8 +121,8 @@ export default function AboutPage() {
                 { value: "4.9", label: "Google Rating" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <span className="block text-2xl sm:text-3xl font-extrabold text-[#38804b]">{stat.value}</span>
-                  <span className="block text-xs text-[#38804b] mt-0.5">{stat.label}</span>
+                  <span className="block text-2xl sm:text-3xl font-extrabold text-white">{stat.value}</span>
+                  <span className="block text-xs text-emerald-100 mt-0.5">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -219,22 +219,22 @@ export default function AboutPage() {
 
         {/* Meet the Team CTA Banner */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-          <div className="rounded-3xl bg-[#081f16] text-white p-8 sm:p-12 border border-[#38804b]/20 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="rounded-3xl bg-[#38804b] text-white p-8 sm:p-12 border border-[#2e6d3f] shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-2 text-center md:text-left">
-              <span className="text-xs uppercase font-bold text-[#38804b] tracking-wider flex items-center justify-center md:justify-start gap-1.5">
-                <Users className="w-3.5 h-3.5 text-[#38804b]" />
+              <span className="text-xs uppercase font-bold text-emerald-100 tracking-wider flex items-center justify-center md:justify-start gap-1.5">
+                <Users className="w-3.5 h-3.5 text-white" />
                 Tangmarg Field Specialists
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
                 Meet the Native Team Behind Your Journeys
               </h3>
-              <p className="text-xs sm:text-sm text-slate-200 max-w-xl">
+              <p className="text-xs sm:text-sm text-emerald-50 max-w-xl">
                 Creative Directors, Senior Travel Consultants, Trip Coordinators, and experienced Mountain Drivers based in Tangmarg, Kashmir.
               </p>
             </div>
             <Link
               href="/team"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#225433] text-white font-bold text-xs sm:text-sm transition-all shadow-md whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-emerald-50 text-[#38804b] font-bold text-xs sm:text-sm transition-all shadow-md whitespace-nowrap"
             >
               <span>View Full Team</span>
               <ArrowRight className="w-4 h-4" />
@@ -269,17 +269,17 @@ export default function AboutPage() {
 
         {/* Direct Contact / Headquarters strip */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 sm:pb-20">
-          <div className="rounded-3xl bg-[#061e15] text-white p-8 sm:p-12 border border-[#38804b]/20 shadow-xl">
+          <div className="rounded-3xl bg-[#38804b] text-white p-8 sm:p-12 border border-[#2e6d3f] shadow-xl">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
               <div className="max-w-xl space-y-3">
-                <span className="inline-flex items-center gap-2 text-[#38804b] text-xs font-bold uppercase tracking-wider">
-                  <Phone className="w-3.5 h-3.5" />
+                <span className="inline-flex items-center gap-2 text-emerald-100 text-xs font-bold uppercase tracking-wider">
+                  <Phone className="w-3.5 h-3.5 text-white" />
                   Ready to plan your journey?
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
                   Speak Directly with Our Tangmarg Concierge Team
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                <p className="text-xs sm:text-sm text-emerald-50 leading-relaxed">
                   Whether you need a custom honeymoon itinerary, an offbeat Gurez-Keran exploration, or a high-pass Ladakh road trip, we are just a call or message away.
                 </p>
               </div>
@@ -289,16 +289,16 @@ export default function AboutPage() {
                   href={`https://wa.me/${companyInfo.whatsapp}?text=${encodeURIComponent("Hello Shop A Trip Team, I would like to plan a trip to Kashmir/Ladakh.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white font-bold text-sm shadow-md transition-all min-h-[48px]"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white hover:bg-emerald-50 text-[#38804b] font-bold text-sm shadow-md transition-all min-h-[48px]"
                 >
                   <WhatsAppIcon className="w-4 h-4 mr-2" />
                   <span>WhatsApp Us</span>
                 </a>
                 <a
                   href={`tel:${companyInfo.phones[0]}`}
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all min-h-[48px]"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-semibold text-sm border border-white/30 transition-all min-h-[48px]"
                 >
-                  <Phone className="w-4 h-4 mr-2 text-[#38804b]" />
+                  <Phone className="w-4 h-4 mr-2 text-white" />
                   <span>Call {companyInfo.phones[0]}</span>
                 </a>
               </div>

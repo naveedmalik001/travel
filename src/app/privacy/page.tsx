@@ -39,25 +39,25 @@ export default function PrivacyPolicyPage() {
             <span className="text-[#38804b] font-semibold">Privacy Policy</span>
           </div>
 
-          <div className="bg-[#08150f] rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl border border-[#38804b]/20">
+          <div className="bg-[#38804b] rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl border border-[#2e6d3f]">
             <div className="relative z-10 max-w-2xl">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#38804b]/20 text-[#38804b] border border-[#38804b]/30 mb-4">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-white border border-white/30 mb-4">
                 <Lock className="w-3.5 h-3.5" />
                 <span>Guest Data Privacy</span>
               </span>
               <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-serif">
                 Privacy Policy
               </h1>
-              <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+              <p className="mt-3 text-emerald-100 text-sm sm:text-base leading-relaxed">
                 We respect your personal privacy. Discover how we protect your personal details, travel preferences, and border identification records.
               </p>
-              <p className="mt-4 text-xs text-[#38804b] font-medium">
+              <p className="mt-4 text-xs text-emerald-100/90 font-medium">
                 Last Updated: {lastUpdated} • {companyInfo.name} (shopatrip.in)
               </p>
             </div>
 
             {/* Decorative accent */}
-            <div className="absolute -right-16 -bottom-16 w-80 h-80 bg-[#38804b]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -right-16 -bottom-16 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           </div>
         </div>
 

@@ -67,19 +67,19 @@ export default function ContactPage() {
         <Breadcrumbs items={[{ name: "Contact Us", href: "/contact" }]} />
 
         {/* Hero Banner */}
-        <section className="relative bg-[#081f16] text-white py-14 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#38804b]/20 via-transparent to-transparent pointer-events-none" />
+        <section className="relative bg-[#38804b] text-white py-14 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-0 left-0 right-0 h-12 bg-[#fbfdfb] rounded-tl-[2rem] rounded-tr-[2rem] hidden md:block" />
           <div className="max-w-7xl mx-auto relative z-10 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#0B1E15]/90 text-[#38804b] border border-[#38804b]/30 mb-5">
-              <BadgeCheck className="w-3.5 h-3.5 text-[#38804b]" />
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/20 text-white border border-white/30 mb-5">
+              <BadgeCheck className="w-3.5 h-3.5 text-white" />
               Contact Us
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
               Get in Touch with Our{" "}
-              <span className="text-[#38804b]">Local Travel Team</span>
+              <span className="text-emerald-100">Local Travel Team</span>
             </h1>
-            <p className="mt-5 text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-sm sm:text-base text-emerald-50 max-w-2xl mx-auto leading-relaxed">
               Have questions about snow conditions, cab permits, hotels, or want a custom quotation? We are here to help you 7 days a week.
             </p>
           </div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                 href={companyInfo.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 px-4 rounded-xl bg-[#0B1E15] hover:bg-[#0B1E15] text-[#38804b] text-sm font-bold text-center transition-colors flex items-center justify-center gap-2 min-h-[44px]"
+                className="w-full py-3 px-4 rounded-xl bg-[#38804b] hover:bg-[#2b693f] text-white text-sm font-bold text-center transition-colors flex items-center justify-center gap-2 min-h-[44px] shadow-sm"
               >
                 <MapPin className="w-4 h-4" />
                 <span>Open in Google Maps</span>
