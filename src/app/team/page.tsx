@@ -86,9 +86,9 @@ export default function TeamPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {teamMembers.map((member) => (
-              <TeamMemberCard key={member.id} member={member} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {teamMembers.map((member, idx) => (
+              <TeamMemberCard key={member.id} member={member} index={idx} />
             ))}
           </div>
         </section>

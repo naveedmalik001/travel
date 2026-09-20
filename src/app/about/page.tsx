@@ -22,8 +22,6 @@ import {
   ArrowRight,
   BadgeCheck
 } from "lucide-react";
-import TeamMemberCard from "@/components/TeamMemberCard";
-import { teamMembers } from "@/data/team";
 
 export const metadata: Metadata = {
   title: "About Us | Shop A Trip Tour & Travels (peace & you) - Kashmir",
