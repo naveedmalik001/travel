@@ -282,6 +282,45 @@ Please share a detailed day-by-day itinerary and transparent custom quotation.`;
           </p>
         </div>
 
+        {/* Mobile Host Banner (Visible only on < lg) */}
+        <div className="lg:hidden mb-6 bg-white rounded-2xl p-4 border border-slate-200 shadow-sm overflow-hidden relative">
+          <div className="flex items-center gap-3.5">
+            <div className="w-20 h-24 relative flex-shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/mascot.png"
+                alt="Shop A Trip Travel Host"
+                className="w-full h-full object-contain object-bottom drop-shadow-sm"
+                loading="lazy"
+              />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-[#38804b]/10 text-[#38804b] text-[10px] font-bold uppercase tracking-wider mb-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#38804b]" />
+                <span>Your Travel Host</span>
+              </div>
+              <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
+                From planning to departure, we are with you.
+              </h4>
+              <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">
+                Tell us what you want, and we will curate it for you with verified stays and dedicated mountain cab.
+              </p>
+            </div>
+          </div>
+
+          {/* Quick stats chip row */}
+          <div className="mt-3 pt-2.5 border-t border-slate-100 grid grid-cols-2 gap-2 text-[11px] text-slate-600 font-medium">
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
+              <span>200+ Happy Travelers</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] flex-shrink-0" />
+              <span>24/7 Assistance</span>
+            </div>
+          </div>
+        </div>
+
         {/* Desktop 2-Column Grid: Form + Host Side Pillar */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           
@@ -773,7 +812,7 @@ Please share a detailed day-by-day itinerary and transparent custom quotation.`;
           </div>
 
           {/* Desktop Host Companion Pillar (4 Cols on Desktop) */}
-          <div className="lg:col-span-4 flex flex-col justify-between h-full space-y-4">
+          <div className="hidden lg:flex lg:col-span-4 flex-col justify-between h-full space-y-4">
             
             {/* Host Visual Card */}
             <div className="bg-white rounded-3xl p-5 border border-slate-200/90 shadow-lg flex flex-col items-center text-center relative overflow-hidden">
