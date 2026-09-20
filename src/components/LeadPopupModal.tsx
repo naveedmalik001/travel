@@ -6,28 +6,33 @@ import { companyInfo } from "@/data/company";
 import { WhatsAppIcon } from "@/components/SocialIcons";
 import { 
   X, 
-  Send, 
   Calendar, 
   Users, 
   MapPin, 
   Hotel, 
   Wallet, 
   Phone, 
-  ShieldCheck, 
+  User,
+  ArrowRight,
+  ArrowLeft,
   CheckCircle2, 
-  Clock, 
-  Compass 
+  Compass,
+  Sparkles
 } from "lucide-react";
 
 export default function LeadPopupModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentStep, setCurrentStep] = useState<1 | 2 | 3>(1);
+
+  // Form State
   const [travelDate, setTravelDate] = useState("");
   const [travelers, setTravelers] = useState("2");
-  const [destination, setDestination] = useState("Kashmir Classic (Srinagar, Gulmarg, Pahalgam)");
+  const [destination, setDestination] = useState("🏔️ Kashmir Classic (Srinagar • Gulmarg • Pahalgam)");
   const [hotelCategory, setHotelCategory] = useState("3-Star Deluxe");
-  const [budget, setBudget] = useState("₹15k - ₹25k / person");
+  const [budget, setBudget] = useState("₹15,000 – ₹25,000 / person");
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
+  const [phoneError, setPhoneError] = useState(false);
 
   useEffect(() => {
     // Show popup after 1.5s if not dismissed in this session
@@ -45,14 +50,33 @@ export default function LeadPopupModal() {
     sessionStorage.setItem("lead_popup_dismissed", "true");
   };
 
+  const handleNextStep = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (currentStep === 1) {
+      setCurrentStep(2);
+    } else if (currentStep === 2) {
+      setCurrentStep(3);
+    }
+  };
+
+  const handlePrevStep = () => {
+    if (currentStep === 3) setCurrentStep(2);
+    else if (currentStep === 2) setCurrentStep(1);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!phone.trim()) {
+      setPhoneError(true);
+      return;
+    }
+
     const message = `*Custom Trip Request — Shop A Trip Tour & Travels*
 👤 *Name:* ${name.trim() || "Traveler"}
-📱 *WhatsApp:* ${phone.trim() || "Not provided"}
-📅 *Travel Date / Month:* ${travelDate || "Flexible"}
-👥 *Travelers:* ${travelers} Persons
-📍 *Preferred Destination:* ${destination}
+📱 *WhatsApp:* ${phone.trim()}
+📅 *Travel Date:* ${travelDate.trim() || "Flexible / Planning"}
+👥 *Travellers:* ${travelers} Persons
+📍 *Destination:* ${destination}
 🏨 *Hotel Category:* ${hotelCategory}
 💰 *Approximate Budget:* ${budget}
 
@@ -74,19 +98,19 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
     >
       {/* Modal Container */}
       <div 
-        className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col md:flex-row my-auto max-h-[92vh] md:max-h-[580px] animate-in zoom-in-95 duration-200"
+        className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col md:flex-row my-auto max-h-[92vh] md:max-h-[590px] animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Floating Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-3.5 right-3.5 z-20 w-8 h-8 rounded-full bg-slate-900/80 md:bg-slate-100 hover:bg-slate-900 text-white md:text-slate-700 md:hover:text-white flex items-center justify-center transition-all shadow-md"
+          className="absolute top-3.5 right-3.5 z-20 w-8 h-8 rounded-full bg-slate-900/80 md:bg-slate-100 hover:bg-slate-900 text-white md:text-slate-700 md:hover:text-white flex items-center justify-center transition-all shadow-md cursor-pointer"
           aria-label="Close modal"
         >
           <X className="w-4 h-4" />
         </button>
 
-        {/* ── Left Visual / Trust Panel (Desktop only or banner on mobile) ── */}
+        {/* ── Left Visual / Trust Panel ── */}
         <div className="relative md:w-5/12 bg-gradient-to-br from-[#061811] via-[#0b2b1e] to-[#04110c] text-white p-6 flex flex-col justify-between overflow-hidden shrink-0">
           {/* Background image overlay */}
           <div className="absolute inset-0 opacity-25 mix-blend-overlay pointer-events-none">
@@ -100,20 +124,20 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
 
           <div className="relative z-10">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#38804b]/30 text-white border border-[#38804b]/50 text-[11px] font-bold mb-3">
-              <Compass className="w-3.5 h-3.5 text-white" />
+              <Sparkles className="w-3.5 h-3.5 text-white" />
               <span>Free Custom Itinerary</span>
             </div>
 
             <h3 className="text-xl sm:text-2xl font-extrabold leading-tight tracking-tight text-white">
-              Plan Your Kashmir &amp; Ladakh Trip
+              Plan Your Perfect Kashmir Trip
             </h3>
-            <p className="text-xs text-slate-200 mt-1.5 leading-relaxed">
-              Curated by local team • 100% transparent pricing with MAP meals &amp; private cab.
+            <p className="text-xs text-slate-200 mt-2 leading-relaxed">
+              Tell us a few details. Our Team will create a personalised itinerary for you.
             </p>
           </div>
 
           {/* Key trust bullets */}
-          <div className="relative z-10 my-4 space-y-2 text-xs text-slate-200 hidden md:block">
+          <div className="relative z-10 my-4 space-y-2.5 text-xs text-slate-200 hidden md:block">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#38804b] shrink-0" />
               <span>Zero hidden fee • Direct local rates</span>
@@ -132,183 +156,362 @@ Hello Shop A Trip! Please share a customized itinerary and quotation for my trip
             </div>
           </div>
 
-          {/* Rating Badge */}
-          <div className="relative z-10 pt-3 border-t border-[#38804b]/30 flex items-center justify-between text-[11px]">
-            <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#38804b]" />
-              <span className="font-bold text-white">4.9 / 5.0 Rating</span>
-            </div>
-            <span className="text-slate-300 font-medium">Verified Reviews</span>
+          {/* Bottom badge */}
+          <div className="relative z-10 pt-3 border-t border-[#38804b]/30 hidden md:flex items-center gap-2 text-[11px] text-slate-300">
+            <Compass className="w-3.5 h-3.5 text-[#38804b]" />
+            <span>Tangmarg Head Office • Native Guides</span>
           </div>
         </div>
 
-        {/* ── Right Compact Form ── */}
+        {/* ── Right 3-Step Form ── */}
         <div className="md:w-7/12 p-5 sm:p-6 flex flex-col justify-between overflow-y-auto bg-white">
-          <form onSubmit={handleSubmit} className="space-y-3.5">
-            
-            {/* Header for mobile view */}
-            <div className="md:hidden pr-8 mb-1">
-              <h4 className="font-bold text-slate-900 text-sm">Tell Us Your Preferences</h4>
-              <p className="text-[11px] text-slate-500">Get an instant quote on WhatsApp</p>
-            </div>
-
-            {/* Row 1: Travel Date & Number of Travelers */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center gap-1">
-                  <Calendar className="w-3 h-3 text-[#38804b]" />
-                  <span>Travel Date / Month *</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. 15th Oct, Next month"
-                  value={travelDate}
-                  onChange={(e) => setTravelDate(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white transition-all"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center gap-1">
-                  <Users className="w-3 h-3 text-[#38804b]" />
-                  <span>Travelers</span>
-                </label>
-                <div className="grid grid-cols-4 gap-1">
-                  {["1", "2", "3-4", "5+"].map((num) => (
-                    <button
-                      key={num}
-                      type="button"
-                      onClick={() => setTravelers(num)}
-                      className={`py-1.5 text-xs font-bold rounded-lg border transition-all ${
-                        travelers === num
-                          ? "bg-[#38804b] text-white border-[#38804b] shadow-sm"
-                          : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
-                      }`}
-                    >
-                      {num}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Row 2: Preferred Destination */}
-            <div>
-              <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center gap-1">
-                <MapPin className="w-3 h-3 text-[#38804b]" />
-                <span>Preferred Destination</span>
-              </label>
-              <select
-                value={destination}
-                onChange={(e) => setDestination(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white transition-all"
-              >
-                <option value="Kashmir Classic (Srinagar, Gulmarg, Pahalgam)">Kashmir Classic (Srinagar, Gulmarg, Pahalgam)</option>
-                <option value="Honeymoon Special (Houseboat + Candlelight)">Honeymoon Special (Houseboat + Candlelight)</option>
-                <option value="Offbeat Kashmir (Gurez, Keran, Bangus)">Offbeat Kashmir (Gurez, Keran, Bangus)</option>
-                <option value="Leh-Ladakh Overland Expedition">Leh-Ladakh Overland Expedition</option>
-                <option value="Vaishno Devi Pilgrimage & Patnitop">Vaishno Devi Pilgrimage & Patnitop</option>
-              </select>
-            </div>
-
-            {/* Row 3: Hotel Category */}
-            <div>
-              <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center gap-1">
-                <Hotel className="w-3 h-3 text-[#38804b]" />
-                <span>Hotel Category</span>
-              </label>
-              <div className="grid grid-cols-3 gap-1.5">
-                {[
-                  { label: "3-Star Deluxe", value: "3-Star Deluxe" },
-                  { label: "4-Star Luxury", value: "4-Star Luxury" },
-                  { label: "5-Star / Chalets", value: "5-Star / Chalets" }
-                ].map((tier) => (
-                  <button
-                    key={tier.value}
-                    type="button"
-                    onClick={() => setHotelCategory(tier.value)}
-                    className={`py-1.5 px-1 text-[11px] font-bold rounded-lg border transition-all text-center ${
-                      hotelCategory === tier.value
-                        ? "bg-[#38804b] text-white border-[#38804b] shadow-sm"
-                        : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
-                    }`}
-                  >
-                    {tier.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Row 4: Budget */}
-            <div>
-              <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center gap-1">
-                <Wallet className="w-3 h-3 text-[#38804b]" />
-                <span>Approximate Budget (Per Person)</span>
-              </label>
-              <select
-                value={budget}
-                onChange={(e) => setBudget(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white transition-all"
-              >
-                <option value="₹10k - ₹15k / person (Budget)">₹10,000 - ₹15,000 / person (Budget)</option>
-                <option value="₹15k - ₹25k / person (Standard / Popular)">₹15,000 - ₹25,000 / person (Standard / Popular)</option>
-                <option value="₹25k - ₹40k / person (Premium / 4-Star)">₹25,000 - ₹40,000 / person (Premium / 4-Star)</option>
-                <option value="₹40k+ / person (Luxury Experience)">₹40,000+ / person (Luxury Experience)</option>
-              </select>
-            </div>
-
-            {/* Row 5: Name & WhatsApp */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-0.5">
-              <div>
-                <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. Rahul Sharma"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white"
-                />
-              </div>
-
-              <div>
-                <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center gap-1">
-                  <Phone className="w-3 h-3 text-[#38804b]" />
-                  <span>WhatsApp Number *</span>
-                </label>
-                <input
-                  type="tel"
-                  placeholder="e.g. 9876543210"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  required
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white"
-                />
-              </div>
-            </div>
-
-            {/* CTA Submit Button */}
-            <div className="pt-2">
+          
+          {/* Step Navigation Header */}
+          <div className="mb-4">
+            <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold text-slate-500 pb-2.5 border-b border-slate-100">
               <button
-                type="submit"
-                className="w-full py-3 px-4 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#245434] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5"
+                type="button"
+                onClick={() => setCurrentStep(1)}
+                className={`flex items-center gap-1 transition-colors ${
+                  currentStep === 1 
+                    ? "text-[#38804b] font-bold" 
+                    : currentStep > 1 
+                      ? "text-slate-800 hover:text-[#38804b] cursor-pointer" 
+                      : "text-slate-400"
+                }`}
               >
-                <WhatsAppIcon className="w-4 h-4" />
-                <span>Create My Trip (Get WhatsApp Itinerary)</span>
+                <span className={`w-4.5 h-4.5 rounded-full text-[10px] flex items-center justify-center font-bold ${
+                  currentStep === 1 
+                    ? "bg-[#38804b] text-white" 
+                    : currentStep > 1 
+                      ? "bg-[#38804b]/15 text-[#38804b]" 
+                      : "bg-slate-100 text-slate-500"
+                }`}>
+                  1
+                </span>
+                <span>Trip Details</span>
               </button>
-              
-              <div className="flex items-center justify-center gap-1.5 text-[10px] text-slate-500 mt-1.5">
-                <Clock className="w-3 h-3 text-[#38804b]" />
-                <span>⚡ Fast 5-minute response from local travel desk</span>
+
+              <span className="text-slate-300">—</span>
+
+              <button
+                type="button"
+                onClick={() => currentStep > 2 && setCurrentStep(2)}
+                className={`flex items-center gap-1 transition-colors ${
+                  currentStep === 2 
+                    ? "text-[#38804b] font-bold" 
+                    : currentStep > 2 
+                      ? "text-slate-800 hover:text-[#38804b] cursor-pointer" 
+                      : "text-slate-400"
+                }`}
+              >
+                <span className={`w-4.5 h-4.5 rounded-full text-[10px] flex items-center justify-center font-bold ${
+                  currentStep === 2 
+                    ? "bg-[#38804b] text-white" 
+                    : currentStep > 2 
+                      ? "bg-[#38804b]/15 text-[#38804b]" 
+                      : "bg-slate-100 text-slate-500"
+                }`}>
+                  2
+                </span>
+                <span>Preferences</span>
+              </button>
+
+              <span className="text-slate-300">—</span>
+
+              <div className={`flex items-center gap-1 ${
+                currentStep === 3 ? "text-[#38804b] font-bold" : "text-slate-400"
+              }`}>
+                <span className={`w-4.5 h-4.5 rounded-full text-[10px] flex items-center justify-center font-bold ${
+                  currentStep === 3 
+                    ? "bg-[#38804b] text-white" 
+                    : "bg-slate-100 text-slate-500"
+                }`}>
+                  3
+                </span>
+                <span>Get My Quote</span>
               </div>
             </div>
+          </div>
 
-          </form>
+          {/* ═══════════════ STEP 01 — TRIP DETAILS ═══════════════ */}
+          {currentStep === 1 && (
+            <form onSubmit={handleNextStep} className="space-y-4 flex-1 flex flex-col justify-between animate-in fade-in duration-200">
+              <div className="space-y-3.5">
+                
+                {/* Field 1: Travel Date */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-800 mb-0.5 flex items-center gap-1">
+                    <Calendar className="w-3.5 h-3.5 text-[#38804b]" />
+                    <span>Travel Date</span>
+                  </label>
+                  <p className="text-[11px] text-slate-500 mb-1.5">
+                    When are you planning to travel?
+                  </p>
+                  <input
+                    type="text"
+                    placeholder="e.g. 15th October, Next Month, Flexible"
+                    value={travelDate}
+                    onChange={(e) => setTravelDate(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white transition-all"
+                    required
+                  />
+                </div>
+
+                {/* Field 2: Travellers */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-800 mb-0.5 flex items-center gap-1">
+                    <Users className="w-3.5 h-3.5 text-[#38804b]" />
+                    <span>Travellers</span>
+                  </label>
+                  <p className="text-[11px] text-slate-500 mb-1.5">
+                    How many people are travelling?
+                  </p>
+                  <div className="grid grid-cols-4 gap-1.5">
+                    {["1", "2", "3-4", "5+"].map((num) => (
+                      <button
+                        key={num}
+                        type="button"
+                        onClick={() => setTravelers(num)}
+                        className={`py-2 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
+                          travelers === num
+                            ? "bg-[#38804b] text-white border-[#38804b] shadow-sm"
+                            : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                        }`}
+                      >
+                        {num === "1" ? "1 Person" : num === "2" ? "2 (Couple)" : num === "3-4" ? "3-4 (Family)" : "5+ Group"}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Field 3: Where would you like to go? */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-800 mb-0.5 flex items-center gap-1">
+                    <MapPin className="w-3.5 h-3.5 text-[#38804b]" />
+                    <span>Where would you like to go?</span>
+                  </label>
+                  <p className="text-[11px] text-slate-500 mb-1.5">
+                    Choose your destination
+                  </p>
+                  <select
+                    value={destination}
+                    onChange={(e) => setDestination(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white transition-all cursor-pointer"
+                  >
+                    <option value="🏔️ Kashmir Classic (Srinagar • Gulmarg • Pahalgam)">
+                      🏔️ Kashmir Classic (Srinagar • Gulmarg • Pahalgam)
+                    </option>
+                    <option value="❄️ Kashmir + Gurez">
+                      ❄️ Kashmir + Gurez
+                    </option>
+                    <option value="🌿 Kashmir Explorer">
+                      🌿 Kashmir Explorer
+                    </option>
+                    <option value="🏔️ Kashmir + Ladakh">
+                      🏔️ Kashmir + Ladakh
+                    </option>
+                    <option value="✨ I'll decide with your expert">
+                      ✨ I&apos;ll decide with your expert
+                    </option>
+                  </select>
+                </div>
+
+              </div>
+
+              {/* Step 1 Action Button */}
+              <div className="pt-3 border-t border-slate-100 flex items-center justify-end">
+                <button
+                  type="submit"
+                  className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#245434] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer hover:-translate-y-0.5"
+                >
+                  <span>Continue to Preferences</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </form>
+          )}
+
+          {/* ═══════════════ STEP 02 — STAY & BUDGET ═══════════════ */}
+          {currentStep === 2 && (
+            <form onSubmit={handleNextStep} className="space-y-4 flex-1 flex flex-col justify-between animate-in fade-in duration-200">
+              <div className="space-y-4">
+                
+                {/* Field 1: Hotel Category */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-800 mb-0.5 flex items-center gap-1">
+                    <Hotel className="w-3.5 h-3.5 text-[#38804b]" />
+                    <span>Hotel Category</span>
+                  </label>
+                  <p className="text-[11px] text-slate-500 mb-1.5">
+                    Select your preferred accommodation comfort tier
+                  </p>
+                  <div className="grid grid-cols-3 gap-2">
+                    {[
+                      { label: "3-Star Deluxe", desc: "Heated & Cozy", value: "3-Star Deluxe" },
+                      { label: "4-Star Luxury", desc: "Premium Stays", value: "4-Star Luxury" },
+                      { label: "5-Star / Chalets", desc: "Heritage & Resort", value: "5-Star / Chalets" }
+                    ].map((tier) => (
+                      <button
+                        key={tier.value}
+                        type="button"
+                        onClick={() => setHotelCategory(tier.value)}
+                        className={`p-2.5 rounded-xl border transition-all text-left cursor-pointer ${
+                          hotelCategory === tier.value
+                            ? "bg-[#38804b]/10 border-[#38804b] ring-1 ring-[#38804b]"
+                            : "bg-slate-50 border-slate-200 hover:bg-slate-100"
+                        }`}
+                      >
+                        <p className={`text-xs font-bold ${hotelCategory === tier.value ? "text-[#38804b]" : "text-slate-800"}`}>
+                          {tier.label}
+                        </p>
+                        <p className="text-[10px] text-slate-500 mt-0.5">
+                          {tier.desc}
+                        </p>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Field 2: Your Approximate Budget */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-800 mb-0.5 flex items-center gap-1">
+                    <Wallet className="w-3.5 h-3.5 text-[#38804b]" />
+                    <span>Your Approximate Budget</span>
+                  </label>
+                  <select
+                    value={budget}
+                    onChange={(e) => setBudget(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white transition-all cursor-pointer mt-1"
+                  >
+                    <option value="₹10,000 – ₹15,000 / person">₹10,000 – ₹15,000 / person</option>
+                    <option value="₹15,000 – ₹25,000 / person">₹15,000 – ₹25,000 / person</option>
+                    <option value="₹25,000 – ₹40,000 / person">₹25,000 – ₹40,000 / person</option>
+                    <option value="₹40,000+ / person">₹40,000+ / person</option>
+                  </select>
+                  <p className="text-[11px] text-slate-500 mt-1.5 flex items-center gap-1">
+                    <span>💡 We&apos;ll suggest options that match your budget.</span>
+                  </p>
+                </div>
+
+              </div>
+
+              {/* Step 2 Action Buttons */}
+              <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+                <button
+                  type="button"
+                  onClick={handlePrevStep}
+                  className="px-4 py-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-semibold text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <ArrowLeft className="w-3.5 h-3.5" />
+                  <span>Back</span>
+                </button>
+
+                <button
+                  type="submit"
+                  className="px-6 py-2.5 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#245434] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer hover:-translate-y-0.5"
+                >
+                  <span>Get My Itinerary</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </form>
+          )}
+
+          {/* ═══════════════ STEP 03 — CONTACT DETAILS ═══════════════ */}
+          {currentStep === 3 && (
+            <form onSubmit={handleSubmit} className="space-y-4 flex-1 flex flex-col justify-between animate-in fade-in duration-200">
+              <div className="space-y-3.5">
+                
+                {/* Field 1: Name */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-800 mb-0.5 flex items-center gap-1">
+                    <User className="w-3.5 h-3.5 text-[#38804b]" />
+                    <span>Your Name</span>
+                  </label>
+                  <p className="text-[11px] text-slate-500 mb-1.5">
+                    Who should our holiday planner address the quote to?
+                  </p>
+                  <input
+                    type="text"
+                    placeholder="e.g. Rahul Sharma"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#38804b] focus:bg-white transition-all"
+                  />
+                </div>
+
+                {/* Field 2: WhatsApp Number */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-800 mb-0.5 flex items-center gap-1">
+                    <Phone className="w-3.5 h-3.5 text-[#38804b]" />
+                    <span>WhatsApp Number *</span>
+                  </label>
+                  <p className="text-[11px] text-slate-500 mb-1.5">
+                    We&apos;ll send your personalised plan on WhatsApp.
+                  </p>
+                  <input
+                    type="tel"
+                    placeholder="e.g. 9876543210"
+                    value={phone}
+                    onChange={(e) => {
+                      setPhone(e.target.value);
+                      if (phoneError) setPhoneError(false);
+                    }}
+                    required
+                    className={`w-full bg-slate-50 border rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:bg-white transition-all ${
+                      phoneError 
+                        ? "border-red-500 focus:ring-red-500" 
+                        : "border-slate-200 focus:ring-[#38804b]"
+                    }`}
+                  />
+                  {phoneError && (
+                    <p className="text-[11px] text-red-500 mt-1">
+                      Please enter your WhatsApp number to receive the custom itinerary.
+                    </p>
+                  )}
+                </div>
+
+                {/* Summary Pill of selections */}
+                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200/80 text-[11px] text-slate-600 space-y-1">
+                  <div className="flex justify-between">
+                    <span className="text-slate-500">Selected Destination:</span>
+                    <span className="font-semibold text-slate-800 truncate max-w-[190px]">{destination.replace(/^[^\w\s]+/, "").trim()}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-500">Stay &amp; Group:</span>
+                    <span className="font-semibold text-slate-800">{travelers} Guests • {hotelCategory}</span>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Step 3 Action Buttons */}
+              <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-3">
+                <button
+                  type="button"
+                  onClick={handlePrevStep}
+                  className="px-4 py-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-semibold text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <ArrowLeft className="w-3.5 h-3.5" />
+                  <span>Back</span>
+                </button>
+
+                <button
+                  type="submit"
+                  className="flex-1 sm:flex-initial px-6 py-3 rounded-xl bg-[#38804b] hover:bg-[#2b693f] active:bg-[#245434] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 cursor-pointer"
+                >
+                  <WhatsAppIcon className="w-4 h-4" />
+                  <span>Get My Custom Itinerary</span>
+                </button>
+              </div>
+            </form>
+          )}
+
         </div>
 
       </div>
     </div>
   );
 }
+
