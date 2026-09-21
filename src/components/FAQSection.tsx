@@ -69,7 +69,7 @@ const faqs: FAQItem[] = [
     id: "faq-8",
     category: "transfers",
     q: "What is your cancellation and refund policy?",
-    a: "All trip bookings and private cab reservations are governed by our standard cancellation window:\n\n• Within 24 to 48 Hours: A trip reservation is eligible for cancellation consideration strictly within 24 to 48 hours of initial booking confirmation.\n• After 48 Hours: After the initial 48-hour window, there will be NO REFUND of any advance payment or deposit, as hotel, houseboat, and vehicle rosters are immediately locked.\n• Disputes & Inquiries: For written cancellation requests or billing queries, contact our desk at contact@shopatrip.in.",
+    a: "All trip bookings and private cab reservations are governed by our standard cancellation window:\n\n• Within 24 to 48 Hours: A trip reservation is eligible for cancellation consideration strictly within 24 to 48 hours of initial booking confirmation.\n• After 48 Hours: After the initial 48-hour window, there will be NO REFUND of any advance payment or deposit, as hotel, houseboat, and vehicle rosters are immediately locked.\n• Disputes & Inquiries: For written cancellation requests or billing queries, contact our desk at business@shopatrip.in.",
   },
 ];
 

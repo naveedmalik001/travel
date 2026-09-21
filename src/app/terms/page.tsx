@@ -228,10 +228,10 @@ export default function TermsPage() {
                     <div>
                       <span className="text-slate-500 font-semibold block mb-1">Official Legal & Dispute Email:</span>
                       <a 
-                        href="mailto:contact@shopatrip.in" 
+                        href={`mailto:${companyInfo.email}`} 
                         className="text-sm font-bold text-[#38804b] hover:underline flex items-center gap-1.5"
                       >
-                        <Mail className="w-4 h-4" /> contact@shopatrip.in
+                        <Mail className="w-4 h-4" /> {companyInfo.email}
                       </a>
                     </div>
                     <div>

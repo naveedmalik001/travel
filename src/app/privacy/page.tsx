@@ -204,10 +204,10 @@ export default function PrivacyPolicyPage() {
                     <div>
                       <span className="text-slate-500 font-semibold block mb-1">Official Privacy Email:</span>
                       <a 
-                        href="mailto:contact@shopatrip.in" 
+                        href={`mailto:${companyInfo.email}`} 
                         className="text-sm font-bold text-[#38804b] hover:underline flex items-center gap-1"
                       >
-                        <Mail className="w-3.5 h-3.5" /> contact@shopatrip.in
+                        <Mail className="w-3.5 h-3.5" /> {companyInfo.email}
                       </a>
                     </div>
                     <div>

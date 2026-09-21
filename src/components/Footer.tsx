@@ -235,8 +235,8 @@ export default function Footer() {
               </p>
               <p className="flex items-center">
                 <Mail className="w-3.5 h-3.5 mr-1.5 text-white flex-shrink-0" />
-                <a href="mailto:contact@shopatrip.in" className="hover:text-white truncate font-medium text-white">
-                  contact@shopatrip.in
+                <a href={`mailto:${companyInfo.email}`} className="hover:text-white truncate font-medium text-white">
+                  {companyInfo.email}
                 </a>
               </p>
             </div>

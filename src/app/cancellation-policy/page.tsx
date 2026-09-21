@@ -90,7 +90,7 @@ export default function CancellationPolicyPage() {
                     </div>
                     <div className="flex items-start gap-2">
                       <Mail className="w-4 h-4 text-[#38804b] flex-shrink-0 mt-0.5" />
-                      <span><strong>Request Channel:</strong> contact@shopatrip.in</span>
+                      <span><strong>Request Channel:</strong> {companyInfo.email}</span>
                     </div>
                   </div>
                 </div>
@@ -158,12 +158,12 @@ export default function CancellationPolicyPage() {
                     To ensure transparent verification and timestamp accuracy, all cancellation notices must be officially communicated in writing via email:
                   </p>
                   <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-2 text-xs">
-                    <p>• <strong>Official Email:</strong> <a href="mailto:contact@shopatrip.in" className="font-bold text-[#38804b] hover:underline">contact@shopatrip.in</a></p>
+                    <p>• <strong>Official Email:</strong> <a href={`mailto:${companyInfo.email}`} className="font-bold text-[#38804b] hover:underline">{companyInfo.email}</a></p>
                     <p>• <strong>Subject Line:</strong> <code>Cancellation Request - [Booking ID / Guest Name]</code></p>
                     <p>• <strong>Required Details:</strong> Booking Date, Lead Traveler Name, Contact Number, and Reason for Cancellation.</p>
                   </div>
                   <p className="text-xs text-slate-500">
-                    * The cancellation timestamp is calculated strictly from the time the written email is received at contact@shopatrip.in.
+                    * The cancellation timestamp is calculated strictly from the time the written email is received at {companyInfo.email}.
                   </p>
                 </div>
               </section>
@@ -215,10 +215,10 @@ export default function CancellationPolicyPage() {
                     <div>
                       <span className="text-slate-500 font-semibold block mb-1">Email for Dispute Notices:</span>
                       <a 
-                        href="mailto:contact@shopatrip.in" 
+                        href={`mailto:${companyInfo.email}`} 
                         className="text-sm font-bold text-[#38804b] hover:underline flex items-center gap-1"
                       >
-                        <Mail className="w-3.5 h-3.5" /> contact@shopatrip.in
+                        <Mail className="w-3.5 h-3.5" /> {companyInfo.email}
                       </a>
                     </div>
                     <div>
