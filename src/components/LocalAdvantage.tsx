@@ -46,7 +46,7 @@ export default function LocalAdvantage() {
           <div className="lg:col-span-5 relative order-2 lg:order-1">
             <div className="relative h-[320px] sm:h-[420px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=80"
+                src="/images/destinations/Gulmarg/Gulmarg.jpg"
                 alt="Gulmarg Gondola cable car ascending Apharwat Peak in winter"
                 fill
                 className="object-cover"

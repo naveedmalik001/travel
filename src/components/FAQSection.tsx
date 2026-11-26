@@ -99,7 +99,7 @@ export default function FAQSection() {
             <span>Clear Answers &amp; Guidelines</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 font-serif">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-slate-900 font-serif">
             Frequently Asked Questions
           </h2>
           <p className="mt-2.5 text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">

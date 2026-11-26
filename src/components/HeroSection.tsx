@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { companyInfo } from "@/data/company";
 import { WhatsAppIcon } from "@/components/SocialIcons";
 import { 
@@ -41,18 +39,24 @@ export default function HeroSection({
 
   return (
     <div className="relative min-h-[100svh] flex flex-col justify-end overflow-hidden bg-[#071410]">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=2000&q=85"
-          alt="Kashmir Pahalgam Valley pine forest and snow peaks"
-          fill
-          priority
-          className="object-cover object-center opacity-50"
-        />
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover object-center"
+        >
+          <source src="/video/sat-hero.mp4" type="video/mp4" />
+          <source src="/video/SAT%20website%20video.mov" type="video/mp4" />
+          <source src="/video/SAT website video.mov" type="video/quicktime" />
+          Your browser does not support the video tag.
+        </video>
         {/* Layered gradient: stronger at bottom for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071410] via-[#071410]/70 to-[#071410]/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071410]/75 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#071410] via-[#071410]/70 to-[#071410]/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071410]/80 via-[#071410]/35 to-transparent" />
       </div>
 
       {/* Content — bottom-anchored on mobile, centred on desktop */}
@@ -69,8 +73,8 @@ export default function HeroSection({
 
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-3xl">
-            KASHMIR<br />
-            <span className="text-[#38804b] font-serif italic font-semibold">EXPERIENCE THE UNFORGETTABLE</span>
+            Kashmir<br />
+            <span className="text-[#38804b] font-semibold">Experience the Unforgettable</span>
           </h1>
 
           {/* Tagline */}

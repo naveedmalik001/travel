@@ -162,7 +162,7 @@ export default function AboutPage() {
             {/* Visual Box */}
             <div className="relative rounded-3xl overflow-hidden border border-[#38804b]/20 shadow-2xl bg-slate-900 aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1200&q=80"
+                src="/images/destinations/Tangmarg/IMG_20260915_125046.jpg"
                 alt="Tangmarg Gulmarg Kashmir"
                 fill
                 className="object-cover"

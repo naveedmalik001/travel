@@ -49,10 +49,11 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹12,499",
     originalPrice: "₹15,999",
     hotelCategory: "3-Star Deluxe Hotels + Houseboat",
-    image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Gulmarg/IMG_20251225_085718.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1627916607164-7b20241db935?auto=format&fit=crop&w=1000&q=80"
+      "/images/destinations/Gulmarg/IMG_20251225_085718.jpg",
+      "/images/destinations/Pahalgam/20261126_082954_0000.jpg",
+      "/images/destinations/Srinagar/Canva - download_20261126_083120_0000.png"
     ],
     overview: "This four-day escape to Kashmir blends iconic landscapes with gentle adventure and comfort. You drift across Dal Lake on a sunset shikara, stand beneath towering pine forests along the Lidder River in Pahalgam, ride the world's highest cable car in Gulmarg, and explore the timeless Mughal-era gardens of Srinagar.",
     inclusions: [
@@ -131,11 +132,11 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹24,999",
     originalPrice: "₹31,500",
     hotelCategory: "3-Star Deluxe & Luxury Houseboat",
-    image: "https://images.unsplash.com/photo-1597074866923-dc0589150358?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Srinagar/Canva - download_20261126_083105_0000.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1597074866923-dc0589150358?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=1000&q=80"
+      "/images/destinations/Srinagar/Canva - download_20261126_083105_0000.jpg",
+      "/images/destinations/Gulmarg/IMG_20251225_085718.jpg",
+      "/images/destinations/Pahalgam/20261126_082954_0000.jpg"
     ],
     overview: "Crafted exclusively for newlyweds and couples seeking intimacy in the Himalayas. Drift on Dal Lake during twilight, experience a romantic candlelight dinner on a traditional cedarwood houseboat with flower bed decoration, play in the powdery snows of Gulmarg Apharwat, and take intimate riverside walks along the Lidder River in Pahalgam.",
     inclusions: [
@@ -232,11 +233,12 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹18,999",
     originalPrice: "₹24,000",
     hotelCategory: "3-Star Deluxe Stays + 1 Night Houseboat",
-    image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Pahalgam/20261126_082954_0000.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1627916607164-7b20241db935?auto=format&fit=crop&w=1000&q=80"
+      "/images/destinations/Pahalgam/20261126_082954_0000.jpg",
+      "/images/destinations/Sonmarg/Sonmarg.jpg",
+      "/images/destinations/Gulmarg/pexels-sheikh-basim-664884875-20155455.jpg",
+      "/images/destinations/Srinagar/Canva - download_20261126_083055_0000.jpg"
     ],
     overview: "The quintessential Kashmiri expedition. Experience the complete harmony of culture, alpine thrills, and quiet lakes. Stay in Pahalgam by the rushing Lidder, ride Asia's highest gondola at Gulmarg, witness glacial wonders in Sonmarg, and spend an enchanting night on a heritage Dal Lake houseboat.",
     inclusions: [
@@ -343,11 +345,11 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹28,500",
     originalPrice: "₹36,000",
     hotelCategory: "4-Star Srinagar Hotels + Boutique Lodges in Gurez",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Gurez/Habba Khatoon Peak.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=80"
-    ],
+      "/images/destinations/Gurez/Habba Khatoon Peak.jpg",
+      "/images/destinations/Srinagar/Canva - download_20261126_083055_0000.jpg"
+],
     overview: "A rare Himalayan expedition into Kashmir's northern frontier — the mystical Gurez Valley. Cross the dramatic Razdan Pass at 11,672 ft, trace the turquoise Kishanganga River, gaze at the legendary pyramid of Habba Khatoon Peak, and meet the Dard Shin tribe in ancient wooden villages. Designed for discerning explorers and photographers.",
     inclusions: [
       "2 Nights 4-Star Hotel in Srinagar + 4 Nights Boutique Lodges / Riverside Stays in Gurez (Dawar)",
@@ -450,11 +452,12 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹22,999",
     originalPrice: "₹29,000",
     hotelCategory: "3-Star Srinagar + Riverside Wooden Stays in Keran",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Keran/20261126_082606_0000.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=80"
-    ],
+      "/images/destinations/Keran/20261126_082606_0000.jpg",
+      "/images/destinations/Keran/Copy of 9sat.jpeg",
+      "/images/destinations/Srinagar/Canva - download_20261126_083055_0000.jpg"
+],
     overview: "A scenic Himalayan journey into the newly opened Keran Valley — a lush riverside wonderland tucked along the Kishanganga River directly facing Pakistan-administered Kashmir across a few meters of water. Expect pure mountain air, wooden hillside villages, walnut and apple orchards, and pristine frontier silence.",
     inclusions: [
       "2 Nights 3-Star Hotel in Srinagar + 4 Nights Riverside Stay in Keran Valley",
@@ -555,11 +558,13 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹26,999",
     originalPrice: "₹34,000",
     hotelCategory: "3-Star Deluxe Hotels throughout",
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Vaishnodevi/Vaishnodevi.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=80"
-    ],
+      "/images/destinations/Vaishnodevi/Vaishnodevi.jpg",
+      "/images/destinations/Patnitop/patnitop.jpg",
+      "/images/destinations/Pahalgam/pahalgam.jpg",
+      "/images/destinations/Gulmarg/Gulmarg.jpg"
+],
     overview: "A deeply fulfilling 10-day grand journey uniting sacred pilgrimage with Kashmir's peerless natural splendor. Seek divine blessings at the holy shrine of Shri Mata Vaishno Devi in Katra, marvel at the pine-carpeted meadows of Patnitop, walk along the Lidder in Pahalgam, ride the Gulmarg Gondola, and cruise the waters of Dal Lake in Srinagar.",
     inclusions: [
       "9 Nights stay in premium 3-Star Hotels (Jammu, Katra, Patnitop, Pahalgam, Gulmarg, Srinagar)",
@@ -695,10 +700,12 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹14,999",
     originalPrice: "₹19,500",
     hotelCategory: "3-Star Family Friendly Stays",
-    image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Patnitop/IMG_20260128_094140(1).jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=80"
-    ],
+      "/images/destinations/Patnitop/IMG_20260128_094140(1).jpg",
+      "/images/destinations/Patnitop/patnitop.jpg",
+      "/images/destinations/Gulmarg/Gulmarg.jpg"
+],
     overview: "An unbeatable value family package starting and ending in Jammu. Includes private cab, comfortable 3-star family stays, MAP meal plan, Shikara ride on Dal Lake, Gulmarg meadow excursion, and Patnitop pine forests.",
     inclusions: [
       "5 Nights accommodation in comfortable 3-Star family hotels",
@@ -792,10 +799,12 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹19,500",
     originalPrice: "₹25,000",
     hotelCategory: "Deluxe Mountain Resorts & Cottages",
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Bhadarwah/Copy of 16 aaa.jpeg",
     gallery: [
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80"
-    ],
+      "/images/destinations/Bhadarwah/Copy of 16 aaa.jpeg",
+      "/images/destinations/Kishtwar/Copy of 15sat.jpeg",
+      "/images/destinations/Sinthan Top/Copy of 10sat.jpeg"
+],
     overview: "Explore the dramatic Chenab canyon landscapes of Kishtwar and the lush pine plateaus of Bhaderwah (frequently called the Mini Switzerland of Jammu). Walk across the saffron fields of Kishtwar, visit the ancient Machail Mata base in Paddar Valley, cross the breath-stopping Sinthan Pass, and relax in the rolling meadows of Jai Valley.",
     inclusions: [
       "5 Nights Deluxe accommodation in Bhaderwah, Kishtwar and Patnitop",
@@ -887,10 +896,12 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹13,999",
     originalPrice: "₹18,000",
     hotelCategory: "3-Star Deluxe Hotels + Houseboat",
-    image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Doodhpathri/20261126_082938_0000.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=80"
-    ],
+      "/images/destinations/Doodhpathri/20261126_082938_0000.jpg",
+      "/images/destinations/Gulmarg/Gulmarg.jpg",
+      "/images/destinations/Srinagar/Canva - download_20261126_083120_0000.png"
+],
     overview: "Specially tailored for friend groups, corporate teams, and college reunions. Circles out from Srinagar with seamless transfers, comfortable stays, group dining, and visits to Gulmarg, Pahalgam, and the untouched lush meadows of Doodhpathri.",
     inclusions: [
       "5 Nights accommodation (4 Nights Hotel + 1 Night Deluxe Houseboat)",
@@ -983,11 +994,13 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹42,500",
     originalPrice: "₹52,000",
     hotelCategory: "Deluxe Hotels & Luxury Swiss Camps",
-    image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Pangong/Pangong TSO.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80"
-    ],
+      "/images/destinations/Pangong/Pangong TSO.jpg",
+      "/images/destinations/Leh Ladakh/Ladakh.jpg",
+      "/images/destinations/Kargil/Kargil.jpg",
+      "/images/destinations/Nubra/Copy of 27sat.jpeg"
+],
     overview: "The ultimate Himalayan road odyssey connecting the lush green gardens of Kashmir to the stark high-altitude deserts of Ladakh. Cross the treacherous Zoji La Pass, pay tribute at the Kargil War Memorial in Drass, cross Khardung La (17,982 ft) into the Nubra Valley, ride double-humped Bactrian camels on cold sand dunes, and gaze upon the changing blues of Pangong Tso.",
     inclusions: [
       "11 Nights accommodation in handpicked Deluxe Hotels & Swiss Luxury Tents",
@@ -1138,10 +1151,12 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹21,999",
     originalPrice: "₹28,000",
     hotelCategory: "3-Star Deluxe Hotels & Swiss Tents",
-    image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Leh Ladakh/Ladakh.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=1000&q=80"
-    ],
+      "/images/destinations/Leh Ladakh/Ladakh.jpg",
+      "/images/destinations/Pangong/Pangong TSO.jpg",
+      "/images/destinations/Nubra/Copy of 27sat.jpeg"
+],
     overview: "The ideal compact Ladakh itinerary for travelers arriving directly at Leh Airport. Experience Khardung La, Diskit Monastery, camel rides in Hunder sand dunes, the spellbinding colors of Pangong Lake, and Chang La Pass.",
     inclusions: [
       "5 Nights accommodation (3 Nights Leh Hotel + 1 Night Nubra Camp + 1 Night Pangong Camp)",
@@ -1233,10 +1248,11 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹24,500",
     originalPrice: "₹31,000",
     hotelCategory: "3-Star Srinagar Hotels + Riverfront Lodges in Gurez",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Gurez/Habba Khatoon Peak.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80"
-    ],
+      "/images/destinations/Gurez/Habba Khatoon Peak.jpg",
+      "/images/destinations/Srinagar/Canva - download_20261126_083055_0000.jpg"
+],
     overview: "A slow-paced, scenic Himalayan escape into Kashmir's most untouched frontier — Gurez Valley. Cross dramatic Razdan Pass, stay beside the Kishanganga River, walk to ancient wooden hamlets like Tulail and Dawar, and meet the warm Dard Shina community. Perfect for nature lovers seeking starry skies and tranquility.",
     inclusions: [
       "3 Nights in 3-Star Srinagar Hotel + 4 Nights in Boutique/Riverside Lodges in Gurez",
@@ -1345,10 +1361,13 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹38,000",
     originalPrice: "₹48,000",
     hotelCategory: "Boutique Stays & Heritage Houseboats",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/Bangus/Copy of 12sat.jpeg",
     gallery: [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80"
-    ],
+      "/images/destinations/Bangus/Copy of 12sat.jpeg",
+      "/images/destinations/Keran/20261126_082606_0000.jpg",
+      "/images/destinations/Lolab/Copy of 17sat.jpeg",
+      "/images/destinations/Doodhpathri/20261126_082938_0000.jpg"
+],
     overview: "For the true explorer who wants to leave crowded tourist spots behind. Unveils Kashmir's most pristine frontiers: the mystical Gurez Valley, the riverside beauty of Keran on the border, the untouched rolling plateaus of Doodhpathri and Yusmarg, and the dramatic high mountain pass of Sinthan Top.",
     inclusions: [
       "11 Nights accommodation in boutique retreats, wooden lodges & houseboats",

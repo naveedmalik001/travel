@@ -9,35 +9,35 @@ const DESTINATION_SLIDES = [
   {
     name: "Gulmarg Snow Valley",
     region: "Kashmir",
-    image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1400&q=85",
+    image: "/images/destinations/Gulmarg/Gulmarg.jpg",
     tag: "Apharwat Peak & Alpine Slopes",
     color: "#34d399"
   },
   {
     name: "Dal Lake, Srinagar",
     region: "Kashmir",
-    image: "https://images.unsplash.com/photo-1566837945700-30057527ade0?auto=format&fit=crop&w=1400&q=85",
+    image: "/images/destinations/Srinagar/Canva - download_20261126_083105_0000.jpg",
     tag: "Golden Sunset Shikara & Houseboats",
     color: "#f59e0b"
   },
   {
     name: "Betaab Valley, Pahalgam",
     region: "Kashmir",
-    image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=1400&q=85",
+    image: "/images/destinations/Pahalgam/20261126_082954_0000.jpg",
     tag: "Glacial Lidder River & Pine Meadows",
     color: "#6ee7b7"
   },
   {
     name: "Pangong Tso & Nubra Valley",
     region: "Ladakh",
-    image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=1400&q=85",
+    image: "/images/destinations/Pangong/Pangong TSO.jpg",
     tag: "High-Altitude Turquoise Waters & Passes",
     color: "#38bdf8"
   },
   {
     name: "Sonmarg Glacier",
     region: "Kashmir",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=85",
+    image: "/images/destinations/Sonmarg/Sonmarg.jpg",
     tag: "Thajiwas Glacier & Meadow of Gold",
     color: "#fbbf24"
   }

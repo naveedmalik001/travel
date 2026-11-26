@@ -114,7 +114,7 @@ Hello Shop A Trip Team, please share a customized itinerary and price quote for 
           {/* Authentic Kashmir landscape image */}
           <div className="absolute inset-0 opacity-20 mix-blend-luminosity pointer-events-none">
             <Image
-              src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80"
+              src="/images/destinations/Gulmarg/Gulmarg.jpg"
               alt="Kashmir Valley landscape"
               fill
               className="object-cover"
