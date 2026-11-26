@@ -49,9 +49,10 @@ export const tourPackages: TourPackage[] = [
     priceFrom: "₹12,499",
     originalPrice: "₹15,999",
     hotelCategory: "3-Star Deluxe Hotels + Houseboat",
-    image: "/images/destinations/Gulmarg/IMG_20251225_085718.jpg",
+    image: "/images/destinations/Gulmarg/Gulmarg.jpg",
     gallery: [
-      "/images/destinations/Gulmarg/IMG_20251225_085718.jpg",
+      "/images/destinations/Gulmarg/Gulmarg.jpg",
+      "/images/destinations/Gulmarg/20240308_151330(1).jpg",
       "/images/destinations/Pahalgam/20261126_082954_0000.jpg",
       "/images/destinations/Srinagar/Canva - download_20261126_083120_0000.png"
     ],
@@ -135,7 +136,8 @@ export const tourPackages: TourPackage[] = [
     image: "/images/destinations/Srinagar/Canva - download_20261126_083105_0000.jpg",
     gallery: [
       "/images/destinations/Srinagar/Canva - download_20261126_083105_0000.jpg",
-      "/images/destinations/Gulmarg/IMG_20251225_085718.jpg",
+      "/images/destinations/Srinagar/Canva - download_20261126_083120_0000.png",
+      "/images/destinations/Gulmarg/Gulmarg.jpg",
       "/images/destinations/Pahalgam/20261126_082954_0000.jpg"
     ],
     overview: "Crafted exclusively for newlyweds and couples seeking intimacy in the Himalayas. Drift on Dal Lake during twilight, experience a romantic candlelight dinner on a traditional cedarwood houseboat with flower bed decoration, play in the powdery snows of Gulmarg Apharwat, and take intimate riverside walks along the Lidder River in Pahalgam.",

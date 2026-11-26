@@ -60,11 +60,11 @@ export default function HeroSection({
           autoPlay
           loop
           muted
-          defaultMuted
           playsInline
           preload="auto"
           className="w-full h-full object-cover object-center"
         >
+          <source src="/video/kashmir-hero.mp4" type="video/mp4" />
           <source src="/video/sat-hero.mp4" type="video/mp4" />
           <source src="/video/SAT website video.mov" type="video/quicktime" />
           Your browser does not support the video tag.
