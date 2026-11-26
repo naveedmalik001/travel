@@ -38,7 +38,7 @@ const securityHeaders = [
   },
   {
     key: 'Content-Security-Policy',
-    value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https:; frame-ancestors 'self'; form-action 'self' https://wa.me https://api.whatsapp.com; object-src 'none'; base-uri 'self'; upgrade-insecure-requests;",
+    value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; media-src 'self' data: blob: https:; font-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https:; frame-ancestors 'self'; form-action 'self' https://wa.me https://api.whatsapp.com; object-src 'none'; base-uri 'self'; upgrade-insecure-requests;",
   },
 ];
 

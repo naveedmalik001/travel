@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { companyInfo } from "@/data/company";
 import { WhatsAppIcon } from "@/components/SocialIcons";
 import { 
@@ -18,6 +18,20 @@ export default function HeroSection({
   onFilterChange: (category: string) => void;
 }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay handled by browser policy
+        });
+      }
+    }
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,15 +56,16 @@ export default function HeroSection({
       {/* Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
+          defaultMuted
           playsInline
           preload="auto"
           className="w-full h-full object-cover object-center"
         >
           <source src="/video/sat-hero.mp4" type="video/mp4" />
-          <source src="/video/SAT%20website%20video.mov" type="video/mp4" />
           <source src="/video/SAT website video.mov" type="video/quicktime" />
           Your browser does not support the video tag.
         </video>
