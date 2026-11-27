@@ -93,8 +93,8 @@ export default function HeroSection({
   ];
 
   return (
-    <div className="relative min-h-[100svh] flex flex-col justify-end overflow-hidden bg-black">
-      {/* Background Video */}
+    <div className="relative min-h-screen min-h-[100dvh] min-h-[100svh] flex flex-col justify-end overflow-hidden bg-black">
+      {/* Background Video — Full-bleed & mobile-responsive */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
           ref={videoRef}
@@ -105,8 +105,19 @@ export default function HeroSection({
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover object-center"
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          className="w-full h-full object-cover max-w-none"
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            minWidth: "100%",
+            minHeight: "100%",
+            width: "auto",
+            height: "auto",
+            objectFit: "cover",
+            objectPosition: "center 30%",
+          }}
         >
           <source src="/video/kashmir-hero.mp4" type="video/mp4" />
           <source src="/video/sat-hero.mp4" type="video/mp4" />
@@ -116,7 +127,7 @@ export default function HeroSection({
       </div>
 
       {/* Content — bottom-anchored on mobile, centred on desktop */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-10 sm:pb-16 lg:pb-20 flex flex-col lg:flex-row lg:items-end lg:gap-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-8 sm:pb-16 lg:pb-20 flex flex-col lg:flex-row lg:items-end lg:gap-12">
 
         {/* ─── Text Stack ──────────────────────────────────── */}
         <div className="flex-1 text-white">
