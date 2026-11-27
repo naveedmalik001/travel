@@ -139,9 +139,9 @@ export default function HeroSection({
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight max-w-3xl">
-            <span className="text-[#38804b]">Kashmir</span><br />
-            <span className="text-[#38804b] font-semibold">Experience the Unforgettable</span>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-3xl">
+            Kashmir<br />
+            <span className="text-white font-semibold">Experience the Unforgettable</span>
           </h1>
 
           {/* Tagline */}
