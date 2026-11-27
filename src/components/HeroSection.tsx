@@ -84,18 +84,18 @@ export default function HeroSection({
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-3xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-3xl">
             Kashmir<br />
-            <span className="text-[#38804b] font-semibold drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">Experience the Unforgettable</span>
+            <span className="text-[#38804b] font-semibold">Experience the Unforgettable</span>
           </h1>
 
           {/* Tagline */}
-          <p className="mt-3 text-base sm:text-xl font-serif italic text-[#38804b] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+          <p className="mt-3 text-base sm:text-xl font-serif italic text-[#38804b]">
             peace &amp; you
           </p>
 
           {/* Supporting Text */}
-          <p className="mt-2.5 text-sm sm:text-base text-white/95 max-w-xl leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+          <p className="mt-2.5 text-sm sm:text-base text-slate-200 max-w-xl leading-relaxed font-normal">
             Curated journeys, beautiful stays and seamless travel experiences across Kashmir and beyond.
           </p>
 

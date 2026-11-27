@@ -134,7 +134,7 @@ export default function Navbar({ onOpenCustomPlanner }: { onOpenCustomPlanner?: 
         className={`transition-all duration-300 ${
           isLightNav
             ? "bg-white/95 backdrop-blur-md shadow-sm py-2.5 sm:py-3 text-slate-800 border-b border-slate-100" 
-            : "bg-gradient-to-b from-black/85 via-black/55 to-transparent py-3.5 sm:py-4 text-white"
+            : "bg-transparent py-3.5 sm:py-4 text-white"
         }`}
       >
         <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 xl:gap-6">
