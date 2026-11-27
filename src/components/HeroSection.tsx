@@ -21,16 +21,57 @@ export default function HeroSection({
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.defaultMuted = true;
-      videoRef.current.muted = true;
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay handled by browser policy
-        });
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Strict attributes for mobile iOS/Android inline autoplay
+    video.defaultMuted = true;
+    video.muted = true;
+    video.setAttribute("playsinline", "true");
+    video.setAttribute("webkit-playsinline", "true");
+
+    const playVideo = () => {
+      if (video.paused) {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Handled: Will play on user interaction below
+          });
+        }
       }
-    }
+    };
+
+    playVideo();
+
+    // Mobile fallback: Start playback on first user touch/scroll if restricted by device battery saver
+    const handleFirstInteraction = () => {
+      playVideo();
+      window.removeEventListener("touchstart", handleFirstInteraction);
+      window.removeEventListener("touchend", handleFirstInteraction);
+      window.removeEventListener("scroll", handleFirstInteraction);
+      window.removeEventListener("click", handleFirstInteraction);
+    };
+
+    window.addEventListener("touchstart", handleFirstInteraction, { passive: true, once: true });
+    window.addEventListener("touchend", handleFirstInteraction, { passive: true, once: true });
+    window.addEventListener("scroll", handleFirstInteraction, { passive: true, once: true });
+    window.addEventListener("click", handleFirstInteraction, { passive: true, once: true });
+
+    // Resume video when user switches back to this tab on mobile
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible") {
+        playVideo();
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+
+    return () => {
+      window.removeEventListener("touchstart", handleFirstInteraction);
+      window.removeEventListener("touchend", handleFirstInteraction);
+      window.removeEventListener("scroll", handleFirstInteraction);
+      window.removeEventListener("click", handleFirstInteraction);
+      document.removeEventListener("visibilitychange", handleVisibility);
+    };
   }, []);
 
   const handleSearch = (e: React.FormEvent) => {
@@ -57,12 +98,15 @@ export default function HeroSection({
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
           ref={videoRef}
+          src="/video/kashmir-hero.mp4"
+          poster="/images/destinations/Gulmarg/Gulmarg.jpg"
           autoPlay
           loop
           muted
           playsInline
           preload="auto"
           className="w-full h-full object-cover object-center"
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
         >
           <source src="/video/kashmir-hero.mp4" type="video/mp4" />
           <source src="/video/sat-hero.mp4" type="video/mp4" />
@@ -84,8 +128,8 @@ export default function HeroSection({
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-3xl">
-            Kashmir<br />
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight max-w-3xl">
+            <span className="text-[#38804b]">Kashmir</span><br />
             <span className="text-[#38804b] font-semibold">Experience the Unforgettable</span>
           </h1>
 
