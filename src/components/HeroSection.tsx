@@ -52,7 +52,7 @@ export default function HeroSection({
   ];
 
   return (
-    <div className="relative min-h-[100svh] flex flex-col justify-end overflow-hidden bg-[#071410]">
+    <div className="relative min-h-[100svh] flex flex-col justify-end overflow-hidden bg-black">
       {/* Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
@@ -69,9 +69,6 @@ export default function HeroSection({
           <source src="/video/SAT website video.mov" type="video/quicktime" />
           Your browser does not support the video tag.
         </video>
-        {/* Layered gradient: stronger at bottom for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071410] via-[#071410]/70 to-[#071410]/25" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071410]/80 via-[#071410]/35 to-transparent" />
       </div>
 
       {/* Content — bottom-anchored on mobile, centred on desktop */}
@@ -87,18 +84,18 @@ export default function HeroSection({
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-3xl">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-3xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
             Kashmir<br />
-            <span className="text-[#38804b] font-semibold">Experience the Unforgettable</span>
+            <span className="text-[#38804b] font-semibold drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">Experience the Unforgettable</span>
           </h1>
 
           {/* Tagline */}
-          <p className="mt-3 text-base sm:text-xl font-serif italic text-[#38804b]">
+          <p className="mt-3 text-base sm:text-xl font-serif italic text-[#38804b] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
             peace &amp; you
           </p>
 
           {/* Supporting Text */}
-          <p className="mt-2.5 text-sm sm:text-base text-slate-200 max-w-xl leading-relaxed font-normal">
+          <p className="mt-2.5 text-sm sm:text-base text-white/95 max-w-xl leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
             Curated journeys, beautiful stays and seamless travel experiences across Kashmir and beyond.
           </p>
 
