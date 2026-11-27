@@ -127,7 +127,7 @@ export default function HeroSection({
       </div>
 
       {/* Content — bottom-anchored on mobile, centred on desktop */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-8 sm:pb-16 lg:pb-20 flex flex-col lg:flex-row lg:items-end lg:gap-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[132px] sm:pt-36 lg:pt-32 pb-8 sm:pb-16 lg:pb-20 flex flex-col lg:flex-row lg:items-end lg:gap-12">
 
         {/* ─── Text Stack ──────────────────────────────────── */}
         <div className="flex-1 text-white">
